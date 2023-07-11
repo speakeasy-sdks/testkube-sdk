@@ -1,0 +1,10 @@
+# TestTriggerConditionSpec
+
+
+## Fields
+
+| Field                                                                        | Type                                                                         | Required                                                                     | Description                                                                  | Example                                                                      |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `conditions`                                                                 | [TestTriggerCondition](../../models/shared/testtriggercondition.md)[]        | :heavy_minus_sign:                                                           | list of test trigger conditions                                              |                                                                              |
+| `delay`                                                                      | *number*                                                                     | :heavy_minus_sign:                                                           | duration in seconds the test trigger waits between condition checks          | 1                                                                            |
+| `timeout`                                                                    | *number*                                                                     | :heavy_minus_sign:                                                           | duration in seconds the test trigger waits for conditions, until its stopped | 1                                                                            |

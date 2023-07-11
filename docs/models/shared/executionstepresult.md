@@ -1,0 +1,13 @@
+# ExecutionStepResult
+
+execution result data
+
+
+## Fields
+
+| Field                                                                         | Type                                                                          | Required                                                                      | Description                                                                   | Example                                                                       |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `assertionResults`                                                            | [AssertionResult](../../models/shared/assertionresult.md)[]                   | :heavy_minus_sign:                                                            | N/A                                                                           |                                                                               |
+| `duration`                                                                    | *string*                                                                      | :heavy_minus_sign:                                                            | N/A                                                                           | 10m0s                                                                         |
+| `name`                                                                        | *string*                                                                      | :heavy_check_mark:                                                            | step name                                                                     | step1                                                                         |
+| `status`                                                                      | [ExecutionStepResultStatus](../../models/shared/executionstepresultstatus.md) | :heavy_check_mark:                                                            | execution step status                                                         |                                                                               |

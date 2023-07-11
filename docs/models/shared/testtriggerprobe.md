@@ -1,0 +1,14 @@
+# TestTriggerProbe
+
+supported probe for test triggers
+
+
+## Fields
+
+| Field                                                                   | Type                                                                    | Required                                                                | Description                                                             | Example                                                                 |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `headers`                                                               | Record<string, *string*>                                                | :heavy_minus_sign:                                                      | test trigger condition probe headers to submit                          |                                                                         |
+| `host`                                                                  | *string*                                                                | :heavy_minus_sign:                                                      | test trigger condition probe host, default is pod ip or service name    | testkube-api-server                                                     |
+| `path`                                                                  | *string*                                                                | :heavy_minus_sign:                                                      | test trigger condition probe path to check, default is /                | /                                                                       |
+| `port`                                                                  | *number*                                                                | :heavy_minus_sign:                                                      | test trigger condition probe port to connect                            | 80                                                                      |
+| `scheme`                                                                | *string*                                                                | :heavy_minus_sign:                                                      | test trigger condition probe scheme to connect to host, default is http | http                                                                    |

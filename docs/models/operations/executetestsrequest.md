@@ -1,0 +1,12 @@
+# ExecuteTestsRequest
+
+
+## Fields
+
+| Field                                                                        | Type                                                                         | Required                                                                     | Description                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `executionRequestInput`                                                      | [shared.ExecutionRequestInput](../../models/shared/executionrequestinput.md) | :heavy_check_mark:                                                           | body passed to configure executions                                          |
+| `concurrency`                                                                | *number*                                                                     | :heavy_minus_sign:                                                           | N/A                                                                          |
+| `executionSelector`                                                          | *string*                                                                     | :heavy_minus_sign:                                                           | N/A                                                                          |
+| `namespace`                                                                  | *string*                                                                     | :heavy_minus_sign:                                                           | N/A                                                                          |
+| `selector`                                                                   | *string*                                                                     | :heavy_minus_sign:                                                           | N/A                                                                          |

@@ -1,0 +1,10 @@
+# TestTriggerProbeSpec
+
+
+## Fields
+
+| Field                                                                    | Type                                                                     | Required                                                                 | Description                                                              | Example                                                                  |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `delay`                                                                  | *number*                                                                 | :heavy_minus_sign:                                                       | duration in seconds the test trigger waits between probes                | 1                                                                        |
+| `probes`                                                                 | [TestTriggerProbe](../../models/shared/testtriggerprobe.md)[]            | :heavy_minus_sign:                                                       | list of test trigger probes                                              |                                                                          |
+| `timeout`                                                                | *number*                                                                 | :heavy_minus_sign:                                                       | duration in seconds the test trigger waits for probes, until its stopped | 1                                                                        |
