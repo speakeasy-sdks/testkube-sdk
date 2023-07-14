@@ -17,13 +17,6 @@ Returns logs of the given executionID
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 import { GetExecutionLogsResponse } from "testkube-sdk/dist/sdk/models/operations";
-import {
-  AssertionResultStatus,
-  ExecutionResultOutputType,
-  ExecutionStatus,
-  ExecutionStepResultStatus,
-  ExecutorOutputType,
-} from "testkube-sdk/dist/sdk/models/shared";
 
 const sdk = new TestkubeSDK();
 

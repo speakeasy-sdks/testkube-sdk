@@ -24,12 +24,7 @@ Create new executor based on variables passed in request
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 import { CreateExecutorJsonResponse } from "testkube-sdk/dist/sdk/models/operations";
-import {
-  ExecutionStatus,
-  ExecutorFeatures,
-  ExecutorUpsertRequestFeatures,
-  RunningContextType,
-} from "testkube-sdk/dist/sdk/models/shared";
+import { ExecutorUpsertRequestFeatures } from "testkube-sdk/dist/sdk/models/shared";
 
 const sdk = new TestkubeSDK();
 
@@ -109,7 +104,6 @@ Create new executor based on variables passed in request
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 import { CreateExecutorStringResponse } from "testkube-sdk/dist/sdk/models/operations";
-import { ExecutionStatus, ExecutorFeatures, RunningContextType } from "testkube-sdk/dist/sdk/models/shared";
 
 const sdk = new TestkubeSDK();
 
@@ -210,7 +204,6 @@ Returns executors data with executions passed to executor
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 import { GetExecutorResponse } from "testkube-sdk/dist/sdk/models/operations";
-import { ExecutionStatus, ExecutorFeatures, RunningContextType } from "testkube-sdk/dist/sdk/models/shared";
 
 const sdk = new TestkubeSDK();
 
@@ -245,7 +238,6 @@ List executors available in cluster
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 import { ListExecutorsResponse } from "testkube-sdk/dist/sdk/models/operations";
-import { ExecutorFeatures } from "testkube-sdk/dist/sdk/models/shared";
 
 const sdk = new TestkubeSDK();
 
@@ -280,12 +272,7 @@ Update new executor based on variables passed in request
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 import { UpdateExecutorJsonResponse } from "testkube-sdk/dist/sdk/models/operations";
-import {
-  ExecutionStatus,
-  ExecutorFeatures,
-  ExecutorUpdateRequestFeatures,
-  RunningContextType,
-} from "testkube-sdk/dist/sdk/models/shared";
+import { ExecutorUpdateRequestFeatures } from "testkube-sdk/dist/sdk/models/shared";
 
 const sdk = new TestkubeSDK();
 
@@ -371,7 +358,6 @@ Update new executor based on variables passed in request
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 import { UpdateExecutorStringResponse } from "testkube-sdk/dist/sdk/models/operations";
-import { ExecutionStatus, ExecutorFeatures, RunningContextType } from "testkube-sdk/dist/sdk/models/shared";
 
 const sdk = new TestkubeSDK();
 

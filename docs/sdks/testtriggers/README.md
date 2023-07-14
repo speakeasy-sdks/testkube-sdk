@@ -286,12 +286,6 @@ Create new test trigger CRD inside a Kubernetes cluster
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 import { CreateTestTriggerStringResponse } from "testkube-sdk/dist/sdk/models/operations";
-import {
-  TestTriggerActions,
-  TestTriggerConditionStatuses,
-  TestTriggerExecutions,
-  TestTriggerResources,
-} from "testkube-sdk/dist/sdk/models/shared";
 
 const sdk = new TestkubeSDK();
 
@@ -394,12 +388,6 @@ Get test trigger by ID from CRD in kubernetes cluster
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 import { GetTestTriggerByIDResponse } from "testkube-sdk/dist/sdk/models/operations";
-import {
-  TestTriggerActions,
-  TestTriggerConditionStatuses,
-  TestTriggerExecutions,
-  TestTriggerResources,
-} from "testkube-sdk/dist/sdk/models/shared";
 
 const sdk = new TestkubeSDK();
 
@@ -435,12 +423,6 @@ List test triggers from the kubernetes cluster
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 import { ListTestTriggersResponse } from "testkube-sdk/dist/sdk/models/operations";
-import {
-  TestTriggerActions,
-  TestTriggerConditionStatuses,
-  TestTriggerExecutions,
-  TestTriggerResources,
-} from "testkube-sdk/dist/sdk/models/shared";
 
 const sdk = new TestkubeSDK();
 
@@ -595,12 +577,6 @@ Update test trigger
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 import { UpdateTestTriggerStringResponse } from "testkube-sdk/dist/sdk/models/operations";
-import {
-  TestTriggerActions,
-  TestTriggerConditionStatuses,
-  TestTriggerExecutions,
-  TestTriggerResources,
-} from "testkube-sdk/dist/sdk/models/shared";
 
 const sdk = new TestkubeSDK();
 

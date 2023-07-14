@@ -386,15 +386,6 @@ Create new test based on file content, uri or git based data
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 import { CreateTestStringResponse } from "testkube-sdk/dist/sdk/models/operations";
-import {
-  ExecutionRequestArgsMode,
-  ExecutionStatus,
-  RepositoryAuthType,
-  RepositoryType,
-  RunningContextType,
-  TestContentType,
-  VariableType,
-} from "testkube-sdk/dist/sdk/models/shared";
 
 const sdk = new TestkubeSDK();
 
@@ -495,15 +486,7 @@ New test execution returns new execution details on successful execution start
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 import { ExecuteTestResponse } from "testkube-sdk/dist/sdk/models/operations";
-import {
-  AssertionResultStatus,
-  ExecutionRequestArgsMode,
-  ExecutionResultOutputType,
-  ExecutionStatus,
-  ExecutionStepResultStatus,
-  RunningContextType,
-  VariableType,
-} from "testkube-sdk/dist/sdk/models/shared";
+import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/shared";
 
 const sdk = new TestkubeSDK();
 
@@ -692,15 +675,7 @@ New test executions returns new executions details on successful executions star
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 import { ExecuteTestsResponse } from "testkube-sdk/dist/sdk/models/operations";
-import {
-  AssertionResultStatus,
-  ExecutionRequestArgsMode,
-  ExecutionResultOutputType,
-  ExecutionStatus,
-  ExecutionStepResultStatus,
-  RunningContextType,
-  VariableType,
-} from "testkube-sdk/dist/sdk/models/shared";
+import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/shared";
 
 const sdk = new TestkubeSDK();
 
@@ -901,15 +876,6 @@ Gets the specified test
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 import { GetTestResponse } from "testkube-sdk/dist/sdk/models/operations";
-import {
-  ExecutionRequestArgsMode,
-  ExecutionStatus,
-  RepositoryAuthType,
-  RepositoryType,
-  RunningContextType,
-  TestContentType,
-  VariableType,
-} from "testkube-sdk/dist/sdk/models/shared";
 
 const sdk = new TestkubeSDK();
 
@@ -944,18 +910,6 @@ Returns execution with given executionID
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 import { GetTestExecutionResponse } from "testkube-sdk/dist/sdk/models/operations";
-import {
-  AssertionResultStatus,
-  ExecutionArgsMode,
-  ExecutionResultOutputType,
-  ExecutionStatus,
-  ExecutionStepResultStatus,
-  RepositoryAuthType,
-  RepositoryType,
-  RunningContextType,
-  TestContentType,
-  VariableType,
-} from "testkube-sdk/dist/sdk/models/shared";
 
 const sdk = new TestkubeSDK();
 
@@ -1063,19 +1017,6 @@ Gets the specified test with execution
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 import { GetTestWithExecutionResponse } from "testkube-sdk/dist/sdk/models/operations";
-import {
-  AssertionResultStatus,
-  ExecutionArgsMode,
-  ExecutionRequestArgsMode,
-  ExecutionResultOutputType,
-  ExecutionStatus,
-  ExecutionStepResultStatus,
-  RepositoryAuthType,
-  RepositoryType,
-  RunningContextType,
-  TestContentType,
-  VariableType,
-} from "testkube-sdk/dist/sdk/models/shared";
 
 const sdk = new TestkubeSDK();
 
@@ -1110,7 +1051,7 @@ Returns array of all available test executions
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 import { ListTestExecutionsResponse } from "testkube-sdk/dist/sdk/models/operations";
-import { ExecutionStatus, RunningContextType } from "testkube-sdk/dist/sdk/models/shared";
+import { ExecutionStatus } from "testkube-sdk/dist/sdk/models/shared";
 import { RFCDate } from "testkube-sdk/dist/sdk/types";
 
 const sdk = new TestkubeSDK();
@@ -1152,15 +1093,7 @@ List available test with executions
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 import { ListTestWithExecutionsResponse } from "testkube-sdk/dist/sdk/models/operations";
-import {
-  ExecutionRequestArgsMode,
-  ExecutionStatus,
-  RepositoryAuthType,
-  RepositoryType,
-  RunningContextType,
-  TestContentType,
-  VariableType,
-} from "testkube-sdk/dist/sdk/models/shared";
+import { ExecutionStatus } from "testkube-sdk/dist/sdk/models/shared";
 
 const sdk = new TestkubeSDK();
 
@@ -1199,15 +1132,6 @@ List available tests
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 import { ListTestsResponse } from "testkube-sdk/dist/sdk/models/operations";
-import {
-  ExecutionRequestArgsMode,
-  ExecutionStatus,
-  RepositoryAuthType,
-  RepositoryType,
-  RunningContextType,
-  TestContentType,
-  VariableType,
-} from "testkube-sdk/dist/sdk/models/shared";
 
 const sdk = new TestkubeSDK();
 
@@ -1472,15 +1396,6 @@ Update test based on test content or git based data
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 import { UpdateTestStringResponse } from "testkube-sdk/dist/sdk/models/operations";
-import {
-  ExecutionRequestArgsMode,
-  ExecutionStatus,
-  RepositoryAuthType,
-  RepositoryType,
-  RunningContextType,
-  TestContentType,
-  VariableType,
-} from "testkube-sdk/dist/sdk/models/shared";
 
 const sdk = new TestkubeSDK();
 

@@ -77,7 +77,6 @@ Create new webhook based on variables passed in request
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 import { CreateWebhookStringResponse } from "testkube-sdk/dist/sdk/models/operations";
-import { EventType } from "testkube-sdk/dist/sdk/models/shared";
 
 const sdk = new TestkubeSDK();
 
@@ -178,7 +177,6 @@ Returns webhook
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 import { GetWebhookResponse } from "testkube-sdk/dist/sdk/models/operations";
-import { EventType } from "testkube-sdk/dist/sdk/models/shared";
 
 const sdk = new TestkubeSDK();
 
@@ -213,7 +211,6 @@ List webhooks available in cluster
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 import { ListWebhooksResponse } from "testkube-sdk/dist/sdk/models/operations";
-import { EventType } from "testkube-sdk/dist/sdk/models/shared";
 
 const sdk = new TestkubeSDK();
 

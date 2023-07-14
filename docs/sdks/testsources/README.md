@@ -21,7 +21,7 @@ Create new test source based on variables passed in request
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 import { CreateTestSourceJsonResponse } from "testkube-sdk/dist/sdk/models/operations";
-import { RepositoryAuthType, RepositoryType, TestSourceType, TestSourceUpsertRequestType } from "testkube-sdk/dist/sdk/models/shared";
+import { RepositoryAuthType, RepositoryType, TestSourceUpsertRequestType } from "testkube-sdk/dist/sdk/models/shared";
 
 const sdk = new TestkubeSDK();
 
@@ -85,7 +85,6 @@ Create new test source based on variables passed in request
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 import { CreateTestSourceStringResponse } from "testkube-sdk/dist/sdk/models/operations";
-import { RepositoryAuthType, RepositoryType, TestSourceType } from "testkube-sdk/dist/sdk/models/shared";
 
 const sdk = new TestkubeSDK();
 
@@ -186,7 +185,6 @@ Returns test sources data
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 import { GetTestSourceResponse } from "testkube-sdk/dist/sdk/models/operations";
-import { RepositoryAuthType, RepositoryType, TestSourceType } from "testkube-sdk/dist/sdk/models/shared";
 
 const sdk = new TestkubeSDK();
 
@@ -221,7 +219,6 @@ List test sources available in cluster
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 import { ListTestSourcesResponse } from "testkube-sdk/dist/sdk/models/operations";
-import { RepositoryAuthType, RepositoryType, TestSourceType } from "testkube-sdk/dist/sdk/models/shared";
 
 const sdk = new TestkubeSDK();
 
@@ -392,7 +389,7 @@ Update test source based on test content or git based data
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 import { UpdateTestSourceJsonResponse } from "testkube-sdk/dist/sdk/models/operations";
-import { RepositoryAuthType, RepositoryType, TestSourceType, TestSourceUpdateRequestType } from "testkube-sdk/dist/sdk/models/shared";
+import { RepositoryAuthType, RepositoryType, TestSourceUpdateRequestType } from "testkube-sdk/dist/sdk/models/shared";
 
 const sdk = new TestkubeSDK();
 
@@ -459,7 +456,6 @@ Update test source based on test content or git based data
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 import { UpdateTestSourceStringResponse } from "testkube-sdk/dist/sdk/models/operations";
-import { RepositoryAuthType, RepositoryType, TestSourceType } from "testkube-sdk/dist/sdk/models/shared";
 
 const sdk = new TestkubeSDK();
 
