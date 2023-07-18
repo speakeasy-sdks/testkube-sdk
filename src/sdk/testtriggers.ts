@@ -3,6 +3,7 @@
  */
 
 import * as utils from "../internal/utils";
+import * as errors from "./models/errors";
 import * as operations from "./models/operations";
 import * as shared from "./models/shared";
 import { SDKConfiguration } from "./sdk";
@@ -87,6 +88,13 @@ export class TestTriggers {
                         shared.TestTrigger,
                         resFieldDepth
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 502].includes(httpRes?.status):
@@ -97,6 +105,13 @@ export class TestTriggers {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -175,9 +190,15 @@ export class TestTriggers {
                         JSON.parse(decodedRes),
                         shared.TestTrigger
                     );
-                }
-                if (utils.matchContentType(contentType, `text/yaml`)) {
+                } else if (utils.matchContentType(contentType, `text/yaml`)) {
                     res.createTestTriggerJson200TextYamlString = decodedRes;
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 502].includes(httpRes?.status):
@@ -188,6 +209,13 @@ export class TestTriggers {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -262,9 +290,15 @@ export class TestTriggers {
                         JSON.parse(decodedRes),
                         shared.TestTrigger
                     );
-                }
-                if (utils.matchContentType(contentType, `text/yaml`)) {
+                } else if (utils.matchContentType(contentType, `text/yaml`)) {
                     res.createTestTriggerString200TextYamlString = decodedRes;
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 502].includes(httpRes?.status):
@@ -275,6 +309,13 @@ export class TestTriggers {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -344,6 +385,13 @@ export class TestTriggers {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -415,6 +463,13 @@ export class TestTriggers {
                         shared.Problem,
                         resFieldDepth
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -480,9 +535,15 @@ export class TestTriggers {
                         JSON.parse(decodedRes),
                         shared.TestTrigger
                     );
-                }
-                if (utils.matchContentType(contentType, `text/yaml`)) {
+                } else if (utils.matchContentType(contentType, `text/yaml`)) {
                     res.getTestTriggerByID200TextYamlString = decodedRes;
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [404, 502].includes(httpRes?.status):
@@ -493,6 +554,13 @@ export class TestTriggers {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -561,9 +629,15 @@ export class TestTriggers {
                         shared.TestTrigger,
                         resFieldDepth
                     );
-                }
-                if (utils.matchContentType(contentType, `text/yaml`)) {
+                } else if (utils.matchContentType(contentType, `text/yaml`)) {
                     res.listTestTriggers200TextYamlString = decodedRes;
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 502].includes(httpRes?.status):
@@ -574,6 +648,13 @@ export class TestTriggers {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -657,6 +738,13 @@ export class TestTriggers {
                         JSON.parse(decodedRes),
                         shared.TestTrigger
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 404, 502].includes(httpRes?.status):
@@ -667,6 +755,13 @@ export class TestTriggers {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -746,6 +841,13 @@ export class TestTriggers {
                         JSON.parse(decodedRes),
                         shared.TestTrigger
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 404, 502].includes(httpRes?.status):
@@ -756,6 +858,13 @@ export class TestTriggers {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;

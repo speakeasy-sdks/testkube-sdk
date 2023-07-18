@@ -3,6 +3,7 @@
  */
 
 import * as utils from "../internal/utils";
+import * as errors from "./models/errors";
 import * as operations from "./models/operations";
 import * as shared from "./models/shared";
 import { SDKConfiguration } from "./sdk";
@@ -79,6 +80,13 @@ export class Api {
                         shared.Problem,
                         resFieldDepth
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -147,6 +155,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -221,6 +236,13 @@ export class Api {
                         shared.Problem,
                         resFieldDepth
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -290,6 +312,13 @@ export class Api {
                         shared.Problem,
                         resFieldDepth
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -358,6 +387,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -435,6 +471,13 @@ export class Api {
                         shared.TestTrigger,
                         resFieldDepth
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 502].includes(httpRes?.status):
@@ -445,6 +488,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -520,6 +570,13 @@ export class Api {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `text/yaml`)) {
                     res.createExecutorJson200TextYamlString = decodedRes;
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case httpRes?.status == 201:
@@ -527,6 +584,13 @@ export class Api {
                     res.executorDetails = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.ExecutorDetails
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -538,6 +602,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -609,6 +680,13 @@ export class Api {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `text/yaml`)) {
                     res.createExecutorString200TextYamlString = decodedRes;
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case httpRes?.status == 201:
@@ -616,6 +694,13 @@ export class Api {
                     res.executorDetails = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.ExecutorDetails
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -627,6 +712,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -702,11 +794,25 @@ export class Api {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `text/yaml`)) {
                     res.createTestSourceJson200TextYamlString = decodedRes;
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case httpRes?.status == 201:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.testSource = utils.objectToClass(JSON.parse(decodedRes), shared.TestSource);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 502].includes(httpRes?.status):
@@ -717,6 +823,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -788,11 +901,25 @@ export class Api {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `text/yaml`)) {
                     res.createTestSourceString200TextYamlString = decodedRes;
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case httpRes?.status == 201:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.testSource = utils.objectToClass(JSON.parse(decodedRes), shared.TestSource);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 502].includes(httpRes?.status):
@@ -803,6 +930,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -878,11 +1012,25 @@ export class Api {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `text/yaml`)) {
                     res.createTestSuiteJson200TextYamlString = decodedRes;
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case httpRes?.status == 201:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.testSuite = utils.objectToClass(JSON.parse(decodedRes), shared.TestSuite);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 502].includes(httpRes?.status):
@@ -893,6 +1041,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -964,11 +1119,25 @@ export class Api {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `text/yaml`)) {
                     res.createTestSuiteString200TextYamlString = decodedRes;
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case httpRes?.status == 201:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.testSuite = utils.objectToClass(JSON.parse(decodedRes), shared.TestSuite);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 502].includes(httpRes?.status):
@@ -979,6 +1148,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -1057,9 +1233,15 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.TestTrigger
                     );
-                }
-                if (utils.matchContentType(contentType, `text/yaml`)) {
+                } else if (utils.matchContentType(contentType, `text/yaml`)) {
                     res.createTestTriggerJson200TextYamlString = decodedRes;
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 502].includes(httpRes?.status):
@@ -1070,6 +1252,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -1144,9 +1333,15 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.TestTrigger
                     );
-                }
-                if (utils.matchContentType(contentType, `text/yaml`)) {
+                } else if (utils.matchContentType(contentType, `text/yaml`)) {
                     res.createTestTriggerString200TextYamlString = decodedRes;
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 502].includes(httpRes?.status):
@@ -1157,6 +1352,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -1231,11 +1433,25 @@ export class Api {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `text/yaml`)) {
                     res.createTestJson200TextYamlString = decodedRes;
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case httpRes?.status == 201:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.test = utils.objectToClass(JSON.parse(decodedRes), shared.Test);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 502].includes(httpRes?.status):
@@ -1246,6 +1462,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -1316,11 +1539,25 @@ export class Api {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `text/yaml`)) {
                     res.createTestString200TextYamlString = decodedRes;
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case httpRes?.status == 201:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.test = utils.objectToClass(JSON.parse(decodedRes), shared.Test);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 502].includes(httpRes?.status):
@@ -1331,6 +1568,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -1405,11 +1649,25 @@ export class Api {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `text/yaml`)) {
                     res.createWebhookJson200TextYamlString = decodedRes;
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case httpRes?.status == 201:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.webhook = utils.objectToClass(JSON.parse(decodedRes), shared.Webhook);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 502].includes(httpRes?.status):
@@ -1420,6 +1678,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -1491,11 +1756,25 @@ export class Api {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `text/yaml`)) {
                     res.createWebhookString200TextYamlString = decodedRes;
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case httpRes?.status == 201:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.webhook = utils.objectToClass(JSON.parse(decodedRes), shared.Webhook);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 502].includes(httpRes?.status):
@@ -1506,6 +1785,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -1574,6 +1860,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -1644,6 +1937,13 @@ export class Api {
                         shared.Problem,
                         resFieldDepth
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -1712,6 +2012,13 @@ export class Api {
                         shared.Problem,
                         resFieldDepth
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -1779,6 +2086,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -1849,6 +2163,13 @@ export class Api {
                         shared.Problem,
                         resFieldDepth
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -1916,6 +2237,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -1986,6 +2314,13 @@ export class Api {
                         shared.Problem,
                         resFieldDepth
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -2054,6 +2389,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -2125,6 +2467,13 @@ export class Api {
                         shared.Problem,
                         resFieldDepth
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -2194,6 +2543,13 @@ export class Api {
                         shared.Problem,
                         resFieldDepth
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -2261,6 +2617,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -2331,6 +2694,13 @@ export class Api {
                         shared.Problem,
                         resFieldDepth
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -2392,6 +2762,13 @@ export class Api {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/octet-stream`)) {
                     res.downloadArchive200ApplicationOctetStreamBinaryString = httpRes?.data;
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [404, 500].includes(httpRes?.status):
@@ -2402,6 +2779,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -2467,6 +2851,13 @@ export class Api {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/octet-stream`)) {
                     res.downloadFile200ApplicationOctetStreamBinaryString = httpRes?.data;
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [404, 500].includes(httpRes?.status):
@@ -2477,6 +2868,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -2559,6 +2957,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.ExecutionResult
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 404, 500, 502].includes(httpRes?.status):
@@ -2569,6 +2974,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -2651,6 +3063,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.TestSuiteExecutionsResult
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 404, 500, 502].includes(httpRes?.status):
@@ -2661,6 +3080,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -2746,6 +3172,13 @@ export class Api {
                         shared.TestSuiteExecutionsResult,
                         resFieldDepth
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 500, 502].includes(httpRes?.status):
@@ -2756,6 +3189,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -2841,6 +3281,13 @@ export class Api {
                         shared.ExecutionResult,
                         resFieldDepth
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 404, 500, 502].includes(httpRes?.status):
@@ -2851,6 +3298,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -2905,6 +3359,13 @@ export class Api {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.config = utils.objectToClass(JSON.parse(decodedRes), shared.Config);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [404, 500].includes(httpRes?.status):
@@ -2915,6 +3376,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -2969,6 +3437,13 @@ export class Api {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.debugInfo = utils.objectToClass(JSON.parse(decodedRes), shared.DebugInfo);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [500, 502].includes(httpRes?.status):
@@ -2979,6 +3454,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -3047,6 +3529,13 @@ export class Api {
                         shared.Artifact,
                         resFieldDepth
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [404, 500].includes(httpRes?.status):
@@ -3057,6 +3546,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -3118,6 +3614,13 @@ export class Api {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.execution = utils.objectToClass(JSON.parse(decodedRes), shared.Execution);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [404, 500, 502].includes(httpRes?.status):
@@ -3128,6 +3631,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -3195,6 +3705,13 @@ export class Api {
                         shared.ExecutorOutput,
                         resFieldDepth
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case httpRes?.status == 500:
@@ -3205,6 +3722,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -3269,9 +3793,15 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.ExecutorDetails
                     );
-                }
-                if (utils.matchContentType(contentType, `text/yaml`)) {
+                } else if (utils.matchContentType(contentType, `text/yaml`)) {
                     res.getExecutor200TextYamlString = decodedRes;
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 500, 502].includes(httpRes?.status):
@@ -3282,6 +3812,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -3338,6 +3875,13 @@ export class Api {
                     res.testTriggerKeyMap = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.TestTriggerKeyMap
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -3399,9 +3943,15 @@ export class Api {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.test = utils.objectToClass(JSON.parse(decodedRes), shared.Test);
-                }
-                if (utils.matchContentType(contentType, `text/yaml`)) {
+                } else if (utils.matchContentType(contentType, `text/yaml`)) {
                     res.getTest200TextYamlString = decodedRes;
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 404, 502].includes(httpRes?.status):
@@ -3412,6 +3962,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -3473,6 +4030,13 @@ export class Api {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.execution = utils.objectToClass(JSON.parse(decodedRes), shared.Execution);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [404, 500, 502].includes(httpRes?.status):
@@ -3483,6 +4047,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -3548,6 +4119,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.ExecutionsMetrics
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [500, 502].includes(httpRes?.status):
@@ -3558,6 +4136,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -3619,9 +4204,15 @@ export class Api {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.testSource = utils.objectToClass(JSON.parse(decodedRes), shared.TestSource);
-                }
-                if (utils.matchContentType(contentType, `text/yaml`)) {
+                } else if (utils.matchContentType(contentType, `text/yaml`)) {
                     res.getTestSource200TextYamlString = decodedRes;
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 404, 500, 502].includes(httpRes?.status):
@@ -3632,6 +4223,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -3693,9 +4291,15 @@ export class Api {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.testSuite = utils.objectToClass(JSON.parse(decodedRes), shared.TestSuite);
-                }
-                if (utils.matchContentType(contentType, `text/yaml`)) {
+                } else if (utils.matchContentType(contentType, `text/yaml`)) {
                     res.getTestSuiteByID200TextYamlString = decodedRes;
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [404, 500, 502].includes(httpRes?.status):
@@ -3706,6 +4310,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -3771,9 +4382,15 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.TestSuiteWithExecution
                     );
-                }
-                if (utils.matchContentType(contentType, `text/yaml`)) {
+                } else if (utils.matchContentType(contentType, `text/yaml`)) {
                     res.getTestSuiteByIDWithExecution200TextYamlString = decodedRes;
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case httpRes?.status == 500:
@@ -3784,6 +4401,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -3853,6 +4477,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.TestSuiteExecution
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [404, 500, 502].includes(httpRes?.status):
@@ -3863,6 +4494,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -3929,6 +4567,13 @@ export class Api {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.artifact = utils.objectToClass(JSON.parse(decodedRes), shared.Artifact);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case httpRes?.status == 500:
@@ -3939,6 +4584,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -4005,6 +4657,13 @@ export class Api {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.artifact = utils.objectToClass(JSON.parse(decodedRes), shared.Artifact);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [404, 500].includes(httpRes?.status):
@@ -4015,6 +4674,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -4081,6 +4747,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.TestSuiteExecution
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case httpRes?.status == 500:
@@ -4091,6 +4764,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -4157,6 +4837,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.ExecutionsMetrics
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case httpRes?.status == 500:
@@ -4167,6 +4854,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -4233,9 +4927,15 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.TestTrigger
                     );
-                }
-                if (utils.matchContentType(contentType, `text/yaml`)) {
+                } else if (utils.matchContentType(contentType, `text/yaml`)) {
                     res.getTestTriggerByID200TextYamlString = decodedRes;
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [404, 502].includes(httpRes?.status):
@@ -4246,6 +4946,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -4311,9 +5018,15 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.TestWithExecution
                     );
-                }
-                if (utils.matchContentType(contentType, `text/yaml`)) {
+                } else if (utils.matchContentType(contentType, `text/yaml`)) {
                     res.getTestWithExecution200TextYamlString = decodedRes;
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 404, 500, 502].includes(httpRes?.status):
@@ -4324,6 +5037,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -4385,9 +5105,15 @@ export class Api {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.webhook = utils.objectToClass(JSON.parse(decodedRes), shared.Webhook);
-                }
-                if (utils.matchContentType(contentType, `text/yaml`)) {
+                } else if (utils.matchContentType(contentType, `text/yaml`)) {
                     res.getWebhook200TextYamlString = decodedRes;
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 404, 500, 502].includes(httpRes?.status):
@@ -4398,6 +5124,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -4464,6 +5197,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.TestSuiteExecutionsResult
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case httpRes?.status == 500:
@@ -4474,6 +5214,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -4539,6 +5286,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.ExecutionsResult
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [404, 500].includes(httpRes?.status):
@@ -4549,6 +5303,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -4617,9 +5378,15 @@ export class Api {
                         shared.Executor,
                         resFieldDepth
                     );
-                }
-                if (utils.matchContentType(contentType, `text/yaml`)) {
+                } else if (utils.matchContentType(contentType, `text/yaml`)) {
                     res.listExecutors200TextYamlString = decodedRes;
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 502].includes(httpRes?.status):
@@ -4630,6 +5397,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -4696,6 +5470,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.ExecutionsResult
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [404, 500].includes(httpRes?.status):
@@ -4706,6 +5487,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -4774,9 +5562,15 @@ export class Api {
                         shared.TestSource,
                         resFieldDepth
                     );
-                }
-                if (utils.matchContentType(contentType, `text/yaml`)) {
+                } else if (utils.matchContentType(contentType, `text/yaml`)) {
                     res.listTestSources200TextYamlString = decodedRes;
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 502].includes(httpRes?.status):
@@ -4787,6 +5581,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -4853,6 +5654,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.TestSuiteExecutionsResult
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case httpRes?.status == 500:
@@ -4863,6 +5671,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -4931,9 +5746,15 @@ export class Api {
                         shared.Test,
                         resFieldDepth
                     );
-                }
-                if (utils.matchContentType(contentType, `text/yaml`)) {
+                } else if (utils.matchContentType(contentType, `text/yaml`)) {
                     res.listTestSuiteTests200TextYamlString = decodedRes;
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [404, 502].includes(httpRes?.status):
@@ -4944,6 +5765,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -5013,9 +5841,15 @@ export class Api {
                         shared.TestSuiteWithExecutionSummary,
                         resFieldDepth
                     );
-                }
-                if (utils.matchContentType(contentType, `text/yaml`)) {
+                } else if (utils.matchContentType(contentType, `text/yaml`)) {
                     res.listTestSuiteWithExecutions200TextYamlString = decodedRes;
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 500, 502].includes(httpRes?.status):
@@ -5026,6 +5860,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -5094,9 +5935,15 @@ export class Api {
                         shared.TestSuite,
                         resFieldDepth
                     );
-                }
-                if (utils.matchContentType(contentType, `text/yaml`)) {
+                } else if (utils.matchContentType(contentType, `text/yaml`)) {
                     res.listTestSuites200TextYamlString = decodedRes;
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 502].includes(httpRes?.status):
@@ -5107,6 +5954,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -5175,9 +6029,15 @@ export class Api {
                         shared.TestTrigger,
                         resFieldDepth
                     );
-                }
-                if (utils.matchContentType(contentType, `text/yaml`)) {
+                } else if (utils.matchContentType(contentType, `text/yaml`)) {
                     res.listTestTriggers200TextYamlString = decodedRes;
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 502].includes(httpRes?.status):
@@ -5188,6 +6048,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -5257,9 +6124,15 @@ export class Api {
                         shared.TestWithExecutionSummary,
                         resFieldDepth
                     );
-                }
-                if (utils.matchContentType(contentType, `text/yaml`)) {
+                } else if (utils.matchContentType(contentType, `text/yaml`)) {
                     res.listTestWithExecutions200TextYamlString = decodedRes;
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 500, 502].includes(httpRes?.status):
@@ -5270,6 +6143,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -5338,9 +6218,15 @@ export class Api {
                         shared.Test,
                         resFieldDepth
                     );
-                }
-                if (utils.matchContentType(contentType, `text/yaml`)) {
+                } else if (utils.matchContentType(contentType, `text/yaml`)) {
                     res.listTests200TextYamlString = decodedRes;
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 502].includes(httpRes?.status):
@@ -5351,6 +6237,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -5419,9 +6312,15 @@ export class Api {
                         shared.Webhook,
                         resFieldDepth
                     );
-                }
-                if (utils.matchContentType(contentType, `text/yaml`)) {
+                } else if (utils.matchContentType(contentType, `text/yaml`)) {
                     res.listWebhooks200TextYamlString = decodedRes;
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 502].includes(httpRes?.status):
@@ -5432,6 +6331,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -5510,6 +6416,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.TestSourceBatchResult
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 502].includes(httpRes?.status):
@@ -5520,6 +6433,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -5594,6 +6514,13 @@ export class Api {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.config = utils.objectToClass(JSON.parse(decodedRes), shared.Config);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 404, 500].includes(httpRes?.status):
@@ -5604,6 +6531,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -5686,6 +6620,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.ExecutorDetails
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 404, 502].includes(httpRes?.status):
@@ -5696,6 +6637,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -5774,6 +6722,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.ExecutorDetails
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 404, 502].includes(httpRes?.status):
@@ -5784,6 +6739,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -5863,6 +6825,13 @@ export class Api {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.testSource = utils.objectToClass(JSON.parse(decodedRes), shared.TestSource);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 404, 502].includes(httpRes?.status):
@@ -5873,6 +6842,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -5948,6 +6924,13 @@ export class Api {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.testSource = utils.objectToClass(JSON.parse(decodedRes), shared.TestSource);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 404, 502].includes(httpRes?.status):
@@ -5958,6 +6941,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -6037,6 +7027,13 @@ export class Api {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.testSuite = utils.objectToClass(JSON.parse(decodedRes), shared.TestSuite);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 404, 502].includes(httpRes?.status):
@@ -6047,6 +7044,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -6122,6 +7126,13 @@ export class Api {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.testSuite = utils.objectToClass(JSON.parse(decodedRes), shared.TestSuite);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 404, 502].includes(httpRes?.status):
@@ -6132,6 +7143,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -6215,6 +7233,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.TestTrigger
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 404, 502].includes(httpRes?.status):
@@ -6225,6 +7250,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -6304,6 +7336,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.TestTrigger
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 404, 502].includes(httpRes?.status):
@@ -6314,6 +7353,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -6392,6 +7438,13 @@ export class Api {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.test = utils.objectToClass(JSON.parse(decodedRes), shared.Test);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 404, 502].includes(httpRes?.status):
@@ -6402,6 +7455,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -6476,6 +7536,13 @@ export class Api {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.test = utils.objectToClass(JSON.parse(decodedRes), shared.Test);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 404, 502].includes(httpRes?.status):
@@ -6486,6 +7553,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -6560,9 +7634,15 @@ export class Api {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.uploads200ApplicationJSONString = decodedRes;
-                }
-                if (utils.matchContentType(contentType, `text/yaml`)) {
+                } else if (utils.matchContentType(contentType, `text/yaml`)) {
                     res.uploads200TextYamlString = decodedRes;
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case [400, 500].includes(httpRes?.status):
@@ -6573,6 +7653,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -6655,6 +7742,13 @@ export class Api {
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
