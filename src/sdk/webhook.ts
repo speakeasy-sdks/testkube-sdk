@@ -12,6 +12,30 @@ import { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
 /**
  * Webhook operations
  */
+export enum CreateWebhookJsonAcceptEnum {
+    applicationJson = "application/json",
+    applicationProblemPlusJson = "application/problem+json",
+    textYaml = "text/yaml",
+}
+
+export enum CreateWebhookStringAcceptEnum {
+    applicationJson = "application/json",
+    applicationProblemPlusJson = "application/problem+json",
+    textYaml = "text/yaml",
+}
+
+export enum GetWebhookAcceptEnum {
+    applicationJson = "application/json",
+    applicationProblemPlusJson = "application/problem+json",
+    textYaml = "text/yaml",
+}
+
+export enum ListWebhooksAcceptEnum {
+    applicationJson = "application/json",
+    applicationProblemPlusJson = "application/problem+json",
+    textYaml = "text/yaml",
+}
+
 export class Webhook {
     private sdkConfiguration: SDKConfiguration;
 
@@ -27,7 +51,8 @@ export class Webhook {
      */
     async createWebhookJson(
         req: shared.WebhookCreateRequest,
-        config?: AxiosRequestConfig
+        config?: AxiosRequestConfig,
+        acceptHeaderOverride?: CreateWebhookJsonAcceptEnum
     ): Promise<operations.CreateWebhookJsonResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
             req = new shared.WebhookCreateRequest(req);
@@ -54,7 +79,13 @@ export class Webhook {
         const headers = { ...reqBodyHeaders, ...config?.headers };
         if (reqBody == null || Object.keys(reqBody).length === 0)
             throw new Error("request body is required");
-        headers["Accept"] = "application/json;q=1, application/problem+json;q=0.7, text/yaml;q=0";
+        if (acceptHeaderOverride !== undefined) {
+            headers["Accept"] = acceptHeaderOverride.toString();
+        } else {
+            headers["Accept"] =
+                "application/json;q=1, application/problem+json;q=0.7, text/yaml;q=0";
+        }
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -137,7 +168,8 @@ export class Webhook {
      */
     async createWebhookString(
         req: string,
-        config?: AxiosRequestConfig
+        config?: AxiosRequestConfig,
+        acceptHeaderOverride?: CreateWebhookStringAcceptEnum
     ): Promise<operations.CreateWebhookStringResponse> {
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
@@ -160,7 +192,13 @@ export class Webhook {
         const headers = { ...reqBodyHeaders, ...config?.headers };
         if (reqBody == null || Object.keys(reqBody).length === 0)
             throw new Error("request body is required");
-        headers["Accept"] = "application/json;q=1, application/problem+json;q=0.7, text/yaml;q=0";
+        if (acceptHeaderOverride !== undefined) {
+            headers["Accept"] = acceptHeaderOverride.toString();
+        } else {
+            headers["Accept"] =
+                "application/json;q=1, application/problem+json;q=0.7, text/yaml;q=0";
+        }
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -260,6 +298,7 @@ export class Webhook {
 
         const headers = { ...config?.headers };
         headers["Accept"] = "application/problem+json";
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -336,6 +375,7 @@ export class Webhook {
         const headers = { ...config?.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/problem+json";
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -395,7 +435,8 @@ export class Webhook {
      */
     async getWebhook(
         req: operations.GetWebhookRequest,
-        config?: AxiosRequestConfig
+        config?: AxiosRequestConfig,
+        acceptHeaderOverride?: GetWebhookAcceptEnum
     ): Promise<operations.GetWebhookResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
             req = new operations.GetWebhookRequest(req);
@@ -410,7 +451,13 @@ export class Webhook {
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
 
         const headers = { ...config?.headers };
-        headers["Accept"] = "application/json;q=1, application/problem+json;q=0.7, text/yaml;q=0";
+        if (acceptHeaderOverride !== undefined) {
+            headers["Accept"] = acceptHeaderOverride.toString();
+        } else {
+            headers["Accept"] =
+                "application/json;q=1, application/problem+json;q=0.7, text/yaml;q=0";
+        }
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -482,7 +529,8 @@ export class Webhook {
      */
     async listWebhooks(
         req: operations.ListWebhooksRequest,
-        config?: AxiosRequestConfig
+        config?: AxiosRequestConfig,
+        acceptHeaderOverride?: ListWebhooksAcceptEnum
     ): Promise<operations.ListWebhooksResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
             req = new operations.ListWebhooksRequest(req);
@@ -498,7 +546,13 @@ export class Webhook {
 
         const headers = { ...config?.headers };
         const queryParams: string = utils.serializeQueryParams(req);
-        headers["Accept"] = "application/json;q=1, application/problem+json;q=0.7, text/yaml;q=0";
+        if (acceptHeaderOverride !== undefined) {
+            headers["Accept"] = acceptHeaderOverride.toString();
+        } else {
+            headers["Accept"] =
+                "application/json;q=1, application/problem+json;q=0.7, text/yaml;q=0";
+        }
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;

@@ -12,6 +12,11 @@ import { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
 /**
  * Listing all available labels
  */
+export enum ListLabelsAcceptEnum {
+    applicationJson = "application/json",
+    applicationProblemPlusJson = "application/problem+json",
+}
+
 export class Labels {
     private sdkConfiguration: SDKConfiguration;
 
@@ -25,7 +30,10 @@ export class Labels {
      * @remarks
      * list all available labels
      */
-    async listLabels(config?: AxiosRequestConfig): Promise<operations.ListLabelsResponse> {
+    async listLabels(
+        config?: AxiosRequestConfig,
+        acceptHeaderOverride?: ListLabelsAcceptEnum
+    ): Promise<operations.ListLabelsResponse> {
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
@@ -35,7 +43,12 @@ export class Labels {
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
 
         const headers = { ...config?.headers };
-        headers["Accept"] = "application/json;q=1, application/problem+json;q=0";
+        if (acceptHeaderOverride !== undefined) {
+            headers["Accept"] = acceptHeaderOverride.toString();
+        } else {
+            headers["Accept"] = "application/json;q=1, application/problem+json;q=0";
+        }
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;

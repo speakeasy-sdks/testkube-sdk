@@ -12,6 +12,21 @@ import { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
 /**
  * Artifact operations
  */
+export enum DownloadArchiveAcceptEnum {
+    applicationProblemPlusJson = "application/problem+json",
+    applicationOctetStream = "application/octet-stream",
+}
+
+export enum DownloadFileAcceptEnum {
+    applicationProblemPlusJson = "application/problem+json",
+    applicationOctetStream = "application/octet-stream",
+}
+
+export enum GetExecutionArtifactsAcceptEnum {
+    applicationJson = "application/json",
+    applicationProblemPlusJson = "application/problem+json",
+}
+
 export class Artifacts {
     private sdkConfiguration: SDKConfiguration;
 
@@ -27,7 +42,8 @@ export class Artifacts {
      */
     async downloadArchive(
         req: operations.DownloadArchiveRequest,
-        config?: AxiosRequestConfig
+        config?: AxiosRequestConfig,
+        acceptHeaderOverride?: DownloadArchiveAcceptEnum
     ): Promise<operations.DownloadArchiveResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
             req = new operations.DownloadArchiveRequest(req);
@@ -43,7 +59,12 @@ export class Artifacts {
 
         const headers = { ...config?.headers };
         const queryParams: string = utils.serializeQueryParams(req);
-        headers["Accept"] = "application/problem+json;q=1, application/octet-stream;q=0";
+        if (acceptHeaderOverride !== undefined) {
+            headers["Accept"] = acceptHeaderOverride.toString();
+        } else {
+            headers["Accept"] = "application/problem+json;q=1, application/octet-stream;q=0";
+        }
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -113,7 +134,8 @@ export class Artifacts {
      */
     async downloadFile(
         req: operations.DownloadFileRequest,
-        config?: AxiosRequestConfig
+        config?: AxiosRequestConfig,
+        acceptHeaderOverride?: DownloadFileAcceptEnum
     ): Promise<operations.DownloadFileResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
             req = new operations.DownloadFileRequest(req);
@@ -132,7 +154,12 @@ export class Artifacts {
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
 
         const headers = { ...config?.headers };
-        headers["Accept"] = "application/problem+json;q=1, application/octet-stream;q=0";
+        if (acceptHeaderOverride !== undefined) {
+            headers["Accept"] = acceptHeaderOverride.toString();
+        } else {
+            headers["Accept"] = "application/problem+json;q=1, application/octet-stream;q=0";
+        }
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -202,7 +229,8 @@ export class Artifacts {
      */
     async getExecutionArtifacts(
         req: operations.GetExecutionArtifactsRequest,
-        config?: AxiosRequestConfig
+        config?: AxiosRequestConfig,
+        acceptHeaderOverride?: GetExecutionArtifactsAcceptEnum
     ): Promise<operations.GetExecutionArtifactsResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
             req = new operations.GetExecutionArtifactsRequest(req);
@@ -217,7 +245,12 @@ export class Artifacts {
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
 
         const headers = { ...config?.headers };
-        headers["Accept"] = "application/json;q=1, application/problem+json;q=0";
+        if (acceptHeaderOverride !== undefined) {
+            headers["Accept"] = acceptHeaderOverride.toString();
+        } else {
+            headers["Accept"] = "application/json;q=1, application/problem+json;q=0";
+        }
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;

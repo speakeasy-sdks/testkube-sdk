@@ -12,6 +12,11 @@ import { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
 /**
  * Log operations
  */
+export enum GetExecutionLogsAcceptEnum {
+    applicationJson = "application/json",
+    applicationProblemPlusJson = "application/problem+json",
+}
+
 export class Logs {
     private sdkConfiguration: SDKConfiguration;
 
@@ -27,7 +32,8 @@ export class Logs {
      */
     async getExecutionLogs(
         req: operations.GetExecutionLogsRequest,
-        config?: AxiosRequestConfig
+        config?: AxiosRequestConfig,
+        acceptHeaderOverride?: GetExecutionLogsAcceptEnum
     ): Promise<operations.GetExecutionLogsResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
             req = new operations.GetExecutionLogsRequest(req);
@@ -42,7 +48,12 @@ export class Logs {
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
 
         const headers = { ...config?.headers };
-        headers["Accept"] = "application/json;q=1, application/problem+json;q=0";
+        if (acceptHeaderOverride !== undefined) {
+            headers["Accept"] = acceptHeaderOverride.toString();
+        } else {
+            headers["Accept"] = "application/json;q=1, application/problem+json;q=0";
+        }
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;

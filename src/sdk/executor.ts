@@ -12,6 +12,40 @@ import { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
 /**
  * Executor operations
  */
+export enum CreateExecutorJsonAcceptEnum {
+    applicationJson = "application/json",
+    applicationProblemPlusJson = "application/problem+json",
+    textYaml = "text/yaml",
+}
+
+export enum CreateExecutorStringAcceptEnum {
+    applicationJson = "application/json",
+    applicationProblemPlusJson = "application/problem+json",
+    textYaml = "text/yaml",
+}
+
+export enum GetExecutorAcceptEnum {
+    applicationJson = "application/json",
+    applicationProblemPlusJson = "application/problem+json",
+    textYaml = "text/yaml",
+}
+
+export enum ListExecutorsAcceptEnum {
+    applicationJson = "application/json",
+    applicationProblemPlusJson = "application/problem+json",
+    textYaml = "text/yaml",
+}
+
+export enum UpdateExecutorJsonAcceptEnum {
+    applicationJson = "application/json",
+    applicationProblemPlusJson = "application/problem+json",
+}
+
+export enum UpdateExecutorStringAcceptEnum {
+    applicationJson = "application/json",
+    applicationProblemPlusJson = "application/problem+json",
+}
+
 export class Executor {
     private sdkConfiguration: SDKConfiguration;
 
@@ -27,7 +61,8 @@ export class Executor {
      */
     async createExecutorJson(
         req: shared.ExecutorUpsertRequest,
-        config?: AxiosRequestConfig
+        config?: AxiosRequestConfig,
+        acceptHeaderOverride?: CreateExecutorJsonAcceptEnum
     ): Promise<operations.CreateExecutorJsonResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
             req = new shared.ExecutorUpsertRequest(req);
@@ -54,7 +89,13 @@ export class Executor {
         const headers = { ...reqBodyHeaders, ...config?.headers };
         if (reqBody == null || Object.keys(reqBody).length === 0)
             throw new Error("request body is required");
-        headers["Accept"] = "application/json;q=1, application/problem+json;q=0.7, text/yaml;q=0";
+        if (acceptHeaderOverride !== undefined) {
+            headers["Accept"] = acceptHeaderOverride.toString();
+        } else {
+            headers["Accept"] =
+                "application/json;q=1, application/problem+json;q=0.7, text/yaml;q=0";
+        }
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -141,7 +182,8 @@ export class Executor {
      */
     async createExecutorString(
         req: string,
-        config?: AxiosRequestConfig
+        config?: AxiosRequestConfig,
+        acceptHeaderOverride?: CreateExecutorStringAcceptEnum
     ): Promise<operations.CreateExecutorStringResponse> {
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
@@ -164,7 +206,13 @@ export class Executor {
         const headers = { ...reqBodyHeaders, ...config?.headers };
         if (reqBody == null || Object.keys(reqBody).length === 0)
             throw new Error("request body is required");
-        headers["Accept"] = "application/json;q=1, application/problem+json;q=0.7, text/yaml;q=0";
+        if (acceptHeaderOverride !== undefined) {
+            headers["Accept"] = acceptHeaderOverride.toString();
+        } else {
+            headers["Accept"] =
+                "application/json;q=1, application/problem+json;q=0.7, text/yaml;q=0";
+        }
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -267,6 +315,7 @@ export class Executor {
 
         const headers = { ...config?.headers };
         headers["Accept"] = "application/problem+json";
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -343,6 +392,7 @@ export class Executor {
         const headers = { ...config?.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/problem+json";
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -402,7 +452,8 @@ export class Executor {
      */
     async getExecutor(
         req: operations.GetExecutorRequest,
-        config?: AxiosRequestConfig
+        config?: AxiosRequestConfig,
+        acceptHeaderOverride?: GetExecutorAcceptEnum
     ): Promise<operations.GetExecutorResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
             req = new operations.GetExecutorRequest(req);
@@ -417,7 +468,13 @@ export class Executor {
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
 
         const headers = { ...config?.headers };
-        headers["Accept"] = "application/json;q=1, application/problem+json;q=0.7, text/yaml;q=0";
+        if (acceptHeaderOverride !== undefined) {
+            headers["Accept"] = acceptHeaderOverride.toString();
+        } else {
+            headers["Accept"] =
+                "application/json;q=1, application/problem+json;q=0.7, text/yaml;q=0";
+        }
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -492,7 +549,8 @@ export class Executor {
      */
     async listExecutors(
         req: operations.ListExecutorsRequest,
-        config?: AxiosRequestConfig
+        config?: AxiosRequestConfig,
+        acceptHeaderOverride?: ListExecutorsAcceptEnum
     ): Promise<operations.ListExecutorsResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
             req = new operations.ListExecutorsRequest(req);
@@ -508,7 +566,13 @@ export class Executor {
 
         const headers = { ...config?.headers };
         const queryParams: string = utils.serializeQueryParams(req);
-        headers["Accept"] = "application/json;q=1, application/problem+json;q=0.7, text/yaml;q=0";
+        if (acceptHeaderOverride !== undefined) {
+            headers["Accept"] = acceptHeaderOverride.toString();
+        } else {
+            headers["Accept"] =
+                "application/json;q=1, application/problem+json;q=0.7, text/yaml;q=0";
+        }
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -586,7 +650,8 @@ export class Executor {
      */
     async updateExecutorJson(
         req: operations.UpdateExecutorJsonRequest,
-        config?: AxiosRequestConfig
+        config?: AxiosRequestConfig,
+        acceptHeaderOverride?: UpdateExecutorJsonAcceptEnum
     ): Promise<operations.UpdateExecutorJsonResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
             req = new operations.UpdateExecutorJsonRequest(req);
@@ -617,7 +682,12 @@ export class Executor {
         const headers = { ...reqBodyHeaders, ...config?.headers };
         if (reqBody == null || Object.keys(reqBody).length === 0)
             throw new Error("request body is required");
-        headers["Accept"] = "application/json;q=1, application/problem+json;q=0";
+        if (acceptHeaderOverride !== undefined) {
+            headers["Accept"] = acceptHeaderOverride.toString();
+        } else {
+            headers["Accept"] = "application/json;q=1, application/problem+json;q=0";
+        }
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -692,7 +762,8 @@ export class Executor {
      */
     async updateExecutorString(
         req: operations.UpdateExecutorStringRequest,
-        config?: AxiosRequestConfig
+        config?: AxiosRequestConfig,
+        acceptHeaderOverride?: UpdateExecutorStringAcceptEnum
     ): Promise<operations.UpdateExecutorStringResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
             req = new operations.UpdateExecutorStringRequest(req);
@@ -719,7 +790,12 @@ export class Executor {
         const headers = { ...reqBodyHeaders, ...config?.headers };
         if (reqBody == null || Object.keys(reqBody).length === 0)
             throw new Error("request body is required");
-        headers["Accept"] = "application/json;q=1, application/problem+json;q=0";
+        if (acceptHeaderOverride !== undefined) {
+            headers["Accept"] = acceptHeaderOverride.toString();
+        } else {
+            headers["Accept"] = "application/json;q=1, application/problem+json;q=0";
+        }
+
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
