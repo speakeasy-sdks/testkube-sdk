@@ -100,7 +100,7 @@ export class ExecutionRequest extends SpeakeasyBase {
     /**
      * Environment variables passed to executor. Deprecated: use Basic Variables instead
      *
-     * @deprecated this field will be removed in a future release, please migrate away from it as soon as possible
+     * @deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     @SpeakeasyMetadata()
     @Expose({ name: "envs" })
@@ -230,7 +230,7 @@ export class ExecutionRequest extends SpeakeasyBase {
     /**
      * Execution variables passed to executor from secrets. Deprecated: use Secret Variables instead
      *
-     * @deprecated this field will be removed in a future release, please migrate away from it as soon as possible
+     * @deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     @SpeakeasyMetadata()
     @Expose({ name: "secretEnvs" })
@@ -377,7 +377,7 @@ export class ExecutionRequestInput extends SpeakeasyBase {
     /**
      * Environment variables passed to executor. Deprecated: use Basic Variables instead
      *
-     * @deprecated this field will be removed in a future release, please migrate away from it as soon as possible
+     * @deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     @SpeakeasyMetadata()
     @Expose({ name: "envs" })
@@ -507,7 +507,7 @@ export class ExecutionRequestInput extends SpeakeasyBase {
     /**
      * Execution variables passed to executor from secrets. Deprecated: use Secret Variables instead
      *
-     * @deprecated this field will be removed in a future release, please migrate away from it as soon as possible
+     * @deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     @SpeakeasyMetadata()
     @Expose({ name: "secretEnvs" })
