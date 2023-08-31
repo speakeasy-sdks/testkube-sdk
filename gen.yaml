@@ -2,8 +2,8 @@ configVersion: 1.0.0
 management:
   docChecksum: 35de89d3f53d9b12dd4444c075cea53e
   docVersion: 1.0.0
-  speakeasyVersion: 1.74.16
-  generationVersion: 2.88.2
+  speakeasyVersion: 1.76.0
+  generationVersion: 2.89.1
 generation:
   comments:
     disableComments: false
@@ -15,12 +15,12 @@ generation:
 features:
   typescript:
     acceptHeaders: 2.81.1
-    core: 2.83.1
+    core: 2.84.1
     deprecations: 2.81.1
     globalServerURLs: 2.82.0
     inputOutputModels: 2.81.1
 typescript:
-  version: 1.11.0
+  version: 1.12.0
   author: aabedraba
   maxMethodParams: 0
   packageName: testkube-sdk
