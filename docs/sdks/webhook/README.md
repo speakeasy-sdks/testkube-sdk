@@ -28,25 +28,19 @@ const sdk = new TestkubeSDK();
 
 sdk.webhook.createWebhookJson({
   events: [
-    EventType.EndTestsuiteFailed,
-    EventType.StartTestsuite,
     EventType.EndTestsuiteSuccess,
-    EventType.Deleted,
   ],
   headers: {
-    "nemo": "ratione",
-    "dolore": "perferendis",
-    "enim": "impedit",
-    "libero": "dolor",
+    "atque": "velit",
   },
   labels: {
-    "vitae": "pariatur",
+    "molestiae": "nam",
   },
   name: "webhook1",
   namespace: "testkube",
-  payloadObjectField: "numquam",
-  payloadTemplate: "provident",
-  selector: "quia",
+  payloadObjectField: "aperiam",
+  payloadTemplate: "vitae",
+  selector: "mollitia",
   uri: "https://hooks.app.com/services/1",
 }).then((res: CreateWebhookJsonResponse) => {
   if (res.statusCode == 200) {
@@ -80,7 +74,7 @@ import { CreateWebhookStringResponse } from "testkube-sdk/dist/sdk/models/operat
 
 const sdk = new TestkubeSDK();
 
-sdk.webhook.createWebhookString("reiciendis").then((res: CreateWebhookStringResponse) => {
+sdk.webhook.createWebhookString("asperiores").then((res: CreateWebhookStringResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -113,7 +107,7 @@ import { DeleteWebhookResponse } from "testkube-sdk/dist/sdk/models/operations";
 const sdk = new TestkubeSDK();
 
 sdk.webhook.deleteWebhook({
-  id: "4f127fb0-e0bf-41f8-a179-78d0acca77ae",
+  id: "dd788624-189e-4b44-873f-5033f19dbf12",
 }).then((res: DeleteWebhookResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -147,7 +141,7 @@ import { DeleteWebhooksResponse } from "testkube-sdk/dist/sdk/models/operations"
 const sdk = new TestkubeSDK();
 
 sdk.webhook.deleteWebhooks({
-  selector: "tempore",
+  selector: "nemo",
 }).then((res: DeleteWebhooksResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -181,7 +175,7 @@ import { GetWebhookResponse } from "testkube-sdk/dist/sdk/models/operations";
 const sdk = new TestkubeSDK();
 
 sdk.webhook.getWebhook({
-  id: "7b7021a5-2046-4b64-a99f-b0e67e094fdf",
+  id: "ce4152ea-b9cd-47e5-a24a-6a0e123b7847",
 }).then((res: GetWebhookResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -215,7 +209,7 @@ import { ListWebhooksResponse } from "testkube-sdk/dist/sdk/models/operations";
 const sdk = new TestkubeSDK();
 
 sdk.webhook.listWebhooks({
-  selector: "saepe",
+  selector: "vero",
 }).then((res: ListWebhooksResponse) => {
   if (res.statusCode == 200) {
     // handle response

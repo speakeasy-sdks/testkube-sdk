@@ -41,19 +41,7 @@ sdk.testTriggers.bulkUpdateTestTriggers([
       conditions: [
         {
           reason: "NewReplicaSetAvailable",
-          status: TestTriggerConditionStatuses.Unknown,
-          ttl: 1,
-          type: "Progressing",
-        },
-        {
-          reason: "NewReplicaSetAvailable",
-          status: TestTriggerConditionStatuses.Unknown,
-          ttl: 1,
-          type: "Progressing",
-        },
-        {
-          reason: "NewReplicaSetAvailable",
-          status: TestTriggerConditionStatuses.Unknown,
+          status: TestTriggerConditionStatuses.False,
           ttl: 1,
           type: "Progressing",
         },
@@ -62,11 +50,9 @@ sdk.testTriggers.bulkUpdateTestTriggers([
       timeout: 1,
     },
     event: "modified",
-    execution: TestTriggerExecutions.Testsuite,
+    execution: TestTriggerExecutions.Test,
     labels: {
-      "et": "earum",
-      "fuga": "est",
-      "distinctio": "fugiat",
+      "sapiente": "officiis",
     },
     name: "name",
     namespace: "testkube",
@@ -75,43 +61,7 @@ sdk.testTriggers.bulkUpdateTestTriggers([
       probes: [
         {
           headers: {
-            "praesentium": "officiis",
-            "esse": "vitae",
-            "delectus": "laboriosam",
-          },
-          host: "testkube-api-server",
-          path: "/",
-          port: 80,
-          scheme: "http",
-        },
-        {
-          headers: {
-            "labore": "quas",
-            "sed": "veniam",
-            "sed": "quibusdam",
-            "reprehenderit": "voluptate",
-          },
-          host: "testkube-api-server",
-          path: "/",
-          port: 80,
-          scheme: "http",
-        },
-        {
-          headers: {
-            "et": "eveniet",
-            "voluptate": "hic",
-          },
-          host: "testkube-api-server",
-          path: "/",
-          port: 80,
-          scheme: "http",
-        },
-        {
-          headers: {
-            "perferendis": "in",
-            "eius": "aut",
-            "consequatur": "iste",
-            "accusamus": "repellat",
+            "expedita": "quia",
           },
           host: "testkube-api-server",
           path: "/",
@@ -121,7 +71,7 @@ sdk.testTriggers.bulkUpdateTestTriggers([
       ],
       timeout: 1,
     },
-    resource: TestTriggerResources.Service,
+    resource: TestTriggerResources.Pod,
     resourceSelector: {
       name: "nginx",
       namespace: "testkube",
@@ -175,25 +125,7 @@ sdk.testTriggers.createTestTriggerJson({
     conditions: [
       {
         reason: "NewReplicaSetAvailable",
-        status: TestTriggerConditionStatuses.True,
-        ttl: 1,
-        type: "Progressing",
-      },
-      {
-        reason: "NewReplicaSetAvailable",
         status: TestTriggerConditionStatuses.False,
-        ttl: 1,
-        type: "Progressing",
-      },
-      {
-        reason: "NewReplicaSetAvailable",
-        status: TestTriggerConditionStatuses.Unknown,
-        ttl: 1,
-        type: "Progressing",
-      },
-      {
-        reason: "NewReplicaSetAvailable",
-        status: TestTriggerConditionStatuses.Unknown,
         ttl: 1,
         type: "Progressing",
       },
@@ -202,12 +134,9 @@ sdk.testTriggers.createTestTriggerJson({
     timeout: 1,
   },
   event: "modified",
-  execution: TestTriggerExecutions.Test,
+  execution: TestTriggerExecutions.Testsuite,
   labels: {
-    "fugiat": "ducimus",
-    "aut": "provident",
-    "voluptate": "tempore",
-    "ullam": "illum",
+    "ipsa": "distinctio",
   },
   name: "name",
   namespace: "testkube",
@@ -216,29 +145,7 @@ sdk.testTriggers.createTestTriggerJson({
     probes: [
       {
         headers: {
-          "quos": "quo",
-        },
-        host: "testkube-api-server",
-        path: "/",
-        port: 80,
-        scheme: "http",
-      },
-      {
-        headers: {
-          "in": "doloribus",
-          "id": "eum",
-        },
-        host: "testkube-api-server",
-        path: "/",
-        port: 80,
-        scheme: "http",
-      },
-      {
-        headers: {
-          "odio": "atque",
-          "similique": "quia",
-          "architecto": "ea",
-          "accusamus": "illo",
+          "placeat": "quod",
         },
         host: "testkube-api-server",
         path: "/",
@@ -248,7 +155,7 @@ sdk.testTriggers.createTestTriggerJson({
     ],
     timeout: 1,
   },
-  resource: TestTriggerResources.Service,
+  resource: TestTriggerResources.Event,
   resourceSelector: {
     name: "nginx",
     namespace: "testkube",
@@ -289,7 +196,7 @@ import { CreateTestTriggerStringResponse } from "testkube-sdk/dist/sdk/models/op
 
 const sdk = new TestkubeSDK();
 
-sdk.testTriggers.createTestTriggerString("harum").then((res: CreateTestTriggerStringResponse) => {
+sdk.testTriggers.createTestTriggerString("sit").then((res: CreateTestTriggerStringResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -322,8 +229,8 @@ import { DeleteTestTriggerResponse } from "testkube-sdk/dist/sdk/models/operatio
 const sdk = new TestkubeSDK();
 
 sdk.testTriggers.deleteTestTrigger({
-  id: "afeca619-1498-4140-b64f-f8ae170ef03b",
-  namespace: "quaerat",
+  id: "dbbddb48-4708-4fb4-a391-e6bc158c4c4e",
+  namespace: "ullam",
 }).then((res: DeleteTestTriggerResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -357,8 +264,8 @@ import { DeleteTestTriggersResponse } from "testkube-sdk/dist/sdk/models/operati
 const sdk = new TestkubeSDK();
 
 sdk.testTriggers.deleteTestTriggers({
-  namespace: "a",
-  selector: "neque",
+  namespace: "numquam",
+  selector: "enim",
 }).then((res: DeleteTestTriggersResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -392,8 +299,8 @@ import { GetTestTriggerByIDResponse } from "testkube-sdk/dist/sdk/models/operati
 const sdk = new TestkubeSDK();
 
 sdk.testTriggers.getTestTriggerByID({
-  id: "7e4aa868-5559-4667-b2aa-5dcb6682cb70",
-  namespace: "delectus",
+  id: "99ea3422-60e9-4b20-8ce7-8a1bd8fb7a0a",
+  namespace: "dicta",
 }).then((res: GetTestTriggerByIDResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -427,8 +334,8 @@ import { ListTestTriggersResponse } from "testkube-sdk/dist/sdk/models/operation
 const sdk = new TestkubeSDK();
 
 sdk.testTriggers.listTestTriggers({
-  namespace: "blanditiis",
-  selector: "minus",
+  namespace: "architecto",
+  selector: "suscipit",
 }).then((res: ListTestTriggersResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -478,35 +385,14 @@ sdk.testTriggers.updateTestTriggerJson({
           ttl: 1,
           type: "Progressing",
         },
-        {
-          reason: "NewReplicaSetAvailable",
-          status: TestTriggerConditionStatuses.False,
-          ttl: 1,
-          type: "Progressing",
-        },
-        {
-          reason: "NewReplicaSetAvailable",
-          status: TestTriggerConditionStatuses.Unknown,
-          ttl: 1,
-          type: "Progressing",
-        },
-        {
-          reason: "NewReplicaSetAvailable",
-          status: TestTriggerConditionStatuses.Unknown,
-          ttl: 1,
-          type: "Progressing",
-        },
       ],
       delay: 1,
       timeout: 1,
     },
     event: "modified",
-    execution: TestTriggerExecutions.Test,
+    execution: TestTriggerExecutions.Testsuite,
     labels: {
-      "occaecati": "dicta",
-      "quidem": "omnis",
-      "laborum": "molestias",
-      "a": "dignissimos",
+      "dignissimos": "fugit",
     },
     name: "name",
     namespace: "testkube",
@@ -515,18 +401,7 @@ sdk.testTriggers.updateTestTriggerJson({
       probes: [
         {
           headers: {
-            "dolore": "aliquid",
-            "repudiandae": "aspernatur",
-            "quod": "dolorem",
-          },
-          host: "testkube-api-server",
-          path: "/",
-          port: 80,
-          scheme: "http",
-        },
-        {
-          headers: {
-            "ipsa": "excepturi",
+            "ratione": "possimus",
           },
           host: "testkube-api-server",
           path: "/",
@@ -536,7 +411,7 @@ sdk.testTriggers.updateTestTriggerJson({
       ],
       timeout: 1,
     },
-    resource: TestTriggerResources.Event,
+    resource: TestTriggerResources.Statefulset,
     resourceSelector: {
       name: "nginx",
       namespace: "testkube",
@@ -546,8 +421,8 @@ sdk.testTriggers.updateTestTriggerJson({
       namespace: "testkube",
     },
   },
-  id: "b0536d9e-75ca-4006-b539-2c11a25a8bf9",
-  namespace: "sunt",
+  id: "097fa30e-9af7-425b-a912-2030d83f5aeb",
+  namespace: "iusto",
 }).then((res: UpdateTestTriggerJsonResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -581,9 +456,9 @@ import { UpdateTestTriggerStringResponse } from "testkube-sdk/dist/sdk/models/op
 const sdk = new TestkubeSDK();
 
 sdk.testTriggers.updateTestTriggerString({
-  requestBody: "maiores",
-  id: "97428ad9-a9f8-4bf8-a211-25359d98387f",
-  namespace: "iusto",
+  requestBody: "dignissimos",
+  id: "99d22e8c-1f84-4938-a5fd-c42c876c2c2d",
+  namespace: "delectus",
 }).then((res: UpdateTestTriggerStringResponse) => {
   if (res.statusCode == 200) {
     // handle response

@@ -30,51 +30,41 @@ const sdk = new TestkubeSDK();
 
 sdk.executor.createExecutorJson({
   args: [
-    "aspernatur",
-    "dolores",
-    "laborum",
-    "vero",
+    "deleniti",
   ],
   command: [
-    "voluptatem",
+    "sunt",
   ],
   contentTypes: [
-    "id",
-    "quae",
-    "commodi",
-    "a",
+    "nesciunt",
   ],
-  executorType: "minus",
+  executorType: "delectus",
   features: [
     ExecutorUpsertRequestFeatures.JunitReport,
   ],
-  image: "quia",
+  image: "aliquam",
   imagePullSecrets: [
     {
-      name: "Sandy Cormier",
-    },
-    {
-      name: "Dan Kreiger",
+      name: "Edwin Cartwright",
     },
   ],
-  jobTemplate: "nemo",
+  jobTemplate: "voluptatum",
   labels: {
-    "recusandae": "omnis",
-    "ipsa": "aliquam",
+    "ipsa": "at",
   },
   meta: {
     docsURI: "https://docs.testkube.io/test-types/executor-k6",
     iconURI: "/assets/k6.jpg",
     tooltips: {
-      "occaecati": "quibusdam",
+      "dolorem": "repellat",
     },
   },
   name: "name",
   namespace: "testkube",
   types: [
-    "consequuntur",
+    "aspernatur",
   ],
-  uri: "http://failing-hate.info",
+  uri: "http://difficult-centurion.net",
 }).then((res: CreateExecutorJsonResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -107,7 +97,7 @@ import { CreateExecutorStringResponse } from "testkube-sdk/dist/sdk/models/opera
 
 const sdk = new TestkubeSDK();
 
-sdk.executor.createExecutorString("vel").then((res: CreateExecutorStringResponse) => {
+sdk.executor.createExecutorString("hic").then((res: CreateExecutorStringResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -140,7 +130,7 @@ import { DeleteExecutorResponse } from "testkube-sdk/dist/sdk/models/operations"
 const sdk = new TestkubeSDK();
 
 sdk.executor.deleteExecutor({
-  id: "94624070-84f7-4ab3-bcef-02225194db55",
+  id: "03102d51-4f4c-4c6f-98bf-9621a6a4f77a",
 }).then((res: DeleteExecutorResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -174,7 +164,7 @@ import { DeleteExecutorsResponse } from "testkube-sdk/dist/sdk/models/operations
 const sdk = new TestkubeSDK();
 
 sdk.executor.deleteExecutors({
-  selector: "modi",
+  selector: "laudantium",
 }).then((res: DeleteExecutorsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -208,7 +198,7 @@ import { GetExecutorResponse } from "testkube-sdk/dist/sdk/models/operations";
 const sdk = new TestkubeSDK();
 
 sdk.executor.getExecutor({
-  id: "10adc669-af90-4a26-87cd-c981f068981d",
+  id: "7ee3e4be-752c-465b-b441-8e3bb91c8d97",
 }).then((res: GetExecutorResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -242,7 +232,7 @@ import { ListExecutorsResponse } from "testkube-sdk/dist/sdk/models/operations";
 const sdk = new TestkubeSDK();
 
 sdk.executor.listExecutors({
-  selector: "ea",
+  selector: "enim",
 }).then((res: ListExecutorsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -279,56 +269,43 @@ const sdk = new TestkubeSDK();
 sdk.executor.updateExecutorJson({
   executorUpdateRequest: {
     args: [
-      "nam",
-      "amet",
-      "adipisci",
+      "accusamus",
     ],
     command: [
-      "hic",
-      "similique",
-      "fuga",
-      "consectetur",
+      "aperiam",
     ],
     contentTypes: [
-      "laudantium",
-      "cumque",
+      "voluptates",
     ],
-    executorType: "adipisci",
+    executorType: "laudantium",
     features: [
-      ExecutorUpdateRequestFeatures.JunitReport,
+      ExecutorUpdateRequestFeatures.Artifacts,
     ],
-    image: "voluptatibus",
+    image: "quae",
     imagePullSecrets: [
       {
-        name: "Dora Watsica",
-      },
-      {
-        name: "Miss Guillermo Williamson",
+        name: "Gilberto Legros",
       },
     ],
-    jobTemplate: "aspernatur",
+    jobTemplate: "modi",
     labels: {
-      "nihil": "voluptatum",
-      "reiciendis": "vitae",
-      "ullam": "nisi",
+      "earum": "architecto",
     },
     meta: {
       docsURI: "https://docs.testkube.io/test-types/executor-k6",
       iconURI: "/assets/k6.jpg",
       tooltips: {
-        "voluptas": "ratione",
+        "aliquam": "labore",
       },
     },
     name: "name",
     namespace: "testkube",
     types: [
-      "corrupti",
-      "est",
-      "perferendis",
+      "maiores",
     ],
-    uri: "https://snarling-lamp.info",
+    uri: "http://unsightly-addiction.info",
   },
-  id: "6324ccb0-6c8c-4a12-9025-29270b8d5722",
+  id: "edcc4aa5-f3ca-4bd9-85a9-72e056728227",
 }).then((res: UpdateExecutorJsonResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -362,8 +339,8 @@ import { UpdateExecutorStringResponse } from "testkube-sdk/dist/sdk/models/opera
 const sdk = new TestkubeSDK();
 
 sdk.executor.updateExecutorString({
-  requestBody: "at",
-  id: "d895b8bc-f24d-4b95-9693-352f74533994",
+  requestBody: "expedita",
+  id: "2d309470-bf7a-44fa-87cf-535a6fae54eb",
 }).then((res: UpdateExecutorStringResponse) => {
   if (res.statusCode == 200) {
     // handle response

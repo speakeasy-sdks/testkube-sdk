@@ -1,7 +1,5 @@
 # TestSuiteExecutionStatus
 
-optional status filter containing multiple values separated by comma
-
 
 ## Values
 

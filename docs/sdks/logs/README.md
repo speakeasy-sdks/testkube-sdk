@@ -21,7 +21,7 @@ import { GetExecutionLogsResponse } from "testkube-sdk/dist/sdk/models/operation
 const sdk = new TestkubeSDK();
 
 sdk.logs.getExecutionLogs({
-  id: "d78de3b6-e938-49f5-abb7-f662550a2838",
+  id: "f60c321f-023b-475d-a367-fe1a0cc8df79",
 }).then((res: GetExecutionLogsResponse) => {
   if (res.statusCode == 200) {
     // handle response

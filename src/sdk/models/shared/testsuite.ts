@@ -8,9 +8,6 @@ import { TestSuiteExecutionRequest } from "./testsuiteexecutionrequest";
 import { TestSuiteStatus } from "./testsuitestatus";
 import { Expose, Transform, Type } from "class-transformer";
 
-/**
- * successful operation
- */
 export class TestSuite extends SpeakeasyBase {
     /**
      * Run these batch steps after whole suite

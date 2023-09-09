@@ -18,24 +18,24 @@ import { RepositoryAuthType, RepositoryType } from "testkube-sdk/dist/sdk/models
 const sdk = new TestkubeSDK();
 
 sdk.repository.validateRepository({
-  authType: RepositoryAuthType.Basic,
+  authType: RepositoryAuthType.Header,
   branch: "main",
-  certificateSecret: "deserunt",
+  certificateSecret: "aperiam",
   commit: "b928cbb7186944ab9275937ec1ac3d3738ca2e1d",
   path: "test/perf",
-  token: "eligendi",
+  token: "similique",
   tokenSecret: {
-    key: "incidunt",
-    name: "Rodney Orn",
-    namespace: "odit",
+    key: "nesciunt",
+    name: "Ruben Sipes DDS",
+    namespace: "sequi",
   },
   type: RepositoryType.Git,
   uri: "https://github.com/kubeshop/testkube",
-  username: "Darian70",
+  username: "Harmony.Grant78",
   usernameSecret: {
-    key: "facilis",
-    name: "Mr. Charlie Hilpert",
-    namespace: "incidunt",
+    key: "sunt",
+    name: "Betsy Wuckert",
+    namespace: "impedit",
   },
   workingDir: "/",
 }).then((res: ValidateRepositoryResponse) => {

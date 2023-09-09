@@ -11,9 +11,6 @@ import { TestTriggerResources } from "./testtriggerresources";
 import { TestTriggerSelector } from "./testtriggerselector";
 import { Expose, Type } from "class-transformer";
 
-/**
- * successful operation
- */
 export class TestTrigger extends SpeakeasyBase {
     /**
      * supported actions for test triggers

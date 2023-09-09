@@ -1,7 +1,5 @@
 # TestSuite
 
-successful operation
-
 
 ## Fields
 

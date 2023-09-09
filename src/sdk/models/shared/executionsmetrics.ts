@@ -6,9 +6,6 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { ExecutionsMetricsExecutions } from "./executionsmetricsexecutions";
 import { Expose, Type } from "class-transformer";
 
-/**
- * successful operation
- */
 export class ExecutionsMetrics extends SpeakeasyBase {
     /**
      * 50th percentile of all durations

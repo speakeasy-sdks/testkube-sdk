@@ -1,7 +1,5 @@
 # TestTriggerKeyMap
 
-successful get operation
-
 
 ## Fields
 

@@ -5,9 +5,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-/**
- * successful get operation
- */
 export class TestTriggerKeyMap extends SpeakeasyBase {
     /**
      * list of supported values for resources

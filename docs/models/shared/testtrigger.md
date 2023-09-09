@@ -1,7 +1,5 @@
 # TestTrigger
 
-successful operation
-
 
 ## Fields
 

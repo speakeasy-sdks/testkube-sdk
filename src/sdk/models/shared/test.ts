@@ -8,9 +8,6 @@ import { TestContent } from "./testcontent";
 import { TestStatus } from "./teststatus";
 import { Expose, Transform, Type } from "class-transformer";
 
-/**
- * successful operation
- */
 export class Test extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "content" })

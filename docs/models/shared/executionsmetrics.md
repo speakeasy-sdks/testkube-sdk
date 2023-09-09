@@ -1,7 +1,5 @@
 # ExecutionsMetrics
 
-successful operation
-
 
 ## Fields
 

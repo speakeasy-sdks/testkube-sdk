@@ -39,8 +39,8 @@ import { AbortTestSuiteExecutionResponse } from "testkube-sdk/dist/sdk/models/op
 const sdk = new TestkubeSDK();
 
 sdk.testSuites.abortTestSuiteExecution({
-  executionID: "atque",
-  id: "fbb8c20c-b67f-4c4b-825e-99e6234c9f7b",
+  executionID: "similique",
+  id: "cb3ecfda-8d0c-4549-af03-004978a61fa1",
 }).then((res: AbortTestSuiteExecutionResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -74,7 +74,7 @@ import { AbortTestSuiteExecutionsResponse } from "testkube-sdk/dist/sdk/models/o
 const sdk = new TestkubeSDK();
 
 sdk.testSuites.abortTestSuiteExecutions({
-  id: "79dfeb77-a5c3-48d4-baf9-1e506ef890a5",
+  id: "cf20688f-77c1-4ffc-b1dc-a163f2a3c80a",
 }).then((res: AbortTestSuiteExecutionsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -116,27 +116,6 @@ sdk.testSuites.createTestSuiteJson({
           delay: "1s",
           test: "name",
         },
-        {
-          delay: "1s",
-          test: "name",
-        },
-        {
-          delay: "1s",
-          test: "name",
-        },
-      ],
-      stopOnFailure: false,
-    },
-    {
-      execute: [
-        {
-          delay: "1s",
-          test: "name",
-        },
-        {
-          delay: "1s",
-          test: "name",
-        },
       ],
       stopOnFailure: false,
     },
@@ -148,36 +127,11 @@ sdk.testSuites.createTestSuiteJson({
           delay: "1s",
           test: "name",
         },
-        {
-          delay: "1s",
-          test: "name",
-        },
-      ],
-      stopOnFailure: false,
-    },
-    {
-      execute: [
-        {
-          delay: "1s",
-          test: "name",
-        },
-        {
-          delay: "1s",
-          test: "name",
-        },
-        {
-          delay: "1s",
-          test: "name",
-        },
-        {
-          delay: "1s",
-          test: "name",
-        },
       ],
       stopOnFailure: false,
     },
   ],
-  created: new Date("2022-07-30T17:56:08.127Z"),
+  created: new Date("2022-01-22T15:58:15.848Z"),
   description: "collection of tests",
   executionRequest: {
     concurrencyLevel: 10,
@@ -189,61 +143,44 @@ sdk.testSuites.createTestSuiteJson({
         workingDir: "/",
       },
     },
-    cronJobTemplate: "earum",
+    cronJobTemplate: "tenetur",
     executionLabels: {
-      "ex": "possimus",
-      "nesciunt": "corrupti",
+      "sapiente": "velit",
     },
     httpProxy: "user:pass@my.proxy.server:8080",
     httpsProxy: "user:pass@my.proxy.server:8081",
     labels: {
-      "fuga": "sequi",
-      "maxime": "numquam",
+      "adipisci": "non",
     },
     name: "testing with 1000 users",
     namespace: "testkube",
     number: 1,
     runningContext: {
-      context: "laborum",
-      type: RunningContextType.Testtrigger,
+      context: "optio",
+      type: RunningContextType.Scheduler,
     },
     sync: false,
     timeout: 1,
     variables: {
-      "adipisci": {
+      "at": {
         configMapRef: {
-          key: "sunt",
-          name: "Tracy Medhurst",
-          namespace: "autem",
+          key: "tenetur",
+          name: "Roberto Klocko",
+          namespace: "voluptates",
         },
-        name: "Conrad Stehr",
+        name: "Ann Luettgen",
         secretRef: {
-          key: "natus",
-          name: "Marcos Quigley",
-          namespace: "et",
+          key: "porro",
+          name: "Mr. Iris Powlowski",
+          namespace: "magni",
         },
-        type: VariableType.Basic,
-        value: "maiores",
-      },
-      "nisi": {
-        configMapRef: {
-          key: "velit",
-          name: "Rudolph Weimann IV",
-          namespace: "atque",
-        },
-        name: "Mr. Nellie Reichert",
-        secretRef: {
-          key: "asperiores",
-          name: "Ellis Koepp",
-          namespace: "vel",
-        },
-        type: VariableType.Basic,
-        value: "labore",
+        type: VariableType.Secret,
+        value: "illum",
       },
     },
   },
   labels: {
-    "blanditiis": "iste",
+    "a": "impedit",
   },
   name: "name",
   namespace: "testkube",
@@ -251,36 +188,15 @@ sdk.testSuites.createTestSuiteJson({
   schedule: "* * * * *",
   status: {
     latestExecution: {
-      endTime: new Date("2020-11-07T12:44:30.685Z"),
+      endTime: new Date("2022-06-09T12:55:49.795Z"),
       id: "62f395e004109209b50edfc4",
-      startTime: new Date("2022-09-18T01:28:12.994Z"),
-      status: TestSuiteExecutionStatus.Failed,
+      startTime: new Date("2021-11-13T21:22:20.627Z"),
+      status: TestSuiteExecutionStatus.Timeout,
     },
   },
   steps: [
     {
       execute: [
-        {
-          delay: "1s",
-          test: "name",
-        },
-      ],
-      stopOnFailure: false,
-    },
-    {
-      execute: [
-        {
-          delay: "1s",
-          test: "name",
-        },
-        {
-          delay: "1s",
-          test: "name",
-        },
-        {
-          delay: "1s",
-          test: "name",
-        },
         {
           delay: "1s",
           test: "name",
@@ -321,7 +237,7 @@ import { CreateTestSuiteStringResponse } from "testkube-sdk/dist/sdk/models/oper
 
 const sdk = new TestkubeSDK();
 
-sdk.testSuites.createTestSuiteString("quis").then((res: CreateTestSuiteStringResponse) => {
+sdk.testSuites.createTestSuiteString("recusandae").then((res: CreateTestSuiteStringResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -354,7 +270,7 @@ import { DeleteTestSuiteResponse } from "testkube-sdk/dist/sdk/models/operations
 const sdk = new TestkubeSDK();
 
 sdk.testSuites.deleteTestSuite({
-  id: "033f19db-f125-4ce4-952e-ab9cd7e5224a",
+  id: "cd799390-066a-46d2-9000-355338cec086",
 }).then((res: DeleteTestSuiteResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -388,7 +304,7 @@ import { DeleteTestSuitesResponse } from "testkube-sdk/dist/sdk/models/operation
 const sdk = new TestkubeSDK();
 
 sdk.testSuites.deleteTestSuites({
-  selector: "vel",
+  selector: "maiores",
 }).then((res: DeleteTestSuitesResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -433,60 +349,45 @@ sdk.testSuites.executeTestSuite({
         workingDir: "/",
       },
     },
-    cronJobTemplate: "dolorum",
+    cronJobTemplate: "est",
     executionLabels: {
-      "itaque": "ab",
+      "fugit": "veritatis",
     },
     httpProxy: "user:pass@my.proxy.server:8080",
     httpsProxy: "user:pass@my.proxy.server:8081",
     labels: {
-      "amet": "cum",
+      "necessitatibus": "iste",
     },
     name: "testing with 1000 users",
     namespace: "testkube",
     number: 1,
     runningContext: {
-      context: "iusto",
-      type: RunningContextType.Testsuite,
+      context: "dicta",
+      type: RunningContextType.UserUI,
     },
     sync: false,
     timeout: 1,
     variables: {
-      "esse": {
+      "consequuntur": {
         configMapRef: {
-          key: "vero",
-          name: "Derek Mohr DVM",
-          namespace: "autem",
+          key: "cumque",
+          name: "Ms. Melvin Brekke III",
+          namespace: "ducimus",
         },
-        name: "Jaime Farrell",
+        name: "Ross Turcotte",
         secretRef: {
-          key: "optio",
-          name: "Lamar Goodwin",
-          namespace: "illum",
+          key: "quos",
+          name: "Rudy Bartoletti",
+          namespace: "consequatur",
         },
-        type: VariableType.Basic,
-        value: "aliquid",
-      },
-      "sint": {
-        configMapRef: {
-          key: "aliquid",
-          name: "Timmy Feeney",
-          namespace: "nihil",
-        },
-        name: "Mr. Courtney Hessel",
-        secretRef: {
-          key: "corporis",
-          name: "Gretchen Greenholt",
-          namespace: "ipsam",
-        },
-        type: VariableType.Basic,
-        value: "hic",
+        type: VariableType.Secret,
+        value: "repellendus",
       },
     },
   },
-  id: "8b084c31-97e1-493a-a454-67f94874c2d5",
-  last: 750343,
-  namespace: "porro",
+  id: "6d364ffd-4559-406d-9263-d48e935c2c9e",
+  last: 551778,
+  namespace: "dicta",
 }).then((res: ExecuteTestSuiteResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -531,63 +432,45 @@ sdk.testSuites.executeTestSuites({
         workingDir: "/",
       },
     },
-    cronJobTemplate: "labore",
+    cronJobTemplate: "sapiente",
     executionLabels: {
-      "ducimus": "qui",
-      "qui": "consectetur",
-      "ratione": "saepe",
+      "ipsum": "consequatur",
     },
     httpProxy: "user:pass@my.proxy.server:8080",
     httpsProxy: "user:pass@my.proxy.server:8081",
     labels: {
-      "aliquid": "cum",
-      "fugiat": "rem",
+      "soluta": "necessitatibus",
     },
     name: "testing with 1000 users",
     namespace: "testkube",
     number: 1,
     runningContext: {
-      context: "voluptatibus",
+      context: "sequi",
       type: RunningContextType.Scheduler,
     },
     sync: false,
     timeout: 1,
     variables: {
-      "repellendus": {
+      "labore": {
         configMapRef: {
-          key: "aut",
-          name: "Jeannette Mante",
-          namespace: "officiis",
+          key: "adipisci",
+          name: "Sarah D'Amore",
+          namespace: "magni",
         },
-        name: "Martin Bahringer",
+        name: "Beth Hand",
         secretRef: {
-          key: "nihil",
-          name: "Nicole Becker",
-          namespace: "aut",
+          key: "minima",
+          name: "Kristin Howell IV",
+          namespace: "dignissimos",
         },
-        type: VariableType.Secret,
-        value: "quod",
-      },
-      "quo": {
-        configMapRef: {
-          key: "architecto",
-          name: "Erika Jaskolski Jr.",
-          namespace: "non",
-        },
-        name: "Annie Price",
-        secretRef: {
-          key: "quis",
-          name: "Amber Grady",
-          namespace: "ullam",
-        },
-        type: VariableType.Secret,
-        value: "debitis",
+        type: VariableType.Basic,
+        value: "assumenda",
       },
     },
   },
-  concurrency: 442668,
-  namespace: "eos",
-  selector: "assumenda",
+  concurrency: 590969,
+  namespace: "facere",
+  selector: "sed",
 }).then((res: ExecuteTestSuitesResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -621,7 +504,7 @@ import { GetTestSuiteByIDResponse } from "testkube-sdk/dist/sdk/models/operation
 const sdk = new TestkubeSDK();
 
 sdk.testSuites.getTestSuiteByID({
-  id: "c4077d0c-c3f4-408e-bc15-ceb4d6e1eae0",
+  id: "1f9ad030-c4ec-4c11-a083-6429068b8502",
 }).then((res: GetTestSuiteByIDResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -655,7 +538,7 @@ import { GetTestSuiteByIDWithExecutionResponse } from "testkube-sdk/dist/sdk/mod
 const sdk = new TestkubeSDK();
 
 sdk.testSuites.getTestSuiteByIDWithExecution({
-  id: "f75aedf2-acab-458b-991c-926ddb589461",
+  id: "a55e7f73-bc84-45e3-a0a3-19f4badf947c",
 }).then((res: GetTestSuiteByIDWithExecutionResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -689,8 +572,8 @@ import { GetTestSuiteExecutionResponse } from "testkube-sdk/dist/sdk/models/oper
 const sdk = new TestkubeSDK();
 
 sdk.testSuites.getTestSuiteExecution({
-  executionID: "vero",
-  id: "7421cbe6-d950-42f0-aa93-0b69f7ac2f72",
+  executionID: "error",
+  id: "a867bc42-4266-4658-96dd-ca8ef51fcb4c",
 }).then((res: GetTestSuiteExecutionResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -724,7 +607,7 @@ import { GetTestSuiteExecutionArtifactsResponse } from "testkube-sdk/dist/sdk/mo
 const sdk = new TestkubeSDK();
 
 sdk.testSuites.getTestSuiteExecutionArtifacts({
-  executionID: "delectus",
+  executionID: "ipsam",
 }).then((res: GetTestSuiteExecutionArtifactsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -758,8 +641,8 @@ import { GetTestSuiteExecutionArtifactsByTestsuiteResponse } from "testkube-sdk/
 const sdk = new TestkubeSDK();
 
 sdk.testSuites.getTestSuiteExecutionArtifactsByTestsuite({
-  executionID: "quos",
-  id: "85009049-1160-4820-b888-ec66183bfe96",
+  executionID: "occaecati",
+  id: "3ec12cda-ad0e-4c7a-bedb-d80df448a47f",
 }).then((res: GetTestSuiteExecutionArtifactsByTestsuiteResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -795,11 +678,11 @@ import { RFCDate } from "testkube-sdk/dist/sdk/types";
 const sdk = new TestkubeSDK();
 
 sdk.testSuites.listTestSuiteExecutions({
-  endDate: new RFCDate("2022-05-26"),
-  id: "eb40ec16-faf7-45b0-b532-a4da37cbaaf4",
-  page: 260246,
-  pageSize: 323876,
-  startDate: new RFCDate("2022-03-15"),
+  endDate: new RFCDate("2022-07-19"),
+  id: "90c58880-983d-4abf-9ef3-ffdd9f7f079a",
+  page: 989089,
+  pageSize: 266289,
+  startDate: new RFCDate("2022-05-17"),
   status: TestSuiteExecutionStatus.Passed,
 }).then((res: ListTestSuiteExecutionsResponse) => {
   if (res.statusCode == 200) {
@@ -834,7 +717,7 @@ import { ListTestSuiteTestsResponse } from "testkube-sdk/dist/sdk/models/operati
 const sdk = new TestkubeSDK();
 
 sdk.testSuites.listTestSuiteTests({
-  id: "842c9b2a-d32d-4afe-81a8-8f4444573fec",
+  id: "724cdb0f-4d28-4118-bd56-844eded85a90",
 }).then((res: ListTestSuiteTestsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -869,11 +752,11 @@ import { TestSuiteExecutionStatus } from "testkube-sdk/dist/sdk/models/shared";
 const sdk = new TestkubeSDK();
 
 sdk.testSuites.listTestSuiteWithExecutions({
-  page: 858398,
-  pageSize: 271185,
-  selector: "quam",
-  status: TestSuiteExecutionStatus.Running,
-  textSearch: "nemo",
+  page: 430181,
+  pageSize: 341405,
+  selector: "eveniet",
+  status: TestSuiteExecutionStatus.Passed,
+  textSearch: "ratione",
 }).then((res: ListTestSuiteWithExecutionsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -907,8 +790,8 @@ import { ListTestSuitesResponse } from "testkube-sdk/dist/sdk/models/operations"
 const sdk = new TestkubeSDK();
 
 sdk.testSuites.listTestSuites({
-  selector: "nesciunt",
-  textSearch: "earum",
+  selector: "blanditiis",
+  textSearch: "quidem",
 }).then((res: ListTestSuitesResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -954,27 +837,6 @@ sdk.testSuites.updateTestSuiteJson({
         ],
         stopOnFailure: false,
       },
-      {
-        execute: [
-          {
-            delay: "1s",
-            test: "name",
-          },
-          {
-            delay: "1s",
-            test: "name",
-          },
-          {
-            delay: "1s",
-            test: "name",
-          },
-          {
-            delay: "1s",
-            test: "name",
-          },
-        ],
-        stopOnFailure: false,
-      },
     ],
     before: [
       {
@@ -986,34 +848,8 @@ sdk.testSuites.updateTestSuiteJson({
         ],
         stopOnFailure: false,
       },
-      {
-        execute: [
-          {
-            delay: "1s",
-            test: "name",
-          },
-        ],
-        stopOnFailure: false,
-      },
-      {
-        execute: [
-          {
-            delay: "1s",
-            test: "name",
-          },
-          {
-            delay: "1s",
-            test: "name",
-          },
-          {
-            delay: "1s",
-            test: "name",
-          },
-        ],
-        stopOnFailure: false,
-      },
     ],
-    created: new Date("2022-07-12T14:44:09.875Z"),
+    created: new Date("2020-02-03T10:32:11.414Z"),
     description: "collection of tests",
     executionRequest: {
       concurrencyLevel: 10,
@@ -1025,64 +861,44 @@ sdk.testSuites.updateTestSuiteJson({
           workingDir: "/",
         },
       },
-      cronJobTemplate: "unde",
+      cronJobTemplate: "placeat",
       executionLabels: {
-        "id": "ex",
-        "occaecati": "optio",
-        "at": "ad",
+        "dolores": "consequatur",
       },
       httpProxy: "user:pass@my.proxy.server:8080",
       httpsProxy: "user:pass@my.proxy.server:8081",
       labels: {
-        "nam": "cumque",
-        "sapiente": "quam",
-        "occaecati": "repellendus",
-        "culpa": "dicta",
+        "nesciunt": "quia",
       },
       name: "testing with 1000 users",
       namespace: "testkube",
       number: 1,
       runningContext: {
-        context: "rem",
-        type: RunningContextType.Testtrigger,
+        context: "quidem",
+        type: RunningContextType.UserUI,
       },
       sync: false,
       timeout: 1,
       variables: {
-        "totam": {
+        "quo": {
           configMapRef: {
-            key: "magni",
-            name: "Fannie Wiza",
-            namespace: "quos",
+            key: "laudantium",
+            name: "Guadalupe Monahan",
+            namespace: "quidem",
           },
-          name: "Tom Thiel",
+          name: "Raquel Bruen",
           secretRef: {
-            key: "eum",
-            name: "Lynda Schuppe",
-            namespace: "quaerat",
-          },
-          type: VariableType.Secret,
-          value: "iste",
-        },
-        "accusamus": {
-          configMapRef: {
-            key: "ipsam",
-            name: "Miss Darren Hermiston",
-            namespace: "doloribus",
-          },
-          name: "Wallace Wilderman",
-          secretRef: {
-            key: "aut",
-            name: "Susie Wolf",
-            namespace: "non",
+            key: "atque",
+            name: "Nettie Kilback",
+            namespace: "et",
           },
           type: VariableType.Basic,
-          value: "enim",
+          value: "impedit",
         },
       },
     },
     labels: {
-      "blanditiis": "modi",
+      "ex": "praesentium",
     },
     name: "name",
     namespace: "testkube",
@@ -1090,10 +906,10 @@ sdk.testSuites.updateTestSuiteJson({
     schedule: "* * * * *",
     status: {
       latestExecution: {
-        endTime: new Date("2022-01-17T10:40:45.847Z"),
+        endTime: new Date("2022-10-11T05:30:08.045Z"),
         id: "62f395e004109209b50edfc4",
-        startTime: new Date("2022-07-11T21:25:21.909Z"),
-        status: TestSuiteExecutionStatus.Passed,
+        startTime: new Date("2021-06-15T21:46:49.215Z"),
+        status: TestSuiteExecutionStatus.Queued,
       },
     },
     steps: [
@@ -1103,29 +919,12 @@ sdk.testSuites.updateTestSuiteJson({
             delay: "1s",
             test: "name",
           },
-          {
-            delay: "1s",
-            test: "name",
-          },
-        ],
-        stopOnFailure: false,
-      },
-      {
-        execute: [
-          {
-            delay: "1s",
-            test: "name",
-          },
-          {
-            delay: "1s",
-            test: "name",
-          },
         ],
         stopOnFailure: false,
       },
     ],
   },
-  id: "6379f3fb-27e2-41f8-a265-7b36fc6b9f58",
+  id: "ce115717-2305-4377-9cfa-89df975e3566",
 }).then((res: UpdateTestSuiteJsonResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -1159,8 +958,8 @@ import { UpdateTestSuiteStringResponse } from "testkube-sdk/dist/sdk/models/oper
 const sdk = new TestkubeSDK();
 
 sdk.testSuites.updateTestSuiteString({
-  requestBody: "iusto",
-  id: "ce525c67-641a-4831-ae50-47b4c21ccb42",
+  requestBody: "rem",
+  id: "6092e9c3-ddc5-4f11-9dea-1026d541a4d1",
 }).then((res: UpdateTestSuiteStringResponse) => {
   if (res.statusCode == 200) {
     // handle response

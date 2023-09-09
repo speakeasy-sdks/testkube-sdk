@@ -1,7 +1,5 @@
 # Test
 
-successful operation
-
 
 ## Fields
 
