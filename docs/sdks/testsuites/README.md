@@ -1,4 +1,4 @@
-# testSuites
+# TestSuites
 
 ## Overview
 

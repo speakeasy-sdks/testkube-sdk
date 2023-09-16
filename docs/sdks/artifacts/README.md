@@ -1,4 +1,4 @@
-# artifacts
+# Artifacts
 
 ## Overview
 

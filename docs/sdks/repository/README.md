@@ -1,4 +1,4 @@
-# repository
+# Repository
 
 ### Available Operations
 
