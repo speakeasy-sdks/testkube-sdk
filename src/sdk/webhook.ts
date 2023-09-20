@@ -64,7 +64,7 @@ export class Webhook {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/webhooks";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -75,8 +75,7 @@ export class Webhook {
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         const headers = { ...reqBodyHeaders, ...config?.headers };
-        if (reqBody == null || Object.keys(reqBody).length === 0)
-            throw new Error("request body is required");
+        if (reqBody == null) throw new Error("request body is required");
         if (acceptHeaderOverride !== undefined) {
             headers["Accept"] = acceptHeaderOverride.toString();
         } else {
@@ -175,7 +174,7 @@ export class Webhook {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/webhooks";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "string");
@@ -186,8 +185,7 @@ export class Webhook {
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         const headers = { ...reqBodyHeaders, ...config?.headers };
-        if (reqBody == null || Object.keys(reqBody).length === 0)
-            throw new Error("request body is required");
+        if (reqBody == null) throw new Error("request body is required");
         if (acceptHeaderOverride !== undefined) {
             headers["Accept"] = acceptHeaderOverride.toString();
         } else {

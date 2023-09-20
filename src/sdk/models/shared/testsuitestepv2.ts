@@ -20,5 +20,5 @@ export class TestSuiteStepV2 extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "stopTestOnFailure" })
-    stopTestOnFailure: boolean;
+    stopTestOnFailure?: boolean;
 }
