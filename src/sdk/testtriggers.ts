@@ -7,7 +7,7 @@ import * as errors from "./models/errors";
 import * as operations from "./models/operations";
 import * as shared from "./models/shared";
 import { SDKConfiguration } from "./sdk";
-import { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
+import { AxiosInstance, AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from "axios";
 
 /**
  * Test Triggers CRUD operations
@@ -85,7 +85,7 @@ export class TestTriggers {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        const headers = { ...reqBodyHeaders, ...config?.headers };
+        const headers: RawAxiosRequestHeaders = { ...reqBodyHeaders, ...config?.headers };
         if (reqBody == null) throw new Error("request body is required");
         if (acceptHeaderOverride !== undefined) {
             headers["Accept"] = acceptHeaderOverride.toString();
@@ -193,7 +193,7 @@ export class TestTriggers {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        const headers = { ...reqBodyHeaders, ...config?.headers };
+        const headers: RawAxiosRequestHeaders = { ...reqBodyHeaders, ...config?.headers };
         if (reqBody == null) throw new Error("request body is required");
         if (acceptHeaderOverride !== undefined) {
             headers["Accept"] = acceptHeaderOverride.toString();
@@ -297,7 +297,7 @@ export class TestTriggers {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        const headers = { ...reqBodyHeaders, ...config?.headers };
+        const headers: RawAxiosRequestHeaders = { ...reqBodyHeaders, ...config?.headers };
         if (reqBody == null) throw new Error("request body is required");
         if (acceptHeaderOverride !== undefined) {
             headers["Accept"] = acceptHeaderOverride.toString();
@@ -394,7 +394,7 @@ export class TestTriggers {
         );
         const url: string = utils.generateURL(baseURL, "/triggers/{id}", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        const headers = { ...config?.headers };
+        const headers: RawAxiosRequestHeaders = { ...config?.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/problem+json";
 
@@ -469,7 +469,7 @@ export class TestTriggers {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/triggers";
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        const headers = { ...config?.headers };
+        const headers: RawAxiosRequestHeaders = { ...config?.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/problem+json";
 
@@ -546,7 +546,7 @@ export class TestTriggers {
         );
         const url: string = utils.generateURL(baseURL, "/triggers/{id}", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        const headers = { ...config?.headers };
+        const headers: RawAxiosRequestHeaders = { ...config?.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         if (acceptHeaderOverride !== undefined) {
             headers["Accept"] = acceptHeaderOverride.toString();
@@ -643,7 +643,7 @@ export class TestTriggers {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/triggers";
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        const headers = { ...config?.headers };
+        const headers: RawAxiosRequestHeaders = { ...config?.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         if (acceptHeaderOverride !== undefined) {
             headers["Accept"] = acceptHeaderOverride.toString();
@@ -756,7 +756,7 @@ export class TestTriggers {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        const headers = { ...reqBodyHeaders, ...config?.headers };
+        const headers: RawAxiosRequestHeaders = { ...reqBodyHeaders, ...config?.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         if (reqBody == null) throw new Error("request body is required");
         if (acceptHeaderOverride !== undefined) {
@@ -862,7 +862,7 @@ export class TestTriggers {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        const headers = { ...reqBodyHeaders, ...config?.headers };
+        const headers: RawAxiosRequestHeaders = { ...reqBodyHeaders, ...config?.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         if (reqBody == null) throw new Error("request body is required");
         if (acceptHeaderOverride !== undefined) {
