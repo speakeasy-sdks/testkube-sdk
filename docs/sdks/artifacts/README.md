@@ -23,8 +23,8 @@ import { DownloadArchiveResponse } from "testkube-sdk/dist/sdk/models/operations
 const sdk = new TestkubeSDK();
 
 sdk.artifacts.downloadArchive({
-  id: "7a5b4046-3a7d-4575-b140-0e764ad7334e",
-  mask: "minus",
+  id: "1b36a080-88d1-400e-bada-200ef0422eb2",
+  mask: "beatae",
 }).then((res: DownloadArchiveResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -58,8 +58,8 @@ import { DownloadFileResponse } from "testkube-sdk/dist/sdk/models/operations";
 const sdk = new TestkubeSDK();
 
 sdk.artifacts.downloadFile({
-  filename: "sunt",
-  id: "b781b36a-0808-48d1-80ef-ada200ef0422",
+  filename: "aliquid",
+  id: "4cf9ab83-66c7-423f-bda9-e06bee4825c1",
 }).then((res: DownloadFileResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -93,7 +93,7 @@ import { GetExecutionArtifactsResponse } from "testkube-sdk/dist/sdk/models/oper
 const sdk = new TestkubeSDK();
 
 sdk.artifacts.getExecutionArtifacts({
-  id: "eb2164cf-9ab8-4366-8723-ffda9e06bee4",
+  id: "fc0e115c-80bf-4f91-8544-ec42defcce8f",
 }).then((res: GetExecutionArtifactsResponse) => {
   if (res.statusCode == 200) {
     // handle response

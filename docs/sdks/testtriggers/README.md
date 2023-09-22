@@ -41,7 +41,7 @@ sdk.testTriggers.bulkUpdateTestTriggers([
       conditions: [
         {
           reason: "NewReplicaSetAvailable",
-          status: TestTriggerConditionStatuses.False,
+          status: TestTriggerConditionStatuses.True,
           ttl: 1,
           type: "Progressing",
         },
@@ -52,7 +52,7 @@ sdk.testTriggers.bulkUpdateTestTriggers([
     event: "modified",
     execution: TestTriggerExecutions.Test,
     labels: {
-      "sapiente": "officiis",
+      "blanditiis": "porro",
     },
     name: "name",
     namespace: "testkube",
@@ -61,7 +61,7 @@ sdk.testTriggers.bulkUpdateTestTriggers([
       probes: [
         {
           headers: {
-            "expedita": "quia",
+            "labore": "impedit",
           },
           host: "testkube-api-server",
           path: "/",
@@ -71,7 +71,7 @@ sdk.testTriggers.bulkUpdateTestTriggers([
       ],
       timeout: 1,
     },
-    resource: TestTriggerResources.Pod,
+    resource: TestTriggerResources.Statefulset,
     resourceSelector: {
       name: "nginx",
       namespace: "testkube",
@@ -125,7 +125,7 @@ sdk.testTriggers.createTestTriggerJson({
     conditions: [
       {
         reason: "NewReplicaSetAvailable",
-        status: TestTriggerConditionStatuses.False,
+        status: TestTriggerConditionStatuses.Unknown,
         ttl: 1,
         type: "Progressing",
       },
@@ -134,9 +134,9 @@ sdk.testTriggers.createTestTriggerJson({
     timeout: 1,
   },
   event: "modified",
-  execution: TestTriggerExecutions.Testsuite,
+  execution: TestTriggerExecutions.Test,
   labels: {
-    "ipsa": "distinctio",
+    "numquam": "enim",
   },
   name: "name",
   namespace: "testkube",
@@ -145,7 +145,7 @@ sdk.testTriggers.createTestTriggerJson({
     probes: [
       {
         headers: {
-          "placeat": "quod",
+          "cupiditate": "occaecati",
         },
         host: "testkube-api-server",
         path: "/",
@@ -155,7 +155,7 @@ sdk.testTriggers.createTestTriggerJson({
     ],
     timeout: 1,
   },
-  resource: TestTriggerResources.Event,
+  resource: TestTriggerResources.Configmap,
   resourceSelector: {
     name: "nginx",
     namespace: "testkube",
@@ -196,7 +196,7 @@ import { CreateTestTriggerStringResponse } from "testkube-sdk/dist/sdk/models/op
 
 const sdk = new TestkubeSDK();
 
-sdk.testTriggers.createTestTriggerString("sit").then((res: CreateTestTriggerStringResponse) => {
+sdk.testTriggers.createTestTriggerString("fuga").then((res: CreateTestTriggerStringResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -229,8 +229,8 @@ import { DeleteTestTriggerResponse } from "testkube-sdk/dist/sdk/models/operatio
 const sdk = new TestkubeSDK();
 
 sdk.testTriggers.deleteTestTrigger({
-  id: "dbbddb48-4708-4fb4-a391-e6bc158c4c4e",
-  namespace: "ullam",
+  id: "342260e9-b200-4ce7-8a1b-d8fb7a0a116c",
+  namespace: "officiis",
 }).then((res: DeleteTestTriggerResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -264,8 +264,8 @@ import { DeleteTestTriggersResponse } from "testkube-sdk/dist/sdk/models/operati
 const sdk = new TestkubeSDK();
 
 sdk.testTriggers.deleteTestTriggers({
-  namespace: "numquam",
-  selector: "enim",
+  namespace: "dignissimos",
+  selector: "fugit",
 }).then((res: DeleteTestTriggersResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -299,8 +299,8 @@ import { GetTestTriggerByIDResponse } from "testkube-sdk/dist/sdk/models/operati
 const sdk = new TestkubeSDK();
 
 sdk.testTriggers.getTestTriggerByID({
-  id: "99ea3422-60e9-4b20-8ce7-8a1bd8fb7a0a",
-  namespace: "dicta",
+  id: "3d4097fa-30e9-4af7-a5b2-9122030d83f5",
+  namespace: "deserunt",
 }).then((res: GetTestTriggerByIDResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -334,8 +334,8 @@ import { ListTestTriggersResponse } from "testkube-sdk/dist/sdk/models/operation
 const sdk = new TestkubeSDK();
 
 sdk.testTriggers.listTestTriggers({
-  namespace: "architecto",
-  selector: "suscipit",
+  namespace: "itaque",
+  selector: "distinctio",
 }).then((res: ListTestTriggersResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -381,7 +381,7 @@ sdk.testTriggers.updateTestTriggerJson({
       conditions: [
         {
           reason: "NewReplicaSetAvailable",
-          status: TestTriggerConditionStatuses.Unknown,
+          status: TestTriggerConditionStatuses.False,
           ttl: 1,
           type: "Progressing",
         },
@@ -390,9 +390,9 @@ sdk.testTriggers.updateTestTriggerJson({
       timeout: 1,
     },
     event: "modified",
-    execution: TestTriggerExecutions.Testsuite,
+    execution: TestTriggerExecutions.Test,
     labels: {
-      "dignissimos": "fugit",
+      "provident": "occaecati",
     },
     name: "name",
     namespace: "testkube",
@@ -401,7 +401,7 @@ sdk.testTriggers.updateTestTriggerJson({
       probes: [
         {
           headers: {
-            "ratione": "possimus",
+            "assumenda": "sunt",
           },
           host: "testkube-api-server",
           path: "/",
@@ -411,7 +411,7 @@ sdk.testTriggers.updateTestTriggerJson({
       ],
       timeout: 1,
     },
-    resource: TestTriggerResources.Statefulset,
+    resource: TestTriggerResources.Deployment,
     resourceSelector: {
       name: "nginx",
       namespace: "testkube",
@@ -421,8 +421,8 @@ sdk.testTriggers.updateTestTriggerJson({
       namespace: "testkube",
     },
   },
-  id: "097fa30e-9af7-425b-a912-2030d83f5aeb",
-  namespace: "iusto",
+  id: "e8c1f849-3825-4fdc-82c8-76c2c2dfb4cf",
+  namespace: "quo",
 }).then((res: UpdateTestTriggerJsonResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -456,9 +456,9 @@ import { UpdateTestTriggerStringResponse } from "testkube-sdk/dist/sdk/models/op
 const sdk = new TestkubeSDK();
 
 sdk.testTriggers.updateTestTriggerString({
-  requestBody: "dignissimos",
-  id: "99d22e8c-1f84-4938-a5fd-c42c876c2c2d",
-  namespace: "delectus",
+  requestBody: "illo",
+  id: "c76230f8-41fb-41bd-a3fd-b14db6be5a68",
+  namespace: "corporis",
 }).then((res: UpdateTestTriggerStringResponse) => {
   if (res.statusCode == 200) {
     // handle response

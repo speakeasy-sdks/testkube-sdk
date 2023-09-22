@@ -39,8 +39,8 @@ import { AbortExecutionResponse } from "testkube-sdk/dist/sdk/models/operations"
 const sdk = new TestkubeSDK();
 
 sdk.tests.abortExecution({
-  executionID: "harum",
-  id: "4cfc1c76-230f-4841-bb1b-d23fdb14db6b",
+  executionID: "excepturi",
+  id: "98e22ae2-0da1-46fc-ab27-1a289c57e854",
 }).then((res: AbortExecutionResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -74,7 +74,7 @@ import { AbortTestExecutionsResponse } from "testkube-sdk/dist/sdk/models/operat
 const sdk = new TestkubeSDK();
 
 sdk.tests.abortTestExecutions({
-  id: "e5a68599-8e22-4ae2-8da1-6fc2b271a289",
+  id: "e90439d2-2246-4569-8624-07084f7ab37c",
 }).then((res: AbortTestExecutionsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -118,49 +118,49 @@ const sdk = new TestkubeSDK();
 
 sdk.tests.createTestJson({
   content: {
-    data: "placeat",
+    data: "saepe",
     repository: {
-      authType: RepositoryAuthType.Basic,
+      authType: RepositoryAuthType.Header,
       branch: "main",
-      certificateSecret: "molestiae",
+      certificateSecret: "accusantium",
       commit: "b928cbb7186944ab9275937ec1ac3d3738ca2e1d",
       path: "test/perf",
-      token: "itaque",
+      token: "sed",
       tokenSecret: {
-        key: "rem",
-        name: "Ellen Walter II",
-        namespace: "dolor",
+        key: "eos",
+        name: "Beatrice Buckridge",
+        namespace: "fugiat",
       },
       type: RepositoryType.Git,
       uri: "https://github.com/kubeshop/testkube",
-      username: "Kitty16",
+      username: "Mauricio26",
       usernameSecret: {
-        key: "consequuntur",
-        name: "Tonya Hilpert",
-        namespace: "modi",
+        key: "quasi",
+        name: "Hattie Schuster",
+        namespace: "ex",
       },
       workingDir: "/",
     },
-    type: TestContentType.FileUri,
+    type: TestContentType.GitFile,
     uri: "https://github.com/kubeshop/testkube",
   },
   created: new Date("2022-07-30T06:54:15Z"),
   executionRequest: {
     activeDeadlineSeconds: 1,
     args: [
-      "explicabo",
+      "est",
     ],
-    argsMode: ExecutionRequestArgsMode.Append,
+    argsMode: ExecutionRequestArgsMode.Override,
     artifactRequest: {
       dirs: [
-        "doloremque",
+        "provident",
       ],
       storageClassName: "artifact-volume-local",
-      volumeMountPath: "odio",
+      volumeMountPath: "alias",
     },
     bucketName: "execution-c01d7cf6-ec3f-47f0-9556-a5d6e9009a43",
     command: [
-      "sit",
+      "deserunt",
     ],
     contentRequest: {
       repository: {
@@ -170,14 +170,14 @@ sdk.tests.createTestJson({
         workingDir: "/",
       },
     },
-    cronJobTemplate: "voluptatum",
+    cronJobTemplate: "fugit",
     envConfigMaps: [
       {
         mapToVariables: false,
         mount: true,
-        mountPath: "tempora",
+        mountPath: "autem",
         reference: {
-          name: "Erik Padberg",
+          name: "Clinton Schneider",
         },
       },
     ],
@@ -185,17 +185,17 @@ sdk.tests.createTestJson({
       {
         mapToVariables: false,
         mount: true,
-        mountPath: "molestiae",
+        mountPath: "cupiditate",
         reference: {
-          name: "Mr. Bert Wunsch",
+          name: "Mrs. Arthur Wolff",
         },
       },
     ],
     envs: {
-      "consequuntur": "quis",
+      "unde": "corrupti",
     },
     executionLabels: {
-      "vitae": "occaecati",
+      "quae": "facere",
     },
     httpProxy: "user:pass@my.proxy.server:8080",
     httpsProxy: "user:pass@my.proxy.server:8081",
@@ -203,52 +203,52 @@ sdk.tests.createTestJson({
     image: "kubeshop/testkube-executor-custom:1.10.11-dev-0a9c91",
     imagePullSecrets: [
       {
-        name: "Hope Predovic",
+        name: "Kelli Reichert",
       },
     ],
     isNegativeTestChangedOnRun: false,
     isVariablesFileUploaded: false,
-    jobTemplate: "modi",
+    jobTemplate: "minus",
     name: "testing with 1000 users",
     namespace: "testkube",
     negativeTest: false,
-    number: 95456,
+    number: 943828,
     postRunScript: "sleep 30",
     preRunScript: "echo -n '$SECRET_ENV' > ./secret_file",
     runningContext: {
-      context: "quae",
+      context: "similique",
       type: RunningContextType.Testtrigger,
     },
-    scraperTemplate: "possimus",
+    scraperTemplate: "consectetur",
     secretEnvs: {
-      "quo": "suscipit",
+      "labore": "laudantium",
     },
     sync: false,
     testSuiteName: "test-suite1",
     uploads: [
-      "ex",
+      "cumque",
     ],
     variables: {
-      "sint": {
+      "adipisci": {
         configMapRef: {
-          key: "est",
-          name: "Rene Abbott",
-          namespace: "autem",
+          key: "veritatis",
+          name: "Ms. Courtney Gutkowski",
+          namespace: "necessitatibus",
         },
-        name: "Clinton Schneider",
+        name: "Ora Rosenbaum DDS",
         secretRef: {
-          key: "cupiditate",
-          name: "Mrs. Arthur Wolff",
-          namespace: "unde",
+          key: "numquam",
+          name: "Gayle Koss",
+          namespace: "vitae",
         },
-        type: VariableType.Secret,
-        value: "quae",
+        type: VariableType.Basic,
+        value: "nisi",
       },
     },
-    variablesFile: "facere",
+    variablesFile: "consequuntur",
   },
   labels: {
-    "ea": "libero",
+    "voluptas": "ratione",
   },
   name: "test1",
   namespace: "testkube",
@@ -256,16 +256,16 @@ sdk.tests.createTestJson({
   source: "my-private-repository-test",
   status: {
     latestExecution: {
-      endTime: new Date("2022-07-20T11:17:27.497Z"),
+      endTime: new Date("2021-11-25T23:25:02.274Z"),
       id: "62f395e004109209b50edfc4",
       number: 1,
-      startTime: new Date("2022-03-17T08:05:23.562Z"),
+      startTime: new Date("2022-12-16T03:47:02.612Z"),
       status: ExecutionStatus.Timeout,
     },
   },
   type: "postman/collection",
   uploads: [
-    "similique",
+    "impedit",
   ],
 }).then((res: CreateTestJsonResponse) => {
   if (res.statusCode == 200) {
@@ -299,7 +299,7 @@ import { CreateTestStringResponse } from "testkube-sdk/dist/sdk/models/operation
 
 const sdk = new TestkubeSDK();
 
-sdk.tests.createTestString("fuga").then((res: CreateTestStringResponse) => {
+sdk.tests.createTestString("ducimus").then((res: CreateTestStringResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -332,7 +332,7 @@ import { DeleteTestResponse } from "testkube-sdk/dist/sdk/models/operations";
 const sdk = new TestkubeSDK();
 
 sdk.tests.deleteTest({
-  id: "348c31bf-407e-4e4f-8f0c-42b78f156263",
+  id: "66324ccb-06c8-4ca1-ad02-529270b8d572",
 }).then((res: DeleteTestResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -366,7 +366,7 @@ import { DeleteTestsResponse } from "testkube-sdk/dist/sdk/models/operations";
 const sdk = new TestkubeSDK();
 
 sdk.tests.deleteTests({
-  selector: "excepturi",
+  selector: "aspernatur",
 }).then((res: DeleteTestsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -404,19 +404,19 @@ sdk.tests.executeTest({
   executionRequestInput: {
     activeDeadlineSeconds: 1,
     args: [
-      "corrupti",
+      "at",
     ],
     argsMode: ExecutionRequestArgsMode.Override,
     artifactRequest: {
       dirs: [
-        "perferendis",
+        "praesentium",
       ],
       storageClassName: "artifact-volume-local",
-      volumeMountPath: "quibusdam",
+      volumeMountPath: "sint",
     },
     bucketName: "execution-c01d7cf6-ec3f-47f0-9556-a5d6e9009a43",
     command: [
-      "impedit",
+      "exercitationem",
     ],
     contentRequest: {
       repository: {
@@ -426,14 +426,14 @@ sdk.tests.executeTest({
         workingDir: "/",
       },
     },
-    cronJobTemplate: "ducimus",
+    cronJobTemplate: "cum",
     envConfigMaps: [
       {
         mapToVariables: false,
         mount: true,
-        mountPath: "nisi",
+        mountPath: "voluptatum",
         reference: {
-          name: "Rosa Considine",
+          name: "Guadalupe Wisoky",
         },
       },
     ],
@@ -441,17 +441,17 @@ sdk.tests.executeTest({
       {
         mapToVariables: false,
         mount: true,
-        mountPath: "maxime",
+        mountPath: "pariatur",
         reference: {
-          name: "Edward Jast",
+          name: "Kent Hickle",
         },
       },
     ],
     envs: {
-      "optio": "est",
+      "provident": "amet",
     },
     executionLabels: {
-      "inventore": "consequuntur",
+      "dolor": "nostrum",
     },
     httpProxy: "user:pass@my.proxy.server:8080",
     httpsProxy: "user:pass@my.proxy.server:8081",
@@ -459,52 +459,52 @@ sdk.tests.executeTest({
     image: "kubeshop/testkube-executor-custom:1.10.11-dev-0a9c91",
     imagePullSecrets: [
       {
-        name: "Mark D'Amore",
+        name: "Mandy Kreiger",
       },
     ],
     isNegativeTestChangedOnRun: false,
     isVariablesFileUploaded: false,
-    jobTemplate: "perspiciatis",
+    jobTemplate: "velit",
     name: "testing with 1000 users",
     namespace: "testkube",
     negativeTest: false,
-    number: 166401,
+    number: 240836,
     postRunScript: "sleep 30",
     preRunScript: "echo -n '$SECRET_ENV' > ./secret_file",
     runningContext: {
-      context: "odio",
-      type: RunningContextType.UserCLI,
+      context: "cupiditate",
+      type: RunningContextType.Testsuite,
     },
-    scraperTemplate: "quidem",
+    scraperTemplate: "numquam",
     secretEnvs: {
-      "deleniti": "possimus",
+      "fugiat": "molestiae",
     },
     sync: false,
     testSuiteName: "test-suite1",
     uploads: [
-      "ipsam",
+      "quas",
     ],
     variables: {
-      "odio": {
+      "repellendus": {
         configMapRef: {
-          key: "fugit",
-          name: "Lynette Stark",
-          namespace: "exercitationem",
+          key: "saepe",
+          name: "Verna Kautzer",
+          namespace: "nesciunt",
         },
-        name: "Jaime Purdy",
+        name: "Terrance Wolf",
         secretRef: {
-          key: "dolores",
-          name: "Mercedes Purdy",
-          namespace: "natus",
+          key: "soluta",
+          name: "Harvey Wisoky",
+          namespace: "fugit",
         },
         type: VariableType.Basic,
-        value: "provident",
+        value: "ullam",
       },
     },
-    variablesFile: "amet",
+    variablesFile: "doloremque",
   },
-  id: "352f7453-3994-4d78-9e3b-6e9389f5abb7",
-  namespace: "delectus",
+  id: "a28382ac-483a-4fd2-b15b-ba650164e06f",
+  namespace: "veniam",
 }).then((res: ExecuteTestResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -542,19 +542,19 @@ sdk.tests.executeTests({
   executionRequestInput: {
     activeDeadlineSeconds: 1,
     args: [
-      "commodi",
+      "quidem",
     ],
-    argsMode: ExecutionRequestArgsMode.Append,
+    argsMode: ExecutionRequestArgsMode.Override,
     artifactRequest: {
       dirs: [
-        "fugit",
+        "eum",
       ],
       storageClassName: "artifact-volume-local",
-      volumeMountPath: "ullam",
+      volumeMountPath: "deserunt",
     },
     bucketName: "execution-c01d7cf6-ec3f-47f0-9556-a5d6e9009a43",
     command: [
-      "ullam",
+      "repudiandae",
     ],
     contentRequest: {
       repository: {
@@ -564,14 +564,14 @@ sdk.tests.executeTests({
         workingDir: "/",
       },
     },
-    cronJobTemplate: "doloremque",
+    cronJobTemplate: "nemo",
     envConfigMaps: [
       {
         mapToVariables: false,
         mount: true,
-        mountPath: "est",
+        mountPath: "molestias",
         reference: {
-          name: "Irma Ferry",
+          name: "Mamie Schaefer",
         },
       },
     ],
@@ -579,17 +579,17 @@ sdk.tests.executeTests({
       {
         mapToVariables: false,
         mount: true,
-        mountPath: "deserunt",
+        mountPath: "assumenda",
         reference: {
-          name: "Troy Leuschke",
+          name: "Cary Emmerich Sr.",
         },
       },
     ],
     envs: {
-      "reiciendis": "possimus",
+      "nam": "ex",
     },
     executionLabels: {
-      "odit": "consectetur",
+      "neque": "quod",
     },
     httpProxy: "user:pass@my.proxy.server:8080",
     httpsProxy: "user:pass@my.proxy.server:8081",
@@ -597,54 +597,54 @@ sdk.tests.executeTests({
     image: "kubeshop/testkube-executor-custom:1.10.11-dev-0a9c91",
     imagePullSecrets: [
       {
-        name: "Cathy Prosacco",
+        name: "Mary Hammes",
       },
     ],
     isNegativeTestChangedOnRun: false,
     isVariablesFileUploaded: false,
-    jobTemplate: "nisi",
+    jobTemplate: "id",
     name: "testing with 1000 users",
     namespace: "testkube",
     negativeTest: false,
-    number: 370973,
+    number: 539537,
     postRunScript: "sleep 30",
     preRunScript: "echo -n '$SECRET_ENV' > ./secret_file",
     runningContext: {
-      context: "voluptatem",
+      context: "quaerat",
       type: RunningContextType.UserCLI,
     },
-    scraperTemplate: "iure",
+    scraperTemplate: "dignissimos",
     secretEnvs: {
-      "incidunt": "eveniet",
+      "quam": "modi",
     },
     sync: false,
     testSuiteName: "test-suite1",
     uploads: [
-      "quae",
+      "fuga",
     ],
     variables: {
-      "ea": {
+      "iure": {
         configMapRef: {
-          key: "asperiores",
-          name: "Yvette Zboncak",
-          namespace: "repudiandae",
+          key: "deleniti",
+          name: "Perry Pacocha",
+          namespace: "illum",
         },
-        name: "Felicia Brakus",
+        name: "Leona Hodkiewicz",
         secretRef: {
-          key: "praesentium",
-          name: "Kristopher Walker",
-          namespace: "commodi",
+          key: "maiores",
+          name: "Jessie Wintheiser",
+          namespace: "consequatur",
         },
         type: VariableType.Basic,
-        value: "fugit",
+        value: "accusantium",
       },
     },
-    variablesFile: "nam",
+    variablesFile: "voluptates",
   },
-  concurrency: 401844,
-  executionSelector: "neque",
-  namespace: "quod",
-  selector: "eos",
+  concurrency: 590280,
+  executionSelector: "maiores",
+  namespace: "quaerat",
+  selector: "numquam",
 }).then((res: ExecuteTestsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -678,7 +678,7 @@ import { GetTestResponse } from "testkube-sdk/dist/sdk/models/operations";
 const sdk = new TestkubeSDK();
 
 sdk.tests.getTest({
-  id: "05fda840-774a-468a-9a35-d086b6f66fef",
+  id: "3b4257b9-92c8-4dbd-a6a6-1efa2198258f",
 }).then((res: GetTestResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -712,8 +712,8 @@ import { GetTestExecutionResponse } from "testkube-sdk/dist/sdk/models/operation
 const sdk = new TestkubeSDK();
 
 sdk.tests.getTestExecution({
-  executionID: "consequatur",
-  id: "20e9f443-b425-47b9-92c8-dbda6a61efa2",
+  executionID: "pariatur",
+  id: "0a9eba47-f7d3-4ef0-8964-0d6a1831c87a",
 }).then((res: GetTestExecutionResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -747,9 +747,9 @@ import { GetTestMetricsResponse } from "testkube-sdk/dist/sdk/models/operations"
 const sdk = new TestkubeSDK();
 
 sdk.tests.getTestMetrics({
-  id: "198258fd-0a9e-4ba4-bf7d-3ef049640d6a",
-  last: 116705,
-  limit: 538877,
+  id: "df596fdf-1ad8-437a-a80c-1c19c95ba998",
+  last: 385828,
+  limit: 497695,
 }).then((res: GetTestMetricsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -783,9 +783,9 @@ import { GetTestSuiteMetricsResponse } from "testkube-sdk/dist/sdk/models/operat
 const sdk = new TestkubeSDK();
 
 sdk.tests.getTestSuiteMetrics({
-  id: "31c87adf-596f-4df1-ad83-7ae80c1c19c9",
-  last: 339651,
-  limit: 734361,
+  id: "8fa3f696-991a-4f38-8ce0-3614448c7977",
+  last: 654199,
+  limit: 10585,
 }).then((res: GetTestSuiteMetricsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -819,7 +819,7 @@ import { GetTestWithExecutionResponse } from "testkube-sdk/dist/sdk/models/opera
 const sdk = new TestkubeSDK();
 
 sdk.tests.getTestWithExecution({
-  id: "a998678f-a3f6-4969-91af-388ce0361444",
+  id: "ef2f5360-28ef-4eef-9341-52ed7e253f4c",
 }).then((res: GetTestWithExecutionResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -855,13 +855,13 @@ import { RFCDate } from "testkube-sdk/dist/sdk/types";
 const sdk = new TestkubeSDK();
 
 sdk.tests.listTestExecutions({
-  endDate: new RFCDate("2021-06-02"),
-  id: "7977a0ef-2f53-4602-8efe-ef934152ed7e",
-  last: 131116,
-  page: 355898,
-  pageSize: 248425,
-  startDate: new RFCDate("2022-03-03"),
-  status: ExecutionStatus.Aborted,
+  endDate: new RFCDate("2022-08-24"),
+  id: "7deaa717-0f44-45ac-8f66-7aaf9bbad185",
+  last: 959420,
+  page: 913393,
+  pageSize: 281135,
+  startDate: new RFCDate("2022-12-07"),
+  status: ExecutionStatus.Timeout,
 }).then((res: ListTestExecutionsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -896,11 +896,11 @@ import { ExecutionStatus } from "testkube-sdk/dist/sdk/models/shared";
 const sdk = new TestkubeSDK();
 
 sdk.tests.listTestWithExecutions({
-  page: 123546,
-  pageSize: 353493,
-  selector: "quam",
-  status: ExecutionStatus.Timeout,
-  textSearch: "voluptates",
+  page: 384354,
+  pageSize: 696324,
+  selector: "delectus",
+  status: ExecutionStatus.Passed,
+  textSearch: "cumque",
 }).then((res: ListTestWithExecutionsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -934,8 +934,8 @@ import { ListTestsResponse } from "testkube-sdk/dist/sdk/models/operations";
 const sdk = new TestkubeSDK();
 
 sdk.tests.listTests({
-  selector: "officia",
-  textSearch: "est",
+  selector: "voluptatum",
+  textSearch: "sequi",
 }).then((res: ListTestsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -980,49 +980,49 @@ const sdk = new TestkubeSDK();
 sdk.tests.updateTestJson({
   testUpdateRequestInput: {
     content: {
-      data: "in",
+      data: "atque",
       repository: {
-        authType: RepositoryAuthType.Basic,
+        authType: RepositoryAuthType.Header,
         branch: "main",
-        certificateSecret: "voluptate",
+        certificateSecret: "expedita",
         commit: "b928cbb7186944ab9275937ec1ac3d3738ca2e1d",
         path: "test/perf",
-        token: "consequatur",
+        token: "rerum",
         tokenSecret: {
-          key: "delectus",
-          name: "Joanne Hettinger",
-          namespace: "maxime",
+          key: "totam",
+          name: "Bruce Becker",
+          namespace: "ex",
         },
         type: RepositoryType.Git,
         uri: "https://github.com/kubeshop/testkube",
-        username: "Vito.Howe",
+        username: "Jayson.Windler71",
         usernameSecret: {
-          key: "fuga",
-          name: "Emanuel McKenzie",
-          namespace: "culpa",
+          key: "eius",
+          name: "Sally VonRueden",
+          namespace: "debitis",
         },
         workingDir: "/",
       },
-      type: TestContentType.Git,
+      type: TestContentType.FileUri,
       uri: "https://github.com/kubeshop/testkube",
     },
     created: new Date("2022-07-30T06:54:15Z"),
     executionRequest: {
       activeDeadlineSeconds: 1,
       args: [
-        "inventore",
+        "eos",
       ],
-      argsMode: ExecutionRequestArgsMode.Override,
+      argsMode: ExecutionRequestArgsMode.Append,
       artifactRequest: {
         dirs: [
-          "ad",
+          "incidunt",
         ],
         storageClassName: "artifact-volume-local",
-        volumeMountPath: "sapiente",
+        volumeMountPath: "porro",
       },
       bucketName: "execution-c01d7cf6-ec3f-47f0-9556-a5d6e9009a43",
       command: [
-        "voluptates",
+        "occaecati",
       ],
       contentRequest: {
         repository: {
@@ -1032,14 +1032,14 @@ sdk.tests.updateTestJson({
           workingDir: "/",
         },
       },
-      cronJobTemplate: "ut",
+      cronJobTemplate: "reiciendis",
       envConfigMaps: [
         {
           mapToVariables: false,
           mount: true,
-          mountPath: "nesciunt",
+          mountPath: "voluptate",
           reference: {
-            name: "Doreen Hoppe",
+            name: "Arnold Monahan",
           },
         },
       ],
@@ -1047,17 +1047,17 @@ sdk.tests.updateTestJson({
         {
           mapToVariables: false,
           mount: true,
-          mountPath: "nemo",
+          mountPath: "recusandae",
           reference: {
-            name: "Ken Donnelly",
+            name: "Mathew Klocko",
           },
         },
       ],
       envs: {
-        "expedita": "rerum",
+        "quod": "ratione",
       },
       executionLabels: {
-        "totam": "quod",
+        "totam": "vero",
       },
       httpProxy: "user:pass@my.proxy.server:8080",
       httpsProxy: "user:pass@my.proxy.server:8081",
@@ -1065,52 +1065,52 @@ sdk.tests.updateTestJson({
       image: "kubeshop/testkube-executor-custom:1.10.11-dev-0a9c91",
       imagePullSecrets: [
         {
-          name: "Shirley Rutherford",
+          name: "Candice Nienow",
         },
       ],
       isNegativeTestChangedOnRun: false,
       isVariablesFileUploaded: false,
-      jobTemplate: "odio",
+      jobTemplate: "illo",
       name: "testing with 1000 users",
       namespace: "testkube",
       negativeTest: false,
-      number: 963094,
+      number: 901563,
       postRunScript: "sleep 30",
       preRunScript: "echo -n '$SECRET_ENV' > ./secret_file",
       runningContext: {
-        context: "minus",
-        type: RunningContextType.UserUI,
+        context: "enim",
+        type: RunningContextType.UserCLI,
       },
-      scraperTemplate: "distinctio",
+      scraperTemplate: "ex",
       secretEnvs: {
-        "eius": "eos",
+        "eveniet": "delectus",
       },
       sync: false,
       testSuiteName: "test-suite1",
       uploads: [
-        "veniam",
+        "deleniti",
       ],
       variables: {
-        "repudiandae": {
+        "provident": {
           configMapRef: {
-            key: "sint",
-            name: "Rogelio Howe",
-            namespace: "incidunt",
+            key: "aut",
+            name: "Dean Goldner",
+            namespace: "odio",
           },
-          name: "Tracy Witting",
+          name: "Elisa Boehm",
           secretRef: {
-            key: "in",
-            name: "Rufus Wiegand",
-            namespace: "iusto",
+            key: "minima",
+            name: "Marcella Dooley",
+            namespace: "fuga",
           },
           type: VariableType.Basic,
-          value: "harum",
+          value: "maxime",
         },
       },
-      variablesFile: "ad",
+      variablesFile: "numquam",
     },
     labels: {
-      "quod": "ratione",
+      "laborum": "eligendi",
     },
     name: "test1",
     namespace: "testkube",
@@ -1118,19 +1118,19 @@ sdk.tests.updateTestJson({
     source: "my-private-repository-test",
     status: {
       latestExecution: {
-        endTime: new Date("2021-04-03T05:06:47.498Z"),
+        endTime: new Date("2022-10-06T02:55:36.027Z"),
         id: "62f395e004109209b50edfc4",
         number: 1,
-        startTime: new Date("2022-04-12T03:29:25.285Z"),
+        startTime: new Date("2022-04-20T22:07:53.297Z"),
         status: ExecutionStatus.Failed,
       },
     },
     type: "postman/collection",
     uploads: [
-      "maiores",
+      "provident",
     ],
   },
-  id: "91e506ef-890a-454b-875f-16f56d385a3c",
+  id: "e26ced8f-9fdb-4941-8f63-bbf817837b01",
 }).then((res: UpdateTestJsonResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -1164,8 +1164,8 @@ import { UpdateTestStringResponse } from "testkube-sdk/dist/sdk/models/operation
 const sdk = new TestkubeSDK();
 
 sdk.tests.updateTestString({
-  requestBody: "numquam",
-  id: "ac631b99-e26c-4ed8-b9fd-b9410f63bbf8",
+  requestBody: "mollitia",
+  id: "fdd78862-4189-4eb4-8873-f5033f19dbf1",
 }).then((res: UpdateTestStringResponse) => {
   if (res.statusCode == 200) {
     // handle response

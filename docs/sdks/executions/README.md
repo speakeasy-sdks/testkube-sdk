@@ -42,8 +42,8 @@ import { AbortExecutionResponse } from "testkube-sdk/dist/sdk/models/operations"
 const sdk = new TestkubeSDK();
 
 sdk.executions.abortExecution({
-  executionID: "rem",
-  id: "25c1fc0e-115c-480b-bf91-8544ec42defc",
+  executionID: "ab",
+  id: "977773e6-3562-4a7b-808f-05e3d48fdaf3",
 }).then((res: AbortExecutionResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -77,8 +77,8 @@ import { AbortTestSuiteExecutionResponse } from "testkube-sdk/dist/sdk/models/op
 const sdk = new TestkubeSDK();
 
 sdk.executions.abortTestSuiteExecution({
-  executionID: "porro",
-  id: "e8f19777-73e6-4356-aa7b-408f05e3d48f",
+  executionID: "vitae",
+  id: "3a1f5fd9-4259-4c0b-b6f2-5ea944f3b756",
 }).then((res: AbortTestSuiteExecutionResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -112,7 +112,7 @@ import { AbortTestSuiteExecutionByIDResponse } from "testkube-sdk/dist/sdk/model
 const sdk = new TestkubeSDK();
 
 sdk.executions.abortTestSuiteExecutionByID({
-  executionID: "fugiat",
+  executionID: "minus",
 }).then((res: AbortTestSuiteExecutionByIDResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -146,8 +146,8 @@ import { DownloadArchiveResponse } from "testkube-sdk/dist/sdk/models/operations
 const sdk = new TestkubeSDK();
 
 sdk.executions.downloadArchive({
-  id: "af313a1f-5fd9-4425-9c0b-36f25ea944f3",
-  mask: "libero",
+  id: "11f6c37a-5126-4243-835b-bc05a23a45ce",
+  mask: "a",
 }).then((res: DownloadArchiveResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -181,8 +181,8 @@ import { DownloadFileResponse } from "testkube-sdk/dist/sdk/models/operations";
 const sdk = new TestkubeSDK();
 
 sdk.executions.downloadFile({
-  filename: "in",
-  id: "56c11f6c-37a5-4126-a438-35bbc05a23a4",
+  filename: "quisquam",
+  id: "5fde10a0-ce21-469e-9100-19c6dc5e3476",
 }).then((res: DownloadFileResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -220,19 +220,19 @@ sdk.executions.executeTest({
   executionRequestInput: {
     activeDeadlineSeconds: 1,
     args: [
-      "veniam",
+      "sed",
     ],
-    argsMode: ExecutionRequestArgsMode.Override,
+    argsMode: ExecutionRequestArgsMode.Append,
     artifactRequest: {
       dirs: [
-        "itaque",
+        "natus",
       ],
       storageClassName: "artifact-volume-local",
-      volumeMountPath: "a",
+      volumeMountPath: "provident",
     },
     bucketName: "execution-c01d7cf6-ec3f-47f0-9556-a5d6e9009a43",
     command: [
-      "quisquam",
+      "cum",
     ],
     contentRequest: {
       repository: {
@@ -242,14 +242,14 @@ sdk.executions.executeTest({
         workingDir: "/",
       },
     },
-    cronJobTemplate: "enim",
+    cronJobTemplate: "doloribus",
     envConfigMaps: [
       {
         mapToVariables: false,
         mount: true,
-        mountPath: "doloribus",
+        mountPath: "facilis",
         reference: {
-          name: "Miss Frankie Braun DDS",
+          name: "Bradford Hudson",
         },
       },
     ],
@@ -257,17 +257,17 @@ sdk.executions.executeTest({
       {
         mapToVariables: false,
         mount: true,
-        mountPath: "necessitatibus",
+        mountPath: "perspiciatis",
         reference: {
-          name: "Mildred Kautzer",
+          name: "Jonathon Collins",
         },
       },
     ],
     envs: {
-      "ullam": "architecto",
+      "incidunt": "recusandae",
     },
     executionLabels: {
-      "accusantium": "perferendis",
+      "quod": "id",
     },
     httpProxy: "user:pass@my.proxy.server:8080",
     httpsProxy: "user:pass@my.proxy.server:8081",
@@ -275,52 +275,52 @@ sdk.executions.executeTest({
     image: "kubeshop/testkube-executor-custom:1.10.11-dev-0a9c91",
     imagePullSecrets: [
       {
-        name: "Ramona Runolfsson",
+        name: "Ben Satterfield",
       },
     ],
     isNegativeTestChangedOnRun: false,
     isVariablesFileUploaded: false,
-    jobTemplate: "quod",
+    jobTemplate: "nemo",
     name: "testing with 1000 users",
     namespace: "testkube",
     negativeTest: false,
-    number: 363224,
+    number: 848722,
     postRunScript: "sleep 30",
     preRunScript: "echo -n '$SECRET_ENV' > ./secret_file",
     runningContext: {
-      context: "recusandae",
+      context: "facilis",
       type: RunningContextType.UserUI,
     },
-    scraperTemplate: "magnam",
+    scraperTemplate: "mollitia",
     secretEnvs: {
-      "dignissimos": "laboriosam",
+      "assumenda": "recusandae",
     },
     sync: false,
     testSuiteName: "test-suite1",
     uploads: [
-      "sed",
+      "distinctio",
     ],
     variables: {
-      "odio": {
+      "pariatur": {
         configMapRef: {
-          key: "natus",
-          name: "Felipe Wyman",
-          namespace: "itaque",
+          key: "ad",
+          name: "Pablo Veum",
+          namespace: "maxime",
         },
-        name: "Lindsey Gislason",
+        name: "Mary Hoeger",
         secretRef: {
-          key: "cum",
-          name: "Juana Reichel",
-          namespace: "quod",
+          key: "laborum",
+          name: "Sergio Grant Sr.",
+          namespace: "aliquid",
         },
-        type: VariableType.Secret,
-        value: "saepe",
+        type: VariableType.Basic,
+        value: "quaerat",
       },
     },
-    variablesFile: "autem",
+    variablesFile: "eligendi",
   },
-  id: "c3d5db3a-debd-45da-aa4c-506a8aa94c02",
-  namespace: "aliquid",
+  id: "f5e9d9a4-578a-4dc1-ac60-0dec001ac802",
+  namespace: "officiis",
 }).then((res: ExecuteTestResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -365,45 +365,45 @@ sdk.executions.executeTestSuite({
         workingDir: "/",
       },
     },
-    cronJobTemplate: "magnam",
+    cronJobTemplate: "sed",
     executionLabels: {
-      "quaerat": "eligendi",
+      "necessitatibus": "impedit",
     },
     httpProxy: "user:pass@my.proxy.server:8080",
     httpsProxy: "user:pass@my.proxy.server:8081",
     labels: {
-      "hic": "nostrum",
+      "ipsa": "excepturi",
     },
     name: "testing with 1000 users",
     namespace: "testkube",
     number: 1,
     runningContext: {
-      context: "officiis",
-      type: RunningContextType.Testtrigger,
+      context: "a",
+      type: RunningContextType.Scheduler,
     },
     sync: false,
     timeout: 1,
     variables: {
-      "nulla": {
+      "laudantium": {
         configMapRef: {
-          key: "error",
-          name: "Miguel Heathcote",
-          namespace: "fuga",
+          key: "maiores",
+          name: "Mrs. Ollie Ledner",
+          namespace: "doloribus",
         },
-        name: "Edmund Boyle",
+        name: "Monica Koch",
         secretRef: {
-          key: "laboriosam",
-          name: "Sandra Schumm",
-          namespace: "consequatur",
+          key: "quasi",
+          name: "Mr. Leigh Mann",
+          namespace: "beatae",
         },
         type: VariableType.Basic,
-        value: "architecto",
+        value: "dicta",
       },
     },
   },
-  id: "ac802e2e-c09f-4f8f-8f81-6ff3477c13e9",
-  last: 37534,
-  namespace: "qui",
+  id: "25b0960a-6681-451a-872a-f923c5949f83",
+  last: 971764,
+  namespace: "amet",
 }).then((res: ExecuteTestSuiteResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -448,45 +448,45 @@ sdk.executions.executeTestSuites({
         workingDir: "/",
       },
     },
-    cronJobTemplate: "impedit",
+    cronJobTemplate: "nemo",
     executionLabels: {
-      "beatae": "incidunt",
+      "ipsa": "quisquam",
     },
     httpProxy: "user:pass@my.proxy.server:8080",
     httpsProxy: "user:pass@my.proxy.server:8081",
     labels: {
-      "dicta": "odit",
+      "tenetur": "quas",
     },
     name: "testing with 1000 users",
     namespace: "testkube",
     number: 1,
     runningContext: {
-      context: "corporis",
-      type: RunningContextType.Testtrigger,
+      context: "molestiae",
+      type: RunningContextType.UserUI,
     },
     sync: false,
     timeout: 1,
     variables: {
-      "alias": {
+      "asperiores": {
         configMapRef: {
-          key: "error",
-          name: "Carol O'Reilly",
-          namespace: "quas",
+          key: "a",
+          name: "Miss Wade Barton",
+          namespace: "eveniet",
         },
-        name: "Dana Berge",
+        name: "Geoffrey Powlowski",
         secretRef: {
-          key: "quam",
-          name: "Joanna Wintheiser",
-          namespace: "nesciunt",
+          key: "fugit",
+          name: "Lillian Rosenbaum",
+          namespace: "blanditiis",
         },
         type: VariableType.Secret,
-        value: "quis",
+        value: "repellat",
       },
     },
   },
-  concurrency: 586108,
-  namespace: "aliquam",
-  selector: "excepturi",
+  concurrency: 955047,
+  namespace: "animi",
+  selector: "maiores",
 }).then((res: ExecuteTestSuitesResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -524,19 +524,19 @@ sdk.executions.executeTests({
   executionRequestInput: {
     activeDeadlineSeconds: 1,
     args: [
-      "maiores",
+      "itaque",
     ],
     argsMode: ExecutionRequestArgsMode.Override,
     artifactRequest: {
       dirs: [
-        "velit",
+        "deserunt",
       ],
       storageClassName: "artifact-volume-local",
-      volumeMountPath: "reiciendis",
+      volumeMountPath: "corporis",
     },
     bucketName: "execution-c01d7cf6-ec3f-47f0-9556-a5d6e9009a43",
     command: [
-      "amet",
+      "velit",
     ],
     contentRequest: {
       repository: {
@@ -546,14 +546,14 @@ sdk.executions.executeTests({
         workingDir: "/",
       },
     },
-    cronJobTemplate: "nemo",
+    cronJobTemplate: "officiis",
     envConfigMaps: [
       {
         mapToVariables: false,
         mount: true,
-        mountPath: "ipsa",
+        mountPath: "enim",
         reference: {
-          name: "Roman Luettgen",
+          name: "Elias Keeling MD",
         },
       },
     ],
@@ -561,17 +561,17 @@ sdk.executions.executeTests({
       {
         mapToVariables: false,
         mount: true,
-        mountPath: "asperiores",
+        mountPath: "impedit",
         reference: {
-          name: "Mr. Robin Miller",
+          name: "Mattie Gibson",
         },
       },
     ],
     envs: {
-      "commodi": "eveniet",
+      "nobis": "natus",
     },
     executionLabels: {
-      "porro": "tempore",
+      "minus": "quia",
     },
     httpProxy: "user:pass@my.proxy.server:8080",
     httpsProxy: "user:pass@my.proxy.server:8081",
@@ -579,54 +579,54 @@ sdk.executions.executeTests({
     image: "kubeshop/testkube-executor-custom:1.10.11-dev-0a9c91",
     imagePullSecrets: [
       {
-        name: "Joel Von",
+        name: "Bessie Schmidt",
       },
     ],
     isNegativeTestChangedOnRun: false,
     isVariablesFileUploaded: false,
-    jobTemplate: "sequi",
+    jobTemplate: "amet",
     name: "testing with 1000 users",
     namespace: "testkube",
     negativeTest: false,
-    number: 758194,
+    number: 473326,
     postRunScript: "sleep 30",
     preRunScript: "echo -n '$SECRET_ENV' > ./secret_file",
     runningContext: {
-      context: "asperiores",
-      type: RunningContextType.Testsuite,
+      context: "amet",
+      type: RunningContextType.Testtrigger,
     },
-    scraperTemplate: "blanditiis",
+    scraperTemplate: "modi",
     secretEnvs: {
-      "sint": "repellat",
+      "perferendis": "necessitatibus",
     },
     sync: false,
     testSuiteName: "test-suite1",
     uploads: [
-      "a",
+      "architecto",
     ],
     variables: {
-      "animi": {
+      "molestias": {
         configMapRef: {
-          key: "maiores",
-          name: "Drew Nolan",
-          namespace: "officiis",
+          key: "dolore",
+          name: "Ebony Doyle",
+          namespace: "veniam",
         },
-        name: "Brandi Turner",
+        name: "Jessica Heller",
         secretRef: {
-          key: "accusantium",
-          name: "Myron Boyle",
-          namespace: "quisquam",
+          key: "ad",
+          name: "Essie Hayes",
+          namespace: "suscipit",
         },
-        type: VariableType.Basic,
-        value: "nobis",
+        type: VariableType.Secret,
+        value: "sit",
       },
     },
-    variablesFile: "natus",
+    variablesFile: "quidem",
   },
-  concurrency: 793568,
-  executionSelector: "quia",
-  namespace: "magnam",
-  selector: "reprehenderit",
+  concurrency: 831031,
+  executionSelector: "perferendis",
+  namespace: "id",
+  selector: "sapiente",
 }).then((res: ExecuteTestsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -660,7 +660,7 @@ import { GetExecutionArtifactsResponse } from "testkube-sdk/dist/sdk/models/oper
 const sdk = new TestkubeSDK();
 
 sdk.executions.getExecutionArtifacts({
-  id: "c88373a4-0e19-442f-b2e5-5055756f5d56",
+  id: "2dfe13db-4f62-4cba-bf89-41aebc0b80a6",
 }).then((res: GetExecutionArtifactsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -694,7 +694,7 @@ import { GetExecutionByIDResponse } from "testkube-sdk/dist/sdk/models/operation
 const sdk = new TestkubeSDK();
 
 sdk.executions.getExecutionByID({
-  executionID: "pariatur",
+  executionID: "excepturi",
 }).then((res: GetExecutionByIDResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -728,7 +728,7 @@ import { GetExecutionLogsResponse } from "testkube-sdk/dist/sdk/models/operation
 const sdk = new TestkubeSDK();
 
 sdk.executions.getExecutionLogs({
-  id: "0bd0af2d-fe13-4db4-b62c-ba3f8941aebc",
+  id: "24d3b2ec-fcc8-4f89-9010-f5dd3d6fa180",
 }).then((res: GetExecutionLogsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -762,8 +762,8 @@ import { GetTestExecutionResponse } from "testkube-sdk/dist/sdk/models/operation
 const sdk = new TestkubeSDK();
 
 sdk.executions.getTestExecution({
-  executionID: "doloremque",
-  id: "b80a6924-d3b2-4ecf-8c8f-895010f5dd3d",
+  executionID: "non",
+  id: "e54c82f1-68a3-463c-8873-e484380b1f6b",
 }).then((res: GetTestExecutionResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -797,8 +797,8 @@ import { GetTestSuiteExecutionResponse } from "testkube-sdk/dist/sdk/models/oper
 const sdk = new TestkubeSDK();
 
 sdk.executions.getTestSuiteExecution({
-  executionID: "vel",
-  id: "fa1804e5-4c82-4f16-8a36-3c8873e48438",
+  executionID: "totam",
+  id: "ca275a60-a04c-4495-8c69-9171b51c1bdb",
 }).then((res: GetTestSuiteExecutionResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -832,7 +832,7 @@ import { GetTestSuiteExecutionArtifactsResponse } from "testkube-sdk/dist/sdk/mo
 const sdk = new TestkubeSDK();
 
 sdk.executions.getTestSuiteExecutionArtifacts({
-  executionID: "sit",
+  executionID: "beatae",
 }).then((res: GetTestSuiteExecutionArtifactsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -866,8 +866,8 @@ import { GetTestSuiteExecutionArtifactsByTestsuiteResponse } from "testkube-sdk/
 const sdk = new TestkubeSDK();
 
 sdk.executions.getTestSuiteExecutionArtifactsByTestsuite({
-  executionID: "rerum",
-  id: "1f6b8ca2-75a6-40a0-8c49-5cc699171b51",
+  executionID: "cumque",
+  id: "f4b888eb-dfc4-4ccc-a99b-c7fc0b2dce10",
 }).then((res: GetTestSuiteExecutionArtifactsByTestsuiteResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -901,8 +901,8 @@ import { GetTestSuiteExecutionByIDResponse } from "testkube-sdk/dist/sdk/models/
 const sdk = new TestkubeSDK();
 
 sdk.executions.getTestSuiteExecutionByID({
-  executionID: "cumque",
-  last: 117491,
+  executionID: "laudantium",
+  last: 480421,
 }).then((res: GetTestSuiteExecutionByIDResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -938,15 +938,15 @@ import { RFCDate } from "testkube-sdk/dist/sdk/types";
 const sdk = new TestkubeSDK();
 
 sdk.executions.listAllTestSuiteExecutions({
-  endDate: new RFCDate("2021-05-17"),
-  last: 707983,
-  page: 105372,
-  pageSize: 767210,
-  selector: "delectus",
-  startDate: new RFCDate("2022-04-15"),
-  status: TestSuiteExecutionStatus.Failed,
-  test: "rem",
-  textSearch: "atque",
+  endDate: new RFCDate("2022-01-31"),
+  last: 274295,
+  page: 169935,
+  pageSize: 701841,
+  selector: "doloremque",
+  startDate: new RFCDate("2022-07-27"),
+  status: TestSuiteExecutionStatus.Timeout,
+  test: "eum",
+  textSearch: "reprehenderit",
 }).then((res: ListAllTestSuiteExecutionsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -982,15 +982,15 @@ import { RFCDate } from "testkube-sdk/dist/sdk/types";
 const sdk = new TestkubeSDK();
 
 sdk.executions.listExecutions({
-  endDate: new RFCDate("2020-10-13"),
-  page: 863330,
-  pageSize: 956871,
-  selector: "quo",
-  startDate: new RFCDate("2022-03-15"),
-  status: ExecutionStatus.Aborted,
-  test: "porro",
-  textSearch: "id",
-  type: "excepturi",
+  endDate: new RFCDate("2021-12-30"),
+  page: 470647,
+  pageSize: 540048,
+  selector: "rerum",
+  startDate: new RFCDate("2021-12-01"),
+  status: ExecutionStatus.Passed,
+  test: "atque",
+  textSearch: "architecto",
+  type: "est",
 }).then((res: ListExecutionsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -1026,13 +1026,13 @@ import { RFCDate } from "testkube-sdk/dist/sdk/types";
 const sdk = new TestkubeSDK();
 
 sdk.executions.listTestExecutions({
-  endDate: new RFCDate("2021-07-19"),
-  id: "c7fc0b2d-ce10-4873-a42b-006d678878ba",
-  last: 541822,
-  page: 344856,
-  pageSize: 542340,
-  startDate: new RFCDate("2022-05-02"),
-  status: ExecutionStatus.Running,
+  endDate: new RFCDate("2022-06-24"),
+  id: "208c54fe-fa9c-495f-aeac-5565d307cfee",
+  last: 506250,
+  page: 118349,
+  pageSize: 144179,
+  startDate: new RFCDate("2022-08-09"),
+  status: ExecutionStatus.Timeout,
 }).then((res: ListTestExecutionsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -1068,11 +1068,11 @@ import { RFCDate } from "testkube-sdk/dist/sdk/types";
 const sdk = new TestkubeSDK();
 
 sdk.executions.listTestSuiteExecutions({
-  endDate: new RFCDate("2022-08-31"),
-  id: "08c54fef-a9c9-45f2-aac5-565d307cfee8",
-  page: 118349,
-  pageSize: 144179,
-  startDate: new RFCDate("2022-08-09"),
+  endDate: new RFCDate("2022-06-18"),
+  id: "13fa4a41-c480-4d3f-a132-af03102d514f",
+  page: 255064,
+  pageSize: 760279,
+  startDate: new RFCDate("2021-10-15"),
   status: TestSuiteExecutionStatus.Timeout,
 }).then((res: ListTestSuiteExecutionsResponse) => {
   if (res.statusCode == 200) {
