@@ -27,6 +27,9 @@ export class GetTestSuiteExecutionArtifactsByTestsuiteResponse extends Speakeasy
     @SpeakeasyMetadata()
     artifact?: shared.Artifact;
 
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
@@ -36,9 +39,15 @@ export class GetTestSuiteExecutionArtifactsByTestsuiteResponse extends Speakeasy
     @SpeakeasyMetadata({ elemType: shared.Problem })
     problems?: shared.Problem[];
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
 }

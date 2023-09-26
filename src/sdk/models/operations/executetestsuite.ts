@@ -30,6 +30,9 @@ export class ExecuteTestSuiteRequest extends SpeakeasyBase {
 }
 
 export class ExecuteTestSuiteResponse extends SpeakeasyBase {
+    /**
+     * HTTP response content type for this operation
+     */
     @SpeakeasyMetadata()
     contentType: string;
 
@@ -39,9 +42,15 @@ export class ExecuteTestSuiteResponse extends SpeakeasyBase {
     @SpeakeasyMetadata({ elemType: shared.Problem })
     problems?: shared.Problem[];
 
+    /**
+     * HTTP response status code for this operation
+     */
     @SpeakeasyMetadata()
     statusCode: number;
 
+    /**
+     * Raw HTTP response; suitable for custom response parsing
+     */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
 
