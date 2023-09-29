@@ -42,7 +42,7 @@ sdk.testTriggers.bulkUpdateTestTriggers([
       conditions: [
         {
           reason: "NewReplicaSetAvailable",
-          status: TestTriggerConditionStatuses.True,
+          status: TestTriggerConditionStatuses.Unknown,
           ttl: 1,
           type: "Progressing",
         },
@@ -51,9 +51,9 @@ sdk.testTriggers.bulkUpdateTestTriggers([
       timeout: 1,
     },
     event: "modified",
-    execution: TestTriggerExecutions.Test,
+    execution: TestTriggerExecutions.Testsuite,
     labels: {
-      "blanditiis": "porro",
+      "qui": "serious",
     },
     name: "name",
     namespace: "testkube",
@@ -62,7 +62,7 @@ sdk.testTriggers.bulkUpdateTestTriggers([
       probes: [
         {
           headers: {
-            "labore": "impedit",
+            "quibusdam": "holder",
           },
           host: "testkube-api-server",
           path: "/",
@@ -72,7 +72,7 @@ sdk.testTriggers.bulkUpdateTestTriggers([
       ],
       timeout: 1,
     },
-    resource: TestTriggerResources.Statefulset,
+    resource: TestTriggerResources.Ingress,
     resourceSelector: {
       name: "nginx",
       namespace: "testkube",
@@ -137,7 +137,7 @@ sdk.testTriggers.createTestTriggerJson({
   event: "modified",
   execution: TestTriggerExecutions.Test,
   labels: {
-    "numquam": "enim",
+    "aut": "to",
   },
   name: "name",
   namespace: "testkube",
@@ -146,7 +146,7 @@ sdk.testTriggers.createTestTriggerJson({
     probes: [
       {
         headers: {
-          "cupiditate": "occaecati",
+          "veritatis": "Mountain",
         },
         host: "testkube-api-server",
         path: "/",
@@ -156,7 +156,7 @@ sdk.testTriggers.createTestTriggerJson({
     ],
     timeout: 1,
   },
-  resource: TestTriggerResources.Configmap,
+  resource: TestTriggerResources.Statefulset,
   resourceSelector: {
     name: "nginx",
     namespace: "testkube",
@@ -197,7 +197,7 @@ import { CreateTestTriggerStringResponse } from "testkube-sdk/dist/sdk/models/op
 
 const sdk = new TestkubeSDK();
 
-sdk.testTriggers.createTestTriggerString("fuga").then((res: CreateTestTriggerStringResponse) => {
+sdk.testTriggers.createTestTriggerString("withdrawal").then((res: CreateTestTriggerStringResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -230,8 +230,8 @@ import { DeleteTestTriggerResponse } from "testkube-sdk/dist/sdk/models/operatio
 const sdk = new TestkubeSDK();
 
 sdk.testTriggers.deleteTestTrigger({
-  id: "342260e9-b200-4ce7-8a1b-d8fb7a0a116c",
-  namespace: "officiis",
+  id: "<ID>",
+  namespace: "Dollar hornet",
 }).then((res: DeleteTestTriggerResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -265,8 +265,8 @@ import { DeleteTestTriggersResponse } from "testkube-sdk/dist/sdk/models/operati
 const sdk = new TestkubeSDK();
 
 sdk.testTriggers.deleteTestTriggers({
-  namespace: "dignissimos",
-  selector: "fugit",
+  namespace: "blue Bahamian",
+  selector: "deposit Kroon",
 }).then((res: DeleteTestTriggersResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -300,8 +300,8 @@ import { GetTestTriggerByIDResponse } from "testkube-sdk/dist/sdk/models/operati
 const sdk = new TestkubeSDK();
 
 sdk.testTriggers.getTestTriggerByID({
-  id: "3d4097fa-30e9-4af7-a5b2-9122030d83f5",
-  namespace: "deserunt",
+  id: "<ID>",
+  namespace: "Beauty compress payment",
 }).then((res: GetTestTriggerByIDResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -335,8 +335,8 @@ import { ListTestTriggersResponse } from "testkube-sdk/dist/sdk/models/operation
 const sdk = new TestkubeSDK();
 
 sdk.testTriggers.listTestTriggers({
-  namespace: "itaque",
-  selector: "distinctio",
+  namespace: "Account plum",
+  selector: "male qui port",
 }).then((res: ListTestTriggersResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -391,9 +391,9 @@ sdk.testTriggers.updateTestTriggerJson({
       timeout: 1,
     },
     event: "modified",
-    execution: TestTriggerExecutions.Test,
+    execution: TestTriggerExecutions.Testsuite,
     labels: {
-      "provident": "occaecati",
+      "delectus": "Optimized",
     },
     name: "name",
     namespace: "testkube",
@@ -402,7 +402,7 @@ sdk.testTriggers.updateTestTriggerJson({
       probes: [
         {
           headers: {
-            "assumenda": "sunt",
+            "fugit": "Borders",
           },
           host: "testkube-api-server",
           path: "/",
@@ -422,8 +422,8 @@ sdk.testTriggers.updateTestTriggerJson({
       namespace: "testkube",
     },
   },
-  id: "e8c1f849-3825-4fdc-82c8-76c2c2dfb4cf",
-  namespace: "quo",
+  id: "<ID>",
+  namespace: "Chevrolet",
 }).then((res: UpdateTestTriggerJsonResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -457,9 +457,9 @@ import { UpdateTestTriggerStringResponse } from "testkube-sdk/dist/sdk/models/op
 const sdk = new TestkubeSDK();
 
 sdk.testTriggers.updateTestTriggerString({
-  requestBody: "illo",
-  id: "c76230f8-41fb-41bd-a3fd-b14db6be5a68",
-  namespace: "corporis",
+  requestBody: "plum vainly haptic",
+  id: "<ID>",
+  namespace: "male Borders",
 }).then((res: UpdateTestTriggerStringResponse) => {
   if (res.statusCode == 200) {
     // handle response

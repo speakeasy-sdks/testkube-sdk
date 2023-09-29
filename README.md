@@ -25,8 +25,8 @@ import { AbortExecutionResponse } from "testkube-sdk/dist/sdk/models/operations"
 const sdk = new TestkubeSDK();
 
 sdk.api.abortExecution({
-  executionID: "perferendis",
-  id: "5dfc2ddf-7cc7-48ca-9ba9-28fc816742cb",
+  executionID: "Kazakhstan flexibility",
+  id: "<ID>",
 }).then((res: AbortExecutionResponse) => {
   if (res.statusCode == 200) {
     // handle response

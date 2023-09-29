@@ -14,7 +14,7 @@ export enum UploadsRequestBodyParentType {
 /**
  * Upload files request body data
  */
-export class UploadsRequestBody1 extends SpeakeasyBase {
+export class UploadsRequestBody extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "multipart_form, name=filePath" })
     filePath?: string;
 

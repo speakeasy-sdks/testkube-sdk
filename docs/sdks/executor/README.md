@@ -31,41 +31,41 @@ const sdk = new TestkubeSDK();
 
 sdk.executor.createExecutorJson({
   args: [
-    "deleniti",
+    "National",
   ],
   command: [
-    "expedita",
+    "regarding",
   ],
   contentTypes: [
-    "hic",
+    "reboot",
   ],
-  executorType: "excepturi",
+  executorType: "Bicycle quantify Sports",
   features: [
     ExecutorUpsertRequestFeatures.Artifacts,
   ],
-  image: "sed",
+  image: "https://loremflickr.com/640/480",
   imagePullSecrets: [
     {
-      name: "Marguerite Jast",
+      name: "Yemen Accounts",
     },
   ],
-  jobTemplate: "tenetur",
+  jobTemplate: "Pike",
   labels: {
-    "dignissimos": "esse",
+    "atque": "incidunt",
   },
   meta: {
     docsURI: "https://docs.testkube.io/test-types/executor-k6",
     iconURI: "/assets/k6.jpg",
     tooltips: {
-      "animi": "laudantium",
+      "magnam": "East",
     },
   },
   name: "name",
   namespace: "testkube",
   types: [
-    "esse",
+    "watt",
   ],
-  uri: "https://virtuous-defendant.org",
+  uri: "https://limp-civilian.name",
 }).then((res: CreateExecutorJsonResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -98,7 +98,7 @@ import { CreateExecutorStringResponse } from "testkube-sdk/dist/sdk/models/opera
 
 const sdk = new TestkubeSDK();
 
-sdk.executor.createExecutorString("eius").then((res: CreateExecutorStringResponse) => {
+sdk.executor.createExecutorString("approach").then((res: CreateExecutorStringResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -131,7 +131,7 @@ import { DeleteExecutorResponse } from "testkube-sdk/dist/sdk/models/operations"
 const sdk = new TestkubeSDK();
 
 sdk.executor.deleteExecutor({
-  id: "be752c65-b344-418e-bbb9-1c8d975e0e84",
+  id: "<ID>",
 }).then((res: DeleteExecutorResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -165,7 +165,7 @@ import { DeleteExecutorsResponse } from "testkube-sdk/dist/sdk/models/operations
 const sdk = new TestkubeSDK();
 
 sdk.executor.deleteExecutors({
-  selector: "quae",
+  selector: "utilisation",
 }).then((res: DeleteExecutorsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -199,7 +199,7 @@ import { GetExecutorResponse } from "testkube-sdk/dist/sdk/models/operations";
 const sdk = new TestkubeSDK();
 
 sdk.executor.getExecutor({
-  id: "9d8f84f1-44f3-4e07-adcc-4aa5f3cabd90",
+  id: "<ID>",
 }).then((res: GetExecutorResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -233,7 +233,7 @@ import { ListExecutorsResponse } from "testkube-sdk/dist/sdk/models/operations";
 const sdk = new TestkubeSDK();
 
 sdk.executor.listExecutors({
-  selector: "ipsam",
+  selector: "Bedfordshire male",
 }).then((res: ListExecutorsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -270,43 +270,43 @@ const sdk = new TestkubeSDK();
 sdk.executor.updateExecutorJson({
   executorUpdateRequest: {
     args: [
-      "officia",
+      "virtual",
     ],
     command: [
-      "cupiditate",
+      "Market",
     ],
     contentTypes: [
-      "reprehenderit",
+      "handle",
     ],
-    executorType: "quia",
+    executorType: "lime ASCII",
     features: [
       ExecutorUpdateRequestFeatures.JunitReport,
     ],
-    image: "accusantium",
+    image: "https://loremflickr.com/640/480",
     imagePullSecrets: [
       {
-        name: "Sue Krajcik",
+        name: "Account male",
       },
     ],
-    jobTemplate: "sed",
+    jobTemplate: "programming azure parallelism",
     labels: {
-      "odit": "iusto",
+      "ab": "protocol",
     },
     meta: {
       docsURI: "https://docs.testkube.io/test-types/executor-k6",
       iconURI: "/assets/k6.jpg",
       tooltips: {
-        "expedita": "eos",
+        "eligendi": "Product",
       },
     },
     name: "name",
     namespace: "testkube",
     types: [
-      "repellendus",
+      "quantify",
     ],
-    uri: "http://awkward-mood.biz",
+    uri: "http://humming-spoon.net",
   },
-  id: "70bf7a4f-a87c-4f53-9a6f-ae54ebf60c32",
+  id: "<ID>",
 }).then((res: UpdateExecutorJsonResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -340,8 +340,8 @@ import { UpdateExecutorStringResponse } from "testkube-sdk/dist/sdk/models/opera
 const sdk = new TestkubeSDK();
 
 sdk.executor.updateExecutorString({
-  requestBody: "vitae",
-  id: "f023b75d-2367-4fe1-a0cc-8df79f0a396d",
+  requestBody: "redundant troubled",
+  id: "<ID>",
 }).then((res: UpdateExecutorStringResponse) => {
   if (res.statusCode == 200) {
     // handle response

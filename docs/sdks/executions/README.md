@@ -43,8 +43,8 @@ import { AbortExecutionResponse } from "testkube-sdk/dist/sdk/models/operations"
 const sdk = new TestkubeSDK();
 
 sdk.executions.abortExecution({
-  executionID: "ab",
-  id: "977773e6-3562-4a7b-808f-05e3d48fdaf3",
+  executionID: "Kazakhstan flexibility",
+  id: "<ID>",
 }).then((res: AbortExecutionResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -78,8 +78,8 @@ import { AbortTestSuiteExecutionResponse } from "testkube-sdk/dist/sdk/models/op
 const sdk = new TestkubeSDK();
 
 sdk.executions.abortTestSuiteExecution({
-  executionID: "vitae",
-  id: "3a1f5fd9-4259-4c0b-b6f2-5ea944f3b756",
+  executionID: "Folk Account",
+  id: "<ID>",
 }).then((res: AbortTestSuiteExecutionResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -113,7 +113,7 @@ import { AbortTestSuiteExecutionByIDResponse } from "testkube-sdk/dist/sdk/model
 const sdk = new TestkubeSDK();
 
 sdk.executions.abortTestSuiteExecutionByID({
-  executionID: "minus",
+  executionID: "Buckinghamshire Electronic",
 }).then((res: AbortTestSuiteExecutionByIDResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -147,8 +147,8 @@ import { DownloadArchiveResponse } from "testkube-sdk/dist/sdk/models/operations
 const sdk = new TestkubeSDK();
 
 sdk.executions.downloadArchive({
-  id: "11f6c37a-5126-4243-835b-bc05a23a45ce",
-  mask: "a",
+  id: "<ID>",
+  mask: "boldly withdrawal",
 }).then((res: DownloadArchiveResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -182,8 +182,8 @@ import { DownloadFileResponse } from "testkube-sdk/dist/sdk/models/operations";
 const sdk = new TestkubeSDK();
 
 sdk.executions.downloadFile({
-  filename: "quisquam",
-  id: "5fde10a0-ce21-469e-9100-19c6dc5e3476",
+  filename: "maserati_bronze_audi.mp2a",
+  id: "<ID>",
 }).then((res: DownloadFileResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -221,19 +221,19 @@ sdk.executions.executeTest({
   executionRequestInput: {
     activeDeadlineSeconds: 1,
     args: [
-      "sed",
+      "Savings",
     ],
-    argsMode: ExecutionRequestArgsMode.Append,
+    argsMode: ExecutionRequestArgsMode.Override,
     artifactRequest: {
       dirs: [
-        "natus",
+        "Peso",
       ],
       storageClassName: "artifact-volume-local",
-      volumeMountPath: "provident",
+      volumeMountPath: "Reggae volt Volvo",
     },
     bucketName: "execution-c01d7cf6-ec3f-47f0-9556-a5d6e9009a43",
     command: [
-      "cum",
+      "invoice",
     ],
     contentRequest: {
       repository: {
@@ -243,14 +243,14 @@ sdk.executions.executeTest({
         workingDir: "/",
       },
     },
-    cronJobTemplate: "doloribus",
+    cronJobTemplate: "why SMTP",
     envConfigMaps: [
       {
         mapToVariables: false,
         mount: true,
-        mountPath: "facilis",
+        mountPath: "transmitting Coordinator",
         reference: {
-          name: "Bradford Hudson",
+          name: "Hybrid policy blue",
         },
       },
     ],
@@ -258,17 +258,17 @@ sdk.executions.executeTest({
       {
         mapToVariables: false,
         mount: true,
-        mountPath: "perspiciatis",
+        mountPath: "Manager Interactions Architect",
         reference: {
-          name: "Jonathon Collins",
+          name: "Manhattan how Mauritius",
         },
       },
     ],
     envs: {
-      "incidunt": "recusandae",
+      "nobis": "Cambridgeshire",
     },
     executionLabels: {
-      "quod": "id",
+      "repudiandae": "Beauty",
     },
     httpProxy: "user:pass@my.proxy.server:8080",
     httpsProxy: "user:pass@my.proxy.server:8081",
@@ -276,52 +276,52 @@ sdk.executions.executeTest({
     image: "kubeshop/testkube-executor-custom:1.10.11-dev-0a9c91",
     imagePullSecrets: [
       {
-        name: "Ben Satterfield",
+        name: "application Dollar",
       },
     ],
     isNegativeTestChangedOnRun: false,
     isVariablesFileUploaded: false,
-    jobTemplate: "nemo",
+    jobTemplate: "Island",
     name: "testing with 1000 users",
     namespace: "testkube",
     negativeTest: false,
-    number: 848722,
+    number: 536683,
     postRunScript: "sleep 30",
     preRunScript: "echo -n '$SECRET_ENV' > ./secret_file",
     runningContext: {
-      context: "facilis",
-      type: RunningContextType.UserUI,
+      context: "East redundant",
+      type: RunningContextType.Scheduler,
     },
-    scraperTemplate: "mollitia",
+    scraperTemplate: "Northwest Bicycle",
     secretEnvs: {
-      "assumenda": "recusandae",
+      "vero": "Associate",
     },
     sync: false,
     testSuiteName: "test-suite1",
     uploads: [
-      "distinctio",
+      "Porterville",
     ],
     variables: {
-      "pariatur": {
+      "fugit": {
         configMapRef: {
-          key: "ad",
-          name: "Pablo Veum",
-          namespace: "maxime",
+          key: "<key>",
+          name: "kilogram Integration glen",
+          namespace: "JSON whoa Berkshire",
         },
-        name: "Mary Hoeger",
+        name: "Bacon Cheese",
         secretRef: {
-          key: "laborum",
-          name: "Sergio Grant Sr.",
-          namespace: "aliquid",
+          key: "<key>",
+          name: "eius",
+          namespace: "Fresh Northwest",
         },
-        type: VariableType.Basic,
-        value: "quaerat",
+        type: VariableType.Secret,
+        value: "West Account",
       },
     },
-    variablesFile: "eligendi",
+    variablesFile: "Chief female Honda",
   },
-  id: "f5e9d9a4-578a-4dc1-ac60-0dec001ac802",
-  namespace: "officiis",
+  id: "<ID>",
+  namespace: "Usability Soft defiantly",
 }).then((res: ExecuteTestResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -366,45 +366,45 @@ sdk.executions.executeTestSuite({
         workingDir: "/",
       },
     },
-    cronJobTemplate: "sed",
+    cronJobTemplate: "Southwest Latin",
     executionLabels: {
-      "necessitatibus": "impedit",
+      "voluptate": "finally",
     },
     httpProxy: "user:pass@my.proxy.server:8080",
     httpsProxy: "user:pass@my.proxy.server:8081",
     labels: {
-      "ipsa": "excepturi",
+      "deleniti": "amid",
     },
     name: "testing with 1000 users",
     namespace: "testkube",
     number: 1,
     runningContext: {
-      context: "a",
-      type: RunningContextType.Scheduler,
+      context: "phew Southwest Fundamental",
+      type: RunningContextType.Testsuite,
     },
     sync: false,
     timeout: 1,
     variables: {
-      "laudantium": {
+      "aut": {
         configMapRef: {
-          key: "maiores",
-          name: "Mrs. Ollie Ledner",
-          namespace: "doloribus",
+          key: "<key>",
+          name: "Southwest",
+          namespace: "bandwidth",
         },
-        name: "Monica Koch",
+        name: "East",
         secretRef: {
-          key: "quasi",
-          name: "Mr. Leigh Mann",
-          namespace: "beatae",
+          key: "<key>",
+          name: "fully global customized",
+          namespace: "Indiana Towels",
         },
         type: VariableType.Basic,
-        value: "dicta",
+        value: "Regional",
       },
     },
   },
-  id: "25b0960a-6681-451a-872a-f923c5949f83",
-  last: 971764,
-  namespace: "amet",
+  id: "<ID>",
+  last: 342781,
+  namespace: "navigate mole",
 }).then((res: ExecuteTestSuiteResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -449,45 +449,45 @@ sdk.executions.executeTestSuites({
         workingDir: "/",
       },
     },
-    cronJobTemplate: "nemo",
+    cronJobTemplate: "Fish klutzy",
     executionLabels: {
-      "ipsa": "quisquam",
+      "minus": "Borders",
     },
     httpProxy: "user:pass@my.proxy.server:8080",
     httpsProxy: "user:pass@my.proxy.server:8081",
     labels: {
-      "tenetur": "quas",
+      "id": "Avon",
     },
     name: "testing with 1000 users",
     namespace: "testkube",
     number: 1,
     runningContext: {
-      context: "molestiae",
-      type: RunningContextType.UserUI,
+      context: "input Keyboard",
+      type: RunningContextType.Scheduler,
     },
     sync: false,
     timeout: 1,
     variables: {
-      "asperiores": {
+      "dignissimos": {
         configMapRef: {
-          key: "a",
-          name: "Miss Wade Barton",
-          namespace: "eveniet",
+          key: "<key>",
+          name: "brave SUV mysteriously",
+          namespace: "override Longmont",
         },
-        name: "Geoffrey Powlowski",
+        name: "synthesize",
         secretRef: {
-          key: "fugit",
-          name: "Lillian Rosenbaum",
-          namespace: "blanditiis",
+          key: "<key>",
+          name: "backing Dominica Checking",
+          namespace: "Cargo national lumen",
         },
         type: VariableType.Secret,
-        value: "repellat",
+        value: "frictionless West labore",
       },
     },
   },
-  concurrency: 955047,
-  namespace: "animi",
-  selector: "maiores",
+  concurrency: 618300,
+  namespace: "New",
+  selector: "Profound",
 }).then((res: ExecuteTestSuitesResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -525,19 +525,19 @@ sdk.executions.executeTests({
   executionRequestInput: {
     activeDeadlineSeconds: 1,
     args: [
-      "itaque",
+      "alongside",
     ],
-    argsMode: ExecutionRequestArgsMode.Override,
+    argsMode: ExecutionRequestArgsMode.Append,
     artifactRequest: {
       dirs: [
-        "deserunt",
+        "synthesize",
       ],
       storageClassName: "artifact-volume-local",
-      volumeMountPath: "corporis",
+      volumeMountPath: "Electric",
     },
     bucketName: "execution-c01d7cf6-ec3f-47f0-9556-a5d6e9009a43",
     command: [
-      "velit",
+      "Southeast",
     ],
     contentRequest: {
       repository: {
@@ -547,14 +547,14 @@ sdk.executions.executeTests({
         workingDir: "/",
       },
     },
-    cronJobTemplate: "officiis",
+    cronJobTemplate: "DNS green",
     envConfigMaps: [
       {
         mapToVariables: false,
         mount: true,
-        mountPath: "enim",
+        mountPath: "Greece",
         reference: {
-          name: "Elias Keeling MD",
+          name: "anonymise",
         },
       },
     ],
@@ -562,17 +562,17 @@ sdk.executions.executeTests({
       {
         mapToVariables: false,
         mount: true,
-        mountPath: "impedit",
+        mountPath: "Grocery compress Hatchback",
         reference: {
-          name: "Mattie Gibson",
+          name: "Estates Corporate",
         },
       },
     ],
     envs: {
-      "nobis": "natus",
+      "illo": "Sarasota",
     },
     executionLabels: {
-      "minus": "quia",
+      "sit": "Borders",
     },
     httpProxy: "user:pass@my.proxy.server:8080",
     httpsProxy: "user:pass@my.proxy.server:8081",
@@ -580,54 +580,54 @@ sdk.executions.executeTests({
     image: "kubeshop/testkube-executor-custom:1.10.11-dev-0a9c91",
     imagePullSecrets: [
       {
-        name: "Bessie Schmidt",
+        name: "Kuwaiti 24/7 Alabama",
       },
     ],
     isNegativeTestChangedOnRun: false,
     isVariablesFileUploaded: false,
-    jobTemplate: "amet",
+    jobTemplate: "tightly South invoice",
     name: "testing with 1000 users",
     namespace: "testkube",
     negativeTest: false,
-    number: 473326,
+    number: 334866,
     postRunScript: "sleep 30",
     preRunScript: "echo -n '$SECRET_ENV' > ./secret_file",
     runningContext: {
-      context: "amet",
-      type: RunningContextType.Testtrigger,
+      context: "Electric feed",
+      type: RunningContextType.Scheduler,
     },
-    scraperTemplate: "modi",
+    scraperTemplate: "Street Fresh",
     secretEnvs: {
-      "perferendis": "necessitatibus",
+      "velit": "itch",
     },
     sync: false,
     testSuiteName: "test-suite1",
     uploads: [
-      "architecto",
+      "honestly",
     ],
     variables: {
-      "molestias": {
+      "reiciendis": {
         configMapRef: {
-          key: "dolore",
-          name: "Ebony Doyle",
-          namespace: "veniam",
+          key: "<key>",
+          name: "state Books",
+          namespace: "Southeast payment",
         },
-        name: "Jessica Heller",
+        name: "salmon",
         secretRef: {
-          key: "ad",
-          name: "Essie Hayes",
-          namespace: "suscipit",
+          key: "<key>",
+          name: "Shad Dodge withdrawal",
+          namespace: "Hybrid countess occaecati",
         },
-        type: VariableType.Secret,
-        value: "sit",
+        type: VariableType.Basic,
+        value: "East Auer Palestinian",
       },
     },
-    variablesFile: "quidem",
+    variablesFile: "Granite",
   },
-  concurrency: 831031,
-  executionSelector: "perferendis",
-  namespace: "id",
-  selector: "sapiente",
+  concurrency: 64322,
+  executionSelector: "complex before Kong",
+  namespace: "Northwest Gasoline",
+  selector: "calculating Northeast",
 }).then((res: ExecuteTestsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -661,7 +661,7 @@ import { GetExecutionArtifactsResponse } from "testkube-sdk/dist/sdk/models/oper
 const sdk = new TestkubeSDK();
 
 sdk.executions.getExecutionArtifacts({
-  id: "2dfe13db-4f62-4cba-bf89-41aebc0b80a6",
+  id: "<ID>",
 }).then((res: GetExecutionArtifactsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -695,7 +695,7 @@ import { GetExecutionByIDResponse } from "testkube-sdk/dist/sdk/models/operation
 const sdk = new TestkubeSDK();
 
 sdk.executions.getExecutionByID({
-  executionID: "excepturi",
+  executionID: "Computers",
 }).then((res: GetExecutionByIDResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -729,7 +729,7 @@ import { GetExecutionLogsResponse } from "testkube-sdk/dist/sdk/models/operation
 const sdk = new TestkubeSDK();
 
 sdk.executions.getExecutionLogs({
-  id: "24d3b2ec-fcc8-4f89-9010-f5dd3d6fa180",
+  id: "<ID>",
 }).then((res: GetExecutionLogsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -763,8 +763,8 @@ import { GetTestExecutionResponse } from "testkube-sdk/dist/sdk/models/operation
 const sdk = new TestkubeSDK();
 
 sdk.executions.getTestExecution({
-  executionID: "non",
-  id: "e54c82f1-68a3-463c-8873-e484380b1f6b",
+  executionID: "Northeast male",
+  id: "<ID>",
 }).then((res: GetTestExecutionResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -798,8 +798,8 @@ import { GetTestSuiteExecutionResponse } from "testkube-sdk/dist/sdk/models/oper
 const sdk = new TestkubeSDK();
 
 sdk.executions.getTestSuiteExecution({
-  executionID: "totam",
-  id: "ca275a60-a04c-4495-8c69-9171b51c1bdb",
+  executionID: "despite Guyana",
+  id: "<ID>",
 }).then((res: GetTestSuiteExecutionResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -833,7 +833,7 @@ import { GetTestSuiteExecutionArtifactsResponse } from "testkube-sdk/dist/sdk/mo
 const sdk = new TestkubeSDK();
 
 sdk.executions.getTestSuiteExecutionArtifacts({
-  executionID: "beatae",
+  executionID: "atop North mole",
 }).then((res: GetTestSuiteExecutionArtifactsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -867,8 +867,8 @@ import { GetTestSuiteExecutionArtifactsByTestsuiteResponse } from "testkube-sdk/
 const sdk = new TestkubeSDK();
 
 sdk.executions.getTestSuiteExecutionArtifactsByTestsuite({
-  executionID: "cumque",
-  id: "f4b888eb-dfc4-4ccc-a99b-c7fc0b2dce10",
+  executionID: "hertz Bowling",
+  id: "<ID>",
 }).then((res: GetTestSuiteExecutionArtifactsByTestsuiteResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -902,8 +902,8 @@ import { GetTestSuiteExecutionByIDResponse } from "testkube-sdk/dist/sdk/models/
 const sdk = new TestkubeSDK();
 
 sdk.executions.getTestSuiteExecutionByID({
-  executionID: "laudantium",
-  last: 480421,
+  executionID: "Hermaphrodite Markets",
+  last: 386664,
 }).then((res: GetTestSuiteExecutionByIDResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -939,15 +939,15 @@ import { RFCDate } from "testkube-sdk/dist/sdk/types";
 const sdk = new TestkubeSDK();
 
 sdk.executions.listAllTestSuiteExecutions({
-  endDate: new RFCDate("2022-01-31"),
-  last: 274295,
-  page: 169935,
-  pageSize: 701841,
-  selector: "doloremque",
-  startDate: new RFCDate("2022-07-27"),
+  endDate: new RFCDate("2021-10-24"),
+  last: 23183,
+  page: 456148,
+  pageSize: 513574,
+  selector: "Directives",
+  startDate: new RFCDate("2023-11-09"),
   status: TestSuiteExecutionStatus.Timeout,
-  test: "eum",
-  textSearch: "reprehenderit",
+  test: "deposit female versus",
+  textSearch: "Qatari overriding program",
 }).then((res: ListAllTestSuiteExecutionsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -983,15 +983,15 @@ import { RFCDate } from "testkube-sdk/dist/sdk/types";
 const sdk = new TestkubeSDK();
 
 sdk.executions.listExecutions({
-  endDate: new RFCDate("2021-12-30"),
-  page: 470647,
-  pageSize: 540048,
-  selector: "rerum",
-  startDate: new RFCDate("2021-12-01"),
-  status: ExecutionStatus.Passed,
-  test: "atque",
-  textSearch: "architecto",
-  type: "est",
+  endDate: new RFCDate("2021-04-10"),
+  page: 506498,
+  pageSize: 935977,
+  selector: "withdrawal",
+  startDate: new RFCDate("2023-06-30"),
+  status: ExecutionStatus.Failed,
+  test: "batting collaborative Convertible",
+  textSearch: "cultivate",
+  type: "Lawrencium joule purple",
 }).then((res: ListExecutionsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -1027,13 +1027,13 @@ import { RFCDate } from "testkube-sdk/dist/sdk/types";
 const sdk = new TestkubeSDK();
 
 sdk.executions.listTestExecutions({
-  endDate: new RFCDate("2022-06-24"),
-  id: "208c54fe-fa9c-495f-aeac-5565d307cfee",
-  last: 506250,
-  page: 118349,
-  pageSize: 144179,
-  startDate: new RFCDate("2022-08-09"),
-  status: ExecutionStatus.Timeout,
+  endDate: new RFCDate("2022-07-14"),
+  id: "<ID>",
+  last: 715626,
+  page: 210724,
+  pageSize: 611817,
+  startDate: new RFCDate("2022-04-16"),
+  status: ExecutionStatus.Queued,
 }).then((res: ListTestExecutionsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -1069,12 +1069,12 @@ import { RFCDate } from "testkube-sdk/dist/sdk/types";
 const sdk = new TestkubeSDK();
 
 sdk.executions.listTestSuiteExecutions({
-  endDate: new RFCDate("2022-06-18"),
-  id: "13fa4a41-c480-4d3f-a132-af03102d514f",
-  page: 255064,
-  pageSize: 760279,
-  startDate: new RFCDate("2021-10-15"),
-  status: TestSuiteExecutionStatus.Timeout,
+  endDate: new RFCDate("2022-11-23"),
+  id: "<ID>",
+  page: 729958,
+  pageSize: 354494,
+  startDate: new RFCDate("2021-04-16"),
+  status: TestSuiteExecutionStatus.Aborting,
 }).then((res: ListTestSuiteExecutionsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -1120,10 +1120,10 @@ sdk.executions.uploads({
 
 ### Parameters
 
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `request`                                                                        | [operations.UploadsRequestBody1](../../models/operations/uploadsrequestbody1.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
-| `config`                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                     | :heavy_minus_sign:                                                               | Available config options for making requests.                                    |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `request`                                                                      | [operations.UploadsRequestBody](../../models/operations/uploadsrequestbody.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
+| `config`                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                   | :heavy_minus_sign:                                                             | Available config options for making requests.                                  |
 
 
 ### Response

@@ -351,7 +351,7 @@ docs/models/operations/updatetestjsonresponse.md
 docs/models/operations/updateteststringrequest.md
 docs/models/operations/updateteststringresponse.md
 docs/models/operations/uploadsrequestbodyparenttype.md
-docs/models/operations/uploadsrequestbody1.md
+docs/models/operations/uploadsrequestbody.md
 docs/models/operations/uploadsresponse.md
 docs/models/operations/validaterepositoryresponse.md
 docs/models/operations/listlabelsresponse.md

@@ -27,35 +27,35 @@ import { RepositoryAuthType, RepositoryType, TestSourceUpsertRequestType } from 
 const sdk = new TestkubeSDK();
 
 sdk.testSources.createTestSourceJson({
-  data: "ipsum",
+  data: "Mazda Iowa",
   labels: {
-    "ducimus": "laudantium",
+    "voluptates": "numquam",
   },
   name: "testsource1",
   namespace: "testkube",
   repository: {
     authType: RepositoryAuthType.Header,
     branch: "main",
-    certificateSecret: "deserunt",
+    certificateSecret: "withdrawal Bedfordshire",
     commit: "b928cbb7186944ab9275937ec1ac3d3738ca2e1d",
     path: "test/perf",
-    token: "odit",
+    token: "Sleek Nella mobile",
     tokenSecret: {
-      key: "ad",
-      name: "Teresa Kshlerin",
-      namespace: "odio",
+      key: "<key>",
+      name: "withdrawal",
+      namespace: "Cadillac",
     },
     type: RepositoryType.Git,
     uri: "https://github.com/kubeshop/testkube",
-    username: "Saige.Russel",
+    username: "Fermin.Roob30",
     usernameSecret: {
-      key: "exercitationem",
-      name: "Gilberto Corkery",
-      namespace: "repellat",
+      key: "<key>",
+      name: "Bespoke",
+      namespace: "Outdoors",
     },
     workingDir: "/",
   },
-  type: TestSourceUpsertRequestType.FileUri,
+  type: TestSourceUpsertRequestType.GitFile,
   uri: "https://github.com/kubeshop/testkube",
 }).then((res: CreateTestSourceJsonResponse) => {
   if (res.statusCode == 200) {
@@ -89,7 +89,7 @@ import { CreateTestSourceStringResponse } from "testkube-sdk/dist/sdk/models/ope
 
 const sdk = new TestkubeSDK();
 
-sdk.testSources.createTestSourceString("illum").then((res: CreateTestSourceStringResponse) => {
+sdk.testSources.createTestSourceString("Demigender").then((res: CreateTestSourceStringResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -122,7 +122,7 @@ import { DeleteTestSourceResponse } from "testkube-sdk/dist/sdk/models/operation
 const sdk = new TestkubeSDK();
 
 sdk.testSources.deleteTestSource({
-  id: "d6723dc0-f5ae-42f3-a6b7-00878756143f",
+  id: "<ID>",
 }).then((res: DeleteTestSourceResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -156,7 +156,7 @@ import { DeleteTestSourcesResponse } from "testkube-sdk/dist/sdk/models/operatio
 const sdk = new TestkubeSDK();
 
 sdk.testSources.deleteTestSources({
-  selector: "corporis",
+  selector: "distributed copying",
 }).then((res: DeleteTestSourcesResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -190,7 +190,7 @@ import { GetTestSourceResponse } from "testkube-sdk/dist/sdk/models/operations";
 const sdk = new TestkubeSDK();
 
 sdk.testSources.getTestSource({
-  id: "a6c98b55-5540-480d-80bc-acc6cbd6b5f3",
+  id: "<ID>",
 }).then((res: GetTestSourceResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -224,7 +224,7 @@ import { ListTestSourcesResponse } from "testkube-sdk/dist/sdk/models/operations
 const sdk = new TestkubeSDK();
 
 sdk.testSources.listTestSources({
-  selector: "necessitatibus",
+  selector: "Administrator Shanahan Coupe",
 }).then((res: ListTestSourcesResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -261,35 +261,35 @@ const sdk = new TestkubeSDK();
 sdk.testSources.processTestSourceBatch({
   batch: [
     {
-      data: "maxime",
+      data: "male Island codpiece",
       labels: {
-        "cupiditate": "voluptatem",
+        "voluptatem": "streamline",
       },
       name: "testsource1",
       namespace: "testkube",
       repository: {
-        authType: RepositoryAuthType.Header,
+        authType: RepositoryAuthType.Basic,
         branch: "main",
-        certificateSecret: "adipisci",
+        certificateSecret: "Cloned Peso United",
         commit: "b928cbb7186944ab9275937ec1ac3d3738ca2e1d",
         path: "test/perf",
-        token: "accusantium",
+        token: "Philadelphia Coordinator Officer",
         tokenSecret: {
-          key: "magnam",
-          name: "Arturo Cole",
-          namespace: "id",
+          key: "<key>",
+          name: "solution Pop purple",
+          namespace: "JBOD",
         },
         type: RepositoryType.Git,
         uri: "https://github.com/kubeshop/testkube",
-        username: "Reid.Conroy",
+        username: "Eloisa_Bergstrom84",
         usernameSecret: {
-          key: "sequi",
-          name: "Roger Mueller",
-          namespace: "voluptate",
+          key: "<key>",
+          name: "Euclid World bumpy",
+          namespace: "Northwest Metrics mismatch",
         },
         workingDir: "/",
       },
-      type: TestSourceUpsertRequestType.FileUri,
+      type: TestSourceUpsertRequestType.Git,
       uri: "https://github.com/kubeshop/testkube",
     },
   ],
@@ -328,38 +328,38 @@ const sdk = new TestkubeSDK();
 
 sdk.testSources.updateTestSourceJson({
   testSourceUpdateRequest: {
-    data: "expedita",
+    data: "Ergonomic Gloves",
     labels: {
-      "aperiam": "voluptates",
+      "vero": "female",
     },
     name: "testsource1",
     namespace: "testkube",
     repository: {
-      authType: RepositoryAuthType.Header,
+      authType: RepositoryAuthType.Basic,
       branch: "main",
-      certificateSecret: "fugit",
+      certificateSecret: "azure",
       commit: "b928cbb7186944ab9275937ec1ac3d3738ca2e1d",
       path: "test/perf",
-      token: "voluptatem",
+      token: "Assistant",
       tokenSecret: {
-        key: "repudiandae",
-        name: "Terri Davis",
-        namespace: "hic",
+        key: "<key>",
+        name: "backing Franc Rand",
+        namespace: "Northwest content indigo",
       },
       type: RepositoryType.Git,
       uri: "https://github.com/kubeshop/testkube",
-      username: "Will.Zboncak",
+      username: "Gertrude3",
       usernameSecret: {
-        key: "cupiditate",
-        name: "Miss Eduardo Breitenberg",
-        namespace: "assumenda",
+        key: "<key>",
+        name: "yellow",
+        namespace: "boohoo",
       },
       workingDir: "/",
     },
-    type: TestSourceUpdateRequestType.GitDir,
+    type: TestSourceUpdateRequestType.FileUri,
     uri: "https://github.com/kubeshop/testkube",
   },
-  id: "ab626766-96e1-4ec0-8221-b335d89acb3e",
+  id: "<ID>",
 }).then((res: UpdateTestSourceJsonResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -393,8 +393,8 @@ import { UpdateTestSourceStringResponse } from "testkube-sdk/dist/sdk/models/ope
 const sdk = new TestkubeSDK();
 
 sdk.testSources.updateTestSourceString({
-  requestBody: "nobis",
-  id: "fda8d0c5-49ef-4030-8497-8a61fa1cf206",
+  requestBody: "Grocery",
+  id: "<ID>",
 }).then((res: UpdateTestSourceStringResponse) => {
   if (res.statusCode == 200) {
     // handle response

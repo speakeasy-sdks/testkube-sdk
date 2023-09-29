@@ -40,8 +40,8 @@ import { AbortTestSuiteExecutionResponse } from "testkube-sdk/dist/sdk/models/op
 const sdk = new TestkubeSDK();
 
 sdk.testSuites.abortTestSuiteExecution({
-  executionID: "atque",
-  id: "8f77c1ff-c71d-4ca1-a3f2-a3c80a97ff33",
+  executionID: "Folk Account",
+  id: "<ID>",
 }).then((res: AbortTestSuiteExecutionResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -75,7 +75,7 @@ import { AbortTestSuiteExecutionsResponse } from "testkube-sdk/dist/sdk/models/o
 const sdk = new TestkubeSDK();
 
 sdk.testSuites.abortTestSuiteExecutions({
-  id: "4cddf857-a9e6-4187-ac6a-b21d29dfc94d",
+  id: "<ID>",
 }).then((res: AbortTestSuiteExecutionsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -132,7 +132,7 @@ sdk.testSuites.createTestSuiteJson({
       stopOnFailure: false,
     },
   ],
-  created: new Date("2022-01-05T14:31:19.145Z"),
+  created: new Date("2022-06-10T22:02:25.936Z"),
   description: "collection of tests",
   executionRequest: {
     concurrencyLevel: 10,
@@ -144,44 +144,44 @@ sdk.testSuites.createTestSuiteJson({
         workingDir: "/",
       },
     },
-    cronJobTemplate: "recusandae",
+    cronJobTemplate: "CLI Latin",
     executionLabels: {
-      "quisquam": "facere",
+      "ab": "Florida",
     },
     httpProxy: "user:pass@my.proxy.server:8080",
     httpsProxy: "user:pass@my.proxy.server:8081",
     labels: {
-      "dignissimos": "iste",
+      "suscipit": "uniform",
     },
     name: "testing with 1000 users",
     namespace: "testkube",
     number: 1,
     runningContext: {
-      context: "provident",
-      type: RunningContextType.UserUI,
+      context: "Cambridgeshire Market B2B",
+      type: RunningContextType.Scheduler,
     },
     sync: false,
     timeout: 1,
     variables: {
-      "sint": {
+      "neque": {
         configMapRef: {
-          key: "aperiam",
-          name: "Natalie Howe",
-          namespace: "assumenda",
+          key: "<key>",
+          name: "Pickup Electric",
+          namespace: "cyan Trans",
         },
-        name: "Mr. Hope Bauch",
+        name: "Southwest Steel",
         secretRef: {
-          key: "ullam",
-          name: "Thelma Dickens",
-          namespace: "recusandae",
+          key: "<key>",
+          name: "hack SUV katal",
+          namespace: "Rock Coordinator",
         },
         type: VariableType.Secret,
-        value: "doloremque",
+        value: "Rapids transmitter Factors",
       },
     },
   },
   labels: {
-    "totam": "iure",
+    "labore": "tensely",
   },
   name: "name",
   namespace: "testkube",
@@ -189,9 +189,9 @@ sdk.testSuites.createTestSuiteJson({
   schedule: "* * * * *",
   status: {
     latestExecution: {
-      endTime: new Date("2020-12-30T22:16:12.789Z"),
+      endTime: new Date("2021-09-23T16:32:55.803Z"),
       id: "62f395e004109209b50edfc4",
-      startTime: new Date("2022-12-01T06:20:31.457Z"),
+      startTime: new Date("2022-03-22T19:51:12.817Z"),
       status: TestSuiteExecutionStatus.Timeout,
     },
   },
@@ -238,7 +238,7 @@ import { CreateTestSuiteStringResponse } from "testkube-sdk/dist/sdk/models/oper
 
 const sdk = new TestkubeSDK();
 
-sdk.testSuites.createTestSuiteString("iste").then((res: CreateTestSuiteStringResponse) => {
+sdk.testSuites.createTestSuiteString("South").then((res: CreateTestSuiteStringResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -271,7 +271,7 @@ import { DeleteTestSuiteResponse } from "testkube-sdk/dist/sdk/models/operations
 const sdk = new TestkubeSDK();
 
 sdk.testSuites.deleteTestSuite({
-  id: "152cb311-9167-4b8e-bc8d-b03408d6d364",
+  id: "<ID>",
 }).then((res: DeleteTestSuiteResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -305,7 +305,7 @@ import { DeleteTestSuitesResponse } from "testkube-sdk/dist/sdk/models/operation
 const sdk = new TestkubeSDK();
 
 sdk.testSuites.deleteTestSuites({
-  selector: "earum",
+  selector: "Norman Honda female",
 }).then((res: DeleteTestSuitesResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -350,45 +350,45 @@ sdk.testSuites.executeTestSuite({
         workingDir: "/",
       },
     },
-    cronJobTemplate: "tenetur",
+    cronJobTemplate: "Southwest Latin",
     executionLabels: {
-      "assumenda": "dolore",
+      "voluptate": "finally",
     },
     httpProxy: "user:pass@my.proxy.server:8080",
     httpsProxy: "user:pass@my.proxy.server:8081",
     labels: {
-      "enim": "ullam",
+      "deleniti": "amid",
     },
     name: "testing with 1000 users",
     namespace: "testkube",
     number: 1,
     runningContext: {
-      context: "perspiciatis",
-      type: RunningContextType.UserCLI,
+      context: "phew Southwest Fundamental",
+      type: RunningContextType.Testsuite,
     },
     sync: false,
     timeout: 1,
     variables: {
-      "ex": {
+      "aut": {
         configMapRef: {
-          key: "quibusdam",
-          name: "Lori Jerde",
-          namespace: "numquam",
+          key: "<key>",
+          name: "Southwest",
+          namespace: "bandwidth",
         },
-        name: "Erick Mohr",
+        name: "East",
         secretRef: {
-          key: "quod",
-          name: "Nichole Marks",
-          namespace: "dicta",
+          key: "<key>",
+          name: "fully global customized",
+          namespace: "Indiana Towels",
         },
-        type: VariableType.Secret,
-        value: "ipsum",
+        type: VariableType.Basic,
+        value: "Regional",
       },
     },
   },
-  id: "0be3e432-02d7-4216-9765-06641870d9d2",
-  last: 80448,
-  namespace: "voluptatibus",
+  id: "<ID>",
+  last: 342781,
+  namespace: "navigate mole",
 }).then((res: ExecuteTestSuiteResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -433,45 +433,45 @@ sdk.testSuites.executeTestSuites({
         workingDir: "/",
       },
     },
-    cronJobTemplate: "unde",
+    cronJobTemplate: "Fish klutzy",
     executionLabels: {
-      "deserunt": "repellendus",
+      "minus": "Borders",
     },
     httpProxy: "user:pass@my.proxy.server:8080",
     httpsProxy: "user:pass@my.proxy.server:8081",
     labels: {
-      "consequatur": "adipisci",
+      "id": "Avon",
     },
     name: "testing with 1000 users",
     namespace: "testkube",
     number: 1,
     runningContext: {
-      context: "doloremque",
-      type: RunningContextType.Testtrigger,
+      context: "input Keyboard",
+      type: RunningContextType.Scheduler,
     },
     sync: false,
     timeout: 1,
     variables: {
-      "tempora": {
+      "dignissimos": {
         configMapRef: {
-          key: "debitis",
-          name: "Miss Simon Bosco V",
-          namespace: "ratione",
+          key: "<key>",
+          name: "brave SUV mysteriously",
+          namespace: "override Longmont",
         },
-        name: "Anita Dare III",
+        name: "synthesize",
         secretRef: {
-          key: "laudantium",
-          name: "Mr. Armando Hermann",
-          namespace: "quaerat",
+          key: "<key>",
+          name: "backing Dominica Checking",
+          namespace: "Cargo national lumen",
         },
-        type: VariableType.Basic,
-        value: "accusamus",
+        type: VariableType.Secret,
+        value: "frictionless West labore",
       },
     },
   },
-  concurrency: 481307,
-  namespace: "sapiente",
-  selector: "esse",
+  concurrency: 618300,
+  namespace: "New",
+  selector: "Profound",
 }).then((res: ExecuteTestSuitesResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -505,7 +505,7 @@ import { GetTestSuiteByIDResponse } from "testkube-sdk/dist/sdk/models/operation
 const sdk = new TestkubeSDK();
 
 sdk.testSuites.getTestSuiteByID({
-  id: "3bc845e3-20a3-419f-8bad-f947c9a867bc",
+  id: "<ID>",
 }).then((res: GetTestSuiteByIDResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -539,7 +539,7 @@ import { GetTestSuiteByIDWithExecutionResponse } from "testkube-sdk/dist/sdk/mod
 const sdk = new TestkubeSDK();
 
 sdk.testSuites.getTestSuiteByIDWithExecution({
-  id: "42426665-816d-4dca-8ef5-1fcb4c593ec1",
+  id: "<ID>",
 }).then((res: GetTestSuiteByIDWithExecutionResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -573,8 +573,8 @@ import { GetTestSuiteExecutionResponse } from "testkube-sdk/dist/sdk/models/oper
 const sdk = new TestkubeSDK();
 
 sdk.testSuites.getTestSuiteExecution({
-  executionID: "fugit",
-  id: "cdaad0ec-7afe-4dbd-80df-448a47f9390c",
+  executionID: "despite Guyana",
+  id: "<ID>",
 }).then((res: GetTestSuiteExecutionResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -608,7 +608,7 @@ import { GetTestSuiteExecutionArtifactsResponse } from "testkube-sdk/dist/sdk/mo
 const sdk = new TestkubeSDK();
 
 sdk.testSuites.getTestSuiteExecutionArtifacts({
-  executionID: "minima",
+  executionID: "atop North mole",
 }).then((res: GetTestSuiteExecutionArtifactsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -642,8 +642,8 @@ import { GetTestSuiteExecutionArtifactsByTestsuiteResponse } from "testkube-sdk/
 const sdk = new TestkubeSDK();
 
 sdk.testSuites.getTestSuiteExecutionArtifactsByTestsuite({
-  executionID: "quos",
-  id: "880983da-bf9e-4f3f-bdd9-f7f079af4d35",
+  executionID: "hertz Bowling",
+  id: "<ID>",
 }).then((res: GetTestSuiteExecutionArtifactsByTestsuiteResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -679,11 +679,11 @@ import { RFCDate } from "testkube-sdk/dist/sdk/types";
 const sdk = new TestkubeSDK();
 
 sdk.testSuites.listTestSuiteExecutions({
-  endDate: new RFCDate("2022-11-06"),
-  id: "4cdb0f4d-2811-487d-9684-4eded85a9065",
-  page: 909093,
-  pageSize: 389630,
-  startDate: new RFCDate("2022-06-30"),
+  endDate: new RFCDate("2022-11-23"),
+  id: "<ID>",
+  page: 729958,
+  pageSize: 354494,
+  startDate: new RFCDate("2021-04-16"),
   status: TestSuiteExecutionStatus.Aborting,
 }).then((res: ListTestSuiteExecutionsResponse) => {
   if (res.statusCode == 200) {
@@ -718,7 +718,7 @@ import { ListTestSuiteTestsResponse } from "testkube-sdk/dist/sdk/models/operati
 const sdk = new TestkubeSDK();
 
 sdk.testSuites.listTestSuiteTests({
-  id: "dfc2032b-6c87-4992-bb7e-13584f7ae12c",
+  id: "<ID>",
 }).then((res: ListTestSuiteTestsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -753,11 +753,11 @@ import { TestSuiteExecutionStatus } from "testkube-sdk/dist/sdk/models/shared";
 const sdk = new TestkubeSDK();
 
 sdk.testSuites.listTestSuiteWithExecutions({
-  page: 401388,
-  pageSize: 507874,
-  selector: "natus",
-  status: TestSuiteExecutionStatus.Queued,
-  textSearch: "tenetur",
+  page: 441473,
+  pageSize: 614278,
+  selector: "grey",
+  status: TestSuiteExecutionStatus.Running,
+  textSearch: "ax",
 }).then((res: ListTestSuiteWithExecutionsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -791,8 +791,8 @@ import { ListTestSuitesResponse } from "testkube-sdk/dist/sdk/models/operations"
 const sdk = new TestkubeSDK();
 
 sdk.testSuites.listTestSuites({
-  selector: "laudantium",
-  textSearch: "aspernatur",
+  selector: "Electric",
+  textSearch: "Passenger magni Hybrid",
 }).then((res: ListTestSuitesResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -850,7 +850,7 @@ sdk.testSuites.updateTestSuiteJson({
         stopOnFailure: false,
       },
     ],
-    created: new Date("2020-03-31T22:12:08.601Z"),
+    created: new Date("2021-03-25T04:09:11.907Z"),
     description: "collection of tests",
     executionRequest: {
       concurrencyLevel: 10,
@@ -862,44 +862,44 @@ sdk.testSuites.updateTestSuiteJson({
           workingDir: "/",
         },
       },
-      cronJobTemplate: "dicta",
+      cronJobTemplate: "Executive",
       executionLabels: {
-        "inventore": "ullam",
+        "deserunt": "Intuitive",
       },
       httpProxy: "user:pass@my.proxy.server:8080",
       httpsProxy: "user:pass@my.proxy.server:8081",
       labels: {
-        "iusto": "inventore",
+        "voluptatem": "Ball",
       },
       name: "testing with 1000 users",
       namespace: "testkube",
       number: 1,
       runningContext: {
-        context: "voluptate",
-        type: RunningContextType.UserCLI,
+        context: "programming",
+        type: RunningContextType.Testsuite,
       },
       sync: false,
       timeout: 1,
       variables: {
-        "dolorem": {
+        "maxime": {
           configMapRef: {
-            key: "eaque",
-            name: "Grace Kling",
-            namespace: "minus",
+            key: "<key>",
+            name: "Thailand",
+            namespace: "viral",
           },
-          name: "Horace Leannon",
+          name: "single Fitness",
           secretRef: {
-            key: "doloribus",
-            name: "Darryl Heller",
-            namespace: "quis",
+            key: "<key>",
+            name: "joyful lime",
+            namespace: "more",
           },
           type: VariableType.Basic,
-          value: "vel",
+          value: "abaft",
         },
       },
     },
     labels: {
-      "rem": "aliquid",
+      "at": "Bespoke",
     },
     name: "name",
     namespace: "testkube",
@@ -907,10 +907,10 @@ sdk.testSuites.updateTestSuiteJson({
     schedule: "* * * * *",
     status: {
       latestExecution: {
-        endTime: new Date("2022-05-28T03:51:39.251Z"),
+        endTime: new Date("2022-09-22T05:31:11.249Z"),
         id: "62f395e004109209b50edfc4",
-        startTime: new Date("2022-01-25T19:10:58.985Z"),
-        status: TestSuiteExecutionStatus.Aborting,
+        startTime: new Date("2021-12-19T01:38:37.615Z"),
+        status: TestSuiteExecutionStatus.Running,
       },
     },
     steps: [
@@ -925,7 +925,7 @@ sdk.testSuites.updateTestSuiteJson({
       },
     ],
   },
-  id: "c3ddc5f1-11de-4a10-a6d5-41a4d190feb2",
+  id: "<ID>",
 }).then((res: UpdateTestSuiteJsonResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -959,8 +959,8 @@ import { UpdateTestSuiteStringResponse } from "testkube-sdk/dist/sdk/models/oper
 const sdk = new TestkubeSDK();
 
 sdk.testSuites.updateTestSuiteString({
-  requestBody: "vitae",
-  id: "780bccc0-dbbd-4db4-8470-8fb4e391e6bc",
+  requestBody: "bluetooth enable generating",
+  id: "<ID>",
 }).then((res: UpdateTestSuiteStringResponse) => {
   if (res.statusCode == 200) {
     // handle response

@@ -24,8 +24,8 @@ import { DownloadArchiveResponse } from "testkube-sdk/dist/sdk/models/operations
 const sdk = new TestkubeSDK();
 
 sdk.artifacts.downloadArchive({
-  id: "1b36a080-88d1-400e-bada-200ef0422eb2",
-  mask: "beatae",
+  id: "<ID>",
+  mask: "boldly withdrawal",
 }).then((res: DownloadArchiveResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -59,8 +59,8 @@ import { DownloadFileResponse } from "testkube-sdk/dist/sdk/models/operations";
 const sdk = new TestkubeSDK();
 
 sdk.artifacts.downloadFile({
-  filename: "aliquid",
-  id: "4cf9ab83-66c7-423f-bda9-e06bee4825c1",
+  filename: "maserati_bronze_audi.mp2a",
+  id: "<ID>",
 }).then((res: DownloadFileResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -94,7 +94,7 @@ import { GetExecutionArtifactsResponse } from "testkube-sdk/dist/sdk/models/oper
 const sdk = new TestkubeSDK();
 
 sdk.artifacts.getExecutionArtifacts({
-  id: "fc0e115c-80bf-4f91-8544-ec42defcce8f",
+  id: "<ID>",
 }).then((res: GetExecutionArtifactsResponse) => {
   if (res.statusCode == 200) {
     // handle response

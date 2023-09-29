@@ -32,16 +32,16 @@ sdk.webhook.createWebhookJson({
     EventType.EndTestTimeout,
   ],
   headers: {
-    "nobis": "debitis",
+    "porro": "Loaf",
   },
   labels: {
-    "labore": "veritatis",
+    "qui": "Quality",
   },
   name: "webhook1",
   namespace: "testkube",
-  payloadObjectField: "minima",
-  payloadTemplate: "magni",
-  selector: "itaque",
+  payloadObjectField: "Eritrea gray",
+  payloadTemplate: "what haptic second",
+  selector: "port",
   uri: "https://hooks.app.com/services/1",
 }).then((res: CreateWebhookJsonResponse) => {
   if (res.statusCode == 200) {
@@ -75,7 +75,7 @@ import { CreateWebhookStringResponse } from "testkube-sdk/dist/sdk/models/operat
 
 const sdk = new TestkubeSDK();
 
-sdk.webhook.createWebhookString("error").then((res: CreateWebhookStringResponse) => {
+sdk.webhook.createWebhookString("henry").then((res: CreateWebhookStringResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -108,7 +108,7 @@ import { DeleteWebhookResponse } from "testkube-sdk/dist/sdk/models/operations";
 const sdk = new TestkubeSDK();
 
 sdk.webhook.deleteWebhook({
-  id: "b9cd7e52-24a6-4a0e-923b-7847ec59e1f6",
+  id: "<ID>",
 }).then((res: DeleteWebhookResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -142,7 +142,7 @@ import { DeleteWebhooksResponse } from "testkube-sdk/dist/sdk/models/operations"
 const sdk = new TestkubeSDK();
 
 sdk.webhook.deleteWebhooks({
-  selector: "in",
+  selector: "Table",
 }).then((res: DeleteWebhooksResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -176,7 +176,7 @@ import { GetWebhookResponse } from "testkube-sdk/dist/sdk/models/operations";
 const sdk = new TestkubeSDK();
 
 sdk.webhook.getWebhook({
-  id: "f3c4cce4-b6d7-4696-bf3c-5747501357e4",
+  id: "<ID>",
 }).then((res: GetWebhookResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -210,7 +210,7 @@ import { ListWebhooksResponse } from "testkube-sdk/dist/sdk/models/operations";
 const sdk = new TestkubeSDK();
 
 sdk.webhook.listWebhooks({
-  selector: "magnam",
+  selector: "Ball indigo",
 }).then((res: ListWebhooksResponse) => {
   if (res.statusCode == 200) {
     // handle response
