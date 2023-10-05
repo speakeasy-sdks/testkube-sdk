@@ -281,3 +281,13 @@ Based on:
 - [typescript v1.17.1] .
 ### Releases
 - [NPM v1.17.1] https://www.npmjs.com/package/testkube-sdk/v/1.17.1 - .
+
+## 2023-10-05 00:41:27
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 
+- Speakeasy CLI 1.94.0 (2.147.0) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [typescript v1.17.2] .
+### Releases
+- [NPM v1.17.2] https://www.npmjs.com/package/testkube-sdk/v/1.17.2 - .
