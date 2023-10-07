@@ -2056,12 +2056,12 @@ export class Executions {
      * Upload file to be used in executions and tests
      */
     async uploads(
-        req: operations.UploadsRequestBody,
+        req: shared.UploadsBody,
         config?: AxiosRequestConfig,
         acceptHeaderOverride?: UploadsAcceptEnum
     ): Promise<operations.UploadsResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.UploadsRequestBody(req);
+            req = new shared.UploadsBody(req);
         }
 
         const baseURL: string = utils.templateUrl(

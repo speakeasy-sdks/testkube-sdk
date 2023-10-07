@@ -81,6 +81,7 @@ export * from "./testupdaterequest";
 export * from "./testupsertrequest";
 export * from "./testwithexecution";
 export * from "./testwithexecutionsummary";
+export * from "./uploadsbody";
 export * from "./variable";
 export * from "./variabletype";
 export * from "./webhook";

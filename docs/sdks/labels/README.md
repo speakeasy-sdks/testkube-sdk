@@ -17,15 +17,16 @@ list all available labels
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { ListLabelsResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.labels.listLabels().then((res: ListLabelsResponse) => {
+  const res = await sdk.labels.listLabels();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

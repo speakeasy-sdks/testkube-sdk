@@ -17,17 +17,18 @@ Returns logs of the given executionID
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { GetExecutionLogsResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.logs.getExecutionLogs({
-  id: "<ID>",
-}).then((res: GetExecutionLogsResponse) => {
+  const res = await sdk.logs.getExecutionLogs({
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

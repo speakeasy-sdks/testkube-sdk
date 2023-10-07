@@ -17,15 +17,16 @@ Returns a keymap (supported/allowed fields) for the test trigger UI screen
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { GetKeyMapResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.keymap.getKeyMap().then((res: GetKeyMapResponse) => {
+  const res = await sdk.keymap.getKeyMap();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

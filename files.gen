@@ -200,6 +200,7 @@ src/sdk/models/shared/executorupdaterequest.ts
 src/sdk/models/shared/testsourceupdaterequest.ts
 src/sdk/models/shared/testsuiteupdaterequest.ts
 src/sdk/models/shared/testupdaterequest.ts
+src/sdk/models/shared/uploadsbody.ts
 src/sdk/models/shared/index.ts
 src/sdk/models/errors/index.ts
 USAGE.md
@@ -350,8 +351,6 @@ docs/models/operations/updatetestjsonrequest.md
 docs/models/operations/updatetestjsonresponse.md
 docs/models/operations/updateteststringrequest.md
 docs/models/operations/updateteststringresponse.md
-docs/models/operations/uploadsrequestbodyparenttype.md
-docs/models/operations/uploadsrequestbody.md
 docs/models/operations/uploadsresponse.md
 docs/models/operations/validaterepositoryresponse.md
 docs/models/operations/listlabelsresponse.md
@@ -457,6 +456,8 @@ docs/models/shared/testsourceupdaterequesttype.md
 docs/models/shared/testsourceupdaterequest.md
 docs/models/shared/testsuiteupdaterequestinput.md
 docs/models/shared/testupdaterequestinput.md
+docs/models/shared/uploadsbodyparenttype.md
+docs/models/shared/uploadsbody.md
 docs/sdks/testkubesdk/README.md
 docs/sdks/api/README.md
 docs/sdks/artifacts/README.md

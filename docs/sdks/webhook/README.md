@@ -22,32 +22,31 @@ Create new webhook based on variables passed in request
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { CreateWebhookJsonResponse } from "testkube-sdk/dist/sdk/models/operations";
 import { EventType } from "testkube-sdk/dist/sdk/models/shared";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.webhook.createWebhookJson({
-  events: [
-    EventType.EndTestTimeout,
-  ],
-  headers: {
-    "porro": "Loaf",
-  },
-  labels: {
-    "qui": "Quality",
-  },
-  name: "webhook1",
-  namespace: "testkube",
-  payloadObjectField: "Eritrea gray",
-  payloadTemplate: "what haptic second",
-  selector: "port",
-  uri: "https://hooks.app.com/services/1",
-}).then((res: CreateWebhookJsonResponse) => {
+  const res = await sdk.webhook.createWebhookJson({
+    events: [
+      EventType.EndTestTimeout,
+    ],
+    headers: {
+      "Content-Type": "application/xml",
+    },
+    labels: {
+      "env": "prod",
+      "app": "backend",
+    },
+    name: "webhook1",
+    namespace: "testkube",
+    uri: "https://hooks.app.com/services/1",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -71,15 +70,16 @@ Create new webhook based on variables passed in request
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { CreateWebhookStringResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.webhook.createWebhookString("henry").then((res: CreateWebhookStringResponse) => {
+  const res = await sdk.webhook.createWebhookString("henry");
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -103,17 +103,18 @@ Deletes webhook by its name
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { DeleteWebhookResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.webhook.deleteWebhook({
-  id: "<ID>",
-}).then((res: DeleteWebhookResponse) => {
+  const res = await sdk.webhook.deleteWebhook({
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -137,17 +138,16 @@ Deletes labeled webhooks
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { DeleteWebhooksResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.webhook.deleteWebhooks({
-  selector: "Table",
-}).then((res: DeleteWebhooksResponse) => {
+  const res = await sdk.webhook.deleteWebhooks({});
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -171,17 +171,18 @@ Returns webhook
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { GetWebhookResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.webhook.getWebhook({
-  id: "<ID>",
-}).then((res: GetWebhookResponse) => {
+  const res = await sdk.webhook.getWebhook({
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -205,17 +206,16 @@ List webhooks available in cluster
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { ListWebhooksResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.webhook.listWebhooks({
-  selector: "Ball indigo",
-}).then((res: ListWebhooksResponse) => {
+  const res = await sdk.webhook.listWebhooks({});
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

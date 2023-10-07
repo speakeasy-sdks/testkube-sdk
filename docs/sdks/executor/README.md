@@ -24,53 +24,51 @@ Create new executor based on variables passed in request
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { CreateExecutorJsonResponse } from "testkube-sdk/dist/sdk/models/operations";
 import { ExecutorUpsertRequestFeatures } from "testkube-sdk/dist/sdk/models/shared";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.executor.createExecutorJson({
-  args: [
-    "National",
-  ],
-  command: [
-    "regarding",
-  ],
-  contentTypes: [
-    "reboot",
-  ],
-  executorType: "Bicycle quantify Sports",
-  features: [
-    ExecutorUpsertRequestFeatures.Artifacts,
-  ],
-  image: "https://loremflickr.com/640/480",
-  imagePullSecrets: [
-    {
-      name: "Yemen Accounts",
+  const res = await sdk.executor.createExecutorJson({
+    args: [
+      "--repeats",
+      "5",
+      "--insecure",
+    ],
+    command: [
+      "curl",
+    ],
+    contentTypes: [
+      "National",
+    ],
+    features: [
+      ExecutorUpsertRequestFeatures.JunitReport,
+    ],
+    imagePullSecrets: [
+      {},
+    ],
+    labels: {
+      "env": "prod",
+      "app": "backend",
     },
-  ],
-  jobTemplate: "Pike",
-  labels: {
-    "atque": "incidunt",
-  },
-  meta: {
-    docsURI: "https://docs.testkube.io/test-types/executor-k6",
-    iconURI: "/assets/k6.jpg",
-    tooltips: {
-      "magnam": "East",
+    meta: {
+      docsURI: "https://docs.testkube.io/test-types/executor-k6",
+      iconURI: "/assets/k6.jpg",
+      tooltips: {
+        "general": "please provide k6 test script for execution",
+      },
     },
-  },
-  name: "name",
-  namespace: "testkube",
-  types: [
-    "watt",
-  ],
-  uri: "https://limp-civilian.name",
-}).then((res: CreateExecutorJsonResponse) => {
+    name: "name",
+    namespace: "testkube",
+    types: [
+      "ohm",
+    ],
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -94,15 +92,16 @@ Create new executor based on variables passed in request
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { CreateExecutorStringResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.executor.createExecutorString("approach").then((res: CreateExecutorStringResponse) => {
+  const res = await sdk.executor.createExecutorString("approach");
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -126,17 +125,18 @@ Deletes executor by its name
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { DeleteExecutorResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.executor.deleteExecutor({
-  id: "<ID>",
-}).then((res: DeleteExecutorResponse) => {
+  const res = await sdk.executor.deleteExecutor({
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -160,17 +160,16 @@ Deletes labeled executors
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { DeleteExecutorsResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.executor.deleteExecutors({
-  selector: "utilisation",
-}).then((res: DeleteExecutorsResponse) => {
+  const res = await sdk.executor.deleteExecutors({});
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -194,17 +193,18 @@ Returns executors data with executions passed to executor
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { GetExecutorResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.executor.getExecutor({
-  id: "<ID>",
-}).then((res: GetExecutorResponse) => {
+  const res = await sdk.executor.getExecutor({
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -228,17 +228,16 @@ List executors available in cluster
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { ListExecutorsResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.executor.listExecutors({
-  selector: "Bedfordshire male",
-}).then((res: ListExecutorsResponse) => {
+  const res = await sdk.executor.listExecutors({});
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -262,56 +261,54 @@ Update new executor based on variables passed in request
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { UpdateExecutorJsonResponse } from "testkube-sdk/dist/sdk/models/operations";
 import { ExecutorUpdateRequestFeatures } from "testkube-sdk/dist/sdk/models/shared";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.executor.updateExecutorJson({
-  executorUpdateRequest: {
-    args: [
-      "virtual",
-    ],
-    command: [
-      "Market",
-    ],
-    contentTypes: [
-      "handle",
-    ],
-    executorType: "lime ASCII",
-    features: [
-      ExecutorUpdateRequestFeatures.JunitReport,
-    ],
-    image: "https://loremflickr.com/640/480",
-    imagePullSecrets: [
-      {
-        name: "Account male",
+  const res = await sdk.executor.updateExecutorJson({
+    executorUpdateRequest: {
+      args: [
+        "--repeats",
+        "5",
+        "--insecure",
+      ],
+      command: [
+        "curl",
+      ],
+      contentTypes: [
+        "virtual",
+      ],
+      features: [
+        ExecutorUpdateRequestFeatures.Artifacts,
+      ],
+      imagePullSecrets: [
+        {},
+      ],
+      labels: {
+        "env": "prod",
+        "app": "backend",
       },
-    ],
-    jobTemplate: "programming azure parallelism",
-    labels: {
-      "ab": "protocol",
-    },
-    meta: {
-      docsURI: "https://docs.testkube.io/test-types/executor-k6",
-      iconURI: "/assets/k6.jpg",
-      tooltips: {
-        "eligendi": "Product",
+      meta: {
+        docsURI: "https://docs.testkube.io/test-types/executor-k6",
+        iconURI: "/assets/k6.jpg",
+        tooltips: {
+          "general": "please provide k6 test script for execution",
+        },
       },
+      name: "name",
+      namespace: "testkube",
+      types: [
+        "handle",
+      ],
     },
-    name: "name",
-    namespace: "testkube",
-    types: [
-      "quantify",
-    ],
-    uri: "http://humming-spoon.net",
-  },
-  id: "<ID>",
-}).then((res: UpdateExecutorJsonResponse) => {
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -335,18 +332,19 @@ Update new executor based on variables passed in request
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { UpdateExecutorStringResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.executor.updateExecutorString({
-  requestBody: "redundant troubled",
-  id: "<ID>",
-}).then((res: UpdateExecutorStringResponse) => {
+  const res = await sdk.executor.updateExecutorString({
+    requestBody: "redundant troubled",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

@@ -6,25 +6,6 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
-export enum UploadsRequestBodyParentType {
-    Test = "test",
-    Execution = "execution",
-}
-
-/**
- * Upload files request body data
- */
-export class UploadsRequestBody extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "multipart_form, name=filePath" })
-    filePath?: string;
-
-    @SpeakeasyMetadata({ data: "multipart_form, name=parentName" })
-    parentName?: string;
-
-    @SpeakeasyMetadata({ data: "multipart_form, name=parentType" })
-    parentType?: UploadsRequestBodyParentType;
-}
-
 export class UploadsResponse extends SpeakeasyBase {
     /**
      * HTTP response content type for this operation

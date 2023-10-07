@@ -25,7 +25,6 @@ Updates test triggers provided as an array in the request body
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { BulkUpdateTestTriggersResponse } from "testkube-sdk/dist/sdk/models/operations";
 import {
   TestTriggerActions,
   TestTriggerConditionStatuses,
@@ -33,60 +32,63 @@ import {
   TestTriggerResources,
 } from "testkube-sdk/dist/sdk/models/shared";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.testTriggers.bulkUpdateTestTriggers([
-  {
-    action: TestTriggerActions.Run,
-    conditionSpec: {
-      conditions: [
-        {
-          reason: "NewReplicaSetAvailable",
-          status: TestTriggerConditionStatuses.Unknown,
-          ttl: 1,
-          type: "Progressing",
-        },
-      ],
-      delay: 1,
-      timeout: 1,
-    },
-    event: "modified",
-    execution: TestTriggerExecutions.Testsuite,
-    labels: {
-      "qui": "serious",
-    },
-    name: "name",
-    namespace: "testkube",
-    probeSpec: {
-      delay: 1,
-      probes: [
-        {
-          headers: {
-            "quibusdam": "holder",
+  const res = await sdk.testTriggers.bulkUpdateTestTriggers([
+    {
+      action: TestTriggerActions.Run,
+      conditionSpec: {
+        conditions: [
+          {
+            reason: "NewReplicaSetAvailable",
+            status: TestTriggerConditionStatuses.Unknown,
+            ttl: 1,
+            type: "Progressing",
           },
-          host: "testkube-api-server",
-          path: "/",
-          port: 80,
-          scheme: "http",
-        },
-      ],
-      timeout: 1,
-    },
-    resource: TestTriggerResources.Ingress,
-    resourceSelector: {
-      name: "nginx",
+        ],
+        delay: 1,
+        timeout: 1,
+      },
+      event: "modified",
+      execution: TestTriggerExecutions.Testsuite,
+      labels: {
+        "env": "prod",
+        "app": "backend",
+      },
+      name: "name",
       namespace: "testkube",
+      probeSpec: {
+        delay: 1,
+        probes: [
+          {
+            headers: {
+              "Content-Type": "application/xml",
+            },
+            host: "testkube-api-server",
+            path: "/",
+            port: 80,
+            scheme: "http",
+          },
+        ],
+        timeout: 1,
+      },
+      resource: TestTriggerResources.Deployment,
+      resourceSelector: {
+        name: "nginx",
+        namespace: "testkube",
+      },
+      testSelector: {
+        name: "nginx",
+        namespace: "testkube",
+      },
     },
-    testSelector: {
-      name: "nginx",
-      namespace: "testkube",
-    },
-  },
-]).then((res: BulkUpdateTestTriggersResponse) => {
+  ]);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -110,7 +112,6 @@ Create new test trigger CRD inside a Kubernetes cluster
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { CreateTestTriggerJsonResponse } from "testkube-sdk/dist/sdk/models/operations";
 import {
   TestTriggerActions,
   TestTriggerConditionStatuses,
@@ -118,58 +119,61 @@ import {
   TestTriggerResources,
 } from "testkube-sdk/dist/sdk/models/shared";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.testTriggers.createTestTriggerJson({
-  action: TestTriggerActions.Run,
-  conditionSpec: {
-    conditions: [
-      {
-        reason: "NewReplicaSetAvailable",
-        status: TestTriggerConditionStatuses.Unknown,
-        ttl: 1,
-        type: "Progressing",
-      },
-    ],
-    delay: 1,
-    timeout: 1,
-  },
-  event: "modified",
-  execution: TestTriggerExecutions.Test,
-  labels: {
-    "aut": "to",
-  },
-  name: "name",
-  namespace: "testkube",
-  probeSpec: {
-    delay: 1,
-    probes: [
-      {
-        headers: {
-          "veritatis": "Mountain",
+  const res = await sdk.testTriggers.createTestTriggerJson({
+    action: TestTriggerActions.Run,
+    conditionSpec: {
+      conditions: [
+        {
+          reason: "NewReplicaSetAvailable",
+          status: TestTriggerConditionStatuses.Unknown,
+          ttl: 1,
+          type: "Progressing",
         },
-        host: "testkube-api-server",
-        path: "/",
-        port: 80,
-        scheme: "http",
-      },
-    ],
-    timeout: 1,
-  },
-  resource: TestTriggerResources.Statefulset,
-  resourceSelector: {
-    name: "nginx",
+      ],
+      delay: 1,
+      timeout: 1,
+    },
+    event: "modified",
+    execution: TestTriggerExecutions.Test,
+    labels: {
+      "env": "prod",
+      "app": "backend",
+    },
+    name: "name",
     namespace: "testkube",
-  },
-  testSelector: {
-    name: "nginx",
-    namespace: "testkube",
-  },
-}).then((res: CreateTestTriggerJsonResponse) => {
+    probeSpec: {
+      delay: 1,
+      probes: [
+        {
+          headers: {
+            "Content-Type": "application/xml",
+          },
+          host: "testkube-api-server",
+          path: "/",
+          port: 80,
+          scheme: "http",
+        },
+      ],
+      timeout: 1,
+    },
+    resource: TestTriggerResources.Pod,
+    resourceSelector: {
+      name: "nginx",
+      namespace: "testkube",
+    },
+    testSelector: {
+      name: "nginx",
+      namespace: "testkube",
+    },
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -193,15 +197,16 @@ Create new test trigger CRD inside a Kubernetes cluster
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { CreateTestTriggerStringResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.testTriggers.createTestTriggerString("withdrawal").then((res: CreateTestTriggerStringResponse) => {
+  const res = await sdk.testTriggers.createTestTriggerString("withdrawal");
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -225,18 +230,18 @@ Deletes a test trigger
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { DeleteTestTriggerResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.testTriggers.deleteTestTrigger({
-  id: "<ID>",
-  namespace: "Dollar hornet",
-}).then((res: DeleteTestTriggerResponse) => {
+  const res = await sdk.testTriggers.deleteTestTrigger({
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -260,18 +265,16 @@ Deletes all or labeled test triggers
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { DeleteTestTriggersResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.testTriggers.deleteTestTriggers({
-  namespace: "blue Bahamian",
-  selector: "deposit Kroon",
-}).then((res: DeleteTestTriggersResponse) => {
+  const res = await sdk.testTriggers.deleteTestTriggers({});
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -295,18 +298,18 @@ Get test trigger by ID from CRD in kubernetes cluster
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { GetTestTriggerByIDResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.testTriggers.getTestTriggerByID({
-  id: "<ID>",
-  namespace: "Beauty compress payment",
-}).then((res: GetTestTriggerByIDResponse) => {
+  const res = await sdk.testTriggers.getTestTriggerByID({
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -330,18 +333,16 @@ List test triggers from the kubernetes cluster
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { ListTestTriggersResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.testTriggers.listTestTriggers({
-  namespace: "Account plum",
-  selector: "male qui port",
-}).then((res: ListTestTriggersResponse) => {
+  const res = await sdk.testTriggers.listTestTriggers({});
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -365,7 +366,6 @@ Update test trigger
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { UpdateTestTriggerJsonResponse } from "testkube-sdk/dist/sdk/models/operations";
 import {
   TestTriggerActions,
   TestTriggerConditionStatuses,
@@ -373,62 +373,64 @@ import {
   TestTriggerResources,
 } from "testkube-sdk/dist/sdk/models/shared";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.testTriggers.updateTestTriggerJson({
-  testTriggerUpsertRequest: {
-    action: TestTriggerActions.Run,
-    conditionSpec: {
-      conditions: [
-        {
-          reason: "NewReplicaSetAvailable",
-          status: TestTriggerConditionStatuses.False,
-          ttl: 1,
-          type: "Progressing",
-        },
-      ],
-      delay: 1,
-      timeout: 1,
-    },
-    event: "modified",
-    execution: TestTriggerExecutions.Testsuite,
-    labels: {
-      "delectus": "Optimized",
-    },
-    name: "name",
-    namespace: "testkube",
-    probeSpec: {
-      delay: 1,
-      probes: [
-        {
-          headers: {
-            "fugit": "Borders",
+  const res = await sdk.testTriggers.updateTestTriggerJson({
+    testTriggerUpsertRequest: {
+      action: TestTriggerActions.Run,
+      conditionSpec: {
+        conditions: [
+          {
+            reason: "NewReplicaSetAvailable",
+            status: TestTriggerConditionStatuses.False,
+            ttl: 1,
+            type: "Progressing",
           },
-          host: "testkube-api-server",
-          path: "/",
-          port: 80,
-          scheme: "http",
-        },
-      ],
-      timeout: 1,
-    },
-    resource: TestTriggerResources.Deployment,
-    resourceSelector: {
-      name: "nginx",
+        ],
+        delay: 1,
+        timeout: 1,
+      },
+      event: "modified",
+      execution: TestTriggerExecutions.Testsuite,
+      labels: {
+        "env": "prod",
+        "app": "backend",
+      },
+      name: "name",
       namespace: "testkube",
+      probeSpec: {
+        delay: 1,
+        probes: [
+          {
+            headers: {
+              "Content-Type": "application/xml",
+            },
+            host: "testkube-api-server",
+            path: "/",
+            port: 80,
+            scheme: "http",
+          },
+        ],
+        timeout: 1,
+      },
+      resource: TestTriggerResources.Configmap,
+      resourceSelector: {
+        name: "nginx",
+        namespace: "testkube",
+      },
+      testSelector: {
+        name: "nginx",
+        namespace: "testkube",
+      },
     },
-    testSelector: {
-      name: "nginx",
-      namespace: "testkube",
-    },
-  },
-  id: "<ID>",
-  namespace: "Chevrolet",
-}).then((res: UpdateTestTriggerJsonResponse) => {
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -452,19 +454,19 @@ Update test trigger
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { UpdateTestTriggerStringResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.testTriggers.updateTestTriggerString({
-  requestBody: "plum vainly haptic",
-  id: "<ID>",
-  namespace: "male Borders",
-}).then((res: UpdateTestTriggerStringResponse) => {
+  const res = await sdk.testTriggers.updateTestTriggerString({
+    requestBody: "plum vainly haptic",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

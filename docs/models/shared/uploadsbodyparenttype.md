@@ -1,4 +1,4 @@
-# UploadsRequestBodyParentType
+# UploadsBodyParentType
 
 
 ## Values

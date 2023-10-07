@@ -3,17 +3,18 @@
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { AbortExecutionResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.abortExecution({
-  executionID: "Kazakhstan flexibility",
-  id: "<ID>",
-}).then((res: AbortExecutionResponse) => {
+  const res = await sdk.api.abortExecution({
+    executionID: "Kazakhstan flexibility",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 <!-- End SDK Example Usage -->

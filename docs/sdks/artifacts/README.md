@@ -19,18 +19,18 @@ Download the artifact archive from the given execution
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { DownloadArchiveResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.artifacts.downloadArchive({
-  id: "<ID>",
-  mask: "boldly withdrawal",
-}).then((res: DownloadArchiveResponse) => {
+  const res = await sdk.artifacts.downloadArchive({
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -54,18 +54,19 @@ Download the artifact file from the given execution
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { DownloadFileResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.artifacts.downloadFile({
-  filename: "maserati_bronze_audi.mp2a",
-  id: "<ID>",
-}).then((res: DownloadFileResponse) => {
+  const res = await sdk.artifacts.downloadFile({
+    filename: "maserati_bronze_audi.mp2a",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -89,17 +90,18 @@ Returns artifacts of the given executionID
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { GetExecutionArtifactsResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.artifacts.getExecutionArtifacts({
-  id: "<ID>",
-}).then((res: GetExecutionArtifactsResponse) => {
+  const res = await sdk.artifacts.getExecutionArtifacts({
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

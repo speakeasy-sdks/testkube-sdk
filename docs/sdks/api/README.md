@@ -100,18 +100,19 @@ Aborts execution with given executionID
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { AbortExecutionResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.abortExecution({
-  executionID: "Kazakhstan flexibility",
-  id: "<ID>",
-}).then((res: AbortExecutionResponse) => {
+  const res = await sdk.api.abortExecution({
+    executionID: "Kazakhstan flexibility",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -135,17 +136,18 @@ Abort all test executions
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { AbortTestExecutionsResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.abortTestExecutions({
-  id: "<ID>",
-}).then((res: AbortTestExecutionsResponse) => {
+  const res = await sdk.api.abortTestExecutions({
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -169,18 +171,19 @@ Aborts testsuite execution with given executionID
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { AbortTestSuiteExecutionResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.abortTestSuiteExecution({
-  executionID: "Folk Account",
-  id: "<ID>",
-}).then((res: AbortTestSuiteExecutionResponse) => {
+  const res = await sdk.api.abortTestSuiteExecution({
+    executionID: "Folk Account",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -204,17 +207,18 @@ Aborts testsuite execution with given executionID
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { AbortTestSuiteExecutionByIDResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.abortTestSuiteExecutionByID({
-  executionID: "Buckinghamshire Electronic",
-}).then((res: AbortTestSuiteExecutionByIDResponse) => {
+  const res = await sdk.api.abortTestSuiteExecutionByID({
+    executionID: "Buckinghamshire Electronic",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -238,17 +242,18 @@ Abort all test executions of a test suite
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { AbortTestSuiteExecutionsResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.abortTestSuiteExecutions({
-  id: "<ID>",
-}).then((res: AbortTestSuiteExecutionsResponse) => {
+  const res = await sdk.api.abortTestSuiteExecutions({
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -272,7 +277,6 @@ Updates test triggers provided as an array in the request body
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { BulkUpdateTestTriggersResponse } from "testkube-sdk/dist/sdk/models/operations";
 import {
   TestTriggerActions,
   TestTriggerConditionStatuses,
@@ -280,60 +284,63 @@ import {
   TestTriggerResources,
 } from "testkube-sdk/dist/sdk/models/shared";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.bulkUpdateTestTriggers([
-  {
-    action: TestTriggerActions.Run,
-    conditionSpec: {
-      conditions: [
-        {
-          reason: "NewReplicaSetAvailable",
-          status: TestTriggerConditionStatuses.Unknown,
-          ttl: 1,
-          type: "Progressing",
-        },
-      ],
-      delay: 1,
-      timeout: 1,
-    },
-    event: "modified",
-    execution: TestTriggerExecutions.Testsuite,
-    labels: {
-      "qui": "serious",
-    },
-    name: "name",
-    namespace: "testkube",
-    probeSpec: {
-      delay: 1,
-      probes: [
-        {
-          headers: {
-            "quibusdam": "holder",
+  const res = await sdk.api.bulkUpdateTestTriggers([
+    {
+      action: TestTriggerActions.Run,
+      conditionSpec: {
+        conditions: [
+          {
+            reason: "NewReplicaSetAvailable",
+            status: TestTriggerConditionStatuses.Unknown,
+            ttl: 1,
+            type: "Progressing",
           },
-          host: "testkube-api-server",
-          path: "/",
-          port: 80,
-          scheme: "http",
-        },
-      ],
-      timeout: 1,
-    },
-    resource: TestTriggerResources.Ingress,
-    resourceSelector: {
-      name: "nginx",
+        ],
+        delay: 1,
+        timeout: 1,
+      },
+      event: "modified",
+      execution: TestTriggerExecutions.Testsuite,
+      labels: {
+        "env": "prod",
+        "app": "backend",
+      },
+      name: "name",
       namespace: "testkube",
+      probeSpec: {
+        delay: 1,
+        probes: [
+          {
+            headers: {
+              "Content-Type": "application/xml",
+            },
+            host: "testkube-api-server",
+            path: "/",
+            port: 80,
+            scheme: "http",
+          },
+        ],
+        timeout: 1,
+      },
+      resource: TestTriggerResources.Deployment,
+      resourceSelector: {
+        name: "nginx",
+        namespace: "testkube",
+      },
+      testSelector: {
+        name: "nginx",
+        namespace: "testkube",
+      },
     },
-    testSelector: {
-      name: "nginx",
-      namespace: "testkube",
-    },
-  },
-]).then((res: BulkUpdateTestTriggersResponse) => {
+  ]);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -357,53 +364,51 @@ Create new executor based on variables passed in request
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { CreateExecutorJsonResponse } from "testkube-sdk/dist/sdk/models/operations";
 import { ExecutorUpsertRequestFeatures } from "testkube-sdk/dist/sdk/models/shared";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.createExecutorJson({
-  args: [
-    "National",
-  ],
-  command: [
-    "regarding",
-  ],
-  contentTypes: [
-    "reboot",
-  ],
-  executorType: "Bicycle quantify Sports",
-  features: [
-    ExecutorUpsertRequestFeatures.Artifacts,
-  ],
-  image: "https://loremflickr.com/640/480",
-  imagePullSecrets: [
-    {
-      name: "Yemen Accounts",
+  const res = await sdk.api.createExecutorJson({
+    args: [
+      "--repeats",
+      "5",
+      "--insecure",
+    ],
+    command: [
+      "curl",
+    ],
+    contentTypes: [
+      "National",
+    ],
+    features: [
+      ExecutorUpsertRequestFeatures.JunitReport,
+    ],
+    imagePullSecrets: [
+      {},
+    ],
+    labels: {
+      "env": "prod",
+      "app": "backend",
     },
-  ],
-  jobTemplate: "Pike",
-  labels: {
-    "atque": "incidunt",
-  },
-  meta: {
-    docsURI: "https://docs.testkube.io/test-types/executor-k6",
-    iconURI: "/assets/k6.jpg",
-    tooltips: {
-      "magnam": "East",
+    meta: {
+      docsURI: "https://docs.testkube.io/test-types/executor-k6",
+      iconURI: "/assets/k6.jpg",
+      tooltips: {
+        "general": "please provide k6 test script for execution",
+      },
     },
-  },
-  name: "name",
-  namespace: "testkube",
-  types: [
-    "watt",
-  ],
-  uri: "https://limp-civilian.name",
-}).then((res: CreateExecutorJsonResponse) => {
+    name: "name",
+    namespace: "testkube",
+    types: [
+      "ohm",
+    ],
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -427,15 +432,16 @@ Create new executor based on variables passed in request
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { CreateExecutorStringResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.createExecutorString("approach").then((res: CreateExecutorStringResponse) => {
+  const res = await sdk.api.createExecutorString("approach");
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -459,47 +465,40 @@ Create new test source based on variables passed in request
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { CreateTestSourceJsonResponse } from "testkube-sdk/dist/sdk/models/operations";
 import { RepositoryAuthType, RepositoryType, TestSourceUpsertRequestType } from "testkube-sdk/dist/sdk/models/shared";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.createTestSourceJson({
-  data: "Mazda Iowa",
-  labels: {
-    "voluptates": "numquam",
-  },
-  name: "testsource1",
-  namespace: "testkube",
-  repository: {
-    authType: RepositoryAuthType.Header,
-    branch: "main",
-    certificateSecret: "withdrawal Bedfordshire",
-    commit: "b928cbb7186944ab9275937ec1ac3d3738ca2e1d",
-    path: "test/perf",
-    token: "Sleek Nella mobile",
-    tokenSecret: {
-      key: "<key>",
-      name: "withdrawal",
-      namespace: "Cadillac",
+  const res = await sdk.api.createTestSourceJson({
+    labels: {
+      "Research": "ubiquitous",
     },
-    type: RepositoryType.Git,
+    name: "testsource1",
+    namespace: "testkube",
+    repository: {
+      branch: "main",
+      commit: "b928cbb7186944ab9275937ec1ac3d3738ca2e1d",
+      path: "test/perf",
+      tokenSecret: {
+        key: "<key>",
+        name: "Granite Funk",
+      },
+      type: RepositoryType.Git,
+      uri: "https://github.com/kubeshop/testkube",
+      usernameSecret: {
+        key: "<key>",
+        name: "Bedfordshire",
+      },
+      workingDir: "/",
+    },
     uri: "https://github.com/kubeshop/testkube",
-    username: "Fermin.Roob30",
-    usernameSecret: {
-      key: "<key>",
-      name: "Bespoke",
-      namespace: "Outdoors",
-    },
-    workingDir: "/",
-  },
-  type: TestSourceUpsertRequestType.GitFile,
-  uri: "https://github.com/kubeshop/testkube",
-}).then((res: CreateTestSourceJsonResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -523,15 +522,16 @@ Create new test source based on variables passed in request
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { CreateTestSourceStringResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.createTestSourceString("Demigender").then((res: CreateTestSourceStringResponse) => {
+  const res = await sdk.api.createTestSourceString("Demigender");
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -555,113 +555,112 @@ Create new test suite action
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { CreateTestSuiteJsonResponse } from "testkube-sdk/dist/sdk/models/operations";
 import { RunningContextType, TestSuiteExecutionStatus, VariableType } from "testkube-sdk/dist/sdk/models/shared";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.createTestSuiteJson({
-  after: [
-    {
-      execute: [
-        {
-          delay: "1s",
-          test: "name",
+  const res = await sdk.api.createTestSuiteJson({
+    after: [
+      {
+        execute: [
+          {
+            delay: "1s",
+            test: "name",
+          },
+        ],
+      },
+    ],
+    before: [
+      {
+        execute: [
+          {
+            delay: "1s",
+            test: "name",
+          },
+        ],
+      },
+    ],
+    description: "collection of tests",
+    executionRequest: {
+      concurrencyLevel: 10,
+      contentRequest: {
+        repository: {
+          branch: "main",
+          commit: "b928cbb7186944ab9275937ec1ac3d3738ca2e1d",
+          path: "test/perf",
+          workingDir: "/",
         },
-      ],
-      stopOnFailure: false,
-    },
-  ],
-  before: [
-    {
-      execute: [
-        {
-          delay: "1s",
-          test: "name",
+      },
+      executionLabels: {
+        "users": "3",
+        "prefix": "some-",
+      },
+      httpProxy: "user:pass@my.proxy.server:8080",
+      httpsProxy: "user:pass@my.proxy.server:8081",
+      labels: {
+        "users": "3",
+        "prefix": "some-",
+      },
+      name: "testing with 1000 users",
+      namespace: "testkube",
+      number: 1,
+      runningContext: {
+        type: RunningContextType.Testsuite,
+      },
+      timeout: 1,
+      variables: {
+        "var1": {
+          configMapRef: {
+            key: "<key>",
+            name: "CLI Latin",
+          },
+          secretRef: {
+            key: "<key>",
+            name: "Florida",
+          },
         },
-      ],
-      stopOnFailure: false,
-    },
-  ],
-  created: new Date("2022-06-10T22:02:25.936Z"),
-  description: "collection of tests",
-  executionRequest: {
-    concurrencyLevel: 10,
-    contentRequest: {
-      repository: {
-        branch: "main",
-        commit: "b928cbb7186944ab9275937ec1ac3d3738ca2e1d",
-        path: "test/perf",
-        workingDir: "/",
+        "secret1": {
+          configMapRef: {
+            key: "<key>",
+            name: "uniform afore",
+          },
+          secretRef: {
+            key: "<key>",
+            name: "Market B2B even",
+          },
+        },
       },
     },
-    cronJobTemplate: "CLI Latin",
-    executionLabels: {
-      "ab": "Florida",
-    },
-    httpProxy: "user:pass@my.proxy.server:8080",
-    httpsProxy: "user:pass@my.proxy.server:8081",
     labels: {
-      "suscipit": "uniform",
+      "env": "prod",
+      "app": "backend",
     },
-    name: "testing with 1000 users",
+    name: "name",
     namespace: "testkube",
-    number: 1,
-    runningContext: {
-      context: "Cambridgeshire Market B2B",
-      type: RunningContextType.Scheduler,
-    },
-    sync: false,
-    timeout: 1,
-    variables: {
-      "neque": {
-        configMapRef: {
-          key: "<key>",
-          name: "Pickup Electric",
-          namespace: "cyan Trans",
-        },
-        name: "Southwest Steel",
-        secretRef: {
-          key: "<key>",
-          name: "hack SUV katal",
-          namespace: "Rock Coordinator",
-        },
-        type: VariableType.Secret,
-        value: "Rapids transmitter Factors",
+    repeats: 1,
+    schedule: "* * * * *",
+    status: {
+      latestExecution: {
+        id: "62f395e004109209b50edfc4",
       },
     },
-  },
-  labels: {
-    "labore": "tensely",
-  },
-  name: "name",
-  namespace: "testkube",
-  repeats: 1,
-  schedule: "* * * * *",
-  status: {
-    latestExecution: {
-      endTime: new Date("2021-09-23T16:32:55.803Z"),
-      id: "62f395e004109209b50edfc4",
-      startTime: new Date("2022-03-22T19:51:12.817Z"),
-      status: TestSuiteExecutionStatus.Timeout,
-    },
-  },
-  steps: [
-    {
-      execute: [
-        {
-          delay: "1s",
-          test: "name",
-        },
-      ],
-      stopOnFailure: false,
-    },
-  ],
-}).then((res: CreateTestSuiteJsonResponse) => {
+    steps: [
+      {
+        execute: [
+          {
+            delay: "1s",
+            test: "name",
+          },
+        ],
+      },
+    ],
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -685,15 +684,16 @@ Create new test suite action
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { CreateTestSuiteStringResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.createTestSuiteString("South").then((res: CreateTestSuiteStringResponse) => {
+  const res = await sdk.api.createTestSuiteString("South");
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -717,7 +717,6 @@ Create new test trigger CRD inside a Kubernetes cluster
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { CreateTestTriggerJsonResponse } from "testkube-sdk/dist/sdk/models/operations";
 import {
   TestTriggerActions,
   TestTriggerConditionStatuses,
@@ -725,58 +724,61 @@ import {
   TestTriggerResources,
 } from "testkube-sdk/dist/sdk/models/shared";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.createTestTriggerJson({
-  action: TestTriggerActions.Run,
-  conditionSpec: {
-    conditions: [
-      {
-        reason: "NewReplicaSetAvailable",
-        status: TestTriggerConditionStatuses.Unknown,
-        ttl: 1,
-        type: "Progressing",
-      },
-    ],
-    delay: 1,
-    timeout: 1,
-  },
-  event: "modified",
-  execution: TestTriggerExecutions.Test,
-  labels: {
-    "aut": "to",
-  },
-  name: "name",
-  namespace: "testkube",
-  probeSpec: {
-    delay: 1,
-    probes: [
-      {
-        headers: {
-          "veritatis": "Mountain",
+  const res = await sdk.api.createTestTriggerJson({
+    action: TestTriggerActions.Run,
+    conditionSpec: {
+      conditions: [
+        {
+          reason: "NewReplicaSetAvailable",
+          status: TestTriggerConditionStatuses.Unknown,
+          ttl: 1,
+          type: "Progressing",
         },
-        host: "testkube-api-server",
-        path: "/",
-        port: 80,
-        scheme: "http",
-      },
-    ],
-    timeout: 1,
-  },
-  resource: TestTriggerResources.Statefulset,
-  resourceSelector: {
-    name: "nginx",
+      ],
+      delay: 1,
+      timeout: 1,
+    },
+    event: "modified",
+    execution: TestTriggerExecutions.Test,
+    labels: {
+      "env": "prod",
+      "app": "backend",
+    },
+    name: "name",
     namespace: "testkube",
-  },
-  testSelector: {
-    name: "nginx",
-    namespace: "testkube",
-  },
-}).then((res: CreateTestTriggerJsonResponse) => {
+    probeSpec: {
+      delay: 1,
+      probes: [
+        {
+          headers: {
+            "Content-Type": "application/xml",
+          },
+          host: "testkube-api-server",
+          path: "/",
+          port: 80,
+          scheme: "http",
+        },
+      ],
+      timeout: 1,
+    },
+    resource: TestTriggerResources.Pod,
+    resourceSelector: {
+      name: "nginx",
+      namespace: "testkube",
+    },
+    testSelector: {
+      name: "nginx",
+      namespace: "testkube",
+    },
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -800,15 +802,16 @@ Create new test trigger CRD inside a Kubernetes cluster
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { CreateTestTriggerStringResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.createTestTriggerString("withdrawal").then((res: CreateTestTriggerStringResponse) => {
+  const res = await sdk.api.createTestTriggerString("withdrawal");
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -832,7 +835,6 @@ Create new test based on file content, uri or git based data
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { CreateTestJsonResponse } from "testkube-sdk/dist/sdk/models/operations";
 import {
   ExecutionRequestArgsMode,
   ExecutionStatus,
@@ -843,164 +845,147 @@ import {
   VariableType,
 } from "testkube-sdk/dist/sdk/models/shared";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.createTestJson({
-  content: {
-    data: "Digitized",
-    repository: {
-      authType: RepositoryAuthType.Basic,
-      branch: "main",
-      certificateSecret: "bypassing",
-      commit: "b928cbb7186944ab9275937ec1ac3d3738ca2e1d",
-      path: "test/perf",
-      token: "generate",
-      tokenSecret: {
-        key: "<key>",
-        name: "circuit Hampshire generation",
-        namespace: "Rubber",
-      },
-      type: RepositoryType.Git,
-      uri: "https://github.com/kubeshop/testkube",
-      username: "Sadye13",
-      usernameSecret: {
-        key: "<key>",
-        name: "Glendale Technician Soft",
-        namespace: "Coordinator",
-      },
-      workingDir: "/",
-    },
-    type: TestContentType.Git,
-    uri: "https://github.com/kubeshop/testkube",
-  },
-  created: new Date("2022-07-30T06:54:15Z"),
-  executionRequest: {
-    activeDeadlineSeconds: 1,
-    args: [
-      "Yttrium",
-    ],
-    argsMode: ExecutionRequestArgsMode.Override,
-    artifactRequest: {
-      dirs: [
-        "salmon",
-      ],
-      storageClassName: "artifact-volume-local",
-      volumeMountPath: "Classical Transmasculine",
-    },
-    bucketName: "execution-c01d7cf6-ec3f-47f0-9556-a5d6e9009a43",
-    command: [
-      "invoice",
-    ],
-    contentRequest: {
+  const res = await sdk.api.createTestJson({
+    content: {
       repository: {
         branch: "main",
         commit: "b928cbb7186944ab9275937ec1ac3d3738ca2e1d",
         path: "test/perf",
+        tokenSecret: {
+          key: "<key>",
+          name: "Digitized",
+        },
+        type: RepositoryType.Git,
+        uri: "https://github.com/kubeshop/testkube",
+        usernameSecret: {
+          key: "<key>",
+          name: "syndicate",
+        },
         workingDir: "/",
       },
+      uri: "https://github.com/kubeshop/testkube",
     },
-    cronJobTemplate: "solicit black",
-    envConfigMaps: [
-      {
-        mapToVariables: false,
-        mount: true,
-        mountPath: "South doloribus teammate",
-        reference: {
-          name: "Crew Fantastic Accountability",
+    created: new Date("2022-07-30T06:54:15Z"),
+    executionRequest: {
+      activeDeadlineSeconds: 1,
+      args: [
+        "--repeats",
+        "5",
+        "--insecure",
+      ],
+      artifactRequest: {
+        dirs: [
+          "Bedfordshire",
+        ],
+        storageClassName: "artifact-volume-local",
+      },
+      bucketName: "execution-c01d7cf6-ec3f-47f0-9556-a5d6e9009a43",
+      command: [
+        "curl",
+      ],
+      contentRequest: {
+        repository: {
+          branch: "main",
+          commit: "b928cbb7186944ab9275937ec1ac3d3738ca2e1d",
+          path: "test/perf",
+          workingDir: "/",
         },
       },
-    ],
-    envSecrets: [
-      {
-        mapToVariables: false,
-        mount: true,
-        mountPath: "experiences Van Sterling",
-        reference: {
-          name: "Metrics Configuration Northwest",
+      envConfigMaps: [
+        {
+          mount: true,
+          reference: {},
+        },
+      ],
+      envSecrets: [
+        {
+          mount: true,
+          reference: {},
+        },
+      ],
+      envs: {
+        "record": "true",
+        "prefix": "some-",
+      },
+      executionLabels: {
+        "users": "3",
+        "prefix": "some-",
+      },
+      httpProxy: "user:pass@my.proxy.server:8080",
+      httpsProxy: "user:pass@my.proxy.server:8081",
+      id: "62f395e004109209b50edfc1",
+      image: "kubeshop/testkube-executor-custom:1.10.11-dev-0a9c91",
+      imagePullSecrets: [
+        {},
+      ],
+      isNegativeTestChangedOnRun: false,
+      isVariablesFileUploaded: false,
+      name: "testing with 1000 users",
+      namespace: "testkube",
+      negativeTest: false,
+      postRunScript: "sleep 30",
+      preRunScript: "echo -n '$SECRET_ENV' > ./secret_file",
+      runningContext: {
+        type: RunningContextType.UserUI,
+      },
+      secretEnvs: {
+        "secret_key_name1": "secret-name",
+        "secret_Key_name2": "secret-name",
+      },
+      testSuiteName: "test-suite1",
+      uploads: [
+        "settings/config.txt",
+      ],
+      variables: {
+        "var1": {
+          configMapRef: {
+            key: "<key>",
+            name: "blue Hampshire generation",
+          },
+          secretRef: {
+            key: "<key>",
+            name: "Rubber",
+          },
+        },
+        "secret1": {
+          configMapRef: {
+            key: "<key>",
+            name: "partnerships Ohio Glendale",
+          },
+          secretRef: {
+            key: "<key>",
+            name: "Future digital Coordinator",
+          },
         },
       },
-    ],
-    envs: {
-      "consequatur": "whoever",
     },
-    executionLabels: {
-      "libero": "Buckinghamshire",
+    labels: {
+      "env": "prod",
+      "app": "backend",
     },
-    httpProxy: "user:pass@my.proxy.server:8080",
-    httpsProxy: "user:pass@my.proxy.server:8081",
-    id: "62f395e004109209b50edfc1",
-    image: "kubeshop/testkube-executor-custom:1.10.11-dev-0a9c91",
-    imagePullSecrets: [
-      {
-        name: "Savings Officer",
-      },
-    ],
-    isNegativeTestChangedOnRun: false,
-    isVariablesFileUploaded: false,
-    jobTemplate: "Electronics granular",
-    name: "testing with 1000 users",
+    name: "test1",
     namespace: "testkube",
-    negativeTest: false,
-    number: 240230,
-    postRunScript: "sleep 30",
-    preRunScript: "echo -n '$SECRET_ENV' > ./secret_file",
-    runningContext: {
-      context: "port Markets Customizable",
-      type: RunningContextType.UserUI,
-    },
-    scraperTemplate: "Bentley",
-    secretEnvs: {
-      "assumenda": "maximized",
-    },
-    sync: false,
-    testSuiteName: "test-suite1",
-    uploads: [
-      "Branding",
-    ],
-    variables: {
-      "voluptates": {
-        configMapRef: {
-          key: "<key>",
-          name: "Ergonomic",
-          namespace: "reboot drat Roberts",
-        },
-        name: "invoice Actinium Metal",
-        secretRef: {
-          key: "<key>",
-          name: "Rapids hence",
-          namespace: "Granite",
-        },
-        type: VariableType.Secret,
-        value: "Handmade Karley maroon",
+    schedule: "* * * * *",
+    source: "my-private-repository-test",
+    status: {
+      latestExecution: {
+        id: "62f395e004109209b50edfc4",
+        number: 1,
       },
     },
-    variablesFile: "hub",
-  },
-  labels: {
-    "soluta": "mesh",
-  },
-  name: "test1",
-  namespace: "testkube",
-  schedule: "* * * * *",
-  source: "my-private-repository-test",
-  status: {
-    latestExecution: {
-      endTime: new Date("2023-03-16T20:41:40.495Z"),
-      id: "62f395e004109209b50edfc4",
-      number: 1,
-      startTime: new Date("2023-12-05T03:42:12.543Z"),
-      status: ExecutionStatus.Passed,
-    },
-  },
-  type: "postman/collection",
-  uploads: [
-    "New",
-  ],
-}).then((res: CreateTestJsonResponse) => {
+    type: "postman/collection",
+    uploads: [
+      "settings/config.txt",
+    ],
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -1024,15 +1009,16 @@ Create new test based on file content, uri or git based data
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { CreateTestStringResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.createTestString("Hybrid").then((res: CreateTestStringResponse) => {
+  const res = await sdk.api.createTestString("Hybrid");
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -1056,32 +1042,31 @@ Create new webhook based on variables passed in request
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { CreateWebhookJsonResponse } from "testkube-sdk/dist/sdk/models/operations";
 import { EventType } from "testkube-sdk/dist/sdk/models/shared";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.createWebhookJson({
-  events: [
-    EventType.EndTestTimeout,
-  ],
-  headers: {
-    "porro": "Loaf",
-  },
-  labels: {
-    "qui": "Quality",
-  },
-  name: "webhook1",
-  namespace: "testkube",
-  payloadObjectField: "Eritrea gray",
-  payloadTemplate: "what haptic second",
-  selector: "port",
-  uri: "https://hooks.app.com/services/1",
-}).then((res: CreateWebhookJsonResponse) => {
+  const res = await sdk.api.createWebhookJson({
+    events: [
+      EventType.EndTestTimeout,
+    ],
+    headers: {
+      "Content-Type": "application/xml",
+    },
+    labels: {
+      "env": "prod",
+      "app": "backend",
+    },
+    name: "webhook1",
+    namespace: "testkube",
+    uri: "https://hooks.app.com/services/1",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -1105,15 +1090,16 @@ Create new webhook based on variables passed in request
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { CreateWebhookStringResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.createWebhookString("henry").then((res: CreateWebhookStringResponse) => {
+  const res = await sdk.api.createWebhookString("henry");
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -1137,17 +1123,18 @@ Deletes executor by its name
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { DeleteExecutorResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.deleteExecutor({
-  id: "<ID>",
-}).then((res: DeleteExecutorResponse) => {
+  const res = await sdk.api.deleteExecutor({
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -1171,17 +1158,16 @@ Deletes labeled executors
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { DeleteExecutorsResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.deleteExecutors({
-  selector: "utilisation",
-}).then((res: DeleteExecutorsResponse) => {
+  const res = await sdk.api.deleteExecutors({});
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -1205,17 +1191,18 @@ Deletes a test
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { DeleteTestResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.deleteTest({
-  id: "<ID>",
-}).then((res: DeleteTestResponse) => {
+  const res = await sdk.api.deleteTest({
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -1239,17 +1226,18 @@ Deletes test source by its name
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { DeleteTestSourceResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.deleteTestSource({
-  id: "<ID>",
-}).then((res: DeleteTestSourceResponse) => {
+  const res = await sdk.api.deleteTestSource({
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -1273,17 +1261,16 @@ Deletes labeled test sources
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { DeleteTestSourcesResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.deleteTestSources({
-  selector: "distributed copying",
-}).then((res: DeleteTestSourcesResponse) => {
+  const res = await sdk.api.deleteTestSources({});
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -1307,17 +1294,18 @@ Deletes a test suite
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { DeleteTestSuiteResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.deleteTestSuite({
-  id: "<ID>",
-}).then((res: DeleteTestSuiteResponse) => {
+  const res = await sdk.api.deleteTestSuite({
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -1341,17 +1329,16 @@ Deletes all or labeled test suites
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { DeleteTestSuitesResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.deleteTestSuites({
-  selector: "Norman Honda female",
-}).then((res: DeleteTestSuitesResponse) => {
+  const res = await sdk.api.deleteTestSuites({});
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -1375,18 +1362,18 @@ Deletes a test trigger
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { DeleteTestTriggerResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.deleteTestTrigger({
-  id: "<ID>",
-  namespace: "Dollar hornet",
-}).then((res: DeleteTestTriggerResponse) => {
+  const res = await sdk.api.deleteTestTrigger({
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -1410,18 +1397,16 @@ Deletes all or labeled test triggers
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { DeleteTestTriggersResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.deleteTestTriggers({
-  namespace: "blue Bahamian",
-  selector: "deposit Kroon",
-}).then((res: DeleteTestTriggersResponse) => {
+  const res = await sdk.api.deleteTestTriggers({});
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -1445,17 +1430,16 @@ Deletes all or labeled tests
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { DeleteTestsResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.deleteTests({
-  selector: "Steel Hop",
-}).then((res: DeleteTestsResponse) => {
+  const res = await sdk.api.deleteTests({});
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -1479,17 +1463,18 @@ Deletes webhook by its name
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { DeleteWebhookResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.deleteWebhook({
-  id: "<ID>",
-}).then((res: DeleteWebhookResponse) => {
+  const res = await sdk.api.deleteWebhook({
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -1513,17 +1498,16 @@ Deletes labeled webhooks
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { DeleteWebhooksResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.deleteWebhooks({
-  selector: "Table",
-}).then((res: DeleteWebhooksResponse) => {
+  const res = await sdk.api.deleteWebhooks({});
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -1547,18 +1531,18 @@ Download the artifact archive from the given execution
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { DownloadArchiveResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.downloadArchive({
-  id: "<ID>",
-  mask: "boldly withdrawal",
-}).then((res: DownloadArchiveResponse) => {
+  const res = await sdk.api.downloadArchive({
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -1582,18 +1566,19 @@ Download the artifact file from the given execution
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { DownloadFileResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.downloadFile({
-  filename: "maserati_bronze_audi.mp2a",
-  id: "<ID>",
-}).then((res: DownloadFileResponse) => {
+  const res = await sdk.api.downloadFile({
+    filename: "maserati_bronze_audi.mp2a",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -1617,121 +1602,112 @@ New test execution returns new execution details on successful execution start
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { ExecuteTestResponse } from "testkube-sdk/dist/sdk/models/operations";
 import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/shared";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.executeTest({
-  executionRequestInput: {
-    activeDeadlineSeconds: 1,
-    args: [
-      "Savings",
-    ],
-    argsMode: ExecutionRequestArgsMode.Override,
-    artifactRequest: {
-      dirs: [
-        "Peso",
+  const res = await sdk.api.executeTest({
+    executionRequestInput: {
+      activeDeadlineSeconds: 1,
+      args: [
+        "--repeats",
+        "5",
+        "--insecure",
       ],
-      storageClassName: "artifact-volume-local",
-      volumeMountPath: "Reggae volt Volvo",
-    },
-    bucketName: "execution-c01d7cf6-ec3f-47f0-9556-a5d6e9009a43",
-    command: [
-      "invoice",
-    ],
-    contentRequest: {
-      repository: {
-        branch: "main",
-        commit: "b928cbb7186944ab9275937ec1ac3d3738ca2e1d",
-        path: "test/perf",
-        workingDir: "/",
+      artifactRequest: {
+        dirs: [
+          "Savings",
+        ],
+        storageClassName: "artifact-volume-local",
       },
-    },
-    cronJobTemplate: "why SMTP",
-    envConfigMaps: [
-      {
-        mapToVariables: false,
-        mount: true,
-        mountPath: "transmitting Coordinator",
-        reference: {
-          name: "Hybrid policy blue",
+      bucketName: "execution-c01d7cf6-ec3f-47f0-9556-a5d6e9009a43",
+      command: [
+        "curl",
+      ],
+      contentRequest: {
+        repository: {
+          branch: "main",
+          commit: "b928cbb7186944ab9275937ec1ac3d3738ca2e1d",
+          path: "test/perf",
+          workingDir: "/",
         },
       },
-    ],
-    envSecrets: [
-      {
-        mapToVariables: false,
-        mount: true,
-        mountPath: "Manager Interactions Architect",
-        reference: {
-          name: "Manhattan how Mauritius",
+      envConfigMaps: [
+        {
+          mount: true,
+          reference: {},
+        },
+      ],
+      envSecrets: [
+        {
+          mount: true,
+          reference: {},
+        },
+      ],
+      envs: {
+        "prefix": "some-",
+        "record": "true",
+      },
+      executionLabels: {
+        "users": "3",
+        "prefix": "some-",
+      },
+      httpProxy: "user:pass@my.proxy.server:8080",
+      httpsProxy: "user:pass@my.proxy.server:8081",
+      id: "62f395e004109209b50edfc1",
+      image: "kubeshop/testkube-executor-custom:1.10.11-dev-0a9c91",
+      imagePullSecrets: [
+        {},
+      ],
+      isNegativeTestChangedOnRun: false,
+      isVariablesFileUploaded: false,
+      name: "testing with 1000 users",
+      namespace: "testkube",
+      negativeTest: false,
+      postRunScript: "sleep 30",
+      preRunScript: "echo -n '$SECRET_ENV' > ./secret_file",
+      runningContext: {
+        type: RunningContextType.Testtrigger,
+      },
+      secretEnvs: {
+        "secret_key_name1": "secret-name",
+        "secret_Key_name2": "secret-name",
+      },
+      testSuiteName: "test-suite1",
+      uploads: [
+        "settings/config.txt",
+      ],
+      variables: {
+        "var1": {
+          configMapRef: {
+            key: "<key>",
+            name: "Van Reggae",
+          },
+          secretRef: {
+            key: "<key>",
+            name: "transmitting failing aw",
+          },
+        },
+        "secret1": {
+          configMapRef: {
+            key: "<key>",
+            name: "forenenst female transmitting",
+          },
+          secretRef: {
+            key: "<key>",
+            name: "Hybrid policy blue",
+          },
         },
       },
-    ],
-    envs: {
-      "nobis": "Cambridgeshire",
     },
-    executionLabels: {
-      "repudiandae": "Beauty",
-    },
-    httpProxy: "user:pass@my.proxy.server:8080",
-    httpsProxy: "user:pass@my.proxy.server:8081",
-    id: "62f395e004109209b50edfc1",
-    image: "kubeshop/testkube-executor-custom:1.10.11-dev-0a9c91",
-    imagePullSecrets: [
-      {
-        name: "application Dollar",
-      },
-    ],
-    isNegativeTestChangedOnRun: false,
-    isVariablesFileUploaded: false,
-    jobTemplate: "Island",
-    name: "testing with 1000 users",
-    namespace: "testkube",
-    negativeTest: false,
-    number: 536683,
-    postRunScript: "sleep 30",
-    preRunScript: "echo -n '$SECRET_ENV' > ./secret_file",
-    runningContext: {
-      context: "East redundant",
-      type: RunningContextType.Scheduler,
-    },
-    scraperTemplate: "Northwest Bicycle",
-    secretEnvs: {
-      "vero": "Associate",
-    },
-    sync: false,
-    testSuiteName: "test-suite1",
-    uploads: [
-      "Porterville",
-    ],
-    variables: {
-      "fugit": {
-        configMapRef: {
-          key: "<key>",
-          name: "kilogram Integration glen",
-          namespace: "JSON whoa Berkshire",
-        },
-        name: "Bacon Cheese",
-        secretRef: {
-          key: "<key>",
-          name: "eius",
-          namespace: "Fresh Northwest",
-        },
-        type: VariableType.Secret,
-        value: "West Account",
-      },
-    },
-    variablesFile: "Chief female Honda",
-  },
-  id: "<ID>",
-  namespace: "Usability Soft defiantly",
-}).then((res: ExecuteTestResponse) => {
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -1755,66 +1731,69 @@ New test suite execution returns new execution details on successful execution s
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { ExecuteTestSuiteResponse } from "testkube-sdk/dist/sdk/models/operations";
 import { RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/shared";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.executeTestSuite({
-  testSuiteExecutionRequestInput: {
-    concurrencyLevel: 10,
-    contentRequest: {
-      repository: {
-        branch: "main",
-        commit: "b928cbb7186944ab9275937ec1ac3d3738ca2e1d",
-        path: "test/perf",
-        workingDir: "/",
+  const res = await sdk.api.executeTestSuite({
+    testSuiteExecutionRequestInput: {
+      concurrencyLevel: 10,
+      contentRequest: {
+        repository: {
+          branch: "main",
+          commit: "b928cbb7186944ab9275937ec1ac3d3738ca2e1d",
+          path: "test/perf",
+          workingDir: "/",
+        },
+      },
+      executionLabels: {
+        "prefix": "some-",
+        "users": "3",
+      },
+      httpProxy: "user:pass@my.proxy.server:8080",
+      httpsProxy: "user:pass@my.proxy.server:8081",
+      labels: {
+        "users": "3",
+        "prefix": "some-",
+      },
+      name: "testing with 1000 users",
+      namespace: "testkube",
+      number: 1,
+      runningContext: {
+        type: RunningContextType.Testtrigger,
+      },
+      timeout: 1,
+      variables: {
+        "var1": {
+          configMapRef: {
+            key: "<key>",
+            name: "overgeneralize",
+          },
+          secretRef: {
+            key: "<key>",
+            name: "invoice Beauty amid",
+          },
+        },
+        "secret1": {
+          configMapRef: {
+            key: "<key>",
+            name: "phew Southwest Fundamental",
+          },
+          secretRef: {
+            key: "<key>",
+            name: "North Southwest",
+          },
+        },
       },
     },
-    cronJobTemplate: "Southwest Latin",
-    executionLabels: {
-      "voluptate": "finally",
-    },
-    httpProxy: "user:pass@my.proxy.server:8080",
-    httpsProxy: "user:pass@my.proxy.server:8081",
-    labels: {
-      "deleniti": "amid",
-    },
-    name: "testing with 1000 users",
-    namespace: "testkube",
-    number: 1,
-    runningContext: {
-      context: "phew Southwest Fundamental",
-      type: RunningContextType.Testsuite,
-    },
-    sync: false,
-    timeout: 1,
-    variables: {
-      "aut": {
-        configMapRef: {
-          key: "<key>",
-          name: "Southwest",
-          namespace: "bandwidth",
-        },
-        name: "East",
-        secretRef: {
-          key: "<key>",
-          name: "fully global customized",
-          namespace: "Indiana Towels",
-        },
-        type: VariableType.Basic,
-        value: "Regional",
-      },
-    },
-  },
-  id: "<ID>",
-  last: 342781,
-  namespace: "navigate mole",
-}).then((res: ExecuteTestSuiteResponse) => {
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -1838,66 +1817,68 @@ New test suite executions returns new executions details on successful execution
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { ExecuteTestSuitesResponse } from "testkube-sdk/dist/sdk/models/operations";
 import { RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/shared";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.executeTestSuites({
-  testSuiteExecutionRequestInput: {
-    concurrencyLevel: 10,
-    contentRequest: {
-      repository: {
-        branch: "main",
-        commit: "b928cbb7186944ab9275937ec1ac3d3738ca2e1d",
-        path: "test/perf",
-        workingDir: "/",
+  const res = await sdk.api.executeTestSuites({
+    testSuiteExecutionRequestInput: {
+      concurrencyLevel: 10,
+      contentRequest: {
+        repository: {
+          branch: "main",
+          commit: "b928cbb7186944ab9275937ec1ac3d3738ca2e1d",
+          path: "test/perf",
+          workingDir: "/",
+        },
+      },
+      executionLabels: {
+        "users": "3",
+        "prefix": "some-",
+      },
+      httpProxy: "user:pass@my.proxy.server:8080",
+      httpsProxy: "user:pass@my.proxy.server:8081",
+      labels: {
+        "users": "3",
+        "prefix": "some-",
+      },
+      name: "testing with 1000 users",
+      namespace: "testkube",
+      number: 1,
+      runningContext: {
+        type: RunningContextType.UserUI,
+      },
+      timeout: 1,
+      variables: {
+        "var1": {
+          configMapRef: {
+            key: "<key>",
+            name: "Gasoline",
+          },
+          secretRef: {
+            key: "<key>",
+            name: "Smart TCP Borders",
+          },
+        },
+        "secret1": {
+          configMapRef: {
+            key: "<key>",
+            name: "Avon payment",
+          },
+          secretRef: {
+            key: "<key>",
+            name: "Keyboard meh troubled",
+          },
+        },
       },
     },
-    cronJobTemplate: "Fish klutzy",
-    executionLabels: {
-      "minus": "Borders",
-    },
-    httpProxy: "user:pass@my.proxy.server:8080",
-    httpsProxy: "user:pass@my.proxy.server:8081",
-    labels: {
-      "id": "Avon",
-    },
-    name: "testing with 1000 users",
-    namespace: "testkube",
-    number: 1,
-    runningContext: {
-      context: "input Keyboard",
-      type: RunningContextType.Scheduler,
-    },
-    sync: false,
-    timeout: 1,
-    variables: {
-      "dignissimos": {
-        configMapRef: {
-          key: "<key>",
-          name: "brave SUV mysteriously",
-          namespace: "override Longmont",
-        },
-        name: "synthesize",
-        secretRef: {
-          key: "<key>",
-          name: "backing Dominica Checking",
-          namespace: "Cargo national lumen",
-        },
-        type: VariableType.Secret,
-        value: "frictionless West labore",
-      },
-    },
-  },
-  concurrency: 618300,
-  namespace: "New",
-  selector: "Profound",
-}).then((res: ExecuteTestSuitesResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -1921,123 +1902,111 @@ New test executions returns new executions details on successful executions star
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { ExecuteTestsResponse } from "testkube-sdk/dist/sdk/models/operations";
 import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/shared";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.executeTests({
-  executionRequestInput: {
-    activeDeadlineSeconds: 1,
-    args: [
-      "alongside",
-    ],
-    argsMode: ExecutionRequestArgsMode.Append,
-    artifactRequest: {
-      dirs: [
-        "synthesize",
+  const res = await sdk.api.executeTests({
+    executionRequestInput: {
+      activeDeadlineSeconds: 1,
+      args: [
+        "--repeats",
+        "5",
+        "--insecure",
       ],
-      storageClassName: "artifact-volume-local",
-      volumeMountPath: "Electric",
-    },
-    bucketName: "execution-c01d7cf6-ec3f-47f0-9556-a5d6e9009a43",
-    command: [
-      "Southeast",
-    ],
-    contentRequest: {
-      repository: {
-        branch: "main",
-        commit: "b928cbb7186944ab9275937ec1ac3d3738ca2e1d",
-        path: "test/perf",
-        workingDir: "/",
+      artifactRequest: {
+        dirs: [
+          "alongside",
+        ],
+        storageClassName: "artifact-volume-local",
       },
-    },
-    cronJobTemplate: "DNS green",
-    envConfigMaps: [
-      {
-        mapToVariables: false,
-        mount: true,
-        mountPath: "Greece",
-        reference: {
-          name: "anonymise",
+      bucketName: "execution-c01d7cf6-ec3f-47f0-9556-a5d6e9009a43",
+      command: [
+        "curl",
+      ],
+      contentRequest: {
+        repository: {
+          branch: "main",
+          commit: "b928cbb7186944ab9275937ec1ac3d3738ca2e1d",
+          path: "test/perf",
+          workingDir: "/",
         },
       },
-    ],
-    envSecrets: [
-      {
-        mapToVariables: false,
-        mount: true,
-        mountPath: "Grocery compress Hatchback",
-        reference: {
-          name: "Estates Corporate",
+      envConfigMaps: [
+        {
+          mount: true,
+          reference: {},
+        },
+      ],
+      envSecrets: [
+        {
+          mount: true,
+          reference: {},
+        },
+      ],
+      envs: {
+        "record": "true",
+        "prefix": "some-",
+      },
+      executionLabels: {
+        "users": "3",
+        "prefix": "some-",
+      },
+      httpProxy: "user:pass@my.proxy.server:8080",
+      httpsProxy: "user:pass@my.proxy.server:8081",
+      id: "62f395e004109209b50edfc1",
+      image: "kubeshop/testkube-executor-custom:1.10.11-dev-0a9c91",
+      imagePullSecrets: [
+        {},
+      ],
+      isNegativeTestChangedOnRun: false,
+      isVariablesFileUploaded: false,
+      name: "testing with 1000 users",
+      namespace: "testkube",
+      negativeTest: false,
+      postRunScript: "sleep 30",
+      preRunScript: "echo -n '$SECRET_ENV' > ./secret_file",
+      runningContext: {
+        type: RunningContextType.UserUI,
+      },
+      secretEnvs: {
+        "secret_Key_name2": "secret-name",
+        "secret_key_name1": "secret-name",
+      },
+      testSuiteName: "test-suite1",
+      uploads: [
+        "settings/config.txt",
+      ],
+      variables: {
+        "var1": {
+          configMapRef: {
+            key: "<key>",
+            name: "female Electric",
+          },
+          secretRef: {
+            key: "<key>",
+            name: "firewall",
+          },
+        },
+        "secret1": {
+          configMapRef: {
+            key: "<key>",
+            name: "Jewelery Shoes",
+          },
+          secretRef: {
+            key: "<key>",
+            name: "Greece",
+          },
         },
       },
-    ],
-    envs: {
-      "illo": "Sarasota",
     },
-    executionLabels: {
-      "sit": "Borders",
-    },
-    httpProxy: "user:pass@my.proxy.server:8080",
-    httpsProxy: "user:pass@my.proxy.server:8081",
-    id: "62f395e004109209b50edfc1",
-    image: "kubeshop/testkube-executor-custom:1.10.11-dev-0a9c91",
-    imagePullSecrets: [
-      {
-        name: "Kuwaiti 24/7 Alabama",
-      },
-    ],
-    isNegativeTestChangedOnRun: false,
-    isVariablesFileUploaded: false,
-    jobTemplate: "tightly South invoice",
-    name: "testing with 1000 users",
-    namespace: "testkube",
-    negativeTest: false,
-    number: 334866,
-    postRunScript: "sleep 30",
-    preRunScript: "echo -n '$SECRET_ENV' > ./secret_file",
-    runningContext: {
-      context: "Electric feed",
-      type: RunningContextType.Scheduler,
-    },
-    scraperTemplate: "Street Fresh",
-    secretEnvs: {
-      "velit": "itch",
-    },
-    sync: false,
-    testSuiteName: "test-suite1",
-    uploads: [
-      "honestly",
-    ],
-    variables: {
-      "reiciendis": {
-        configMapRef: {
-          key: "<key>",
-          name: "state Books",
-          namespace: "Southeast payment",
-        },
-        name: "salmon",
-        secretRef: {
-          key: "<key>",
-          name: "Shad Dodge withdrawal",
-          namespace: "Hybrid countess occaecati",
-        },
-        type: VariableType.Basic,
-        value: "East Auer Palestinian",
-      },
-    },
-    variablesFile: "Granite",
-  },
-  concurrency: 64322,
-  executionSelector: "complex before Kong",
-  namespace: "Northwest Gasoline",
-  selector: "calculating Northeast",
-}).then((res: ExecuteTestsResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -2061,15 +2030,16 @@ Get config from cluster storage state
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { GetConfigResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.getConfig().then((res: GetConfigResponse) => {
+  const res = await sdk.api.getConfig();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -2092,15 +2062,16 @@ Gets information that is needed for debugging and opening Testkube bug reports
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { GetDebugInfoResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.getDebugInfo().then((res: GetDebugInfoResponse) => {
+  const res = await sdk.api.getDebugInfo();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -2123,17 +2094,18 @@ Returns artifacts of the given executionID
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { GetExecutionArtifactsResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.getExecutionArtifacts({
-  id: "<ID>",
-}).then((res: GetExecutionArtifactsResponse) => {
+  const res = await sdk.api.getExecutionArtifacts({
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -2157,17 +2129,18 @@ Returns execution with given executionID
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { GetExecutionByIDResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.getExecutionByID({
-  executionID: "Computers",
-}).then((res: GetExecutionByIDResponse) => {
+  const res = await sdk.api.getExecutionByID({
+    executionID: "Computers",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -2191,17 +2164,18 @@ Returns logs of the given executionID
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { GetExecutionLogsResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.getExecutionLogs({
-  id: "<ID>",
-}).then((res: GetExecutionLogsResponse) => {
+  const res = await sdk.api.getExecutionLogs({
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -2225,17 +2199,18 @@ Returns executors data with executions passed to executor
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { GetExecutorResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.getExecutor({
-  id: "<ID>",
-}).then((res: GetExecutorResponse) => {
+  const res = await sdk.api.getExecutor({
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -2259,15 +2234,16 @@ Returns a keymap (supported/allowed fields) for the test trigger UI screen
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { GetKeyMapResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.getKeyMap().then((res: GetKeyMapResponse) => {
+  const res = await sdk.api.getKeyMap();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -2290,17 +2266,18 @@ Gets the specified test
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { GetTestResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.getTest({
-  id: "<ID>",
-}).then((res: GetTestResponse) => {
+  const res = await sdk.api.getTest({
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -2324,18 +2301,19 @@ Returns execution with given executionID
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { GetTestExecutionResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.getTestExecution({
-  executionID: "Northeast male",
-  id: "<ID>",
-}).then((res: GetTestExecutionResponse) => {
+  const res = await sdk.api.getTestExecution({
+    executionID: "Northeast male",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -2359,19 +2337,18 @@ Gets test metrics for given tests executions, with particular execution status a
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { GetTestMetricsResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.getTestMetrics({
-  id: "<ID>",
-  last: 553330,
-  limit: 193883,
-}).then((res: GetTestMetricsResponse) => {
+  const res = await sdk.api.getTestMetrics({
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -2395,17 +2372,18 @@ Returns test sources data
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { GetTestSourceResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.getTestSource({
-  id: "<ID>",
-}).then((res: GetTestSourceResponse) => {
+  const res = await sdk.api.getTestSource({
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -2429,17 +2407,18 @@ Returns test suite with given name
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { GetTestSuiteByIDResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.getTestSuiteByID({
-  id: "<ID>",
-}).then((res: GetTestSuiteByIDResponse) => {
+  const res = await sdk.api.getTestSuiteByID({
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -2463,17 +2442,18 @@ Returns test suite with given name with execution
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { GetTestSuiteByIDWithExecutionResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.getTestSuiteByIDWithExecution({
-  id: "<ID>",
-}).then((res: GetTestSuiteByIDWithExecutionResponse) => {
+  const res = await sdk.api.getTestSuiteByIDWithExecution({
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -2497,18 +2477,19 @@ Returns test suite execution with given executionID
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { GetTestSuiteExecutionResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.getTestSuiteExecution({
-  executionID: "despite Guyana",
-  id: "<ID>",
-}).then((res: GetTestSuiteExecutionResponse) => {
+  const res = await sdk.api.getTestSuiteExecution({
+    executionID: "despite Guyana",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -2532,17 +2513,18 @@ Returns test suite execution artifacts with given executionID
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { GetTestSuiteExecutionArtifactsResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.getTestSuiteExecutionArtifacts({
-  executionID: "atop North mole",
-}).then((res: GetTestSuiteExecutionArtifactsResponse) => {
+  const res = await sdk.api.getTestSuiteExecutionArtifacts({
+    executionID: "atop North mole",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -2566,18 +2548,19 @@ Returns test suite execution artifacts with given executionID
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { GetTestSuiteExecutionArtifactsByTestsuiteResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.getTestSuiteExecutionArtifactsByTestsuite({
-  executionID: "hertz Bowling",
-  id: "<ID>",
-}).then((res: GetTestSuiteExecutionArtifactsByTestsuiteResponse) => {
+  const res = await sdk.api.getTestSuiteExecutionArtifactsByTestsuite({
+    executionID: "hertz Bowling",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -2601,18 +2584,18 @@ Returns test suite execution with given executionID
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { GetTestSuiteExecutionByIDResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.getTestSuiteExecutionByID({
-  executionID: "Hermaphrodite Markets",
-  last: 386664,
-}).then((res: GetTestSuiteExecutionByIDResponse) => {
+  const res = await sdk.api.getTestSuiteExecutionByID({
+    executionID: "Hermaphrodite Markets",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -2636,19 +2619,18 @@ Gets test suite metrics for given tests executions, with particular execution st
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { GetTestSuiteMetricsResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.getTestSuiteMetrics({
-  id: "<ID>",
-  last: 663120,
-  limit: 403660,
-}).then((res: GetTestSuiteMetricsResponse) => {
+  const res = await sdk.api.getTestSuiteMetrics({
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -2672,18 +2654,18 @@ Get test trigger by ID from CRD in kubernetes cluster
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { GetTestTriggerByIDResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.getTestTriggerByID({
-  id: "<ID>",
-  namespace: "Beauty compress payment",
-}).then((res: GetTestTriggerByIDResponse) => {
+  const res = await sdk.api.getTestTriggerByID({
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -2707,17 +2689,18 @@ Gets the specified test with execution
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { GetTestWithExecutionResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.getTestWithExecution({
-  id: "<ID>",
-}).then((res: GetTestWithExecutionResponse) => {
+  const res = await sdk.api.getTestWithExecution({
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -2741,17 +2724,18 @@ Returns webhook
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { GetWebhookResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.getWebhook({
-  id: "<ID>",
-}).then((res: GetWebhookResponse) => {
+  const res = await sdk.api.getWebhook({
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -2775,27 +2759,18 @@ Returns array of test suite executions
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { ListAllTestSuiteExecutionsResponse } from "testkube-sdk/dist/sdk/models/operations";
 import { TestSuiteExecutionStatus } from "testkube-sdk/dist/sdk/models/shared";
 import { RFCDate } from "testkube-sdk/dist/sdk/types";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.listAllTestSuiteExecutions({
-  endDate: new RFCDate("2021-10-24"),
-  last: 23183,
-  page: 456148,
-  pageSize: 513574,
-  selector: "Directives",
-  startDate: new RFCDate("2023-11-09"),
-  status: TestSuiteExecutionStatus.Timeout,
-  test: "deposit female versus",
-  textSearch: "Qatari overriding program",
-}).then((res: ListAllTestSuiteExecutionsResponse) => {
+  const res = await sdk.api.listAllTestSuiteExecutions({});
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -2819,27 +2794,18 @@ Returns array of test executions
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { ListExecutionsResponse } from "testkube-sdk/dist/sdk/models/operations";
 import { ExecutionStatus } from "testkube-sdk/dist/sdk/models/shared";
 import { RFCDate } from "testkube-sdk/dist/sdk/types";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.listExecutions({
-  endDate: new RFCDate("2021-04-10"),
-  page: 506498,
-  pageSize: 935977,
-  selector: "withdrawal",
-  startDate: new RFCDate("2023-06-30"),
-  status: ExecutionStatus.Failed,
-  test: "batting collaborative Convertible",
-  textSearch: "cultivate",
-  type: "Lawrencium joule purple",
-}).then((res: ListExecutionsResponse) => {
+  const res = await sdk.api.listExecutions({});
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -2863,17 +2829,16 @@ List executors available in cluster
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { ListExecutorsResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.listExecutors({
-  selector: "Bedfordshire male",
-}).then((res: ListExecutorsResponse) => {
+  const res = await sdk.api.listExecutors({});
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -2897,25 +2862,20 @@ Returns array of all available test executions
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { ListTestExecutionsResponse } from "testkube-sdk/dist/sdk/models/operations";
 import { ExecutionStatus } from "testkube-sdk/dist/sdk/models/shared";
 import { RFCDate } from "testkube-sdk/dist/sdk/types";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.listTestExecutions({
-  endDate: new RFCDate("2022-07-14"),
-  id: "<ID>",
-  last: 715626,
-  page: 210724,
-  pageSize: 611817,
-  startDate: new RFCDate("2022-04-16"),
-  status: ExecutionStatus.Queued,
-}).then((res: ListTestExecutionsResponse) => {
+  const res = await sdk.api.listTestExecutions({
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -2939,17 +2899,16 @@ List test sources available in cluster
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { ListTestSourcesResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.listTestSources({
-  selector: "Administrator Shanahan Coupe",
-}).then((res: ListTestSourcesResponse) => {
+  const res = await sdk.api.listTestSources({});
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -2973,24 +2932,20 @@ Returns array of all available test suite executions
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { ListTestSuiteExecutionsResponse } from "testkube-sdk/dist/sdk/models/operations";
 import { TestSuiteExecutionStatus } from "testkube-sdk/dist/sdk/models/shared";
 import { RFCDate } from "testkube-sdk/dist/sdk/types";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.listTestSuiteExecutions({
-  endDate: new RFCDate("2022-11-23"),
-  id: "<ID>",
-  page: 729958,
-  pageSize: 354494,
-  startDate: new RFCDate("2021-04-16"),
-  status: TestSuiteExecutionStatus.Aborting,
-}).then((res: ListTestSuiteExecutionsResponse) => {
+  const res = await sdk.api.listTestSuiteExecutions({
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -3014,17 +2969,18 @@ List available tests for test suite
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { ListTestSuiteTestsResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.listTestSuiteTests({
-  id: "<ID>",
-}).then((res: ListTestSuiteTestsResponse) => {
+  const res = await sdk.api.listTestSuiteTests({
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -3048,22 +3004,17 @@ Returns array of test suite with executions
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { ListTestSuiteWithExecutionsResponse } from "testkube-sdk/dist/sdk/models/operations";
 import { TestSuiteExecutionStatus } from "testkube-sdk/dist/sdk/models/shared";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.listTestSuiteWithExecutions({
-  page: 441473,
-  pageSize: 614278,
-  selector: "grey",
-  status: TestSuiteExecutionStatus.Running,
-  textSearch: "ax",
-}).then((res: ListTestSuiteWithExecutionsResponse) => {
+  const res = await sdk.api.listTestSuiteWithExecutions({});
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -3087,18 +3038,16 @@ Returns array of test suites
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { ListTestSuitesResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.listTestSuites({
-  selector: "Electric",
-  textSearch: "Passenger magni Hybrid",
-}).then((res: ListTestSuitesResponse) => {
+  const res = await sdk.api.listTestSuites({});
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -3122,18 +3071,16 @@ List test triggers from the kubernetes cluster
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { ListTestTriggersResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.listTestTriggers({
-  namespace: "Account plum",
-  selector: "male qui port",
-}).then((res: ListTestTriggersResponse) => {
+  const res = await sdk.api.listTestTriggers({});
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -3157,22 +3104,17 @@ List available test with executions
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { ListTestWithExecutionsResponse } from "testkube-sdk/dist/sdk/models/operations";
 import { ExecutionStatus } from "testkube-sdk/dist/sdk/models/shared";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.listTestWithExecutions({
-  page: 455452,
-  pageSize: 206952,
-  selector: "Southeast indexing Direct",
-  status: ExecutionStatus.Timeout,
-  textSearch: "Persistent Agent ability",
-}).then((res: ListTestWithExecutionsResponse) => {
+  const res = await sdk.api.listTestWithExecutions({});
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -3196,18 +3138,16 @@ List available tests
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { ListTestsResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.listTests({
-  selector: "blue Frozen Movies",
-  textSearch: "Connecticut multimedia",
-}).then((res: ListTestsResponse) => {
+  const res = await sdk.api.listTests({});
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -3231,17 +3171,16 @@ List webhooks available in cluster
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { ListWebhooksResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.listWebhooks({
-  selector: "Ball indigo",
-}).then((res: ListWebhooksResponse) => {
+  const res = await sdk.api.listWebhooks({});
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -3265,51 +3204,44 @@ Process test source batch based on variables passed in request
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { ProcessTestSourceBatchResponse } from "testkube-sdk/dist/sdk/models/operations";
 import { RepositoryAuthType, RepositoryType, TestSourceUpsertRequestType } from "testkube-sdk/dist/sdk/models/shared";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.processTestSourceBatch({
-  batch: [
-    {
-      data: "male Island codpiece",
-      labels: {
-        "voluptatem": "streamline",
-      },
-      name: "testsource1",
-      namespace: "testkube",
-      repository: {
-        authType: RepositoryAuthType.Basic,
-        branch: "main",
-        certificateSecret: "Cloned Peso United",
-        commit: "b928cbb7186944ab9275937ec1ac3d3738ca2e1d",
-        path: "test/perf",
-        token: "Philadelphia Coordinator Officer",
-        tokenSecret: {
-          key: "<key>",
-          name: "solution Pop purple",
-          namespace: "JBOD",
+  const res = await sdk.api.processTestSourceBatch({
+    batch: [
+      {
+        labels: {
+          "past": "curiously",
         },
-        type: RepositoryType.Git,
+        name: "testsource1",
+        namespace: "testkube",
+        repository: {
+          branch: "main",
+          commit: "b928cbb7186944ab9275937ec1ac3d3738ca2e1d",
+          path: "test/perf",
+          tokenSecret: {
+            key: "<key>",
+            name: "Interface codpiece Farmington",
+          },
+          type: RepositoryType.Git,
+          uri: "https://github.com/kubeshop/testkube",
+          usernameSecret: {
+            key: "<key>",
+            name: "Southeast",
+          },
+          workingDir: "/",
+        },
         uri: "https://github.com/kubeshop/testkube",
-        username: "Eloisa_Bergstrom84",
-        usernameSecret: {
-          key: "<key>",
-          name: "Euclid World bumpy",
-          namespace: "Northwest Metrics mismatch",
-        },
-        workingDir: "/",
       },
-      type: TestSourceUpsertRequestType.Git,
-      uri: "https://github.com/kubeshop/testkube",
-    },
-  ],
-}).then((res: ProcessTestSourceBatchResponse) => {
+    ],
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -3333,19 +3265,20 @@ Updates config in cluster storage state
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { UpdateConfigKeyResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.updateConfigKey({
-  clusterId: "connect Avon",
-  enableTelemetry: false,
-  id: "<ID>",
-}).then((res: UpdateConfigKeyResponse) => {
+  const res = await sdk.api.updateConfigKey({
+    clusterId: "connect Avon",
+    enableTelemetry: false,
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -3369,56 +3302,54 @@ Update new executor based on variables passed in request
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { UpdateExecutorJsonResponse } from "testkube-sdk/dist/sdk/models/operations";
 import { ExecutorUpdateRequestFeatures } from "testkube-sdk/dist/sdk/models/shared";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.updateExecutorJson({
-  executorUpdateRequest: {
-    args: [
-      "virtual",
-    ],
-    command: [
-      "Market",
-    ],
-    contentTypes: [
-      "handle",
-    ],
-    executorType: "lime ASCII",
-    features: [
-      ExecutorUpdateRequestFeatures.JunitReport,
-    ],
-    image: "https://loremflickr.com/640/480",
-    imagePullSecrets: [
-      {
-        name: "Account male",
+  const res = await sdk.api.updateExecutorJson({
+    executorUpdateRequest: {
+      args: [
+        "--repeats",
+        "5",
+        "--insecure",
+      ],
+      command: [
+        "curl",
+      ],
+      contentTypes: [
+        "virtual",
+      ],
+      features: [
+        ExecutorUpdateRequestFeatures.Artifacts,
+      ],
+      imagePullSecrets: [
+        {},
+      ],
+      labels: {
+        "env": "prod",
+        "app": "backend",
       },
-    ],
-    jobTemplate: "programming azure parallelism",
-    labels: {
-      "ab": "protocol",
-    },
-    meta: {
-      docsURI: "https://docs.testkube.io/test-types/executor-k6",
-      iconURI: "/assets/k6.jpg",
-      tooltips: {
-        "eligendi": "Product",
+      meta: {
+        docsURI: "https://docs.testkube.io/test-types/executor-k6",
+        iconURI: "/assets/k6.jpg",
+        tooltips: {
+          "general": "please provide k6 test script for execution",
+        },
       },
+      name: "name",
+      namespace: "testkube",
+      types: [
+        "handle",
+      ],
     },
-    name: "name",
-    namespace: "testkube",
-    types: [
-      "quantify",
-    ],
-    uri: "http://humming-spoon.net",
-  },
-  id: "<ID>",
-}).then((res: UpdateExecutorJsonResponse) => {
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -3442,18 +3373,19 @@ Update new executor based on variables passed in request
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { UpdateExecutorStringResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.updateExecutorString({
-  requestBody: "redundant troubled",
-  id: "<ID>",
-}).then((res: UpdateExecutorStringResponse) => {
+  const res = await sdk.api.updateExecutorString({
+    requestBody: "redundant troubled",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -3477,50 +3409,43 @@ Update test source based on test content or git based data
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { UpdateTestSourceJsonResponse } from "testkube-sdk/dist/sdk/models/operations";
 import { RepositoryAuthType, RepositoryType, TestSourceUpdateRequestType } from "testkube-sdk/dist/sdk/models/shared";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.updateTestSourceJson({
-  testSourceUpdateRequest: {
-    data: "Ergonomic Gloves",
-    labels: {
-      "vero": "female",
-    },
-    name: "testsource1",
-    namespace: "testkube",
-    repository: {
-      authType: RepositoryAuthType.Basic,
-      branch: "main",
-      certificateSecret: "azure",
-      commit: "b928cbb7186944ab9275937ec1ac3d3738ca2e1d",
-      path: "test/perf",
-      token: "Assistant",
-      tokenSecret: {
-        key: "<key>",
-        name: "backing Franc Rand",
-        namespace: "Northwest content indigo",
+  const res = await sdk.api.updateTestSourceJson({
+    testSourceUpdateRequest: {
+      labels: {
+        "compress": "Bedfordshire",
       },
-      type: RepositoryType.Git,
+      name: "testsource1",
+      namespace: "testkube",
+      repository: {
+        branch: "main",
+        commit: "b928cbb7186944ab9275937ec1ac3d3738ca2e1d",
+        path: "test/perf",
+        tokenSecret: {
+          key: "<key>",
+          name: "rough",
+        },
+        type: RepositoryType.Git,
+        uri: "https://github.com/kubeshop/testkube",
+        usernameSecret: {
+          key: "<key>",
+          name: "Steel",
+        },
+        workingDir: "/",
+      },
       uri: "https://github.com/kubeshop/testkube",
-      username: "Gertrude3",
-      usernameSecret: {
-        key: "<key>",
-        name: "yellow",
-        namespace: "boohoo",
-      },
-      workingDir: "/",
     },
-    type: TestSourceUpdateRequestType.FileUri,
-    uri: "https://github.com/kubeshop/testkube",
-  },
-  id: "<ID>",
-}).then((res: UpdateTestSourceJsonResponse) => {
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -3544,18 +3469,19 @@ Update test source based on test content or git based data
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { UpdateTestSourceStringResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.updateTestSourceString({
-  requestBody: "Grocery",
-  id: "<ID>",
-}).then((res: UpdateTestSourceStringResponse) => {
+  const res = await sdk.api.updateTestSourceString({
+    requestBody: "Grocery",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -3579,116 +3505,115 @@ Update test based on test suite content or git based data
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { UpdateTestSuiteJsonResponse } from "testkube-sdk/dist/sdk/models/operations";
 import { RunningContextType, TestSuiteExecutionStatus, VariableType } from "testkube-sdk/dist/sdk/models/shared";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.updateTestSuiteJson({
-  testSuiteUpdateRequestInput: {
-    after: [
-      {
-        execute: [
-          {
-            delay: "1s",
-            test: "name",
+  const res = await sdk.api.updateTestSuiteJson({
+    testSuiteUpdateRequestInput: {
+      after: [
+        {
+          execute: [
+            {
+              delay: "1s",
+              test: "name",
+            },
+          ],
+        },
+      ],
+      before: [
+        {
+          execute: [
+            {
+              delay: "1s",
+              test: "name",
+            },
+          ],
+        },
+      ],
+      description: "collection of tests",
+      executionRequest: {
+        concurrencyLevel: 10,
+        contentRequest: {
+          repository: {
+            branch: "main",
+            commit: "b928cbb7186944ab9275937ec1ac3d3738ca2e1d",
+            path: "test/perf",
+            workingDir: "/",
           },
-        ],
-        stopOnFailure: false,
-      },
-    ],
-    before: [
-      {
-        execute: [
-          {
-            delay: "1s",
-            test: "name",
+        },
+        executionLabels: {
+          "users": "3",
+          "prefix": "some-",
+        },
+        httpProxy: "user:pass@my.proxy.server:8080",
+        httpsProxy: "user:pass@my.proxy.server:8081",
+        labels: {
+          "users": "3",
+          "prefix": "some-",
+        },
+        name: "testing with 1000 users",
+        namespace: "testkube",
+        number: 1,
+        runningContext: {
+          type: RunningContextType.UserCLI,
+        },
+        timeout: 1,
+        variables: {
+          "var1": {
+            configMapRef: {
+              key: "<key>",
+              name: "Executive",
+            },
+            secretRef: {
+              key: "<key>",
+              name: "Intuitive Cuyahoga",
+            },
           },
-        ],
-        stopOnFailure: false,
-      },
-    ],
-    created: new Date("2021-03-25T04:09:11.907Z"),
-    description: "collection of tests",
-    executionRequest: {
-      concurrencyLevel: 10,
-      contentRequest: {
-        repository: {
-          branch: "main",
-          commit: "b928cbb7186944ab9275937ec1ac3d3738ca2e1d",
-          path: "test/perf",
-          workingDir: "/",
+          "secret1": {
+            configMapRef: {
+              key: "<key>",
+              name: "programming",
+            },
+            secretRef: {
+              key: "<key>",
+              name: "Diesel Thailand",
+            },
+          },
         },
       },
-      cronJobTemplate: "Executive",
-      executionLabels: {
-        "deserunt": "Intuitive",
-      },
-      httpProxy: "user:pass@my.proxy.server:8080",
-      httpsProxy: "user:pass@my.proxy.server:8081",
       labels: {
-        "voluptatem": "Ball",
+        "env": "prod",
+        "app": "backend",
       },
-      name: "testing with 1000 users",
+      name: "name",
       namespace: "testkube",
-      number: 1,
-      runningContext: {
-        context: "programming",
-        type: RunningContextType.Testsuite,
-      },
-      sync: false,
-      timeout: 1,
-      variables: {
-        "maxime": {
-          configMapRef: {
-            key: "<key>",
-            name: "Thailand",
-            namespace: "viral",
-          },
-          name: "single Fitness",
-          secretRef: {
-            key: "<key>",
-            name: "joyful lime",
-            namespace: "more",
-          },
-          type: VariableType.Basic,
-          value: "abaft",
+      repeats: 1,
+      schedule: "* * * * *",
+      status: {
+        latestExecution: {
+          id: "62f395e004109209b50edfc4",
         },
       },
+      steps: [
+        {
+          execute: [
+            {
+              delay: "1s",
+              test: "name",
+            },
+          ],
+        },
+      ],
     },
-    labels: {
-      "at": "Bespoke",
-    },
-    name: "name",
-    namespace: "testkube",
-    repeats: 1,
-    schedule: "* * * * *",
-    status: {
-      latestExecution: {
-        endTime: new Date("2022-09-22T05:31:11.249Z"),
-        id: "62f395e004109209b50edfc4",
-        startTime: new Date("2021-12-19T01:38:37.615Z"),
-        status: TestSuiteExecutionStatus.Running,
-      },
-    },
-    steps: [
-      {
-        execute: [
-          {
-            delay: "1s",
-            test: "name",
-          },
-        ],
-        stopOnFailure: false,
-      },
-    ],
-  },
-  id: "<ID>",
-}).then((res: UpdateTestSuiteJsonResponse) => {
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -3712,18 +3637,19 @@ Update test based on test suite content or git based data
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { UpdateTestSuiteStringResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.updateTestSuiteString({
-  requestBody: "bluetooth enable generating",
-  id: "<ID>",
-}).then((res: UpdateTestSuiteStringResponse) => {
+  const res = await sdk.api.updateTestSuiteString({
+    requestBody: "bluetooth enable generating",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -3747,7 +3673,6 @@ Update test trigger
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { UpdateTestTriggerJsonResponse } from "testkube-sdk/dist/sdk/models/operations";
 import {
   TestTriggerActions,
   TestTriggerConditionStatuses,
@@ -3755,62 +3680,64 @@ import {
   TestTriggerResources,
 } from "testkube-sdk/dist/sdk/models/shared";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.updateTestTriggerJson({
-  testTriggerUpsertRequest: {
-    action: TestTriggerActions.Run,
-    conditionSpec: {
-      conditions: [
-        {
-          reason: "NewReplicaSetAvailable",
-          status: TestTriggerConditionStatuses.False,
-          ttl: 1,
-          type: "Progressing",
-        },
-      ],
-      delay: 1,
-      timeout: 1,
-    },
-    event: "modified",
-    execution: TestTriggerExecutions.Testsuite,
-    labels: {
-      "delectus": "Optimized",
-    },
-    name: "name",
-    namespace: "testkube",
-    probeSpec: {
-      delay: 1,
-      probes: [
-        {
-          headers: {
-            "fugit": "Borders",
+  const res = await sdk.api.updateTestTriggerJson({
+    testTriggerUpsertRequest: {
+      action: TestTriggerActions.Run,
+      conditionSpec: {
+        conditions: [
+          {
+            reason: "NewReplicaSetAvailable",
+            status: TestTriggerConditionStatuses.False,
+            ttl: 1,
+            type: "Progressing",
           },
-          host: "testkube-api-server",
-          path: "/",
-          port: 80,
-          scheme: "http",
-        },
-      ],
-      timeout: 1,
-    },
-    resource: TestTriggerResources.Deployment,
-    resourceSelector: {
-      name: "nginx",
+        ],
+        delay: 1,
+        timeout: 1,
+      },
+      event: "modified",
+      execution: TestTriggerExecutions.Testsuite,
+      labels: {
+        "env": "prod",
+        "app": "backend",
+      },
+      name: "name",
       namespace: "testkube",
+      probeSpec: {
+        delay: 1,
+        probes: [
+          {
+            headers: {
+              "Content-Type": "application/xml",
+            },
+            host: "testkube-api-server",
+            path: "/",
+            port: 80,
+            scheme: "http",
+          },
+        ],
+        timeout: 1,
+      },
+      resource: TestTriggerResources.Configmap,
+      resourceSelector: {
+        name: "nginx",
+        namespace: "testkube",
+      },
+      testSelector: {
+        name: "nginx",
+        namespace: "testkube",
+      },
     },
-    testSelector: {
-      name: "nginx",
-      namespace: "testkube",
-    },
-  },
-  id: "<ID>",
-  namespace: "Chevrolet",
-}).then((res: UpdateTestTriggerJsonResponse) => {
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -3834,19 +3761,19 @@ Update test trigger
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { UpdateTestTriggerStringResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.updateTestTriggerString({
-  requestBody: "plum vainly haptic",
-  id: "<ID>",
-  namespace: "male Borders",
-}).then((res: UpdateTestTriggerStringResponse) => {
+  const res = await sdk.api.updateTestTriggerString({
+    requestBody: "plum vainly haptic",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -3870,7 +3797,6 @@ Update test based on test content or git based data
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { UpdateTestJsonResponse } from "testkube-sdk/dist/sdk/models/operations";
 import {
   ExecutionRequestArgsMode,
   ExecutionStatus,
@@ -3881,167 +3807,150 @@ import {
   VariableType,
 } from "testkube-sdk/dist/sdk/models/shared";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.updateTestJson({
-  testUpdateRequestInput: {
-    content: {
-      data: "Man",
-      repository: {
-        authType: RepositoryAuthType.Header,
-        branch: "main",
-        certificateSecret: "Southwest woman North",
-        commit: "b928cbb7186944ab9275937ec1ac3d3738ca2e1d",
-        path: "test/perf",
-        token: "armour fugit Hybrid",
-        tokenSecret: {
-          key: "<key>",
-          name: "out East",
-          namespace: "Illinois Functionality plum",
-        },
-        type: RepositoryType.Git,
-        uri: "https://github.com/kubeshop/testkube",
-        username: "Alice_Marvin",
-        usernameSecret: {
-          key: "<key>",
-          name: "fatally Luxurious",
-          namespace: "Cleveland Strategist",
-        },
-        workingDir: "/",
-      },
-      type: TestContentType.GitDir,
-      uri: "https://github.com/kubeshop/testkube",
-    },
-    created: new Date("2022-07-30T06:54:15Z"),
-    executionRequest: {
-      activeDeadlineSeconds: 1,
-      args: [
-        "Automated",
-      ],
-      argsMode: ExecutionRequestArgsMode.Append,
-      artifactRequest: {
-        dirs: [
-          "Wooden",
-        ],
-        storageClassName: "artifact-volume-local",
-        volumeMountPath: "withdrawal Northeast",
-      },
-      bucketName: "execution-c01d7cf6-ec3f-47f0-9556-a5d6e9009a43",
-      command: [
-        "semantics",
-      ],
-      contentRequest: {
+  const res = await sdk.api.updateTestJson({
+    testUpdateRequestInput: {
+      content: {
         repository: {
           branch: "main",
           commit: "b928cbb7186944ab9275937ec1ac3d3738ca2e1d",
           path: "test/perf",
+          tokenSecret: {
+            key: "<key>",
+            name: "Man",
+          },
+          type: RepositoryType.Git,
+          uri: "https://github.com/kubeshop/testkube",
+          usernameSecret: {
+            key: "<key>",
+            name: "cheerful than",
+          },
           workingDir: "/",
         },
+        uri: "https://github.com/kubeshop/testkube",
       },
-      cronJobTemplate: "Paradigm",
-      envConfigMaps: [
-        {
-          mapToVariables: false,
-          mount: true,
-          mountPath: "Bicycle Ergonomic utterly",
-          reference: {
-            name: "given aspernatur invoice",
+      created: new Date("2022-07-30T06:54:15Z"),
+      executionRequest: {
+        activeDeadlineSeconds: 1,
+        args: [
+          "--repeats",
+          "5",
+          "--insecure",
+        ],
+        artifactRequest: {
+          dirs: [
+            "sophisticated",
+          ],
+          storageClassName: "artifact-volume-local",
+        },
+        bucketName: "execution-c01d7cf6-ec3f-47f0-9556-a5d6e9009a43",
+        command: [
+          "curl",
+        ],
+        contentRequest: {
+          repository: {
+            branch: "main",
+            commit: "b928cbb7186944ab9275937ec1ac3d3738ca2e1d",
+            path: "test/perf",
+            workingDir: "/",
           },
         },
-      ],
-      envSecrets: [
-        {
-          mapToVariables: false,
-          mount: true,
-          mountPath: "Northwest",
-          reference: {
-            name: "synthesize azure customer",
+        envConfigMaps: [
+          {
+            mount: true,
+            reference: {},
+          },
+        ],
+        envSecrets: [
+          {
+            mount: true,
+            reference: {},
+          },
+        ],
+        envs: {
+          "prefix": "some-",
+          "record": "true",
+        },
+        executionLabels: {
+          "users": "3",
+          "prefix": "some-",
+        },
+        httpProxy: "user:pass@my.proxy.server:8080",
+        httpsProxy: "user:pass@my.proxy.server:8081",
+        id: "62f395e004109209b50edfc1",
+        image: "kubeshop/testkube-executor-custom:1.10.11-dev-0a9c91",
+        imagePullSecrets: [
+          {},
+        ],
+        isNegativeTestChangedOnRun: false,
+        isVariablesFileUploaded: false,
+        name: "testing with 1000 users",
+        namespace: "testkube",
+        negativeTest: false,
+        postRunScript: "sleep 30",
+        preRunScript: "echo -n '$SECRET_ENV' > ./secret_file",
+        runningContext: {
+          type: RunningContextType.UserCLI,
+        },
+        secretEnvs: {
+          "secret_Key_name2": "secret-name",
+          "secret_key_name1": "secret-name",
+        },
+        testSuiteName: "test-suite1",
+        uploads: [
+          "settings/config.txt",
+        ],
+        variables: {
+          "secret1": {
+            configMapRef: {
+              key: "<key>",
+              name: "ick",
+            },
+            secretRef: {
+              key: "<key>",
+              name: "fugit",
+            },
+          },
+          "var1": {
+            configMapRef: {
+              key: "<key>",
+              name: "sensor Principal Lead",
+            },
+            secretRef: {
+              key: "<key>",
+              name: "Functionality",
+            },
           },
         },
-      ],
-      envs: {
-        "debitis": "Handmade",
       },
-      executionLabels: {
-        "quisquam": "connecting",
+      labels: {
+        "env": "prod",
+        "app": "backend",
       },
-      httpProxy: "user:pass@my.proxy.server:8080",
-      httpsProxy: "user:pass@my.proxy.server:8081",
-      id: "62f395e004109209b50edfc1",
-      image: "kubeshop/testkube-executor-custom:1.10.11-dev-0a9c91",
-      imagePullSecrets: [
-        {
-          name: "olive Catonsville composite",
-        },
-      ],
-      isNegativeTestChangedOnRun: false,
-      isVariablesFileUploaded: false,
-      jobTemplate: "dragonfly virtual Intranet",
-      name: "testing with 1000 users",
+      name: "test1",
       namespace: "testkube",
-      negativeTest: false,
-      number: 664723,
-      postRunScript: "sleep 30",
-      preRunScript: "echo -n '$SECRET_ENV' > ./secret_file",
-      runningContext: {
-        context: "Fish",
-        type: RunningContextType.UserUI,
-      },
-      scraperTemplate: "circuit",
-      secretEnvs: {
-        "cumque": "Corporate",
-      },
-      sync: false,
-      testSuiteName: "test-suite1",
-      uploads: [
-        "FTM",
-      ],
-      variables: {
-        "minus": {
-          configMapRef: {
-            key: "<key>",
-            name: "Principal",
-            namespace: "Barium",
-          },
-          name: "Northwest indigo",
-          secretRef: {
-            key: "<key>",
-            name: "plum Granite Sports",
-            namespace: "Tools Rock West",
-          },
-          type: VariableType.Secret,
-          value: "spyglass hierarchy Miramar",
+      schedule: "* * * * *",
+      source: "my-private-repository-test",
+      status: {
+        latestExecution: {
+          id: "62f395e004109209b50edfc4",
+          number: 1,
         },
       },
-      variablesFile: "Volvo Northeast",
+      type: "postman/collection",
+      uploads: [
+        "settings/config.txt",
+      ],
     },
-    labels: {
-      "deserunt": "calculating",
-    },
-    name: "test1",
-    namespace: "testkube",
-    schedule: "* * * * *",
-    source: "my-private-repository-test",
-    status: {
-      latestExecution: {
-        endTime: new Date("2023-04-14T05:16:33.717Z"),
-        id: "62f395e004109209b50edfc4",
-        number: 1,
-        startTime: new Date("2023-01-25T11:07:25.324Z"),
-        status: ExecutionStatus.Queued,
-      },
-    },
-    type: "postman/collection",
-    uploads: [
-      "Gorgeous",
-    ],
-  },
-  id: "<ID>",
-}).then((res: UpdateTestJsonResponse) => {
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -4065,18 +3974,19 @@ Update test based on test content or git based data
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { UpdateTestStringResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.updateTestString({
-  requestBody: "meanwhile",
-  id: "<ID>",
-}).then((res: UpdateTestStringResponse) => {
+  const res = await sdk.api.updateTestString({
+    requestBody: "meanwhile",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -4100,27 +4010,28 @@ Upload file to be used in executions and tests
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { UploadsRequestBodyParentType, UploadsResponse } from "testkube-sdk/dist/sdk/models/operations";
+import { UploadsBodyParentType } from "testkube-sdk/dist/sdk/models/shared";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.uploads({
-  filePath: "folder/file.txt",
-  parentName: "test-1",
-  parentType: UploadsRequestBodyParentType.Test,
-}).then((res: UploadsResponse) => {
+  const res = await sdk.api.uploads({
+    filePath: "folder/file.txt",
+    parentName: "test-1",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
 
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `request`                                                                      | [operations.UploadsRequestBody](../../models/operations/uploadsrequestbody.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
-| `config`                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                   | :heavy_minus_sign:                                                             | Available config options for making requests.                                  |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `request`                                                    | [shared.UploadsBody](../../models/shared/uploadsbody.md)     | :heavy_check_mark:                                           | The request object to use for the request.                   |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
@@ -4136,37 +4047,32 @@ Validate new repository based on variables passed in request
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { ValidateRepositoryResponse } from "testkube-sdk/dist/sdk/models/operations";
 import { RepositoryAuthType, RepositoryType } from "testkube-sdk/dist/sdk/models/shared";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.api.validateRepository({
-  authType: RepositoryAuthType.Header,
-  branch: "main",
-  certificateSecret: "Jaguar",
-  commit: "b928cbb7186944ab9275937ec1ac3d3738ca2e1d",
-  path: "test/perf",
-  token: "Pants Gasoline male",
-  tokenSecret: {
-    key: "<key>",
-    name: "officially doloribus withdrawal",
-    namespace: "Metal",
-  },
-  type: RepositoryType.Git,
-  uri: "https://github.com/kubeshop/testkube",
-  username: "Rosina.Leffler",
-  usernameSecret: {
-    key: "<key>",
-    name: "Buckinghamshire solution",
-    namespace: "repudiandae male candela",
-  },
-  workingDir: "/",
-}).then((res: ValidateRepositoryResponse) => {
+  const res = await sdk.api.validateRepository({
+    branch: "main",
+    commit: "b928cbb7186944ab9275937ec1ac3d3738ca2e1d",
+    path: "test/perf",
+    tokenSecret: {
+      key: "<key>",
+      name: "Southeast Somoni Pants",
+    },
+    type: RepositoryType.Git,
+    uri: "https://github.com/kubeshop/testkube",
+    usernameSecret: {
+      key: "<key>",
+      name: "calculating duh officially",
+    },
+    workingDir: "/",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

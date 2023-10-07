@@ -21,47 +21,40 @@ Create new test source based on variables passed in request
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { CreateTestSourceJsonResponse } from "testkube-sdk/dist/sdk/models/operations";
 import { RepositoryAuthType, RepositoryType, TestSourceUpsertRequestType } from "testkube-sdk/dist/sdk/models/shared";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.testSources.createTestSourceJson({
-  data: "Mazda Iowa",
-  labels: {
-    "voluptates": "numquam",
-  },
-  name: "testsource1",
-  namespace: "testkube",
-  repository: {
-    authType: RepositoryAuthType.Header,
-    branch: "main",
-    certificateSecret: "withdrawal Bedfordshire",
-    commit: "b928cbb7186944ab9275937ec1ac3d3738ca2e1d",
-    path: "test/perf",
-    token: "Sleek Nella mobile",
-    tokenSecret: {
-      key: "<key>",
-      name: "withdrawal",
-      namespace: "Cadillac",
+  const res = await sdk.testSources.createTestSourceJson({
+    labels: {
+      "Research": "ubiquitous",
     },
-    type: RepositoryType.Git,
+    name: "testsource1",
+    namespace: "testkube",
+    repository: {
+      branch: "main",
+      commit: "b928cbb7186944ab9275937ec1ac3d3738ca2e1d",
+      path: "test/perf",
+      tokenSecret: {
+        key: "<key>",
+        name: "Granite Funk",
+      },
+      type: RepositoryType.Git,
+      uri: "https://github.com/kubeshop/testkube",
+      usernameSecret: {
+        key: "<key>",
+        name: "Bedfordshire",
+      },
+      workingDir: "/",
+    },
     uri: "https://github.com/kubeshop/testkube",
-    username: "Fermin.Roob30",
-    usernameSecret: {
-      key: "<key>",
-      name: "Bespoke",
-      namespace: "Outdoors",
-    },
-    workingDir: "/",
-  },
-  type: TestSourceUpsertRequestType.GitFile,
-  uri: "https://github.com/kubeshop/testkube",
-}).then((res: CreateTestSourceJsonResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -85,15 +78,16 @@ Create new test source based on variables passed in request
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { CreateTestSourceStringResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.testSources.createTestSourceString("Demigender").then((res: CreateTestSourceStringResponse) => {
+  const res = await sdk.testSources.createTestSourceString("Demigender");
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -117,17 +111,18 @@ Deletes test source by its name
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { DeleteTestSourceResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.testSources.deleteTestSource({
-  id: "<ID>",
-}).then((res: DeleteTestSourceResponse) => {
+  const res = await sdk.testSources.deleteTestSource({
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -151,17 +146,16 @@ Deletes labeled test sources
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { DeleteTestSourcesResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.testSources.deleteTestSources({
-  selector: "distributed copying",
-}).then((res: DeleteTestSourcesResponse) => {
+  const res = await sdk.testSources.deleteTestSources({});
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -185,17 +179,18 @@ Returns test sources data
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { GetTestSourceResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.testSources.getTestSource({
-  id: "<ID>",
-}).then((res: GetTestSourceResponse) => {
+  const res = await sdk.testSources.getTestSource({
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -219,17 +214,16 @@ List test sources available in cluster
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { ListTestSourcesResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.testSources.listTestSources({
-  selector: "Administrator Shanahan Coupe",
-}).then((res: ListTestSourcesResponse) => {
+  const res = await sdk.testSources.listTestSources({});
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -253,51 +247,44 @@ Process test source batch based on variables passed in request
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { ProcessTestSourceBatchResponse } from "testkube-sdk/dist/sdk/models/operations";
 import { RepositoryAuthType, RepositoryType, TestSourceUpsertRequestType } from "testkube-sdk/dist/sdk/models/shared";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.testSources.processTestSourceBatch({
-  batch: [
-    {
-      data: "male Island codpiece",
-      labels: {
-        "voluptatem": "streamline",
-      },
-      name: "testsource1",
-      namespace: "testkube",
-      repository: {
-        authType: RepositoryAuthType.Basic,
-        branch: "main",
-        certificateSecret: "Cloned Peso United",
-        commit: "b928cbb7186944ab9275937ec1ac3d3738ca2e1d",
-        path: "test/perf",
-        token: "Philadelphia Coordinator Officer",
-        tokenSecret: {
-          key: "<key>",
-          name: "solution Pop purple",
-          namespace: "JBOD",
+  const res = await sdk.testSources.processTestSourceBatch({
+    batch: [
+      {
+        labels: {
+          "past": "curiously",
         },
-        type: RepositoryType.Git,
+        name: "testsource1",
+        namespace: "testkube",
+        repository: {
+          branch: "main",
+          commit: "b928cbb7186944ab9275937ec1ac3d3738ca2e1d",
+          path: "test/perf",
+          tokenSecret: {
+            key: "<key>",
+            name: "Interface codpiece Farmington",
+          },
+          type: RepositoryType.Git,
+          uri: "https://github.com/kubeshop/testkube",
+          usernameSecret: {
+            key: "<key>",
+            name: "Southeast",
+          },
+          workingDir: "/",
+        },
         uri: "https://github.com/kubeshop/testkube",
-        username: "Eloisa_Bergstrom84",
-        usernameSecret: {
-          key: "<key>",
-          name: "Euclid World bumpy",
-          namespace: "Northwest Metrics mismatch",
-        },
-        workingDir: "/",
       },
-      type: TestSourceUpsertRequestType.Git,
-      uri: "https://github.com/kubeshop/testkube",
-    },
-  ],
-}).then((res: ProcessTestSourceBatchResponse) => {
+    ],
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -321,50 +308,43 @@ Update test source based on test content or git based data
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { UpdateTestSourceJsonResponse } from "testkube-sdk/dist/sdk/models/operations";
 import { RepositoryAuthType, RepositoryType, TestSourceUpdateRequestType } from "testkube-sdk/dist/sdk/models/shared";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.testSources.updateTestSourceJson({
-  testSourceUpdateRequest: {
-    data: "Ergonomic Gloves",
-    labels: {
-      "vero": "female",
-    },
-    name: "testsource1",
-    namespace: "testkube",
-    repository: {
-      authType: RepositoryAuthType.Basic,
-      branch: "main",
-      certificateSecret: "azure",
-      commit: "b928cbb7186944ab9275937ec1ac3d3738ca2e1d",
-      path: "test/perf",
-      token: "Assistant",
-      tokenSecret: {
-        key: "<key>",
-        name: "backing Franc Rand",
-        namespace: "Northwest content indigo",
+  const res = await sdk.testSources.updateTestSourceJson({
+    testSourceUpdateRequest: {
+      labels: {
+        "compress": "Bedfordshire",
       },
-      type: RepositoryType.Git,
+      name: "testsource1",
+      namespace: "testkube",
+      repository: {
+        branch: "main",
+        commit: "b928cbb7186944ab9275937ec1ac3d3738ca2e1d",
+        path: "test/perf",
+        tokenSecret: {
+          key: "<key>",
+          name: "rough",
+        },
+        type: RepositoryType.Git,
+        uri: "https://github.com/kubeshop/testkube",
+        usernameSecret: {
+          key: "<key>",
+          name: "Steel",
+        },
+        workingDir: "/",
+      },
       uri: "https://github.com/kubeshop/testkube",
-      username: "Gertrude3",
-      usernameSecret: {
-        key: "<key>",
-        name: "yellow",
-        namespace: "boohoo",
-      },
-      workingDir: "/",
     },
-    type: TestSourceUpdateRequestType.FileUri,
-    uri: "https://github.com/kubeshop/testkube",
-  },
-  id: "<ID>",
-}).then((res: UpdateTestSourceJsonResponse) => {
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -388,18 +368,19 @@ Update test source based on test content or git based data
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { UpdateTestSourceStringResponse } from "testkube-sdk/dist/sdk/models/operations";
 
-const sdk = new TestkubeSDK();
+(async() => {
+  const sdk = new TestkubeSDK();
 
-sdk.testSources.updateTestSourceString({
-  requestBody: "Grocery",
-  id: "<ID>",
-}).then((res: UpdateTestSourceStringResponse) => {
+  const res = await sdk.testSources.updateTestSourceString({
+    requestBody: "Grocery",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
