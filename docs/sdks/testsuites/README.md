@@ -40,7 +40,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testSuites.abortTestSuiteExecution({
-    executionID: "Folk Account",
+    executionID: "string",
     id: "<ID>",
   });
 
@@ -164,21 +164,21 @@ import { RunningContextType, TestSuiteExecutionStatus, VariableType } from "test
         "var1": {
           configMapRef: {
             key: "<key>",
-            name: "CLI Latin",
+            name: "string",
           },
           secretRef: {
             key: "<key>",
-            name: "Florida",
+            name: "string",
           },
         },
         "secret1": {
           configMapRef: {
             key: "<key>",
-            name: "uniform afore",
+            name: "string",
           },
           secretRef: {
             key: "<key>",
-            name: "Market B2B even",
+            name: "string",
           },
         },
       },
@@ -239,7 +239,7 @@ import { TestkubeSDK } from "testkube-sdk";
 (async() => {
   const sdk = new TestkubeSDK();
 
-  const res = await sdk.testSuites.createTestSuiteString("South");
+  const res = await sdk.testSuites.createTestSuiteString("string");
 
   if (res.statusCode == 200) {
     // handle response
@@ -373,21 +373,21 @@ import { RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/s
         "var1": {
           configMapRef: {
             key: "<key>",
-            name: "overgeneralize",
+            name: "string",
           },
           secretRef: {
             key: "<key>",
-            name: "invoice Beauty amid",
+            name: "string",
           },
         },
         "secret1": {
           configMapRef: {
             key: "<key>",
-            name: "phew Southwest Fundamental",
+            name: "string",
           },
           secretRef: {
             key: "<key>",
-            name: "North Southwest",
+            name: "string",
           },
         },
       },
@@ -445,8 +445,8 @@ import { RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/s
       httpProxy: "user:pass@my.proxy.server:8080",
       httpsProxy: "user:pass@my.proxy.server:8081",
       labels: {
-        "users": "3",
         "prefix": "some-",
+        "users": "3",
       },
       name: "testing with 1000 users",
       namespace: "testkube",
@@ -459,21 +459,21 @@ import { RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/s
         "var1": {
           configMapRef: {
             key: "<key>",
-            name: "Gasoline",
+            name: "string",
           },
           secretRef: {
             key: "<key>",
-            name: "Smart TCP Borders",
+            name: "string",
           },
         },
         "secret1": {
           configMapRef: {
             key: "<key>",
-            name: "Avon payment",
+            name: "string",
           },
           secretRef: {
             key: "<key>",
-            name: "Keyboard meh troubled",
+            name: "string",
           },
         },
       },
@@ -582,7 +582,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testSuites.getTestSuiteExecution({
-    executionID: "despite Guyana",
+    executionID: "string",
     id: "<ID>",
   });
 
@@ -618,7 +618,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testSuites.getTestSuiteExecutionArtifacts({
-    executionID: "atop North mole",
+    executionID: "string",
   });
 
   if (res.statusCode == 200) {
@@ -653,7 +653,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testSuites.getTestSuiteExecutionArtifactsByTestsuite({
-    executionID: "hertz Bowling",
+    executionID: "string",
     id: "<ID>",
   });
 
@@ -862,8 +862,8 @@ import { RunningContextType, TestSuiteExecutionStatus, VariableType } from "test
           },
         },
         executionLabels: {
-          "users": "3",
           "prefix": "some-",
+          "users": "3",
         },
         httpProxy: "user:pass@my.proxy.server:8080",
         httpsProxy: "user:pass@my.proxy.server:8081",
@@ -882,21 +882,21 @@ import { RunningContextType, TestSuiteExecutionStatus, VariableType } from "test
           "var1": {
             configMapRef: {
               key: "<key>",
-              name: "Executive",
+              name: "string",
             },
             secretRef: {
               key: "<key>",
-              name: "Intuitive Cuyahoga",
+              name: "string",
             },
           },
           "secret1": {
             configMapRef: {
               key: "<key>",
-              name: "programming",
+              name: "string",
             },
             secretRef: {
               key: "<key>",
-              name: "Diesel Thailand",
+              name: "string",
             },
           },
         },
@@ -960,7 +960,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testSuites.updateTestSuiteString({
-    requestBody: "bluetooth enable generating",
+    requestBody: "string",
     id: "<ID>",
   });
 

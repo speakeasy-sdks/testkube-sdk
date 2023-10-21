@@ -74,7 +74,7 @@ import { TestkubeSDK } from "testkube-sdk";
 (async() => {
   const sdk = new TestkubeSDK();
 
-  const res = await sdk.webhook.createWebhookString("henry");
+  const res = await sdk.webhook.createWebhookString("string");
 
   if (res.statusCode == 200) {
     // handle response

@@ -39,7 +39,7 @@ import { ExecutorUpsertRequestFeatures } from "testkube-sdk/dist/sdk/models/shar
       "curl",
     ],
     contentTypes: [
-      "National",
+      "string",
     ],
     features: [
       ExecutorUpsertRequestFeatures.JunitReport,
@@ -61,7 +61,7 @@ import { ExecutorUpsertRequestFeatures } from "testkube-sdk/dist/sdk/models/shar
     name: "name",
     namespace: "testkube",
     types: [
-      "ohm",
+      "string",
     ],
   });
 
@@ -96,7 +96,7 @@ import { TestkubeSDK } from "testkube-sdk";
 (async() => {
   const sdk = new TestkubeSDK();
 
-  const res = await sdk.executor.createExecutorString("approach");
+  const res = await sdk.executor.createExecutorString("string");
 
   if (res.statusCode == 200) {
     // handle response
@@ -277,7 +277,7 @@ import { ExecutorUpdateRequestFeatures } from "testkube-sdk/dist/sdk/models/shar
         "curl",
       ],
       contentTypes: [
-        "virtual",
+        "string",
       ],
       features: [
         ExecutorUpdateRequestFeatures.Artifacts,
@@ -299,7 +299,7 @@ import { ExecutorUpdateRequestFeatures } from "testkube-sdk/dist/sdk/models/shar
       name: "name",
       namespace: "testkube",
       types: [
-        "handle",
+        "string",
       ],
     },
     id: "<ID>",
@@ -337,7 +337,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executor.updateExecutorString({
-    requestBody: "redundant troubled",
+    requestBody: "string",
     id: "<ID>",
   });
 

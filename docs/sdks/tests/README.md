@@ -40,7 +40,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.tests.abortExecution({
-    executionID: "Kazakhstan flexibility",
+    executionID: "string",
     id: "<ID>",
   });
 
@@ -127,13 +127,13 @@ import {
         path: "test/perf",
         tokenSecret: {
           key: "<key>",
-          name: "Digitized",
+          name: "string",
         },
         type: RepositoryType.Git,
         uri: "https://github.com/kubeshop/testkube",
         usernameSecret: {
           key: "<key>",
-          name: "syndicate",
+          name: "string",
         },
         workingDir: "/",
       },
@@ -149,7 +149,7 @@ import {
       ],
       artifactRequest: {
         dirs: [
-          "Bedfordshire",
+          "string",
         ],
         storageClassName: "artifact-volume-local",
       },
@@ -178,8 +178,8 @@ import {
         },
       ],
       envs: {
-        "record": "true",
         "prefix": "some-",
+        "record": "true",
       },
       executionLabels: {
         "users": "3",
@@ -211,24 +211,24 @@ import {
         "settings/config.txt",
       ],
       variables: {
-        "var1": {
-          configMapRef: {
-            key: "<key>",
-            name: "blue Hampshire generation",
-          },
-          secretRef: {
-            key: "<key>",
-            name: "Rubber",
-          },
-        },
         "secret1": {
           configMapRef: {
             key: "<key>",
-            name: "partnerships Ohio Glendale",
+            name: "string",
           },
           secretRef: {
             key: "<key>",
-            name: "Future digital Coordinator",
+            name: "string",
+          },
+        },
+        "var1": {
+          configMapRef: {
+            key: "<key>",
+            name: "string",
+          },
+          secretRef: {
+            key: "<key>",
+            name: "string",
           },
         },
       },
@@ -284,7 +284,7 @@ import { TestkubeSDK } from "testkube-sdk";
 (async() => {
   const sdk = new TestkubeSDK();
 
-  const res = await sdk.tests.createTestString("Hybrid");
+  const res = await sdk.tests.createTestString("string");
 
   if (res.statusCode == 200) {
     // handle response
@@ -396,7 +396,7 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
       ],
       artifactRequest: {
         dirs: [
-          "Savings",
+          "string",
         ],
         storageClassName: "artifact-volume-local",
       },
@@ -447,11 +447,11 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
       postRunScript: "sleep 30",
       preRunScript: "echo -n '$SECRET_ENV' > ./secret_file",
       runningContext: {
-        type: RunningContextType.Testtrigger,
+        type: RunningContextType.Testsuite,
       },
       secretEnvs: {
-        "secret_key_name1": "secret-name",
         "secret_Key_name2": "secret-name",
+        "secret_key_name1": "secret-name",
       },
       testSuiteName: "test-suite1",
       uploads: [
@@ -461,21 +461,21 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
         "var1": {
           configMapRef: {
             key: "<key>",
-            name: "Van Reggae",
+            name: "string",
           },
           secretRef: {
             key: "<key>",
-            name: "transmitting failing aw",
+            name: "string",
           },
         },
         "secret1": {
           configMapRef: {
             key: "<key>",
-            name: "forenenst female transmitting",
+            name: "string",
           },
           secretRef: {
             key: "<key>",
-            name: "Hybrid policy blue",
+            name: "string",
           },
         },
       },
@@ -525,7 +525,7 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
       ],
       artifactRequest: {
         dirs: [
-          "alongside",
+          "string",
         ],
         storageClassName: "artifact-volume-local",
       },
@@ -576,7 +576,7 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
       postRunScript: "sleep 30",
       preRunScript: "echo -n '$SECRET_ENV' > ./secret_file",
       runningContext: {
-        type: RunningContextType.UserUI,
+        type: RunningContextType.Scheduler,
       },
       secretEnvs: {
         "secret_key_name1": "secret-name",
@@ -587,24 +587,24 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
         "settings/config.txt",
       ],
       variables: {
-        "secret1": {
-          configMapRef: {
-            key: "<key>",
-            name: "female Electric",
-          },
-          secretRef: {
-            key: "<key>",
-            name: "firewall",
-          },
-        },
         "var1": {
           configMapRef: {
             key: "<key>",
-            name: "Jewelery Shoes",
+            name: "string",
           },
           secretRef: {
             key: "<key>",
-            name: "Greece",
+            name: "string",
+          },
+        },
+        "secret1": {
+          configMapRef: {
+            key: "<key>",
+            name: "string",
+          },
+          secretRef: {
+            key: "<key>",
+            name: "string",
           },
         },
       },
@@ -678,7 +678,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.tests.getTestExecution({
-    executionID: "Northeast male",
+    executionID: "string",
     id: "<ID>",
   });
 
@@ -940,13 +940,13 @@ import {
           path: "test/perf",
           tokenSecret: {
             key: "<key>",
-            name: "Man",
+            name: "string",
           },
           type: RepositoryType.Git,
           uri: "https://github.com/kubeshop/testkube",
           usernameSecret: {
             key: "<key>",
-            name: "cheerful than",
+            name: "string",
           },
           workingDir: "/",
         },
@@ -962,7 +962,7 @@ import {
         ],
         artifactRequest: {
           dirs: [
-            "sophisticated",
+            "string",
           ],
           storageClassName: "artifact-volume-local",
         },
@@ -1024,24 +1024,24 @@ import {
           "settings/config.txt",
         ],
         variables: {
-          "secret1": {
-            configMapRef: {
-              key: "<key>",
-              name: "ick",
-            },
-            secretRef: {
-              key: "<key>",
-              name: "fugit",
-            },
-          },
           "var1": {
             configMapRef: {
               key: "<key>",
-              name: "sensor Principal Lead",
+              name: "string",
             },
             secretRef: {
               key: "<key>",
-              name: "Functionality",
+              name: "string",
+            },
+          },
+          "secret1": {
+            configMapRef: {
+              key: "<key>",
+              name: "string",
+            },
+            secretRef: {
+              key: "<key>",
+              name: "string",
             },
           },
         },
@@ -1100,7 +1100,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.tests.updateTestString({
-    requestBody: "meanwhile",
+    requestBody: "string",
     id: "<ID>",
   });
 

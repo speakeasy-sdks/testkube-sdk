@@ -28,7 +28,7 @@ import { RepositoryAuthType, RepositoryType, TestSourceUpsertRequestType } from 
 
   const res = await sdk.testSources.createTestSourceJson({
     labels: {
-      "Research": "ubiquitous",
+      "key": "string",
     },
     name: "testsource1",
     namespace: "testkube",
@@ -38,13 +38,13 @@ import { RepositoryAuthType, RepositoryType, TestSourceUpsertRequestType } from 
       path: "test/perf",
       tokenSecret: {
         key: "<key>",
-        name: "Granite Funk",
+        name: "string",
       },
       type: RepositoryType.Git,
       uri: "https://github.com/kubeshop/testkube",
       usernameSecret: {
         key: "<key>",
-        name: "Bedfordshire",
+        name: "string",
       },
       workingDir: "/",
     },
@@ -82,7 +82,7 @@ import { TestkubeSDK } from "testkube-sdk";
 (async() => {
   const sdk = new TestkubeSDK();
 
-  const res = await sdk.testSources.createTestSourceString("Demigender");
+  const res = await sdk.testSources.createTestSourceString("string");
 
   if (res.statusCode == 200) {
     // handle response
@@ -256,7 +256,7 @@ import { RepositoryAuthType, RepositoryType, TestSourceUpsertRequestType } from 
     batch: [
       {
         labels: {
-          "past": "curiously",
+          "key": "string",
         },
         name: "testsource1",
         namespace: "testkube",
@@ -266,13 +266,13 @@ import { RepositoryAuthType, RepositoryType, TestSourceUpsertRequestType } from 
           path: "test/perf",
           tokenSecret: {
             key: "<key>",
-            name: "Interface codpiece Farmington",
+            name: "string",
           },
           type: RepositoryType.Git,
           uri: "https://github.com/kubeshop/testkube",
           usernameSecret: {
             key: "<key>",
-            name: "Southeast",
+            name: "string",
           },
           workingDir: "/",
         },
@@ -316,7 +316,7 @@ import { RepositoryAuthType, RepositoryType, TestSourceUpdateRequestType } from 
   const res = await sdk.testSources.updateTestSourceJson({
     testSourceUpdateRequest: {
       labels: {
-        "compress": "Bedfordshire",
+        "key": "string",
       },
       name: "testsource1",
       namespace: "testkube",
@@ -326,13 +326,13 @@ import { RepositoryAuthType, RepositoryType, TestSourceUpdateRequestType } from 
         path: "test/perf",
         tokenSecret: {
           key: "<key>",
-          name: "rough",
+          name: "string",
         },
         type: RepositoryType.Git,
         uri: "https://github.com/kubeshop/testkube",
         usernameSecret: {
           key: "<key>",
-          name: "Steel",
+          name: "string",
         },
         workingDir: "/",
       },
@@ -373,7 +373,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testSources.updateTestSourceString({
-    requestBody: "Grocery",
+    requestBody: "string",
     id: "<ID>",
   });
 

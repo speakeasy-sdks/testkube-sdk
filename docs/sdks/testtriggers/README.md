@@ -201,7 +201,7 @@ import { TestkubeSDK } from "testkube-sdk";
 (async() => {
   const sdk = new TestkubeSDK();
 
-  const res = await sdk.testTriggers.createTestTriggerString("withdrawal");
+  const res = await sdk.testTriggers.createTestTriggerString("string");
 
   if (res.statusCode == 200) {
     // handle response
@@ -394,8 +394,8 @@ import {
       event: "modified",
       execution: TestTriggerExecutions.Testsuite,
       labels: {
-        "env": "prod",
         "app": "backend",
+        "env": "prod",
       },
       name: "name",
       namespace: "testkube",
@@ -459,7 +459,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testTriggers.updateTestTriggerString({
-    requestBody: "plum vainly haptic",
+    requestBody: "string",
     id: "<ID>",
   });
 

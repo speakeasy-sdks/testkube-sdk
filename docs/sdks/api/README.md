@@ -105,7 +105,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.abortExecution({
-    executionID: "Kazakhstan flexibility",
+    executionID: "string",
     id: "<ID>",
   });
 
@@ -176,7 +176,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.abortTestSuiteExecution({
-    executionID: "Folk Account",
+    executionID: "string",
     id: "<ID>",
   });
 
@@ -212,7 +212,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.abortTestSuiteExecutionByID({
-    executionID: "Buckinghamshire Electronic",
+    executionID: "string",
   });
 
   if (res.statusCode == 200) {
@@ -379,7 +379,7 @@ import { ExecutorUpsertRequestFeatures } from "testkube-sdk/dist/sdk/models/shar
       "curl",
     ],
     contentTypes: [
-      "National",
+      "string",
     ],
     features: [
       ExecutorUpsertRequestFeatures.JunitReport,
@@ -401,7 +401,7 @@ import { ExecutorUpsertRequestFeatures } from "testkube-sdk/dist/sdk/models/shar
     name: "name",
     namespace: "testkube",
     types: [
-      "ohm",
+      "string",
     ],
   });
 
@@ -436,7 +436,7 @@ import { TestkubeSDK } from "testkube-sdk";
 (async() => {
   const sdk = new TestkubeSDK();
 
-  const res = await sdk.api.createExecutorString("approach");
+  const res = await sdk.api.createExecutorString("string");
 
   if (res.statusCode == 200) {
     // handle response
@@ -472,7 +472,7 @@ import { RepositoryAuthType, RepositoryType, TestSourceUpsertRequestType } from 
 
   const res = await sdk.api.createTestSourceJson({
     labels: {
-      "Research": "ubiquitous",
+      "key": "string",
     },
     name: "testsource1",
     namespace: "testkube",
@@ -482,13 +482,13 @@ import { RepositoryAuthType, RepositoryType, TestSourceUpsertRequestType } from 
       path: "test/perf",
       tokenSecret: {
         key: "<key>",
-        name: "Granite Funk",
+        name: "string",
       },
       type: RepositoryType.Git,
       uri: "https://github.com/kubeshop/testkube",
       usernameSecret: {
         key: "<key>",
-        name: "Bedfordshire",
+        name: "string",
       },
       workingDir: "/",
     },
@@ -526,7 +526,7 @@ import { TestkubeSDK } from "testkube-sdk";
 (async() => {
   const sdk = new TestkubeSDK();
 
-  const res = await sdk.api.createTestSourceString("Demigender");
+  const res = await sdk.api.createTestSourceString("string");
 
   if (res.statusCode == 200) {
     // handle response
@@ -613,21 +613,21 @@ import { RunningContextType, TestSuiteExecutionStatus, VariableType } from "test
         "var1": {
           configMapRef: {
             key: "<key>",
-            name: "CLI Latin",
+            name: "string",
           },
           secretRef: {
             key: "<key>",
-            name: "Florida",
+            name: "string",
           },
         },
         "secret1": {
           configMapRef: {
             key: "<key>",
-            name: "uniform afore",
+            name: "string",
           },
           secretRef: {
             key: "<key>",
-            name: "Market B2B even",
+            name: "string",
           },
         },
       },
@@ -688,7 +688,7 @@ import { TestkubeSDK } from "testkube-sdk";
 (async() => {
   const sdk = new TestkubeSDK();
 
-  const res = await sdk.api.createTestSuiteString("South");
+  const res = await sdk.api.createTestSuiteString("string");
 
   if (res.statusCode == 200) {
     // handle response
@@ -806,7 +806,7 @@ import { TestkubeSDK } from "testkube-sdk";
 (async() => {
   const sdk = new TestkubeSDK();
 
-  const res = await sdk.api.createTestTriggerString("withdrawal");
+  const res = await sdk.api.createTestTriggerString("string");
 
   if (res.statusCode == 200) {
     // handle response
@@ -856,13 +856,13 @@ import {
         path: "test/perf",
         tokenSecret: {
           key: "<key>",
-          name: "Digitized",
+          name: "string",
         },
         type: RepositoryType.Git,
         uri: "https://github.com/kubeshop/testkube",
         usernameSecret: {
           key: "<key>",
-          name: "syndicate",
+          name: "string",
         },
         workingDir: "/",
       },
@@ -878,7 +878,7 @@ import {
       ],
       artifactRequest: {
         dirs: [
-          "Bedfordshire",
+          "string",
         ],
         storageClassName: "artifact-volume-local",
       },
@@ -940,24 +940,24 @@ import {
         "settings/config.txt",
       ],
       variables: {
-        "var1": {
-          configMapRef: {
-            key: "<key>",
-            name: "blue Hampshire generation",
-          },
-          secretRef: {
-            key: "<key>",
-            name: "Rubber",
-          },
-        },
         "secret1": {
           configMapRef: {
             key: "<key>",
-            name: "partnerships Ohio Glendale",
+            name: "string",
           },
           secretRef: {
             key: "<key>",
-            name: "Future digital Coordinator",
+            name: "string",
+          },
+        },
+        "var1": {
+          configMapRef: {
+            key: "<key>",
+            name: "string",
+          },
+          secretRef: {
+            key: "<key>",
+            name: "string",
           },
         },
       },
@@ -1013,7 +1013,7 @@ import { TestkubeSDK } from "testkube-sdk";
 (async() => {
   const sdk = new TestkubeSDK();
 
-  const res = await sdk.api.createTestString("Hybrid");
+  const res = await sdk.api.createTestString("string");
 
   if (res.statusCode == 200) {
     // handle response
@@ -1094,7 +1094,7 @@ import { TestkubeSDK } from "testkube-sdk";
 (async() => {
   const sdk = new TestkubeSDK();
 
-  const res = await sdk.api.createWebhookString("henry");
+  const res = await sdk.api.createWebhookString("string");
 
   if (res.statusCode == 200) {
     // handle response
@@ -1617,7 +1617,7 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
       ],
       artifactRequest: {
         dirs: [
-          "Savings",
+          "string",
         ],
         storageClassName: "artifact-volume-local",
       },
@@ -1646,8 +1646,8 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
         },
       ],
       envs: {
-        "prefix": "some-",
         "record": "true",
+        "prefix": "some-",
       },
       executionLabels: {
         "users": "3",
@@ -1668,7 +1668,7 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
       postRunScript: "sleep 30",
       preRunScript: "echo -n '$SECRET_ENV' > ./secret_file",
       runningContext: {
-        type: RunningContextType.Testtrigger,
+        type: RunningContextType.Testsuite,
       },
       secretEnvs: {
         "secret_key_name1": "secret-name",
@@ -1682,21 +1682,21 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
         "var1": {
           configMapRef: {
             key: "<key>",
-            name: "Van Reggae",
+            name: "string",
           },
           secretRef: {
             key: "<key>",
-            name: "transmitting failing aw",
+            name: "string",
           },
         },
         "secret1": {
           configMapRef: {
             key: "<key>",
-            name: "forenenst female transmitting",
+            name: "string",
           },
           secretRef: {
             key: "<key>",
-            name: "Hybrid policy blue",
+            name: "string",
           },
         },
       },
@@ -1748,14 +1748,14 @@ import { RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/s
         },
       },
       executionLabels: {
-        "prefix": "some-",
         "users": "3",
+        "prefix": "some-",
       },
       httpProxy: "user:pass@my.proxy.server:8080",
       httpsProxy: "user:pass@my.proxy.server:8081",
       labels: {
-        "users": "3",
         "prefix": "some-",
+        "users": "3",
       },
       name: "testing with 1000 users",
       namespace: "testkube",
@@ -1768,21 +1768,21 @@ import { RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/s
         "var1": {
           configMapRef: {
             key: "<key>",
-            name: "overgeneralize",
+            name: "string",
           },
           secretRef: {
             key: "<key>",
-            name: "invoice Beauty amid",
+            name: "string",
           },
         },
         "secret1": {
           configMapRef: {
             key: "<key>",
-            name: "phew Southwest Fundamental",
+            name: "string",
           },
           secretRef: {
             key: "<key>",
-            name: "North Southwest",
+            name: "string",
           },
         },
       },
@@ -1854,21 +1854,21 @@ import { RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/s
         "var1": {
           configMapRef: {
             key: "<key>",
-            name: "Gasoline",
+            name: "string",
           },
           secretRef: {
             key: "<key>",
-            name: "Smart TCP Borders",
+            name: "string",
           },
         },
         "secret1": {
           configMapRef: {
             key: "<key>",
-            name: "Avon payment",
+            name: "string",
           },
           secretRef: {
             key: "<key>",
-            name: "Keyboard meh troubled",
+            name: "string",
           },
         },
       },
@@ -1917,7 +1917,7 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
       ],
       artifactRequest: {
         dirs: [
-          "alongside",
+          "string",
         ],
         storageClassName: "artifact-volume-local",
       },
@@ -1968,11 +1968,11 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
       postRunScript: "sleep 30",
       preRunScript: "echo -n '$SECRET_ENV' > ./secret_file",
       runningContext: {
-        type: RunningContextType.UserUI,
+        type: RunningContextType.Scheduler,
       },
       secretEnvs: {
-        "secret_Key_name2": "secret-name",
         "secret_key_name1": "secret-name",
+        "secret_Key_name2": "secret-name",
       },
       testSuiteName: "test-suite1",
       uploads: [
@@ -1982,21 +1982,21 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
         "var1": {
           configMapRef: {
             key: "<key>",
-            name: "female Electric",
+            name: "string",
           },
           secretRef: {
             key: "<key>",
-            name: "firewall",
+            name: "string",
           },
         },
         "secret1": {
           configMapRef: {
             key: "<key>",
-            name: "Jewelery Shoes",
+            name: "string",
           },
           secretRef: {
             key: "<key>",
-            name: "Greece",
+            name: "string",
           },
         },
       },
@@ -2134,7 +2134,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getExecutionByID({
-    executionID: "Computers",
+    executionID: "string",
   });
 
   if (res.statusCode == 200) {
@@ -2306,7 +2306,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getTestExecution({
-    executionID: "Northeast male",
+    executionID: "string",
     id: "<ID>",
   });
 
@@ -2482,7 +2482,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getTestSuiteExecution({
-    executionID: "despite Guyana",
+    executionID: "string",
     id: "<ID>",
   });
 
@@ -2518,7 +2518,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getTestSuiteExecutionArtifacts({
-    executionID: "atop North mole",
+    executionID: "string",
   });
 
   if (res.statusCode == 200) {
@@ -2553,7 +2553,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getTestSuiteExecutionArtifactsByTestsuite({
-    executionID: "hertz Bowling",
+    executionID: "string",
     id: "<ID>",
   });
 
@@ -2589,7 +2589,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getTestSuiteExecutionByID({
-    executionID: "Hermaphrodite Markets",
+    executionID: "string",
   });
 
   if (res.statusCode == 200) {
@@ -3213,7 +3213,7 @@ import { RepositoryAuthType, RepositoryType, TestSourceUpsertRequestType } from 
     batch: [
       {
         labels: {
-          "past": "curiously",
+          "key": "string",
         },
         name: "testsource1",
         namespace: "testkube",
@@ -3223,13 +3223,13 @@ import { RepositoryAuthType, RepositoryType, TestSourceUpsertRequestType } from 
           path: "test/perf",
           tokenSecret: {
             key: "<key>",
-            name: "Interface codpiece Farmington",
+            name: "string",
           },
           type: RepositoryType.Git,
           uri: "https://github.com/kubeshop/testkube",
           usernameSecret: {
             key: "<key>",
-            name: "Southeast",
+            name: "string",
           },
           workingDir: "/",
         },
@@ -3270,7 +3270,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.updateConfigKey({
-    clusterId: "connect Avon",
+    clusterId: "string",
     enableTelemetry: false,
     id: "<ID>",
   });
@@ -3318,7 +3318,7 @@ import { ExecutorUpdateRequestFeatures } from "testkube-sdk/dist/sdk/models/shar
         "curl",
       ],
       contentTypes: [
-        "virtual",
+        "string",
       ],
       features: [
         ExecutorUpdateRequestFeatures.Artifacts,
@@ -3340,7 +3340,7 @@ import { ExecutorUpdateRequestFeatures } from "testkube-sdk/dist/sdk/models/shar
       name: "name",
       namespace: "testkube",
       types: [
-        "handle",
+        "string",
       ],
     },
     id: "<ID>",
@@ -3378,7 +3378,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.updateExecutorString({
-    requestBody: "redundant troubled",
+    requestBody: "string",
     id: "<ID>",
   });
 
@@ -3417,7 +3417,7 @@ import { RepositoryAuthType, RepositoryType, TestSourceUpdateRequestType } from 
   const res = await sdk.api.updateTestSourceJson({
     testSourceUpdateRequest: {
       labels: {
-        "compress": "Bedfordshire",
+        "key": "string",
       },
       name: "testsource1",
       namespace: "testkube",
@@ -3427,13 +3427,13 @@ import { RepositoryAuthType, RepositoryType, TestSourceUpdateRequestType } from 
         path: "test/perf",
         tokenSecret: {
           key: "<key>",
-          name: "rough",
+          name: "string",
         },
         type: RepositoryType.Git,
         uri: "https://github.com/kubeshop/testkube",
         usernameSecret: {
           key: "<key>",
-          name: "Steel",
+          name: "string",
         },
         workingDir: "/",
       },
@@ -3474,7 +3474,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.updateTestSourceString({
-    requestBody: "Grocery",
+    requestBody: "string",
     id: "<ID>",
   });
 
@@ -3564,21 +3564,21 @@ import { RunningContextType, TestSuiteExecutionStatus, VariableType } from "test
           "var1": {
             configMapRef: {
               key: "<key>",
-              name: "Executive",
+              name: "string",
             },
             secretRef: {
               key: "<key>",
-              name: "Intuitive Cuyahoga",
+              name: "string",
             },
           },
           "secret1": {
             configMapRef: {
               key: "<key>",
-              name: "programming",
+              name: "string",
             },
             secretRef: {
               key: "<key>",
-              name: "Diesel Thailand",
+              name: "string",
             },
           },
         },
@@ -3642,7 +3642,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.updateTestSuiteString({
-    requestBody: "bluetooth enable generating",
+    requestBody: "string",
     id: "<ID>",
   });
 
@@ -3766,7 +3766,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.updateTestTriggerString({
-    requestBody: "plum vainly haptic",
+    requestBody: "string",
     id: "<ID>",
   });
 
@@ -3819,13 +3819,13 @@ import {
           path: "test/perf",
           tokenSecret: {
             key: "<key>",
-            name: "Man",
+            name: "string",
           },
           type: RepositoryType.Git,
           uri: "https://github.com/kubeshop/testkube",
           usernameSecret: {
             key: "<key>",
-            name: "cheerful than",
+            name: "string",
           },
           workingDir: "/",
         },
@@ -3841,7 +3841,7 @@ import {
         ],
         artifactRequest: {
           dirs: [
-            "sophisticated",
+            "string",
           ],
           storageClassName: "artifact-volume-local",
         },
@@ -3870,8 +3870,8 @@ import {
           },
         ],
         envs: {
-          "prefix": "some-",
           "record": "true",
+          "prefix": "some-",
         },
         executionLabels: {
           "users": "3",
@@ -3895,39 +3895,39 @@ import {
           type: RunningContextType.UserCLI,
         },
         secretEnvs: {
-          "secret_Key_name2": "secret-name",
           "secret_key_name1": "secret-name",
+          "secret_Key_name2": "secret-name",
         },
         testSuiteName: "test-suite1",
         uploads: [
           "settings/config.txt",
         ],
         variables: {
-          "secret1": {
-            configMapRef: {
-              key: "<key>",
-              name: "ick",
-            },
-            secretRef: {
-              key: "<key>",
-              name: "fugit",
-            },
-          },
           "var1": {
             configMapRef: {
               key: "<key>",
-              name: "sensor Principal Lead",
+              name: "string",
             },
             secretRef: {
               key: "<key>",
-              name: "Functionality",
+              name: "string",
+            },
+          },
+          "secret1": {
+            configMapRef: {
+              key: "<key>",
+              name: "string",
+            },
+            secretRef: {
+              key: "<key>",
+              name: "string",
             },
           },
         },
       },
       labels: {
-        "env": "prod",
         "app": "backend",
+        "env": "prod",
       },
       name: "test1",
       namespace: "testkube",
@@ -3979,7 +3979,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.updateTestString({
-    requestBody: "meanwhile",
+    requestBody: "string",
     id: "<ID>",
   });
 
@@ -4058,13 +4058,13 @@ import { RepositoryAuthType, RepositoryType } from "testkube-sdk/dist/sdk/models
     path: "test/perf",
     tokenSecret: {
       key: "<key>",
-      name: "Southeast Somoni Pants",
+      name: "string",
     },
     type: RepositoryType.Git,
     uri: "https://github.com/kubeshop/testkube",
     usernameSecret: {
       key: "<key>",
-      name: "calculating duh officially",
+      name: "string",
     },
     workingDir: "/",
   });

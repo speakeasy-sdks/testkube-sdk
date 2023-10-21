@@ -4,17 +4,18 @@
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
-  const sdk = new TestkubeSDK();
+(async () => {
+    const sdk = new TestkubeSDK();
 
-  const res = await sdk.api.abortExecution({
-    executionID: "Kazakhstan flexibility",
-    id: "<ID>",
-  });
+    const res = await sdk.api.abortExecution({
+        executionID: "string",
+        id: "<ID>",
+    });
 
-  if (res.statusCode == 200) {
-    // handle response
-  }
+    if (res.statusCode == 200) {
+        // handle response
+    }
 })();
+
 ```
 <!-- End SDK Example Usage -->

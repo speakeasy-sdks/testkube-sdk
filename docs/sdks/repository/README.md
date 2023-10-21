@@ -24,13 +24,13 @@ import { RepositoryAuthType, RepositoryType } from "testkube-sdk/dist/sdk/models
     path: "test/perf",
     tokenSecret: {
       key: "<key>",
-      name: "Southeast Somoni Pants",
+      name: "string",
     },
     type: RepositoryType.Git,
     uri: "https://github.com/kubeshop/testkube",
     usernameSecret: {
       key: "<key>",
-      name: "calculating duh officially",
+      name: "string",
     },
     workingDir: "/",
   });

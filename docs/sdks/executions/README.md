@@ -43,7 +43,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.abortExecution({
-    executionID: "Kazakhstan flexibility",
+    executionID: "string",
     id: "<ID>",
   });
 
@@ -79,7 +79,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.abortTestSuiteExecution({
-    executionID: "Folk Account",
+    executionID: "string",
     id: "<ID>",
   });
 
@@ -115,7 +115,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.abortTestSuiteExecutionByID({
-    executionID: "Buckinghamshire Electronic",
+    executionID: "string",
   });
 
   if (res.statusCode == 200) {
@@ -231,7 +231,7 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
       ],
       artifactRequest: {
         dirs: [
-          "Savings",
+          "string",
         ],
         storageClassName: "artifact-volume-local",
       },
@@ -264,8 +264,8 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
         "prefix": "some-",
       },
       executionLabels: {
-        "users": "3",
         "prefix": "some-",
+        "users": "3",
       },
       httpProxy: "user:pass@my.proxy.server:8080",
       httpsProxy: "user:pass@my.proxy.server:8081",
@@ -282,7 +282,7 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
       postRunScript: "sleep 30",
       preRunScript: "echo -n '$SECRET_ENV' > ./secret_file",
       runningContext: {
-        type: RunningContextType.Testtrigger,
+        type: RunningContextType.Testsuite,
       },
       secretEnvs: {
         "secret_key_name1": "secret-name",
@@ -293,24 +293,24 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
         "settings/config.txt",
       ],
       variables: {
-        "var1": {
-          configMapRef: {
-            key: "<key>",
-            name: "Van Reggae",
-          },
-          secretRef: {
-            key: "<key>",
-            name: "transmitting failing aw",
-          },
-        },
         "secret1": {
           configMapRef: {
             key: "<key>",
-            name: "forenenst female transmitting",
+            name: "string",
           },
           secretRef: {
             key: "<key>",
-            name: "Hybrid policy blue",
+            name: "string",
+          },
+        },
+        "var1": {
+          configMapRef: {
+            key: "<key>",
+            name: "string",
+          },
+          secretRef: {
+            key: "<key>",
+            name: "string",
           },
         },
       },
@@ -382,21 +382,21 @@ import { RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/s
         "var1": {
           configMapRef: {
             key: "<key>",
-            name: "overgeneralize",
+            name: "string",
           },
           secretRef: {
             key: "<key>",
-            name: "invoice Beauty amid",
+            name: "string",
           },
         },
         "secret1": {
           configMapRef: {
             key: "<key>",
-            name: "phew Southwest Fundamental",
+            name: "string",
           },
           secretRef: {
             key: "<key>",
-            name: "North Southwest",
+            name: "string",
           },
         },
       },
@@ -468,21 +468,21 @@ import { RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/s
         "var1": {
           configMapRef: {
             key: "<key>",
-            name: "Gasoline",
+            name: "string",
           },
           secretRef: {
             key: "<key>",
-            name: "Smart TCP Borders",
+            name: "string",
           },
         },
         "secret1": {
           configMapRef: {
             key: "<key>",
-            name: "Avon payment",
+            name: "string",
           },
           secretRef: {
             key: "<key>",
-            name: "Keyboard meh troubled",
+            name: "string",
           },
         },
       },
@@ -531,7 +531,7 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
       ],
       artifactRequest: {
         dirs: [
-          "alongside",
+          "string",
         ],
         storageClassName: "artifact-volume-local",
       },
@@ -582,11 +582,11 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
       postRunScript: "sleep 30",
       preRunScript: "echo -n '$SECRET_ENV' > ./secret_file",
       runningContext: {
-        type: RunningContextType.UserUI,
+        type: RunningContextType.Scheduler,
       },
       secretEnvs: {
-        "secret_key_name1": "secret-name",
         "secret_Key_name2": "secret-name",
+        "secret_key_name1": "secret-name",
       },
       testSuiteName: "test-suite1",
       uploads: [
@@ -596,21 +596,21 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
         "var1": {
           configMapRef: {
             key: "<key>",
-            name: "female Electric",
+            name: "string",
           },
           secretRef: {
             key: "<key>",
-            name: "firewall",
+            name: "string",
           },
         },
         "secret1": {
           configMapRef: {
             key: "<key>",
-            name: "Jewelery Shoes",
+            name: "string",
           },
           secretRef: {
             key: "<key>",
-            name: "Greece",
+            name: "string",
           },
         },
       },
@@ -684,7 +684,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.getExecutionByID({
-    executionID: "Computers",
+    executionID: "string",
   });
 
   if (res.statusCode == 200) {
@@ -754,7 +754,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.getTestExecution({
-    executionID: "Northeast male",
+    executionID: "string",
     id: "<ID>",
   });
 
@@ -790,7 +790,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.getTestSuiteExecution({
-    executionID: "despite Guyana",
+    executionID: "string",
     id: "<ID>",
   });
 
@@ -826,7 +826,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.getTestSuiteExecutionArtifacts({
-    executionID: "atop North mole",
+    executionID: "string",
   });
 
   if (res.statusCode == 200) {
@@ -861,7 +861,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.getTestSuiteExecutionArtifactsByTestsuite({
-    executionID: "hertz Bowling",
+    executionID: "string",
     id: "<ID>",
   });
 
@@ -897,7 +897,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.getTestSuiteExecutionByID({
-    executionID: "Hermaphrodite Markets",
+    executionID: "string",
   });
 
   if (res.statusCode == 200) {
