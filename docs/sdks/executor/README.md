@@ -48,8 +48,8 @@ import { ExecutorUpsertRequestFeatures } from "testkube-sdk/dist/sdk/models/shar
       {},
     ],
     labels: {
-      "env": "prod",
       "app": "backend",
+      "env": "prod",
     },
     meta: {
       docsURI: "https://docs.testkube.io/test-types/executor-k6",
@@ -286,8 +286,8 @@ import { ExecutorUpdateRequestFeatures } from "testkube-sdk/dist/sdk/models/shar
         {},
       ],
       labels: {
-        "env": "prod",
         "app": "backend",
+        "env": "prod",
       },
       meta: {
         docsURI: "https://docs.testkube.io/test-types/executor-k6",

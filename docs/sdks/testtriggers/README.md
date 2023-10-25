@@ -139,8 +139,8 @@ import {
     event: "modified",
     execution: TestTriggerExecutions.Test,
     labels: {
-      "env": "prod",
       "app": "backend",
+      "env": "prod",
     },
     name: "name",
     namespace: "testkube",

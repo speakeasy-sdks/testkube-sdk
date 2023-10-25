@@ -445,8 +445,8 @@ import { RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/s
       httpProxy: "user:pass@my.proxy.server:8080",
       httpsProxy: "user:pass@my.proxy.server:8081",
       labels: {
-        "prefix": "some-",
         "users": "3",
+        "prefix": "some-",
       },
       name: "testing with 1000 users",
       namespace: "testkube",
@@ -862,14 +862,14 @@ import { RunningContextType, TestSuiteExecutionStatus, VariableType } from "test
           },
         },
         executionLabels: {
-          "prefix": "some-",
           "users": "3",
+          "prefix": "some-",
         },
         httpProxy: "user:pass@my.proxy.server:8080",
         httpsProxy: "user:pass@my.proxy.server:8081",
         labels: {
-          "users": "3",
           "prefix": "some-",
+          "users": "3",
         },
         name: "testing with 1000 users",
         namespace: "testkube",

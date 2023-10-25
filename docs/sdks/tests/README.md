@@ -178,8 +178,8 @@ import {
         },
       ],
       envs: {
-        "prefix": "some-",
         "record": "true",
+        "prefix": "some-",
       },
       executionLabels: {
         "users": "3",
@@ -211,7 +211,7 @@ import {
         "settings/config.txt",
       ],
       variables: {
-        "secret1": {
+        "var1": {
           configMapRef: {
             key: "<key>",
             name: "string",
@@ -221,7 +221,7 @@ import {
             name: "string",
           },
         },
-        "var1": {
+        "secret1": {
           configMapRef: {
             key: "<key>",
             name: "string",
@@ -429,8 +429,8 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
         "prefix": "some-",
       },
       executionLabels: {
-        "prefix": "some-",
         "users": "3",
+        "prefix": "some-",
       },
       httpProxy: "user:pass@my.proxy.server:8080",
       httpsProxy: "user:pass@my.proxy.server:8081",
@@ -450,8 +450,8 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
         type: RunningContextType.Testsuite,
       },
       secretEnvs: {
-        "secret_Key_name2": "secret-name",
         "secret_key_name1": "secret-name",
+        "secret_Key_name2": "secret-name",
       },
       testSuiteName: "test-suite1",
       uploads: [
@@ -579,8 +579,8 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
         type: RunningContextType.Scheduler,
       },
       secretEnvs: {
-        "secret_key_name1": "secret-name",
         "secret_Key_name2": "secret-name",
+        "secret_key_name1": "secret-name",
       },
       testSuiteName: "test-suite1",
       uploads: [
@@ -995,8 +995,8 @@ import {
           "prefix": "some-",
         },
         executionLabels: {
-          "users": "3",
           "prefix": "some-",
+          "users": "3",
         },
         httpProxy: "user:pass@my.proxy.server:8080",
         httpsProxy: "user:pass@my.proxy.server:8081",
@@ -1047,8 +1047,8 @@ import {
         },
       },
       labels: {
-        "env": "prod",
         "app": "backend",
+        "env": "prod",
       },
       name: "test1",
       namespace: "testkube",
