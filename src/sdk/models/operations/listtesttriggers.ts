@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class ListTestTriggersRequest extends SpeakeasyBase {
@@ -16,16 +16,34 @@ export class ListTestTriggersRequest extends SpeakeasyBase {
 
 export class ListTestTriggersResponse extends SpeakeasyBase {
     /**
-     * HTTP response content type for this operation
+     * successful list operation
+     */
+    @SpeakeasyMetadata({ elemType: shared.TestTrigger })
+    twoHundredApplicationJsonClasses?: shared.TestTrigger[];
+
+    /**
+     * successful list operation
      */
     @SpeakeasyMetadata()
-    contentType: string;
+    twoHundredTextYamlRes?: string;
 
     /**
      * problem with selector parsing - probably some bad input occurs
      */
     @SpeakeasyMetadata({ elemType: shared.Problem })
-    problems?: shared.Problem[];
+    fourHundredApplicationProblemPlusJsonClasses?: shared.Problem[];
+
+    /**
+     * problem communicating with kubernetes cluster
+     */
+    @SpeakeasyMetadata({ elemType: shared.Problem })
+    fiveHundredAndTwoApplicationProblemPlusJsonClasses?: shared.Problem[];
+
+    /**
+     * HTTP response content type for this operation
+     */
+    @SpeakeasyMetadata()
+    contentType: string;
 
     /**
      * HTTP response status code for this operation
@@ -38,16 +56,4 @@ export class ListTestTriggersResponse extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
-
-    /**
-     * successful list operation
-     */
-    @SpeakeasyMetadata({ elemType: shared.TestTrigger })
-    testTriggers?: shared.TestTrigger[];
-
-    /**
-     * successful list operation
-     */
-    @SpeakeasyMetadata()
-    listTestTriggers200TextYamlString?: string;
 }

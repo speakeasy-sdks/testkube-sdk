@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class GetTestSuiteExecutionArtifactsByTestsuiteRequest extends SpeakeasyBase {
@@ -22,6 +22,18 @@ export class GetTestSuiteExecutionArtifactsByTestsuiteRequest extends SpeakeasyB
 
 export class GetTestSuiteExecutionArtifactsByTestsuiteResponse extends SpeakeasyBase {
     /**
+     * test suite not found
+     */
+    @SpeakeasyMetadata({ elemType: shared.Problem })
+    fourHundredAndFourApplicationProblemPlusJsonClasses?: shared.Problem[];
+
+    /**
+     * problem with getting test suite executions from storage
+     */
+    @SpeakeasyMetadata({ elemType: shared.Problem })
+    fiveHundredApplicationProblemPlusJsonClasses?: shared.Problem[];
+
+    /**
      * successful operation
      */
     @SpeakeasyMetadata()
@@ -32,12 +44,6 @@ export class GetTestSuiteExecutionArtifactsByTestsuiteResponse extends Speakeasy
      */
     @SpeakeasyMetadata()
     contentType: string;
-
-    /**
-     * test suite not found
-     */
-    @SpeakeasyMetadata({ elemType: shared.Problem })
-    problems?: shared.Problem[];
 
     /**
      * HTTP response status code for this operation

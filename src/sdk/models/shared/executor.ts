@@ -7,7 +7,7 @@ import { ExecutorMeta } from "./executormeta";
 import { LocalObjectReference } from "./localobjectreference";
 import { Expose, Type } from "class-transformer";
 
-export enum ExecutorFeatures {
+export enum Features {
     Artifacts = "artifacts",
     JunitReport = "junit-report",
 }
@@ -49,7 +49,7 @@ export class Executor extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "features" })
-    features?: ExecutorFeatures[];
+    features?: Features[];
 
     /**
      * Image for kube-job

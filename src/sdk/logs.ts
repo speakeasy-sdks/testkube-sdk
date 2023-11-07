@@ -3,9 +3,9 @@
  */
 
 import * as utils from "../internal/utils";
-import * as errors from "./models/errors";
-import * as operations from "./models/operations";
-import * as shared from "./models/shared";
+import * as errors from "../sdk/models/errors";
+import * as operations from "../sdk/models/operations";
+import * as shared from "../sdk/models/shared";
 import { SDKConfiguration } from "./sdk";
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from "axios";
 
@@ -78,9 +78,9 @@ export class Logs {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.executorOutputs = [];
+                    res.twoHundredApplicationJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
-                    res.executorOutputs = utils.objectToClass(
+                    res.twoHundredApplicationJsonClasses = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.ExecutorOutput,
                         resFieldDepth
@@ -96,9 +96,9 @@ export class Logs {
                 break;
             case httpRes?.status == 500:
                 if (utils.matchContentType(contentType, `application/problem+json`)) {
-                    res.problems = [];
+                    res.fiveHundredApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
-                    res.problems = utils.objectToClass(
+                    res.fiveHundredApplicationProblemPlusJsonClasses = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth

@@ -13,7 +13,7 @@ import { Expose, Transform, Type } from "class-transformer";
 /**
  * usage mode for arguments
  */
-export enum ExecutionArgsMode {
+export enum ArgsMode {
     Append = "append",
     Override = "override",
 }
@@ -34,7 +34,7 @@ export class Execution extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "args_mode" })
-    argsMode?: ExecutionArgsMode;
+    argsMode?: ArgsMode;
 
     /**
      * artifact request body with test artifacts

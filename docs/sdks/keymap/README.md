@@ -1,5 +1,5 @@
 # Keymap
-(*keymap*)
+(*.keymap*)
 
 ## Overview
 
@@ -22,6 +22,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.keymap.getKeyMap();
+
 
   if (res.statusCode == 200) {
     // handle response

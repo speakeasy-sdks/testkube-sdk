@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class ListLabelsResponse extends SpeakeasyBase {
@@ -12,12 +12,6 @@ export class ListLabelsResponse extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     contentType: string;
-
-    /**
-     * problem with read information from kubernetes cluster
-     */
-    @SpeakeasyMetadata({ elemType: shared.Problem })
-    problems?: shared.Problem[];
 
     /**
      * HTTP response status code for this operation
@@ -32,8 +26,14 @@ export class ListLabelsResponse extends SpeakeasyBase {
     rawResponse?: AxiosResponse;
 
     /**
+     * problem with read information from kubernetes cluster
+     */
+    @SpeakeasyMetadata({ elemType: shared.Problem })
+    classes?: shared.Problem[];
+
+    /**
      * successful operation
      */
     @SpeakeasyMetadata()
-    listLabels200ApplicationJSONObject?: Record<string, string[]>;
+    object?: Record<string, string[]>;
 }

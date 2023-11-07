@@ -1,5 +1,5 @@
 # Webhook
-(*webhook*)
+(*.webhook*)
 
 ## Overview
 
@@ -43,6 +43,7 @@ import { EventType } from "testkube-sdk/dist/sdk/models/shared";
     uri: "https://hooks.app.com/services/1",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -75,6 +76,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.webhook.createWebhookString("string");
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -111,6 +113,7 @@ import { TestkubeSDK } from "testkube-sdk";
     id: "<ID>",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -143,6 +146,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.webhook.deleteWebhooks({});
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -179,6 +183,7 @@ import { TestkubeSDK } from "testkube-sdk";
     id: "<ID>",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -211,6 +216,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.webhook.listWebhooks({});
+
 
   if (res.statusCode == 200) {
     // handle response

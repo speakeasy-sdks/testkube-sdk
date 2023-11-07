@@ -1,5 +1,5 @@
 # Executions
-(*executions*)
+(*.executions*)
 
 ## Overview
 
@@ -47,6 +47,7 @@ import { TestkubeSDK } from "testkube-sdk";
     id: "<ID>",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -83,6 +84,7 @@ import { TestkubeSDK } from "testkube-sdk";
     id: "<ID>",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -118,6 +120,7 @@ import { TestkubeSDK } from "testkube-sdk";
     executionID: "string",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -152,6 +155,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const res = await sdk.executions.downloadArchive({
     id: "<ID>",
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -189,6 +193,7 @@ import { TestkubeSDK } from "testkube-sdk";
     id: "<ID>",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -222,7 +227,7 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.executeTest({
-    executionRequestInput: {
+    executionRequest: {
       activeDeadlineSeconds: 1,
       args: [
         "--repeats",
@@ -293,7 +298,7 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
         "settings/config.txt",
       ],
       variables: {
-        "var1": {
+        "secret1": {
           configMapRef: {
             key: "<key>",
             name: "string",
@@ -303,7 +308,7 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
             name: "string",
           },
         },
-        "secret1": {
+        "var1": {
           configMapRef: {
             key: "<key>",
             name: "string",
@@ -317,6 +322,7 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
     },
     id: "<ID>",
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -351,7 +357,7 @@ import { RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/s
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.executeTestSuite({
-    testSuiteExecutionRequestInput: {
+    testSuiteExecutionRequest: {
       concurrencyLevel: 10,
       contentRequest: {
         repository: {
@@ -404,6 +410,7 @@ import { RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/s
     id: "<ID>",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -437,7 +444,7 @@ import { RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/s
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.executeTestSuites({
-    testSuiteExecutionRequestInput: {
+    testSuiteExecutionRequest: {
       concurrencyLevel: 10,
       contentRequest: {
         repository: {
@@ -448,8 +455,8 @@ import { RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/s
         },
       },
       executionLabels: {
-        "prefix": "some-",
         "users": "3",
+        "prefix": "some-",
       },
       httpProxy: "user:pass@my.proxy.server:8080",
       httpsProxy: "user:pass@my.proxy.server:8081",
@@ -489,6 +496,7 @@ import { RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/s
     },
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -522,7 +530,7 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.executeTests({
-    executionRequestInput: {
+    executionRequest: {
       activeDeadlineSeconds: 1,
       args: [
         "--repeats",
@@ -617,6 +625,7 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
     },
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -651,6 +660,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const res = await sdk.executions.getExecutionArtifacts({
     id: "<ID>",
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -687,6 +697,7 @@ import { TestkubeSDK } from "testkube-sdk";
     executionID: "string",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -721,6 +732,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const res = await sdk.executions.getExecutionLogs({
     id: "<ID>",
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -758,6 +770,7 @@ import { TestkubeSDK } from "testkube-sdk";
     id: "<ID>",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -794,6 +807,7 @@ import { TestkubeSDK } from "testkube-sdk";
     id: "<ID>",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -828,6 +842,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const res = await sdk.executions.getTestSuiteExecutionArtifacts({
     executionID: "string",
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -865,6 +880,7 @@ import { TestkubeSDK } from "testkube-sdk";
     id: "<ID>",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -899,6 +915,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const res = await sdk.executions.getTestSuiteExecutionByID({
     executionID: "string",
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -935,6 +952,7 @@ import { RFCDate } from "testkube-sdk/dist/sdk/types";
 
   const res = await sdk.executions.listAllTestSuiteExecutions({});
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -969,6 +987,7 @@ import { RFCDate } from "testkube-sdk/dist/sdk/types";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.listExecutions({});
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -1007,6 +1026,7 @@ import { RFCDate } from "testkube-sdk/dist/sdk/types";
     id: "<ID>",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1044,6 +1064,7 @@ import { RFCDate } from "testkube-sdk/dist/sdk/types";
     id: "<ID>",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1071,7 +1092,7 @@ Upload file to be used in executions and tests
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { UploadsBodyParentType } from "testkube-sdk/dist/sdk/models/shared";
+import { ParentType } from "testkube-sdk/dist/sdk/models/shared";
 
 (async() => {
   const sdk = new TestkubeSDK();
@@ -1080,6 +1101,7 @@ import { UploadsBodyParentType } from "testkube-sdk/dist/sdk/models/shared";
     filePath: "folder/file.txt",
     parentName: "test-1",
   });
+
 
   if (res.statusCode == 200) {
     // handle response

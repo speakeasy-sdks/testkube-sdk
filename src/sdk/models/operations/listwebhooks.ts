@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class ListWebhooksRequest extends SpeakeasyBase {
@@ -13,16 +13,34 @@ export class ListWebhooksRequest extends SpeakeasyBase {
 
 export class ListWebhooksResponse extends SpeakeasyBase {
     /**
-     * HTTP response content type for this operation
+     * successful operation
+     */
+    @SpeakeasyMetadata({ elemType: shared.Webhook })
+    twoHundredApplicationJsonClasses?: shared.Webhook[];
+
+    /**
+     * successful operation
      */
     @SpeakeasyMetadata()
-    contentType: string;
+    twoHundredTextYamlRes?: string;
 
     /**
      * problem with input for CRD generation
      */
     @SpeakeasyMetadata({ elemType: shared.Problem })
-    problems?: shared.Problem[];
+    fourHundredApplicationProblemPlusJsonClasses?: shared.Problem[];
+
+    /**
+     * problem with read information from kubernetes cluster
+     */
+    @SpeakeasyMetadata({ elemType: shared.Problem })
+    fiveHundredAndTwoApplicationProblemPlusJsonClasses?: shared.Problem[];
+
+    /**
+     * HTTP response content type for this operation
+     */
+    @SpeakeasyMetadata()
+    contentType: string;
 
     /**
      * HTTP response status code for this operation
@@ -35,16 +53,4 @@ export class ListWebhooksResponse extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
-
-    /**
-     * successful operation
-     */
-    @SpeakeasyMetadata({ elemType: shared.Webhook })
-    webhooks?: shared.Webhook[];
-
-    /**
-     * successful operation
-     */
-    @SpeakeasyMetadata()
-    listWebhooks200TextYamlString?: string;
 }

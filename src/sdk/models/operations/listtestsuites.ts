@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class ListTestSuitesRequest extends SpeakeasyBase {
@@ -19,16 +19,34 @@ export class ListTestSuitesRequest extends SpeakeasyBase {
 
 export class ListTestSuitesResponse extends SpeakeasyBase {
     /**
-     * HTTP response content type for this operation
+     * successful operation
+     */
+    @SpeakeasyMetadata({ elemType: shared.TestSuite })
+    twoHundredApplicationJsonClasses?: shared.TestSuite[];
+
+    /**
+     * successful operation
      */
     @SpeakeasyMetadata()
-    contentType: string;
+    twoHundredTextYamlRes?: string;
 
     /**
      * problem with input for CRD generation
      */
     @SpeakeasyMetadata({ elemType: shared.Problem })
-    problems?: shared.Problem[];
+    fourHundredApplicationProblemPlusJsonClasses?: shared.Problem[];
+
+    /**
+     * problem with listing test suites from kubernetes cluster
+     */
+    @SpeakeasyMetadata({ elemType: shared.Problem })
+    fiveHundredAndTwoApplicationProblemPlusJsonClasses?: shared.Problem[];
+
+    /**
+     * HTTP response content type for this operation
+     */
+    @SpeakeasyMetadata()
+    contentType: string;
 
     /**
      * HTTP response status code for this operation
@@ -41,16 +59,4 @@ export class ListTestSuitesResponse extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
-
-    /**
-     * successful operation
-     */
-    @SpeakeasyMetadata({ elemType: shared.TestSuite })
-    testSuites?: shared.TestSuite[];
-
-    /**
-     * successful operation
-     */
-    @SpeakeasyMetadata()
-    listTestSuites200TextYamlString?: string;
 }

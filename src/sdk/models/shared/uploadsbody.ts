@@ -4,7 +4,7 @@
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 
-export enum UploadsBodyParentType {
+export enum ParentType {
     Test = "test",
     Execution = "execution",
 }
@@ -17,5 +17,5 @@ export class UploadsBody extends SpeakeasyBase {
     parentName?: string;
 
     @SpeakeasyMetadata({ data: "multipart_form, name=parentType" })
-    parentType?: UploadsBodyParentType;
+    parentType?: ParentType;
 }

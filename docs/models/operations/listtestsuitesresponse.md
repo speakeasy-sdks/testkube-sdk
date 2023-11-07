@@ -3,11 +3,12 @@
 
 ## Fields
 
-| Field                                                   | Type                                                    | Required                                                | Description                                             |
-| ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
-| `contentType`                                           | *string*                                                | :heavy_check_mark:                                      | HTTP response content type for this operation           |
-| `problems`                                              | [shared.Problem](../../models/shared/problem.md)[]      | :heavy_minus_sign:                                      | problem with input for CRD generation                   |
-| `statusCode`                                            | *number*                                                | :heavy_check_mark:                                      | HTTP response status code for this operation            |
-| `rawResponse`                                           | [AxiosResponse](https://axios-http.com/docs/res_schema) | :heavy_minus_sign:                                      | Raw HTTP response; suitable for custom response parsing |
-| `testSuites`                                            | [shared.TestSuite](../../models/shared/testsuite.md)[]  | :heavy_minus_sign:                                      | successful operation                                    |
-| `listTestSuites200TextYamlString`                       | *string*                                                | :heavy_minus_sign:                                      | successful operation                                    |
+| Field                                                    | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `twoHundredApplicationJsonClasses`                       | [shared.TestSuite](../../models/shared/testsuite.md)[]   | :heavy_minus_sign:                                       | successful operation                                     |
+| `twoHundredTextYamlRes`                                  | *string*                                                 | :heavy_minus_sign:                                       | successful operation                                     |
+| `fourHundredApplicationProblemPlusJsonClasses`           | [shared.Problem](../../models/shared/problem.md)[]       | :heavy_minus_sign:                                       | problem with input for CRD generation                    |
+| `fiveHundredAndTwoApplicationProblemPlusJsonClasses`     | [shared.Problem](../../models/shared/problem.md)[]       | :heavy_minus_sign:                                       | problem with listing test suites from kubernetes cluster |
+| `contentType`                                            | *string*                                                 | :heavy_check_mark:                                       | HTTP response content type for this operation            |
+| `statusCode`                                             | *number*                                                 | :heavy_check_mark:                                       | HTTP response status code for this operation             |
+| `rawResponse`                                            | [AxiosResponse](https://axios-http.com/docs/res_schema)  | :heavy_minus_sign:                                       | Raw HTTP response; suitable for custom response parsing  |

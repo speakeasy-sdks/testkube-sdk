@@ -1,4 +1,4 @@
-# RepositoryAuthType
+# AuthType
 
 auth type for git requests
 

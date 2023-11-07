@@ -3,9 +3,9 @@
  */
 
 import * as utils from "../internal/utils";
-import * as errors from "./models/errors";
-import * as operations from "./models/operations";
-import * as shared from "./models/shared";
+import * as errors from "../sdk/models/errors";
+import * as operations from "../sdk/models/operations";
+import * as shared from "../sdk/models/shared";
 import { SDKConfiguration } from "./sdk";
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from "axios";
 
@@ -123,7 +123,7 @@ export class TestSources {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `text/yaml`)) {
-                    res.createTestSourceJson200TextYamlString = decodedRes;
+                    res.twoHundredTextYamlRes = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,
@@ -145,11 +145,29 @@ export class TestSources {
                     );
                 }
                 break;
-            case [400, 502].includes(httpRes?.status):
+            case httpRes?.status == 400:
                 if (utils.matchContentType(contentType, `application/problem+json`)) {
-                    res.problems = [];
+                    res.fourHundredApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
-                    res.problems = utils.objectToClass(
+                    res.fourHundredApplicationProblemPlusJsonClasses = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.Problem,
+                        resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
+                }
+                break;
+            case httpRes?.status == 502:
+                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                    res.fiveHundredAndTwoApplicationProblemPlusJsonClasses = [];
+                    const resFieldDepth: number = utils.getResFieldDepth(res);
+                    res.fiveHundredAndTwoApplicationProblemPlusJsonClasses = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
@@ -232,7 +250,7 @@ export class TestSources {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `text/yaml`)) {
-                    res.createTestSourceString200TextYamlString = decodedRes;
+                    res.twoHundredTextYamlRes = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,
@@ -254,11 +272,29 @@ export class TestSources {
                     );
                 }
                 break;
-            case [400, 502].includes(httpRes?.status):
+            case httpRes?.status == 400:
                 if (utils.matchContentType(contentType, `application/problem+json`)) {
-                    res.problems = [];
+                    res.fourHundredApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
-                    res.problems = utils.objectToClass(
+                    res.fourHundredApplicationProblemPlusJsonClasses = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.Problem,
+                        resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
+                }
+                break;
+            case httpRes?.status == 502:
+                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                    res.fiveHundredAndTwoApplicationProblemPlusJsonClasses = [];
+                    const resFieldDepth: number = utils.getResFieldDepth(res);
+                    res.fiveHundredAndTwoApplicationProblemPlusJsonClasses = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
@@ -328,9 +364,9 @@ export class TestSources {
                 break;
             case httpRes?.status == 502:
                 if (utils.matchContentType(contentType, `application/problem+json`)) {
-                    res.problems = [];
+                    res.classes = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
-                    res.problems = utils.objectToClass(
+                    res.classes = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
@@ -401,9 +437,9 @@ export class TestSources {
                 break;
             case httpRes?.status == 502:
                 if (utils.matchContentType(contentType, `application/problem+json`)) {
-                    res.problems = [];
+                    res.classes = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
-                    res.problems = utils.objectToClass(
+                    res.classes = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
@@ -479,7 +515,7 @@ export class TestSources {
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.testSource = utils.objectToClass(JSON.parse(decodedRes), shared.TestSource);
                 } else if (utils.matchContentType(contentType, `text/yaml`)) {
-                    res.getTestSource200TextYamlString = decodedRes;
+                    res.twoHundredTextYamlRes = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,
@@ -489,11 +525,65 @@ export class TestSources {
                     );
                 }
                 break;
-            case [400, 404, 500, 502].includes(httpRes?.status):
+            case httpRes?.status == 400:
                 if (utils.matchContentType(contentType, `application/problem+json`)) {
-                    res.problems = [];
+                    res.fourHundredApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
-                    res.problems = utils.objectToClass(
+                    res.fourHundredApplicationProblemPlusJsonClasses = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.Problem,
+                        resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
+                }
+                break;
+            case httpRes?.status == 404:
+                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                    res.fourHundredAndFourApplicationProblemPlusJsonClasses = [];
+                    const resFieldDepth: number = utils.getResFieldDepth(res);
+                    res.fourHundredAndFourApplicationProblemPlusJsonClasses = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.Problem,
+                        resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
+                }
+                break;
+            case httpRes?.status == 500:
+                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                    res.fiveHundredApplicationProblemPlusJsonClasses = [];
+                    const resFieldDepth: number = utils.getResFieldDepth(res);
+                    res.fiveHundredApplicationProblemPlusJsonClasses = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.Problem,
+                        resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
+                }
+                break;
+            case httpRes?.status == 502:
+                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                    res.fiveHundredAndTwoApplicationProblemPlusJsonClasses = [];
+                    const resFieldDepth: number = utils.getResFieldDepth(res);
+                    res.fiveHundredAndTwoApplicationProblemPlusJsonClasses = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
@@ -568,15 +658,15 @@ export class TestSources {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.testSources = [];
+                    res.twoHundredApplicationJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
-                    res.testSources = utils.objectToClass(
+                    res.twoHundredApplicationJsonClasses = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.TestSource,
                         resFieldDepth
                     );
                 } else if (utils.matchContentType(contentType, `text/yaml`)) {
-                    res.listTestSources200TextYamlString = decodedRes;
+                    res.twoHundredTextYamlRes = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,
@@ -586,11 +676,29 @@ export class TestSources {
                     );
                 }
                 break;
-            case [400, 502].includes(httpRes?.status):
+            case httpRes?.status == 400:
                 if (utils.matchContentType(contentType, `application/problem+json`)) {
-                    res.problems = [];
+                    res.fourHundredApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
-                    res.problems = utils.objectToClass(
+                    res.fourHundredApplicationProblemPlusJsonClasses = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.Problem,
+                        resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
+                }
+                break;
+            case httpRes?.status == 502:
+                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                    res.fiveHundredAndTwoApplicationProblemPlusJsonClasses = [];
+                    const resFieldDepth: number = utils.getResFieldDepth(res);
+                    res.fiveHundredAndTwoApplicationProblemPlusJsonClasses = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
@@ -689,11 +797,29 @@ export class TestSources {
                     );
                 }
                 break;
-            case [400, 502].includes(httpRes?.status):
+            case httpRes?.status == 400:
                 if (utils.matchContentType(contentType, `application/problem+json`)) {
-                    res.problems = [];
+                    res.fourHundredApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
-                    res.problems = utils.objectToClass(
+                    res.fourHundredApplicationProblemPlusJsonClasses = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.Problem,
+                        resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
+                }
+                break;
+            case httpRes?.status == 502:
+                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                    res.fiveHundredAndTwoApplicationProblemPlusJsonClasses = [];
+                    const resFieldDepth: number = utils.getResFieldDepth(res);
+                    res.fiveHundredAndTwoApplicationProblemPlusJsonClasses = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
@@ -793,11 +919,47 @@ export class TestSources {
                     );
                 }
                 break;
-            case [400, 404, 502].includes(httpRes?.status):
+            case httpRes?.status == 400:
                 if (utils.matchContentType(contentType, `application/problem+json`)) {
-                    res.problems = [];
+                    res.fourHundredApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
-                    res.problems = utils.objectToClass(
+                    res.fourHundredApplicationProblemPlusJsonClasses = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.Problem,
+                        resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
+                }
+                break;
+            case httpRes?.status == 404:
+                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                    res.fourHundredAndFourApplicationProblemPlusJsonClasses = [];
+                    const resFieldDepth: number = utils.getResFieldDepth(res);
+                    res.fourHundredAndFourApplicationProblemPlusJsonClasses = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.Problem,
+                        resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
+                }
+                break;
+            case httpRes?.status == 502:
+                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                    res.fiveHundredAndTwoApplicationProblemPlusJsonClasses = [];
+                    const resFieldDepth: number = utils.getResFieldDepth(res);
+                    res.fiveHundredAndTwoApplicationProblemPlusJsonClasses = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth
@@ -893,11 +1055,47 @@ export class TestSources {
                     );
                 }
                 break;
-            case [400, 404, 502].includes(httpRes?.status):
+            case httpRes?.status == 400:
                 if (utils.matchContentType(contentType, `application/problem+json`)) {
-                    res.problems = [];
+                    res.fourHundredApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
-                    res.problems = utils.objectToClass(
+                    res.fourHundredApplicationProblemPlusJsonClasses = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.Problem,
+                        resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
+                }
+                break;
+            case httpRes?.status == 404:
+                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                    res.fourHundredAndFourApplicationProblemPlusJsonClasses = [];
+                    const resFieldDepth: number = utils.getResFieldDepth(res);
+                    res.fourHundredAndFourApplicationProblemPlusJsonClasses = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.Problem,
+                        resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
+                }
+                break;
+            case httpRes?.status == 502:
+                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                    res.fiveHundredAndTwoApplicationProblemPlusJsonClasses = [];
+                    const resFieldDepth: number = utils.getResFieldDepth(res);
+                    res.fiveHundredAndTwoApplicationProblemPlusJsonClasses = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.Problem,
                         resFieldDepth

@@ -3,21 +3,33 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class BulkUpdateTestTriggersResponse extends SpeakeasyBase {
     /**
-     * HTTP response content type for this operation
+     * successful operation
      */
-    @SpeakeasyMetadata()
-    contentType: string;
+    @SpeakeasyMetadata({ elemType: shared.TestTrigger })
+    twoHundredApplicationJsonClasses?: shared.TestTrigger[];
 
     /**
      * problem with test trigger definition - probably some bad input occurs (invalid JSON body or similar)
      */
     @SpeakeasyMetadata({ elemType: shared.Problem })
-    problems?: shared.Problem[];
+    fourHundredApplicationProblemPlusJsonClasses?: shared.Problem[];
+
+    /**
+     * problem communicating with kubernetes cluster
+     */
+    @SpeakeasyMetadata({ elemType: shared.Problem })
+    fiveHundredAndTwoApplicationProblemPlusJsonClasses?: shared.Problem[];
+
+    /**
+     * HTTP response content type for this operation
+     */
+    @SpeakeasyMetadata()
+    contentType: string;
 
     /**
      * HTTP response status code for this operation
@@ -30,10 +42,4 @@ export class BulkUpdateTestTriggersResponse extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
-
-    /**
-     * successful operation
-     */
-    @SpeakeasyMetadata({ elemType: shared.TestTrigger })
-    testTriggers?: shared.TestTrigger[];
 }

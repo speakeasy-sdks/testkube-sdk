@@ -3,10 +3,28 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class UpdateConfigKeyResponse extends SpeakeasyBase {
+    /**
+     * problem with input
+     */
+    @SpeakeasyMetadata({ elemType: shared.Problem })
+    fourHundredApplicationProblemPlusJsonClasses?: shared.Problem[];
+
+    /**
+     * config not found
+     */
+    @SpeakeasyMetadata({ elemType: shared.Problem })
+    fourHundredAndFourApplicationProblemPlusJsonClasses?: shared.Problem[];
+
+    /**
+     * problem with updating key in cluster storage
+     */
+    @SpeakeasyMetadata({ elemType: shared.Problem })
+    fiveHundredApplicationProblemPlusJsonClasses?: shared.Problem[];
+
     /**
      * update successful
      */
@@ -18,12 +36,6 @@ export class UpdateConfigKeyResponse extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     contentType: string;
-
-    /**
-     * problem with input
-     */
-    @SpeakeasyMetadata({ elemType: shared.Problem })
-    problems?: shared.Problem[];
 
     /**
      * HTTP response status code for this operation

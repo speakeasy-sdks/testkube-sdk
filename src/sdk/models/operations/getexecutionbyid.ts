@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class GetExecutionByIDRequest extends SpeakeasyBase {
@@ -16,6 +16,24 @@ export class GetExecutionByIDRequest extends SpeakeasyBase {
 
 export class GetExecutionByIDResponse extends SpeakeasyBase {
     /**
+     * execution not found
+     */
+    @SpeakeasyMetadata({ elemType: shared.Problem })
+    fourHundredAndFourApplicationProblemPlusJsonClasses?: shared.Problem[];
+
+    /**
+     * problem with getting test executions from storage
+     */
+    @SpeakeasyMetadata({ elemType: shared.Problem })
+    fiveHundredApplicationProblemPlusJsonClasses?: shared.Problem[];
+
+    /**
+     * problem with reading secrets from kubernetes cluster
+     */
+    @SpeakeasyMetadata({ elemType: shared.Problem })
+    fiveHundredAndTwoApplicationProblemPlusJsonClasses?: shared.Problem[];
+
+    /**
      * HTTP response content type for this operation
      */
     @SpeakeasyMetadata()
@@ -26,12 +44,6 @@ export class GetExecutionByIDResponse extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     execution?: shared.Execution;
-
-    /**
-     * execution not found
-     */
-    @SpeakeasyMetadata({ elemType: shared.Problem })
-    problems?: shared.Problem[];
 
     /**
      * HTTP response status code for this operation

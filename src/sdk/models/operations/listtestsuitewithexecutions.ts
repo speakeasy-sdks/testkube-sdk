@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class ListTestSuiteWithExecutionsRequest extends SpeakeasyBase {
@@ -37,16 +37,40 @@ export class ListTestSuiteWithExecutionsRequest extends SpeakeasyBase {
 
 export class ListTestSuiteWithExecutionsResponse extends SpeakeasyBase {
     /**
-     * HTTP response content type for this operation
+     * successful operation
+     */
+    @SpeakeasyMetadata({ elemType: shared.TestSuiteWithExecutionSummary })
+    twoHundredApplicationJsonClasses?: shared.TestSuiteWithExecutionSummary[];
+
+    /**
+     * successful operation
      */
     @SpeakeasyMetadata()
-    contentType: string;
+    twoHundredTextYamlRes?: string;
 
     /**
      * problem with input
      */
     @SpeakeasyMetadata({ elemType: shared.Problem })
-    problems?: shared.Problem[];
+    fourHundredApplicationProblemPlusJsonClasses?: shared.Problem[];
+
+    /**
+     * problem with getting test suite with executions from storage
+     */
+    @SpeakeasyMetadata({ elemType: shared.Problem })
+    fiveHundredApplicationProblemPlusJsonClasses?: shared.Problem[];
+
+    /**
+     * problem with getting test suite from Kubernetes clusteer
+     */
+    @SpeakeasyMetadata({ elemType: shared.Problem })
+    fiveHundredAndTwoApplicationProblemPlusJsonClasses?: shared.Problem[];
+
+    /**
+     * HTTP response content type for this operation
+     */
+    @SpeakeasyMetadata()
+    contentType: string;
 
     /**
      * HTTP response status code for this operation
@@ -59,16 +83,4 @@ export class ListTestSuiteWithExecutionsResponse extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
-
-    /**
-     * successful operation
-     */
-    @SpeakeasyMetadata({ elemType: shared.TestSuiteWithExecutionSummary })
-    testSuiteWithExecutionSummaries?: shared.TestSuiteWithExecutionSummary[];
-
-    /**
-     * successful operation
-     */
-    @SpeakeasyMetadata()
-    listTestSuiteWithExecutions200TextYamlString?: string;
 }

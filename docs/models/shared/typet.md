@@ -1,4 +1,4 @@
-# ExecutorOutputType
+# TypeT
 
 One of possible output types
 

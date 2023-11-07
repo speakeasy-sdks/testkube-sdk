@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class GetTestSuiteByIDRequest extends SpeakeasyBase {
@@ -16,16 +16,34 @@ export class GetTestSuiteByIDRequest extends SpeakeasyBase {
 
 export class GetTestSuiteByIDResponse extends SpeakeasyBase {
     /**
-     * HTTP response content type for this operation
+     * successful operation
      */
     @SpeakeasyMetadata()
-    contentType: string;
+    twoHundredTextYamlRes?: string;
 
     /**
      * test suite not found
      */
     @SpeakeasyMetadata({ elemType: shared.Problem })
-    problems?: shared.Problem[];
+    fourHundredAndFourApplicationProblemPlusJsonClasses?: shared.Problem[];
+
+    /**
+     * could not get execution result from the database
+     */
+    @SpeakeasyMetadata({ elemType: shared.Problem })
+    fiveHundredApplicationProblemPlusJsonClasses?: shared.Problem[];
+
+    /**
+     * problem with communicating with kubernetes cluster
+     */
+    @SpeakeasyMetadata({ elemType: shared.Problem })
+    fiveHundredAndTwoApplicationProblemPlusJsonClasses?: shared.Problem[];
+
+    /**
+     * HTTP response content type for this operation
+     */
+    @SpeakeasyMetadata()
+    contentType: string;
 
     /**
      * HTTP response status code for this operation
@@ -44,10 +62,4 @@ export class GetTestSuiteByIDResponse extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     testSuite?: shared.TestSuite;
-
-    /**
-     * successful operation
-     */
-    @SpeakeasyMetadata()
-    getTestSuiteByID200TextYamlString?: string;
 }

@@ -3,10 +3,22 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class GetConfigResponse extends SpeakeasyBase {
+    /**
+     * config not found
+     */
+    @SpeakeasyMetadata({ elemType: shared.Problem })
+    fourHundredAndFourApplicationProblemPlusJsonClasses?: shared.Problem[];
+
+    /**
+     * problem with getting config from cluster storage
+     */
+    @SpeakeasyMetadata({ elemType: shared.Problem })
+    fiveHundredApplicationProblemPlusJsonClasses?: shared.Problem[];
+
     /**
      * get successful
      */
@@ -18,12 +30,6 @@ export class GetConfigResponse extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     contentType: string;
-
-    /**
-     * config not found
-     */
-    @SpeakeasyMetadata({ elemType: shared.Problem })
-    problems?: shared.Problem[];
 
     /**
      * HTTP response status code for this operation

@@ -1,5 +1,5 @@
 # Repository
-(*repository*)
+(*.repository*)
 
 ### Available Operations
 
@@ -13,7 +13,7 @@ Validate new repository based on variables passed in request
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { RepositoryAuthType, RepositoryType } from "testkube-sdk/dist/sdk/models/shared";
+import { AuthType, RepositoryType } from "testkube-sdk/dist/sdk/models/shared";
 
 (async() => {
   const sdk = new TestkubeSDK();
@@ -34,6 +34,7 @@ import { RepositoryAuthType, RepositoryType } from "testkube-sdk/dist/sdk/models
     },
     workingDir: "/",
   });
+
 
   if (res.statusCode == 200) {
     // handle response

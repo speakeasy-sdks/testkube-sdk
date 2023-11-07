@@ -1,5 +1,5 @@
 # Tests
-(*tests*)
+(*.tests*)
 
 ## Overview
 
@@ -44,6 +44,7 @@ import { TestkubeSDK } from "testkube-sdk";
     id: "<ID>",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -79,6 +80,7 @@ import { TestkubeSDK } from "testkube-sdk";
     id: "<ID>",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -107,9 +109,9 @@ Create new test based on file content, uri or git based data
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 import {
+  AuthType,
   ExecutionRequestArgsMode,
   ExecutionStatus,
-  RepositoryAuthType,
   RepositoryType,
   RunningContextType,
   TestContentType,
@@ -253,6 +255,7 @@ import {
     ],
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -261,10 +264,10 @@ import {
 
 ### Parameters
 
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `request`                                                                      | [shared.TestUpsertRequestInput](../../models/shared/testupsertrequestinput.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
-| `config`                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                   | :heavy_minus_sign:                                                             | Available config options for making requests.                                  |
+| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `request`                                                            | [shared.TestUpsertRequest](../../models/shared/testupsertrequest.md) | :heavy_check_mark:                                                   | The request object to use for the request.                           |
+| `config`                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)         | :heavy_minus_sign:                                                   | Available config options for making requests.                        |
 
 
 ### Response
@@ -285,6 +288,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.tests.createTestString("string");
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -321,6 +325,7 @@ import { TestkubeSDK } from "testkube-sdk";
     id: "<ID>",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -353,6 +358,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.tests.deleteTests({});
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -387,7 +393,7 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
   const sdk = new TestkubeSDK();
 
   const res = await sdk.tests.executeTest({
-    executionRequestInput: {
+    executionRequest: {
       activeDeadlineSeconds: 1,
       args: [
         "--repeats",
@@ -425,8 +431,8 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
         },
       ],
       envs: {
-        "record": "true",
         "prefix": "some-",
+        "record": "true",
       },
       executionLabels: {
         "users": "3",
@@ -483,6 +489,7 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
     id: "<ID>",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -516,7 +523,7 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
   const sdk = new TestkubeSDK();
 
   const res = await sdk.tests.executeTests({
-    executionRequestInput: {
+    executionRequest: {
       activeDeadlineSeconds: 1,
       args: [
         "--repeats",
@@ -579,8 +586,8 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
         type: RunningContextType.Scheduler,
       },
       secretEnvs: {
-        "secret_Key_name2": "secret-name",
         "secret_key_name1": "secret-name",
+        "secret_Key_name2": "secret-name",
       },
       testSuiteName: "test-suite1",
       uploads: [
@@ -610,6 +617,7 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
       },
     },
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -645,6 +653,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const res = await sdk.tests.getTest({
     id: "<ID>",
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -682,6 +691,7 @@ import { TestkubeSDK } from "testkube-sdk";
     id: "<ID>",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -716,6 +726,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const res = await sdk.tests.getTestMetrics({
     id: "<ID>",
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -752,6 +763,7 @@ import { TestkubeSDK } from "testkube-sdk";
     id: "<ID>",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -786,6 +798,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const res = await sdk.tests.getTestWithExecution({
     id: "<ID>",
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -824,6 +837,7 @@ import { RFCDate } from "testkube-sdk/dist/sdk/types";
     id: "<ID>",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -858,6 +872,7 @@ import { ExecutionStatus } from "testkube-sdk/dist/sdk/models/shared";
 
   const res = await sdk.tests.listTestWithExecutions({});
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -891,6 +906,7 @@ import { TestkubeSDK } from "testkube-sdk";
 
   const res = await sdk.tests.listTests({});
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -919,9 +935,9 @@ Update test based on test content or git based data
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 import {
+  AuthType,
   ExecutionRequestArgsMode,
   ExecutionStatus,
-  RepositoryAuthType,
   RepositoryType,
   RunningContextType,
   TestContentType,
@@ -932,7 +948,7 @@ import {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.tests.updateTestJson({
-    testUpdateRequestInput: {
+    testUpdateRequest: {
       content: {
         repository: {
           branch: "main",
@@ -1047,8 +1063,8 @@ import {
         },
       },
       labels: {
-        "app": "backend",
         "env": "prod",
+        "app": "backend",
       },
       name: "test1",
       namespace: "testkube",
@@ -1067,6 +1083,7 @@ import {
     },
     id: "<ID>",
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -1104,6 +1121,7 @@ import { TestkubeSDK } from "testkube-sdk";
     id: "<ID>",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1131,7 +1149,7 @@ Upload file to be used in executions and tests
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { UploadsBodyParentType } from "testkube-sdk/dist/sdk/models/shared";
+import { ParentType } from "testkube-sdk/dist/sdk/models/shared";
 
 (async() => {
   const sdk = new TestkubeSDK();
@@ -1140,6 +1158,7 @@ import { UploadsBodyParentType } from "testkube-sdk/dist/sdk/models/shared";
     filePath: "folder/file.txt",
     parentName: "test-1",
   });
+
 
   if (res.statusCode == 200) {
     // handle response

@@ -1,5 +1,5 @@
 # TestSuites
-(*testSuites*)
+(*.testSuites*)
 
 ## Overview
 
@@ -44,6 +44,7 @@ import { TestkubeSDK } from "testkube-sdk";
     id: "<ID>",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -78,6 +79,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const res = await sdk.testSuites.abortTestSuiteExecutions({
     id: "<ID>",
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -208,6 +210,7 @@ import { RunningContextType, TestSuiteExecutionStatus, VariableType } from "test
     ],
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -216,10 +219,10 @@ import { RunningContextType, TestSuiteExecutionStatus, VariableType } from "test
 
 ### Parameters
 
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `request`                                                                                | [shared.TestSuiteUpsertRequestInput](../../models/shared/testsuiteupsertrequestinput.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
-| `config`                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                             | :heavy_minus_sign:                                                                       | Available config options for making requests.                                            |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `request`                                                                      | [shared.TestSuiteUpsertRequest](../../models/shared/testsuiteupsertrequest.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
+| `config`                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                   | :heavy_minus_sign:                                                             | Available config options for making requests.                                  |
 
 
 ### Response
@@ -240,6 +243,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testSuites.createTestSuiteString("string");
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -276,6 +280,7 @@ import { TestkubeSDK } from "testkube-sdk";
     id: "<ID>",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -308,6 +313,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testSuites.deleteTestSuites({});
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -342,7 +348,7 @@ import { RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/s
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testSuites.executeTestSuite({
-    testSuiteExecutionRequestInput: {
+    testSuiteExecutionRequest: {
       concurrencyLevel: 10,
       contentRequest: {
         repository: {
@@ -395,6 +401,7 @@ import { RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/s
     id: "<ID>",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -428,7 +435,7 @@ import { RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/s
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testSuites.executeTestSuites({
-    testSuiteExecutionRequestInput: {
+    testSuiteExecutionRequest: {
       concurrencyLevel: 10,
       contentRequest: {
         repository: {
@@ -445,8 +452,8 @@ import { RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/s
       httpProxy: "user:pass@my.proxy.server:8080",
       httpsProxy: "user:pass@my.proxy.server:8081",
       labels: {
-        "users": "3",
         "prefix": "some-",
+        "users": "3",
       },
       name: "testing with 1000 users",
       namespace: "testkube",
@@ -479,6 +486,7 @@ import { RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/s
       },
     },
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -515,6 +523,7 @@ import { TestkubeSDK } from "testkube-sdk";
     id: "<ID>",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -549,6 +558,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const res = await sdk.testSuites.getTestSuiteByIDWithExecution({
     id: "<ID>",
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -586,6 +596,7 @@ import { TestkubeSDK } from "testkube-sdk";
     id: "<ID>",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -620,6 +631,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const res = await sdk.testSuites.getTestSuiteExecutionArtifacts({
     executionID: "string",
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -656,6 +668,7 @@ import { TestkubeSDK } from "testkube-sdk";
     executionID: "string",
     id: "<ID>",
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -694,6 +707,7 @@ import { RFCDate } from "testkube-sdk/dist/sdk/types";
     id: "<ID>",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -729,6 +743,7 @@ import { TestkubeSDK } from "testkube-sdk";
     id: "<ID>",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -763,6 +778,7 @@ import { TestSuiteExecutionStatus } from "testkube-sdk/dist/sdk/models/shared";
 
   const res = await sdk.testSuites.listTestSuiteWithExecutions({});
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -795,6 +811,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testSuites.listTestSuites({});
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -829,7 +846,7 @@ import { RunningContextType, TestSuiteExecutionStatus, VariableType } from "test
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testSuites.updateTestSuiteJson({
-    testSuiteUpdateRequestInput: {
+    testSuiteUpdateRequest: {
       after: [
         {
           execute: [
@@ -868,8 +885,8 @@ import { RunningContextType, TestSuiteExecutionStatus, VariableType } from "test
         httpProxy: "user:pass@my.proxy.server:8080",
         httpsProxy: "user:pass@my.proxy.server:8081",
         labels: {
-          "prefix": "some-",
           "users": "3",
+          "prefix": "some-",
         },
         name: "testing with 1000 users",
         namespace: "testkube",
@@ -928,6 +945,7 @@ import { RunningContextType, TestSuiteExecutionStatus, VariableType } from "test
     id: "<ID>",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -963,6 +981,7 @@ import { TestkubeSDK } from "testkube-sdk";
     requestBody: "string",
     id: "<ID>",
   });
+
 
   if (res.statusCode == 200) {
     // handle response

@@ -1,5 +1,5 @@
 # Logs
-(*logs*)
+(*.logs*)
 
 ## Overview
 
@@ -24,6 +24,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const res = await sdk.logs.getExecutionLogs({
     id: "<ID>",
   });
+
 
   if (res.statusCode == 200) {
     // handle response

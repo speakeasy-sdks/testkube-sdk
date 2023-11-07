@@ -1,4 +1,4 @@
-# AssertionResultStatus
+# Status
 
 
 ## Values

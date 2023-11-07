@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class GetTestTriggerByIDRequest extends SpeakeasyBase {
@@ -19,16 +19,28 @@ export class GetTestTriggerByIDRequest extends SpeakeasyBase {
 
 export class GetTestTriggerByIDResponse extends SpeakeasyBase {
     /**
-     * HTTP response content type for this operation
+     * successful operation
      */
     @SpeakeasyMetadata()
-    contentType: string;
+    twoHundredTextYamlRes?: string;
 
     /**
      * test trigger not found
      */
     @SpeakeasyMetadata({ elemType: shared.Problem })
-    problems?: shared.Problem[];
+    fourHundredAndFourApplicationProblemPlusJsonClasses?: shared.Problem[];
+
+    /**
+     * problem communicating with kubernetes cluster
+     */
+    @SpeakeasyMetadata({ elemType: shared.Problem })
+    fiveHundredAndTwoApplicationProblemPlusJsonClasses?: shared.Problem[];
+
+    /**
+     * HTTP response content type for this operation
+     */
+    @SpeakeasyMetadata()
+    contentType: string;
 
     /**
      * HTTP response status code for this operation
@@ -47,10 +59,4 @@ export class GetTestTriggerByIDResponse extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     testTrigger?: shared.TestTrigger;
-
-    /**
-     * successful operation
-     */
-    @SpeakeasyMetadata()
-    getTestTriggerByID200TextYamlString?: string;
 }

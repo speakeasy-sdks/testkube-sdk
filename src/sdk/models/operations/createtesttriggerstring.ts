@@ -3,21 +3,33 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class CreateTestTriggerStringResponse extends SpeakeasyBase {
     /**
-     * HTTP response content type for this operation
+     * successful operation
      */
     @SpeakeasyMetadata()
-    contentType: string;
+    twoHundredTextYamlRes?: string;
 
     /**
      * problem with test trigger definition - probably some bad input occurs (invalid JSON body or similar)
      */
     @SpeakeasyMetadata({ elemType: shared.Problem })
-    problems?: shared.Problem[];
+    fourHundredApplicationProblemPlusJsonClasses?: shared.Problem[];
+
+    /**
+     * problem communicating with kubernetes cluster
+     */
+    @SpeakeasyMetadata({ elemType: shared.Problem })
+    fiveHundredAndTwoApplicationProblemPlusJsonClasses?: shared.Problem[];
+
+    /**
+     * HTTP response content type for this operation
+     */
+    @SpeakeasyMetadata()
+    contentType: string;
 
     /**
      * HTTP response status code for this operation
@@ -36,10 +48,4 @@ export class CreateTestTriggerStringResponse extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     testTrigger?: shared.TestTrigger;
-
-    /**
-     * successful operation
-     */
-    @SpeakeasyMetadata()
-    createTestTriggerString200TextYamlString?: string;
 }

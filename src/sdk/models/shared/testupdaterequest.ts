@@ -11,7 +11,7 @@ import { Expose, Transform, Type } from "class-transformer";
 /**
  * test update request body
  */
-export class TestUpdateRequestInput extends SpeakeasyBase {
+export class TestUpdateRequest extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "content" })
     @Type(() => TestContent)

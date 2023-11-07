@@ -1,5 +1,5 @@
 # TestSources
-(*testSources*)
+(*.testSources*)
 
 ### Available Operations
 
@@ -21,7 +21,7 @@ Create new test source based on variables passed in request
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { RepositoryAuthType, RepositoryType, TestSourceUpsertRequestType } from "testkube-sdk/dist/sdk/models/shared";
+import { AuthType, RepositoryType, TestSourceUpsertRequestType } from "testkube-sdk/dist/sdk/models/shared";
 
 (async() => {
   const sdk = new TestkubeSDK();
@@ -50,6 +50,7 @@ import { RepositoryAuthType, RepositoryType, TestSourceUpsertRequestType } from 
     },
     uri: "https://github.com/kubeshop/testkube",
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -83,6 +84,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testSources.createTestSourceString("string");
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -119,6 +121,7 @@ import { TestkubeSDK } from "testkube-sdk";
     id: "<ID>",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -151,6 +154,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testSources.deleteTestSources({});
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -187,6 +191,7 @@ import { TestkubeSDK } from "testkube-sdk";
     id: "<ID>",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -220,6 +225,7 @@ import { TestkubeSDK } from "testkube-sdk";
 
   const res = await sdk.testSources.listTestSources({});
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -247,7 +253,7 @@ Process test source batch based on variables passed in request
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { RepositoryAuthType, RepositoryType, TestSourceUpsertRequestType } from "testkube-sdk/dist/sdk/models/shared";
+import { AuthType, RepositoryType, TestSourceUpsertRequestType } from "testkube-sdk/dist/sdk/models/shared";
 
 (async() => {
   const sdk = new TestkubeSDK();
@@ -281,6 +287,7 @@ import { RepositoryAuthType, RepositoryType, TestSourceUpsertRequestType } from 
     ],
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -308,7 +315,7 @@ Update test source based on test content or git based data
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
-import { RepositoryAuthType, RepositoryType, TestSourceUpdateRequestType } from "testkube-sdk/dist/sdk/models/shared";
+import { AuthType, RepositoryType, TestSourceUpdateRequestType } from "testkube-sdk/dist/sdk/models/shared";
 
 (async() => {
   const sdk = new TestkubeSDK();
@@ -340,6 +347,7 @@ import { RepositoryAuthType, RepositoryType, TestSourceUpdateRequestType } from 
     },
     id: "<ID>",
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -376,6 +384,7 @@ import { TestkubeSDK } from "testkube-sdk";
     requestBody: "string",
     id: "<ID>",
   });
+
 
   if (res.statusCode == 200) {
     // handle response

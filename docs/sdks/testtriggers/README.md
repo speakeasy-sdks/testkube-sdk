@@ -1,5 +1,5 @@
 # TestTriggers
-(*testTriggers*)
+(*.testTriggers*)
 
 ## Overview
 
@@ -85,6 +85,7 @@ import {
     },
   ]);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -139,8 +140,8 @@ import {
     event: "modified",
     execution: TestTriggerExecutions.Test,
     labels: {
-      "app": "backend",
       "env": "prod",
+      "app": "backend",
     },
     name: "name",
     namespace: "testkube",
@@ -169,6 +170,7 @@ import {
       namespace: "testkube",
     },
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -202,6 +204,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testTriggers.createTestTriggerString("string");
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -238,6 +241,7 @@ import { TestkubeSDK } from "testkube-sdk";
     id: "<ID>",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -270,6 +274,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testTriggers.deleteTestTriggers({});
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -306,6 +311,7 @@ import { TestkubeSDK } from "testkube-sdk";
     id: "<ID>",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -338,6 +344,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testTriggers.listTestTriggers({});
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -394,8 +401,8 @@ import {
       event: "modified",
       execution: TestTriggerExecutions.Testsuite,
       labels: {
-        "app": "backend",
         "env": "prod",
+        "app": "backend",
       },
       name: "name",
       namespace: "testkube",
@@ -426,6 +433,7 @@ import {
     },
     id: "<ID>",
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -462,6 +470,7 @@ import { TestkubeSDK } from "testkube-sdk";
     requestBody: "string",
     id: "<ID>",
   });
+
 
   if (res.statusCode == 200) {
     // handle response

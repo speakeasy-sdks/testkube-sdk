@@ -9,7 +9,7 @@ import { Expose, Transform, Type } from "class-transformer";
 /**
  * One of possible output types
  */
-export enum ExecutorOutputType {
+export enum TypeT {
     Error = "error",
     Log = "log",
     Event = "event",
@@ -48,5 +48,5 @@ export class ExecutorOutput extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "type" })
-    type: ExecutorOutputType;
+    type: TypeT;
 }

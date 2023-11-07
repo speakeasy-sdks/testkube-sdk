@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class GetExecutionLogsRequest extends SpeakeasyBase {
@@ -16,22 +16,22 @@ export class GetExecutionLogsRequest extends SpeakeasyBase {
 
 export class GetExecutionLogsResponse extends SpeakeasyBase {
     /**
-     * HTTP response content type for this operation
-     */
-    @SpeakeasyMetadata()
-    contentType: string;
-
-    /**
      * successful operation
      */
     @SpeakeasyMetadata({ elemType: shared.ExecutorOutput })
-    executorOutputs?: shared.ExecutorOutput[];
+    twoHundredApplicationJsonClasses?: shared.ExecutorOutput[];
 
     /**
      * problem with getting execution's logs
      */
     @SpeakeasyMetadata({ elemType: shared.Problem })
-    problems?: shared.Problem[];
+    fiveHundredApplicationProblemPlusJsonClasses?: shared.Problem[];
+
+    /**
+     * HTTP response content type for this operation
+     */
+    @SpeakeasyMetadata()
+    contentType: string;
 
     /**
      * HTTP response status code for this operation

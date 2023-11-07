@@ -11,7 +11,7 @@ import { Expose, Transform, Type } from "class-transformer";
 /**
  * test suite update body
  */
-export class TestSuiteUpdateRequestInput extends SpeakeasyBase {
+export class TestSuiteUpdateRequest extends SpeakeasyBase {
     /**
      * Run these batch steps after whole suite
      */

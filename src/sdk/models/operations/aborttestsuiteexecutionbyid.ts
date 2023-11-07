@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class AbortTestSuiteExecutionByIDRequest extends SpeakeasyBase {
@@ -22,12 +22,6 @@ export class AbortTestSuiteExecutionByIDResponse extends SpeakeasyBase {
     contentType: string;
 
     /**
-     * problem with read information from kubernetes cluster
-     */
-    @SpeakeasyMetadata({ elemType: shared.Problem })
-    problems?: shared.Problem[];
-
-    /**
      * HTTP response status code for this operation
      */
     @SpeakeasyMetadata()
@@ -38,4 +32,10 @@ export class AbortTestSuiteExecutionByIDResponse extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
+
+    /**
+     * problem with read information from kubernetes cluster
+     */
+    @SpeakeasyMetadata({ elemType: shared.Problem })
+    classes?: shared.Problem[];
 }

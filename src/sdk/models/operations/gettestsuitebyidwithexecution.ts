@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class GetTestSuiteByIDWithExecutionRequest extends SpeakeasyBase {
@@ -20,12 +20,6 @@ export class GetTestSuiteByIDWithExecutionResponse extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     contentType: string;
-
-    /**
-     * problem with getting test suite with execution from storage
-     */
-    @SpeakeasyMetadata({ elemType: shared.Problem })
-    problems?: shared.Problem[];
 
     /**
      * HTTP response status code for this operation
@@ -46,8 +40,14 @@ export class GetTestSuiteByIDWithExecutionResponse extends SpeakeasyBase {
     testSuiteWithExecution?: shared.TestSuiteWithExecution;
 
     /**
+     * problem with getting test suite with execution from storage
+     */
+    @SpeakeasyMetadata({ elemType: shared.Problem })
+    classes?: shared.Problem[];
+
+    /**
      * successful operation
      */
     @SpeakeasyMetadata()
-    getTestSuiteByIDWithExecution200TextYamlString?: string;
+    res?: string;
 }

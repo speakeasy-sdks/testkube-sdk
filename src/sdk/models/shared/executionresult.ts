@@ -10,13 +10,13 @@ import { Expose, Type } from "class-transformer";
 /**
  * output type depends of reporter used in particular tool
  */
-export enum ExecutionResultOutputType {
+export enum OutputType {
     TextPlain = "text/plain",
     ApplicationJunitPlusXml = "application/junit+xml",
     ApplicationJson = "application/json",
 }
 
-export class ExecutionResultReports extends SpeakeasyBase {
+export class Reports extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "junit" })
     junit?: string;
@@ -45,12 +45,12 @@ export class ExecutionResult extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "outputType" })
-    outputType?: ExecutionResultOutputType;
+    outputType?: OutputType;
 
     @SpeakeasyMetadata()
     @Expose({ name: "reports" })
-    @Type(() => ExecutionResultReports)
-    reports?: ExecutionResultReports;
+    @Type(() => Reports)
+    reports?: Reports;
 
     @SpeakeasyMetadata()
     @Expose({ name: "status" })

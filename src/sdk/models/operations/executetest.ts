@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class ExecuteTestRequest extends SpeakeasyBase {
@@ -11,7 +11,7 @@ export class ExecuteTestRequest extends SpeakeasyBase {
      * body passed to configure execution
      */
     @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    executionRequestInput: shared.ExecutionRequestInput;
+    executionRequest: shared.ExecutionRequestInput;
 
     /**
      * unique id of the object
@@ -25,6 +25,30 @@ export class ExecuteTestRequest extends SpeakeasyBase {
 
 export class ExecuteTestResponse extends SpeakeasyBase {
     /**
+     * problem with request body
+     */
+    @SpeakeasyMetadata({ elemType: shared.Problem })
+    fourHundredApplicationProblemPlusJsonClasses?: shared.Problem[];
+
+    /**
+     * test not found
+     */
+    @SpeakeasyMetadata({ elemType: shared.Problem })
+    fourHundredAndFourApplicationProblemPlusJsonClasses?: shared.Problem[];
+
+    /**
+     * problem with test execution
+     */
+    @SpeakeasyMetadata({ elemType: shared.Problem })
+    fiveHundredApplicationProblemPlusJsonClasses?: shared.Problem[];
+
+    /**
+     * problem with communicating with kubernetes cluster
+     */
+    @SpeakeasyMetadata({ elemType: shared.Problem })
+    fiveHundredAndTwoApplicationProblemPlusJsonClasses?: shared.Problem[];
+
+    /**
      * HTTP response content type for this operation
      */
     @SpeakeasyMetadata()
@@ -35,12 +59,6 @@ export class ExecuteTestResponse extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     executionResult?: shared.ExecutionResult;
-
-    /**
-     * problem with request body
-     */
-    @SpeakeasyMetadata({ elemType: shared.Problem })
-    problems?: shared.Problem[];
 
     /**
      * HTTP response status code for this operation

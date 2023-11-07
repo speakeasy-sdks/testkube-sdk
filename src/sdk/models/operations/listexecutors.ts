@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class ListExecutorsRequest extends SpeakeasyBase {
@@ -13,22 +13,34 @@ export class ListExecutorsRequest extends SpeakeasyBase {
 
 export class ListExecutorsResponse extends SpeakeasyBase {
     /**
-     * HTTP response content type for this operation
+     * successful operation
      */
-    @SpeakeasyMetadata()
-    contentType: string;
+    @SpeakeasyMetadata({ elemType: shared.Executor })
+    twoHundredApplicationJsonClasses?: shared.Executor[];
 
     /**
      * successful operation
      */
-    @SpeakeasyMetadata({ elemType: shared.Executor })
-    executors?: shared.Executor[];
+    @SpeakeasyMetadata()
+    twoHundredTextYamlRes?: string;
 
     /**
      * problem with input for CRD generation
      */
     @SpeakeasyMetadata({ elemType: shared.Problem })
-    problems?: shared.Problem[];
+    fourHundredApplicationProblemPlusJsonClasses?: shared.Problem[];
+
+    /**
+     * problem with read information from kubernetes cluster
+     */
+    @SpeakeasyMetadata({ elemType: shared.Problem })
+    fiveHundredAndTwoApplicationProblemPlusJsonClasses?: shared.Problem[];
+
+    /**
+     * HTTP response content type for this operation
+     */
+    @SpeakeasyMetadata()
+    contentType: string;
 
     /**
      * HTTP response status code for this operation
@@ -41,10 +53,4 @@ export class ListExecutorsResponse extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
-
-    /**
-     * successful operation
-     */
-    @SpeakeasyMetadata()
-    listExecutors200TextYamlString?: string;
 }

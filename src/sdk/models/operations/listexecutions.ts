@@ -3,8 +3,8 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { RFCDate } from "../../types";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
+import { RFCDate } from "../../../sdk/types";
 import { AxiosResponse } from "axios";
 
 export class ListExecutionsRequest extends SpeakeasyBase {
@@ -62,6 +62,18 @@ export class ListExecutionsRequest extends SpeakeasyBase {
 
 export class ListExecutionsResponse extends SpeakeasyBase {
     /**
+     * execution not found
+     */
+    @SpeakeasyMetadata({ elemType: shared.Problem })
+    fourHundredAndFourApplicationProblemPlusJsonClasses?: shared.Problem[];
+
+    /**
+     * problem with getting test executions from storage
+     */
+    @SpeakeasyMetadata({ elemType: shared.Problem })
+    fiveHundredApplicationProblemPlusJsonClasses?: shared.Problem[];
+
+    /**
      * HTTP response content type for this operation
      */
     @SpeakeasyMetadata()
@@ -72,12 +84,6 @@ export class ListExecutionsResponse extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     executionsResult?: shared.ExecutionsResult;
-
-    /**
-     * execution not found
-     */
-    @SpeakeasyMetadata({ elemType: shared.Problem })
-    problems?: shared.Problem[];
 
     /**
      * HTTP response status code for this operation

@@ -3,8 +3,8 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { RFCDate } from "../../types";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
+import { RFCDate } from "../../../sdk/types";
 import { AxiosResponse } from "axios";
 
 export class ListTestSuiteExecutionsRequest extends SpeakeasyBase {
@@ -53,12 +53,6 @@ export class ListTestSuiteExecutionsResponse extends SpeakeasyBase {
     contentType: string;
 
     /**
-     * problem with getting test suite executions from storage
-     */
-    @SpeakeasyMetadata({ elemType: shared.Problem })
-    problems?: shared.Problem[];
-
-    /**
      * HTTP response status code for this operation
      */
     @SpeakeasyMetadata()
@@ -75,4 +69,10 @@ export class ListTestSuiteExecutionsResponse extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     testSuiteExecutionsResult?: shared.TestSuiteExecutionsResult;
+
+    /**
+     * problem with getting test suite executions from storage
+     */
+    @SpeakeasyMetadata({ elemType: shared.Problem })
+    classes?: shared.Problem[];
 }

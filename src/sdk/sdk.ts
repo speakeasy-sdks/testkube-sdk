@@ -59,9 +59,9 @@ export class SDKConfiguration {
     serverDefaults: any;
     language = "typescript";
     openapiDocVersion = "1.0.0";
-    sdkVersion = "1.19.0";
-    genVersion = "2.171.0";
-    userAgent = "speakeasy-sdk/typescript 1.19.0 2.171.0 1.0.0 testkube-sdk";
+    sdkVersion = "2.0.0";
+    genVersion = "2.181.1";
+    userAgent = "speakeasy-sdk/typescript 2.0.0 2.181.1 1.0.0 testkube-sdk";
     retryConfig?: utils.RetryConfig;
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
@@ -79,13 +79,21 @@ export class TestkubeSDK {
      */
     public api: Api;
     /**
-     * Artifact operations
+     * Tests operations
      */
-    public artifacts: Artifacts;
+    public tests: Tests;
     /**
      * Test suites and tests execution operations
      */
     public executions: Executions;
+    /**
+     * Artifact operations
+     */
+    public artifacts: Artifacts;
+    /**
+     * Log operations
+     */
+    public logs: Logs;
     /**
      * Executor operations
      */
@@ -98,10 +106,6 @@ export class TestkubeSDK {
      * Listing all available labels
      */
     public labels: Labels;
-    /**
-     * Log operations
-     */
-    public logs: Logs;
     public repository: Repository;
     public testSources: TestSources;
     /**
@@ -112,10 +116,6 @@ export class TestkubeSDK {
      * Test Triggers CRUD operations
      */
     public testTriggers: TestTriggers;
-    /**
-     * Tests operations
-     */
-    public tests: Tests;
     /**
      * Webhook operations
      */
@@ -139,17 +139,17 @@ export class TestkubeSDK {
         });
 
         this.api = new Api(this.sdkConfiguration);
-        this.artifacts = new Artifacts(this.sdkConfiguration);
+        this.tests = new Tests(this.sdkConfiguration);
         this.executions = new Executions(this.sdkConfiguration);
+        this.artifacts = new Artifacts(this.sdkConfiguration);
+        this.logs = new Logs(this.sdkConfiguration);
         this.executor = new Executor(this.sdkConfiguration);
         this.keymap = new Keymap(this.sdkConfiguration);
         this.labels = new Labels(this.sdkConfiguration);
-        this.logs = new Logs(this.sdkConfiguration);
         this.repository = new Repository(this.sdkConfiguration);
         this.testSources = new TestSources(this.sdkConfiguration);
         this.testSuites = new TestSuites(this.sdkConfiguration);
         this.testTriggers = new TestTriggers(this.sdkConfiguration);
-        this.tests = new Tests(this.sdkConfiguration);
         this.webhook = new Webhook(this.sdkConfiguration);
     }
 }

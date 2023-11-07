@@ -1,4 +1,4 @@
-# ExecutionResultOutputType
+# OutputType
 
 output type depends of reporter used in particular tool
 

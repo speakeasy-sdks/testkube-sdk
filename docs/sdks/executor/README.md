@@ -1,5 +1,5 @@
 # Executor
-(*executor*)
+(*.executor*)
 
 ## Overview
 
@@ -48,8 +48,8 @@ import { ExecutorUpsertRequestFeatures } from "testkube-sdk/dist/sdk/models/shar
       {},
     ],
     labels: {
-      "app": "backend",
       "env": "prod",
+      "app": "backend",
     },
     meta: {
       docsURI: "https://docs.testkube.io/test-types/executor-k6",
@@ -64,6 +64,7 @@ import { ExecutorUpsertRequestFeatures } from "testkube-sdk/dist/sdk/models/shar
       "string",
     ],
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -97,6 +98,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executor.createExecutorString("string");
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -133,6 +135,7 @@ import { TestkubeSDK } from "testkube-sdk";
     id: "<ID>",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -165,6 +168,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executor.deleteExecutors({});
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -201,6 +205,7 @@ import { TestkubeSDK } from "testkube-sdk";
     id: "<ID>",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -233,6 +238,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executor.listExecutors({});
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -286,8 +292,8 @@ import { ExecutorUpdateRequestFeatures } from "testkube-sdk/dist/sdk/models/shar
         {},
       ],
       labels: {
-        "app": "backend",
         "env": "prod",
+        "app": "backend",
       },
       meta: {
         docsURI: "https://docs.testkube.io/test-types/executor-k6",
@@ -304,6 +310,7 @@ import { ExecutorUpdateRequestFeatures } from "testkube-sdk/dist/sdk/models/shar
     },
     id: "<ID>",
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -340,6 +347,7 @@ import { TestkubeSDK } from "testkube-sdk";
     requestBody: "string",
     id: "<ID>",
   });
+
 
   if (res.statusCode == 200) {
     // handle response

@@ -1,5 +1,5 @@
 # Artifacts
-(*artifacts*)
+(*.artifacts*)
 
 ## Overview
 
@@ -26,6 +26,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const res = await sdk.artifacts.downloadArchive({
     id: "<ID>",
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -63,6 +64,7 @@ import { TestkubeSDK } from "testkube-sdk";
     id: "<ID>",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -97,6 +99,7 @@ import { TestkubeSDK } from "testkube-sdk";
   const res = await sdk.artifacts.getExecutionArtifacts({
     id: "<ID>",
   });
+
 
   if (res.statusCode == 200) {
     // handle response

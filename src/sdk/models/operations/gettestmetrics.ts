@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class GetTestMetricsRequest extends SpeakeasyBase {
@@ -28,6 +28,18 @@ export class GetTestMetricsRequest extends SpeakeasyBase {
 
 export class GetTestMetricsResponse extends SpeakeasyBase {
     /**
+     * problem with getting metrics
+     */
+    @SpeakeasyMetadata({ elemType: shared.Problem })
+    fiveHundredApplicationProblemPlusJsonClasses?: shared.Problem[];
+
+    /**
+     * problem with read information from storage
+     */
+    @SpeakeasyMetadata({ elemType: shared.Problem })
+    fiveHundredAndTwoApplicationProblemPlusJsonClasses?: shared.Problem[];
+
+    /**
      * HTTP response content type for this operation
      */
     @SpeakeasyMetadata()
@@ -38,12 +50,6 @@ export class GetTestMetricsResponse extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     executionsMetrics?: shared.ExecutionsMetrics;
-
-    /**
-     * problem with getting metrics
-     */
-    @SpeakeasyMetadata({ elemType: shared.Problem })
-    problems?: shared.Problem[];
 
     /**
      * HTTP response status code for this operation

@@ -9,7 +9,7 @@ import { Expose, Type } from "class-transformer";
 /**
  * auth type for git requests
  */
-export enum RepositoryAuthType {
+export enum AuthType {
     Basic = "basic",
     Header = "header",
 }
@@ -30,7 +30,7 @@ export class Repository extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "authType" })
-    authType?: RepositoryAuthType;
+    authType?: AuthType;
 
     /**
      * branch/tag name for checkout
