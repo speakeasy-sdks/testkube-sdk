@@ -73,7 +73,7 @@ export class TestTriggers {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/triggers";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/triggers";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -97,7 +97,7 @@ export class TestTriggers {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",
@@ -197,7 +197,7 @@ export class TestTriggers {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/triggers";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/triggers";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -222,7 +222,7 @@ export class TestTriggers {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -317,7 +317,7 @@ export class TestTriggers {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/triggers";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/triggers";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -342,7 +342,7 @@ export class TestTriggers {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -440,7 +440,7 @@ export class TestTriggers {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/triggers/{id}", req);
+        const operationUrl: string = utils.generateURL(baseURL, "/triggers/{id}", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         const headers: RawAxiosRequestHeaders = { ...config?.headers };
         const queryParams: string = utils.serializeQueryParams(req);
@@ -450,7 +450,7 @@ export class TestTriggers {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "delete",
             headers: headers,
             responseType: "arraybuffer",
@@ -531,7 +531,7 @@ export class TestTriggers {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/triggers";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/triggers";
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         const headers: RawAxiosRequestHeaders = { ...config?.headers };
         const queryParams: string = utils.serializeQueryParams(req);
@@ -541,7 +541,7 @@ export class TestTriggers {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "delete",
             headers: headers,
             responseType: "arraybuffer",
@@ -642,7 +642,7 @@ export class TestTriggers {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/triggers/{id}", req);
+        const operationUrl: string = utils.generateURL(baseURL, "/triggers/{id}", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         const headers: RawAxiosRequestHeaders = { ...config?.headers };
         const queryParams: string = utils.serializeQueryParams(req);
@@ -657,7 +657,7 @@ export class TestTriggers {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -755,7 +755,7 @@ export class TestTriggers {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/triggers";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/triggers";
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         const headers: RawAxiosRequestHeaders = { ...config?.headers };
         const queryParams: string = utils.serializeQueryParams(req);
@@ -770,7 +770,7 @@ export class TestTriggers {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -870,7 +870,7 @@ export class TestTriggers {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/triggers/{id}", req);
+        const operationUrl: string = utils.generateURL(baseURL, "/triggers/{id}", req);
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -899,7 +899,7 @@ export class TestTriggers {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",
@@ -1014,7 +1014,7 @@ export class TestTriggers {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/triggers/{id}", req);
+        const operationUrl: string = utils.generateURL(baseURL, "/triggers/{id}", req);
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -1039,7 +1039,7 @@ export class TestTriggers {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",

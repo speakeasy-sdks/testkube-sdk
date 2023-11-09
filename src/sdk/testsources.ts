@@ -74,7 +74,7 @@ export class TestSources {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/test-sources";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/test-sources";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -99,7 +99,7 @@ export class TestSources {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -201,7 +201,7 @@ export class TestSources {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/test-sources";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/test-sources";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -226,7 +226,7 @@ export class TestSources {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -331,7 +331,7 @@ export class TestSources {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/test-sources/{id}", req);
+        const operationUrl: string = utils.generateURL(baseURL, "/test-sources/{id}", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         const headers: RawAxiosRequestHeaders = { ...config?.headers };
         headers["Accept"] = "application/problem+json";
@@ -340,7 +340,7 @@ export class TestSources {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "delete",
             headers: headers,
             responseType: "arraybuffer",
@@ -403,7 +403,7 @@ export class TestSources {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/test-sources";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/test-sources";
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         const headers: RawAxiosRequestHeaders = { ...config?.headers };
         const queryParams: string = utils.serializeQueryParams(req);
@@ -413,7 +413,7 @@ export class TestSources {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "delete",
             headers: headers,
             responseType: "arraybuffer",
@@ -477,7 +477,7 @@ export class TestSources {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/test-sources/{id}", req);
+        const operationUrl: string = utils.generateURL(baseURL, "/test-sources/{id}", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         const headers: RawAxiosRequestHeaders = { ...config?.headers };
         if (acceptHeaderOverride !== undefined) {
@@ -491,7 +491,7 @@ export class TestSources {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -621,7 +621,7 @@ export class TestSources {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/test-sources";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/test-sources";
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         const headers: RawAxiosRequestHeaders = { ...config?.headers };
         const queryParams: string = utils.serializeQueryParams(req);
@@ -636,7 +636,7 @@ export class TestSources {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -736,7 +736,7 @@ export class TestSources {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/test-sources";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/test-sources";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -760,7 +760,7 @@ export class TestSources {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",
@@ -857,7 +857,7 @@ export class TestSources {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/test-sources/{id}", req);
+        const operationUrl: string = utils.generateURL(baseURL, "/test-sources/{id}", req);
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -885,7 +885,7 @@ export class TestSources {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",
@@ -997,7 +997,7 @@ export class TestSources {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/test-sources/{id}", req);
+        const operationUrl: string = utils.generateURL(baseURL, "/test-sources/{id}", req);
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -1021,7 +1021,7 @@ export class TestSources {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",

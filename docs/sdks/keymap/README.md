@@ -1,5 +1,5 @@
 # Keymap
-(*.keymap*)
+(*keymap*)
 
 ## Overview
 
@@ -23,7 +23,6 @@ import { TestkubeSDK } from "testkube-sdk";
 
   const res = await sdk.keymap.getKeyMap();
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -39,5 +38,9 @@ import { TestkubeSDK } from "testkube-sdk";
 
 ### Response
 
-**Promise<[operations.GetKeyMapResponse](../../models/operations/getkeymapresponse.md)>**
+**Promise<[operations.GetKeyMapResponse](../../sdk/models/operations/getkeymapresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

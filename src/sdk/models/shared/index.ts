@@ -50,6 +50,7 @@ export * from "./testsuitebatchstepexecutionsummary";
 export * from "./testsuiteexecution";
 export * from "./testsuiteexecutioncore";
 export * from "./testsuiteexecutionrequest";
+export * from "./testsuiteexecutionrequestinput";
 export * from "./testsuiteexecutionsresult";
 export * from "./testsuiteexecutionstatus";
 export * from "./testsuiteexecutionsummary";

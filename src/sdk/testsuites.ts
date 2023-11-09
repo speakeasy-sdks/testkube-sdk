@@ -119,7 +119,7 @@ export class TestSuites {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/test-suites/{id}/executions/{executionID}",
             req
@@ -132,7 +132,7 @@ export class TestSuites {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",
@@ -214,7 +214,7 @@ export class TestSuites {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/test-suites/{id}/abort", req);
+        const operationUrl: string = utils.generateURL(baseURL, "/test-suites/{id}/abort", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         const headers: RawAxiosRequestHeaders = { ...config?.headers };
         headers["Accept"] = "application/problem+json";
@@ -223,7 +223,7 @@ export class TestSuites {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -324,7 +324,7 @@ export class TestSuites {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/test-suites";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/test-suites";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -349,7 +349,7 @@ export class TestSuites {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -451,7 +451,7 @@ export class TestSuites {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/test-suites";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/test-suites";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -476,7 +476,7 @@ export class TestSuites {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -581,7 +581,7 @@ export class TestSuites {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/test-suites/{id}", req);
+        const operationUrl: string = utils.generateURL(baseURL, "/test-suites/{id}", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         const headers: RawAxiosRequestHeaders = { ...config?.headers };
         headers["Accept"] = "application/problem+json";
@@ -590,7 +590,7 @@ export class TestSuites {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "delete",
             headers: headers,
             responseType: "arraybuffer",
@@ -671,7 +671,7 @@ export class TestSuites {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/test-suites";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/test-suites";
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         const headers: RawAxiosRequestHeaders = { ...config?.headers };
         const queryParams: string = utils.serializeQueryParams(req);
@@ -681,7 +681,7 @@ export class TestSuites {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "delete",
             headers: headers,
             responseType: "arraybuffer",
@@ -763,7 +763,11 @@ export class TestSuites {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/test-suites/{id}/executions", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/test-suites/{id}/executions",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -792,7 +796,7 @@ export class TestSuites {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -924,7 +928,7 @@ export class TestSuites {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/test-suite-executions";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/test-suite-executions";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -953,7 +957,7 @@ export class TestSuites {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -1070,7 +1074,7 @@ export class TestSuites {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/test-suites/{id}", req);
+        const operationUrl: string = utils.generateURL(baseURL, "/test-suites/{id}", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         const headers: RawAxiosRequestHeaders = { ...config?.headers };
         if (acceptHeaderOverride !== undefined) {
@@ -1084,7 +1088,7 @@ export class TestSuites {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -1196,7 +1200,11 @@ export class TestSuites {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/test-suite-with-executions/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/test-suite-with-executions/{id}",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         const headers: RawAxiosRequestHeaders = { ...config?.headers };
         if (acceptHeaderOverride !== undefined) {
@@ -1210,7 +1218,7 @@ export class TestSuites {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -1290,7 +1298,7 @@ export class TestSuites {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/test-suites/{id}/executions/{executionID}",
             req
@@ -1307,7 +1315,7 @@ export class TestSuites {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -1421,7 +1429,7 @@ export class TestSuites {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/test-suite-executions/{executionID}/artifacts",
             req
@@ -1438,7 +1446,7 @@ export class TestSuites {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -1513,7 +1521,7 @@ export class TestSuites {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/test-suites/{id}/executions/{executionID}/artifacts",
             req
@@ -1530,7 +1538,7 @@ export class TestSuites {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -1623,7 +1631,11 @@ export class TestSuites {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/test-suites/{id}/executions", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/test-suites/{id}/executions",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         const headers: RawAxiosRequestHeaders = { ...config?.headers };
         const queryParams: string = utils.serializeQueryParams(req);
@@ -1637,7 +1649,7 @@ export class TestSuites {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -1715,7 +1727,7 @@ export class TestSuites {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/test-suites/{id}/tests", req);
+        const operationUrl: string = utils.generateURL(baseURL, "/test-suites/{id}/tests", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         const headers: RawAxiosRequestHeaders = { ...config?.headers };
         if (acceptHeaderOverride !== undefined) {
@@ -1729,7 +1741,7 @@ export class TestSuites {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -1830,7 +1842,7 @@ export class TestSuites {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/test-suite-with-executions";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/test-suite-with-executions";
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         const headers: RawAxiosRequestHeaders = { ...config?.headers };
         const queryParams: string = utils.serializeQueryParams(req);
@@ -1845,7 +1857,7 @@ export class TestSuites {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -1964,7 +1976,7 @@ export class TestSuites {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/test-suites";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/test-suites";
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         const headers: RawAxiosRequestHeaders = { ...config?.headers };
         const queryParams: string = utils.serializeQueryParams(req);
@@ -1979,7 +1991,7 @@ export class TestSuites {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -2079,7 +2091,7 @@ export class TestSuites {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/test-suites/{id}", req);
+        const operationUrl: string = utils.generateURL(baseURL, "/test-suites/{id}", req);
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -2107,7 +2119,7 @@ export class TestSuites {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",
@@ -2219,7 +2231,7 @@ export class TestSuites {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/test-suites/{id}", req);
+        const operationUrl: string = utils.generateURL(baseURL, "/test-suites/{id}", req);
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -2243,7 +2255,7 @@ export class TestSuites {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",

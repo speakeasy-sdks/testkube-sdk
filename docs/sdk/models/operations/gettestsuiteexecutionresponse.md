@@ -1,0 +1,14 @@
+# GetTestSuiteExecutionResponse
+
+
+## Fields
+
+| Field                                                                         | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `fourHundredAndFourApplicationProblemPlusJsonClasses`                         | [shared.Problem](../../../sdk/models/shared/problem.md)[]                     | :heavy_minus_sign:                                                            | test not found                                                                |
+| `fiveHundredApplicationProblemPlusJsonClasses`                                | [shared.Problem](../../../sdk/models/shared/problem.md)[]                     | :heavy_minus_sign:                                                            | problem with getting test suite executions from storage                       |
+| `fiveHundredAndTwoApplicationProblemPlusJsonClasses`                          | [shared.Problem](../../../sdk/models/shared/problem.md)[]                     | :heavy_minus_sign:                                                            | problem with communicating with Kubernetes cluster                            |
+| `contentType`                                                                 | *string*                                                                      | :heavy_check_mark:                                                            | HTTP response content type for this operation                                 |
+| `statusCode`                                                                  | *number*                                                                      | :heavy_check_mark:                                                            | HTTP response status code for this operation                                  |
+| `rawResponse`                                                                 | [AxiosResponse](https://axios-http.com/docs/res_schema)                       | :heavy_minus_sign:                                                            | Raw HTTP response; suitable for custom response parsing                       |
+| `testSuiteExecution`                                                          | [shared.TestSuiteExecution](../../../sdk/models/shared/testsuiteexecution.md) | :heavy_minus_sign:                                                            | successful operation                                                          |

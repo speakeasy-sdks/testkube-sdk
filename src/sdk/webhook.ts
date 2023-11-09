@@ -62,7 +62,7 @@ export class Webhook {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/webhooks";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/webhooks";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -87,7 +87,7 @@ export class Webhook {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -188,7 +188,7 @@ export class Webhook {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/webhooks";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/webhooks";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -213,7 +213,7 @@ export class Webhook {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -318,7 +318,7 @@ export class Webhook {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/webhooks/{id}", req);
+        const operationUrl: string = utils.generateURL(baseURL, "/webhooks/{id}", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         const headers: RawAxiosRequestHeaders = { ...config?.headers };
         headers["Accept"] = "application/problem+json";
@@ -327,7 +327,7 @@ export class Webhook {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "delete",
             headers: headers,
             responseType: "arraybuffer",
@@ -408,7 +408,7 @@ export class Webhook {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/webhooks";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/webhooks";
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         const headers: RawAxiosRequestHeaders = { ...config?.headers };
         const queryParams: string = utils.serializeQueryParams(req);
@@ -418,7 +418,7 @@ export class Webhook {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "delete",
             headers: headers,
             responseType: "arraybuffer",
@@ -482,7 +482,7 @@ export class Webhook {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/webhooks/{id}", req);
+        const operationUrl: string = utils.generateURL(baseURL, "/webhooks/{id}", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         const headers: RawAxiosRequestHeaders = { ...config?.headers };
         if (acceptHeaderOverride !== undefined) {
@@ -496,7 +496,7 @@ export class Webhook {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -626,7 +626,7 @@ export class Webhook {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/webhooks";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/webhooks";
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         const headers: RawAxiosRequestHeaders = { ...config?.headers };
         const queryParams: string = utils.serializeQueryParams(req);
@@ -641,7 +641,7 @@ export class Webhook {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",

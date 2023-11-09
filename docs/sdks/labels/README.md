@@ -1,5 +1,5 @@
 # Labels
-(*.labels*)
+(*labels*)
 
 ## Overview
 
@@ -23,7 +23,6 @@ import { TestkubeSDK } from "testkube-sdk";
 
   const res = await sdk.labels.listLabels();
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -39,5 +38,9 @@ import { TestkubeSDK } from "testkube-sdk";
 
 ### Response
 
-**Promise<[operations.ListLabelsResponse](../../models/operations/listlabelsresponse.md)>**
+**Promise<[operations.ListLabelsResponse](../../sdk/models/operations/listlabelsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

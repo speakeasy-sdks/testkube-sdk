@@ -4,7 +4,7 @@
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { TestSuiteBatchStep } from "./testsuitebatchstep";
-import { TestSuiteExecutionRequestInput } from "./testsuiteexecutionrequest";
+import { TestSuiteExecutionRequestInput } from "./testsuiteexecutionrequestinput";
 import { TestSuiteStatus } from "./testsuitestatus";
 import { Expose, Transform, Type } from "class-transformer";
 

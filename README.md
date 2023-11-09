@@ -41,7 +41,7 @@ import { TestkubeSDK } from "testkube-sdk";
 ## Available Resources and Operations
 
 
-### [.api](docs/sdks/api/README.md)
+### [api](docs/sdks/api/README.md)
 
 * [abortExecution](docs/sdks/api/README.md#abortexecution) - Aborts execution
 * [abortTestExecutions](docs/sdks/api/README.md#aborttestexecutions) - Abort all executions of a test
@@ -128,7 +128,7 @@ import { TestkubeSDK } from "testkube-sdk";
 * [uploads](docs/sdks/api/README.md#uploads) - Upload file
 * [validateRepository](docs/sdks/api/README.md#validaterepository) - Validate new repository
 
-### [.tests](docs/sdks/tests/README.md)
+### [tests](docs/sdks/tests/README.md)
 
 * [abortExecution](docs/sdks/tests/README.md#abortexecution) - Aborts execution
 * [abortTestExecutions](docs/sdks/tests/README.md#aborttestexecutions) - Abort all executions of a test
@@ -150,7 +150,7 @@ import { TestkubeSDK } from "testkube-sdk";
 * [updateTestString](docs/sdks/tests/README.md#updateteststring) - Update test
 * [uploads](docs/sdks/tests/README.md#uploads) - Upload file
 
-### [.executions](docs/sdks/executions/README.md)
+### [executions](docs/sdks/executions/README.md)
 
 * [abortExecution](docs/sdks/executions/README.md#abortexecution) - Aborts execution
 * [abortTestSuiteExecution](docs/sdks/executions/README.md#aborttestsuiteexecution) - Aborts testsuite execution
@@ -175,17 +175,17 @@ import { TestkubeSDK } from "testkube-sdk";
 * [listTestSuiteExecutions](docs/sdks/executions/README.md#listtestsuiteexecutions) - Get all test suite executions
 * [uploads](docs/sdks/executions/README.md#uploads) - Upload file
 
-### [.artifacts](docs/sdks/artifacts/README.md)
+### [artifacts](docs/sdks/artifacts/README.md)
 
 * [downloadArchive](docs/sdks/artifacts/README.md#downloadarchive) - Download artifact archive
 * [downloadFile](docs/sdks/artifacts/README.md#downloadfile) - Download artifact
 * [getExecutionArtifacts](docs/sdks/artifacts/README.md#getexecutionartifacts) - Get execution's artifacts by ID
 
-### [.logs](docs/sdks/logs/README.md)
+### [logs](docs/sdks/logs/README.md)
 
 * [getExecutionLogs](docs/sdks/logs/README.md#getexecutionlogs) - Get execution's logs by ID
 
-### [.executor](docs/sdks/executor/README.md)
+### [executor](docs/sdks/executor/README.md)
 
 * [createExecutorJson](docs/sdks/executor/README.md#createexecutorjson) - Create new executor
 * [createExecutorString](docs/sdks/executor/README.md#createexecutorstring) - Create new executor
@@ -196,19 +196,19 @@ import { TestkubeSDK } from "testkube-sdk";
 * [updateExecutorJson](docs/sdks/executor/README.md#updateexecutorjson) - Update executor
 * [updateExecutorString](docs/sdks/executor/README.md#updateexecutorstring) - Update executor
 
-### [.keymap](docs/sdks/keymap/README.md)
+### [keymap](docs/sdks/keymap/README.md)
 
 * [getKeyMap](docs/sdks/keymap/README.md#getkeymap) - Test triggers keymap
 
-### [.labels](docs/sdks/labels/README.md)
+### [labels](docs/sdks/labels/README.md)
 
 * [listLabels](docs/sdks/labels/README.md#listlabels) - List labels
 
-### [.repository](docs/sdks/repository/README.md)
+### [repository](docs/sdks/repository/README.md)
 
 * [validateRepository](docs/sdks/repository/README.md#validaterepository) - Validate new repository
 
-### [.testSources](docs/sdks/testsources/README.md)
+### [testSources](docs/sdks/testsources/README.md)
 
 * [createTestSourceJson](docs/sdks/testsources/README.md#createtestsourcejson) - Create new test source
 * [createTestSourceString](docs/sdks/testsources/README.md#createtestsourcestring) - Create new test source
@@ -220,7 +220,7 @@ import { TestkubeSDK } from "testkube-sdk";
 * [updateTestSourceJson](docs/sdks/testsources/README.md#updatetestsourcejson) - Update test source
 * [updateTestSourceString](docs/sdks/testsources/README.md#updatetestsourcestring) - Update test source
 
-### [.testSuites](docs/sdks/testsuites/README.md)
+### [testSuites](docs/sdks/testsuites/README.md)
 
 * [abortTestSuiteExecution](docs/sdks/testsuites/README.md#aborttestsuiteexecution) - Aborts testsuite execution
 * [abortTestSuiteExecutions](docs/sdks/testsuites/README.md#aborttestsuiteexecutions) - Abort all executions of a test suite
@@ -242,7 +242,7 @@ import { TestkubeSDK } from "testkube-sdk";
 * [updateTestSuiteJson](docs/sdks/testsuites/README.md#updatetestsuitejson) - Update test suite
 * [updateTestSuiteString](docs/sdks/testsuites/README.md#updatetestsuitestring) - Update test suite
 
-### [.testTriggers](docs/sdks/testtriggers/README.md)
+### [testTriggers](docs/sdks/testtriggers/README.md)
 
 * [bulkUpdateTestTriggers](docs/sdks/testtriggers/README.md#bulkupdatetesttriggers) - Bulk update test triggers
 * [createTestTriggerJson](docs/sdks/testtriggers/README.md#createtesttriggerjson) - Create new test trigger
@@ -254,7 +254,7 @@ import { TestkubeSDK } from "testkube-sdk";
 * [updateTestTriggerJson](docs/sdks/testtriggers/README.md#updatetesttriggerjson) - Update test trigger
 * [updateTestTriggerString](docs/sdks/testtriggers/README.md#updatetesttriggerstring) - Update test trigger
 
-### [.webhook](docs/sdks/webhook/README.md)
+### [webhook](docs/sdks/webhook/README.md)
 
 * [createWebhookJson](docs/sdks/webhook/README.md#createwebhookjson) - Create new webhook
 * [createWebhookString](docs/sdks/webhook/README.md#createwebhookstring) - Create new webhook
@@ -287,9 +287,35 @@ Here's an example of one such pagination call:
 <!-- Start Error Handling -->
 # Error Handling
 
-Handling errors in your SDK should largely match your expectations.  All operations return a response object or throw an error.  If Error objects are specified in your OpenAPI Spec, the SDK will throw the appropriate Error type.
+Handling errors in this SDK should largely match your expectations.  All operations return a response object or throw an error.  If Error objects are specified in your OpenAPI Spec, the SDK will throw the appropriate Error type.
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 
+## Example
+
+```typescript
+import { TestkubeSDK } from "testkube-sdk";
+
+(async () => {
+    const sdk = new TestkubeSDK();
+
+    let res;
+    try {
+        res = await sdk.api.abortExecution({
+            executionID: "string",
+            id: "<ID>",
+        });
+    } catch (e) {}
+
+    if (res.statusCode == 200) {
+        // handle response
+    }
+})();
+
+```
 <!-- End Error Handling -->
 
 
@@ -374,8 +400,6 @@ const httpClient = axios.create({
 
 const sdk = new TestkubeSDK({defaultClient: httpClient});
 ```
-
-
 <!-- End Custom HTTP Client -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
