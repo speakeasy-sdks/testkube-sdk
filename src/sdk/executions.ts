@@ -153,7 +153,7 @@ export class Executions {
             ...config,
         });
 
-        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) {
             throw new Error(`status code not found in response: ${httpRes}`);
@@ -161,7 +161,7 @@ export class Executions {
 
         const res: operations.AbortExecutionResponse = new operations.AbortExecutionResponse({
             statusCode: httpRes.status,
-            contentType: contentType,
+            contentType: responseContentType,
             rawResponse: httpRes,
         });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
@@ -169,7 +169,7 @@ export class Executions {
             case httpRes?.status == 204:
                 break;
             case httpRes?.status == 502:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.classes = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.classes = utils.objectToClass(
@@ -179,7 +179,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -229,7 +229,7 @@ export class Executions {
             ...config,
         });
 
-        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) {
             throw new Error(`status code not found in response: ${httpRes}`);
@@ -238,7 +238,7 @@ export class Executions {
         const res: operations.AbortTestSuiteExecutionResponse =
             new operations.AbortTestSuiteExecutionResponse({
                 statusCode: httpRes.status,
-                contentType: contentType,
+                contentType: responseContentType,
                 rawResponse: httpRes,
             });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
@@ -246,7 +246,7 @@ export class Executions {
             case httpRes?.status == 204:
                 break;
             case httpRes?.status == 404:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.fourHundredAndFourApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.fourHundredAndFourApplicationProblemPlusJsonClasses = utils.objectToClass(
@@ -256,7 +256,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -264,7 +264,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 500:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.fiveHundredApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.fiveHundredApplicationProblemPlusJsonClasses = utils.objectToClass(
@@ -274,7 +274,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -324,7 +324,7 @@ export class Executions {
             ...config,
         });
 
-        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) {
             throw new Error(`status code not found in response: ${httpRes}`);
@@ -333,7 +333,7 @@ export class Executions {
         const res: operations.AbortTestSuiteExecutionByIDResponse =
             new operations.AbortTestSuiteExecutionByIDResponse({
                 statusCode: httpRes.status,
-                contentType: contentType,
+                contentType: responseContentType,
                 rawResponse: httpRes,
             });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
@@ -341,7 +341,7 @@ export class Executions {
             case httpRes?.status == 204:
                 break;
             case httpRes?.status == 502:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.classes = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.classes = utils.objectToClass(
@@ -351,7 +351,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -407,7 +407,7 @@ export class Executions {
             ...config,
         });
 
-        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) {
             throw new Error(`status code not found in response: ${httpRes}`);
@@ -415,17 +415,17 @@ export class Executions {
 
         const res: operations.DownloadArchiveResponse = new operations.DownloadArchiveResponse({
             statusCode: httpRes.status,
-            contentType: contentType,
+            contentType: responseContentType,
             rawResponse: httpRes,
         });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
-                if (utils.matchContentType(contentType, `application/octet-stream`)) {
+                if (utils.matchContentType(responseContentType, `application/octet-stream`)) {
                     res.twoHundredApplicationOctetStreamBytes = httpRes?.data;
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -433,7 +433,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 404:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.fourHundredAndFourApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.fourHundredAndFourApplicationProblemPlusJsonClasses = utils.objectToClass(
@@ -443,7 +443,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -451,7 +451,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 500:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.fiveHundredApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.fiveHundredApplicationProblemPlusJsonClasses = utils.objectToClass(
@@ -461,7 +461,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -516,7 +516,7 @@ export class Executions {
             ...config,
         });
 
-        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) {
             throw new Error(`status code not found in response: ${httpRes}`);
@@ -524,17 +524,17 @@ export class Executions {
 
         const res: operations.DownloadFileResponse = new operations.DownloadFileResponse({
             statusCode: httpRes.status,
-            contentType: contentType,
+            contentType: responseContentType,
             rawResponse: httpRes,
         });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
-                if (utils.matchContentType(contentType, `application/octet-stream`)) {
+                if (utils.matchContentType(responseContentType, `application/octet-stream`)) {
                     res.twoHundredApplicationOctetStreamBytes = httpRes?.data;
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -542,7 +542,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 404:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.fourHundredAndFourApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.fourHundredAndFourApplicationProblemPlusJsonClasses = utils.objectToClass(
@@ -552,7 +552,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -560,7 +560,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 500:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.fiveHundredApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.fiveHundredApplicationProblemPlusJsonClasses = utils.objectToClass(
@@ -570,7 +570,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -634,7 +634,7 @@ export class Executions {
             ...config,
         });
 
-        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) {
             throw new Error(`status code not found in response: ${httpRes}`);
@@ -642,20 +642,20 @@ export class Executions {
 
         const res: operations.ExecuteTestResponse = new operations.ExecuteTestResponse({
             statusCode: httpRes.status,
-            contentType: contentType,
+            contentType: responseContentType,
             rawResponse: httpRes,
         });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 201:
-                if (utils.matchContentType(contentType, `application/json`)) {
+                if (utils.matchContentType(responseContentType, `application/json`)) {
                     res.executionResult = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.ExecutionResult
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -663,7 +663,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 400:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.fourHundredApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.fourHundredApplicationProblemPlusJsonClasses = utils.objectToClass(
@@ -673,7 +673,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -681,7 +681,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 404:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.fourHundredAndFourApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.fourHundredAndFourApplicationProblemPlusJsonClasses = utils.objectToClass(
@@ -691,7 +691,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -699,7 +699,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 500:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.fiveHundredApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.fiveHundredApplicationProblemPlusJsonClasses = utils.objectToClass(
@@ -709,7 +709,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -717,7 +717,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 502:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.fiveHundredAndTwoApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.fiveHundredAndTwoApplicationProblemPlusJsonClasses = utils.objectToClass(
@@ -727,7 +727,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -799,7 +799,7 @@ export class Executions {
             ...config,
         });
 
-        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) {
             throw new Error(`status code not found in response: ${httpRes}`);
@@ -807,20 +807,20 @@ export class Executions {
 
         const res: operations.ExecuteTestSuiteResponse = new operations.ExecuteTestSuiteResponse({
             statusCode: httpRes.status,
-            contentType: contentType,
+            contentType: responseContentType,
             rawResponse: httpRes,
         });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 201:
-                if (utils.matchContentType(contentType, `application/json`)) {
+                if (utils.matchContentType(responseContentType, `application/json`)) {
                     res.testSuiteExecutionsResult = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.TestSuiteExecutionsResult
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -828,7 +828,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 400:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.fourHundredApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.fourHundredApplicationProblemPlusJsonClasses = utils.objectToClass(
@@ -838,7 +838,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -846,7 +846,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 404:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.fourHundredAndFourApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.fourHundredAndFourApplicationProblemPlusJsonClasses = utils.objectToClass(
@@ -856,7 +856,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -864,7 +864,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 500:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.fiveHundredApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.fiveHundredApplicationProblemPlusJsonClasses = utils.objectToClass(
@@ -874,7 +874,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -882,7 +882,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 502:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.fiveHundredAndTwoApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.fiveHundredAndTwoApplicationProblemPlusJsonClasses = utils.objectToClass(
@@ -892,7 +892,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -960,7 +960,7 @@ export class Executions {
             ...config,
         });
 
-        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) {
             throw new Error(`status code not found in response: ${httpRes}`);
@@ -968,13 +968,13 @@ export class Executions {
 
         const res: operations.ExecuteTestSuitesResponse = new operations.ExecuteTestSuitesResponse({
             statusCode: httpRes.status,
-            contentType: contentType,
+            contentType: responseContentType,
             rawResponse: httpRes,
         });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 201:
-                if (utils.matchContentType(contentType, `application/json`)) {
+                if (utils.matchContentType(responseContentType, `application/json`)) {
                     res.twoHundredAndOneApplicationJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.twoHundredAndOneApplicationJsonClasses = utils.objectToClass(
@@ -984,7 +984,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -992,7 +992,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 400:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.fourHundredApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.fourHundredApplicationProblemPlusJsonClasses = utils.objectToClass(
@@ -1002,7 +1002,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -1010,7 +1010,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 500:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.fiveHundredApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.fiveHundredApplicationProblemPlusJsonClasses = utils.objectToClass(
@@ -1020,7 +1020,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -1028,7 +1028,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 502:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.fiveHundredAndTwoApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.fiveHundredAndTwoApplicationProblemPlusJsonClasses = utils.objectToClass(
@@ -1038,7 +1038,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -1102,7 +1102,7 @@ export class Executions {
             ...config,
         });
 
-        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) {
             throw new Error(`status code not found in response: ${httpRes}`);
@@ -1110,13 +1110,13 @@ export class Executions {
 
         const res: operations.ExecuteTestsResponse = new operations.ExecuteTestsResponse({
             statusCode: httpRes.status,
-            contentType: contentType,
+            contentType: responseContentType,
             rawResponse: httpRes,
         });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 201:
-                if (utils.matchContentType(contentType, `application/json`)) {
+                if (utils.matchContentType(responseContentType, `application/json`)) {
                     res.twoHundredAndOneApplicationJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.twoHundredAndOneApplicationJsonClasses = utils.objectToClass(
@@ -1126,7 +1126,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -1134,7 +1134,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 400:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.fourHundredApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.fourHundredApplicationProblemPlusJsonClasses = utils.objectToClass(
@@ -1144,7 +1144,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -1152,7 +1152,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 404:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.fourHundredAndFourApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.fourHundredAndFourApplicationProblemPlusJsonClasses = utils.objectToClass(
@@ -1162,7 +1162,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -1170,7 +1170,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 500:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.fiveHundredApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.fiveHundredApplicationProblemPlusJsonClasses = utils.objectToClass(
@@ -1180,7 +1180,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -1188,7 +1188,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 502:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.fiveHundredAndTwoApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.fiveHundredAndTwoApplicationProblemPlusJsonClasses = utils.objectToClass(
@@ -1198,7 +1198,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -1249,7 +1249,7 @@ export class Executions {
             ...config,
         });
 
-        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) {
             throw new Error(`status code not found in response: ${httpRes}`);
@@ -1258,13 +1258,13 @@ export class Executions {
         const res: operations.GetExecutionArtifactsResponse =
             new operations.GetExecutionArtifactsResponse({
                 statusCode: httpRes.status,
-                contentType: contentType,
+                contentType: responseContentType,
                 rawResponse: httpRes,
             });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
-                if (utils.matchContentType(contentType, `application/json`)) {
+                if (utils.matchContentType(responseContentType, `application/json`)) {
                     res.twoHundredApplicationJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.twoHundredApplicationJsonClasses = utils.objectToClass(
@@ -1274,7 +1274,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -1282,7 +1282,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 404:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.fourHundredAndFourApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.fourHundredAndFourApplicationProblemPlusJsonClasses = utils.objectToClass(
@@ -1292,7 +1292,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -1300,7 +1300,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 500:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.fiveHundredApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.fiveHundredApplicationProblemPlusJsonClasses = utils.objectToClass(
@@ -1310,7 +1310,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -1361,7 +1361,7 @@ export class Executions {
             ...config,
         });
 
-        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) {
             throw new Error(`status code not found in response: ${httpRes}`);
@@ -1369,17 +1369,17 @@ export class Executions {
 
         const res: operations.GetExecutionByIDResponse = new operations.GetExecutionByIDResponse({
             statusCode: httpRes.status,
-            contentType: contentType,
+            contentType: responseContentType,
             rawResponse: httpRes,
         });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
-                if (utils.matchContentType(contentType, `application/json`)) {
+                if (utils.matchContentType(responseContentType, `application/json`)) {
                     res.execution = utils.objectToClass(JSON.parse(decodedRes), shared.Execution);
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -1387,7 +1387,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 404:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.fourHundredAndFourApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.fourHundredAndFourApplicationProblemPlusJsonClasses = utils.objectToClass(
@@ -1397,7 +1397,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -1405,7 +1405,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 500:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.fiveHundredApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.fiveHundredApplicationProblemPlusJsonClasses = utils.objectToClass(
@@ -1415,7 +1415,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -1423,7 +1423,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 502:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.fiveHundredAndTwoApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.fiveHundredAndTwoApplicationProblemPlusJsonClasses = utils.objectToClass(
@@ -1433,7 +1433,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -1484,7 +1484,7 @@ export class Executions {
             ...config,
         });
 
-        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) {
             throw new Error(`status code not found in response: ${httpRes}`);
@@ -1492,13 +1492,13 @@ export class Executions {
 
         const res: operations.GetExecutionLogsResponse = new operations.GetExecutionLogsResponse({
             statusCode: httpRes.status,
-            contentType: contentType,
+            contentType: responseContentType,
             rawResponse: httpRes,
         });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
-                if (utils.matchContentType(contentType, `application/json`)) {
+                if (utils.matchContentType(responseContentType, `application/json`)) {
                     res.twoHundredApplicationJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.twoHundredApplicationJsonClasses = utils.objectToClass(
@@ -1508,7 +1508,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -1516,7 +1516,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 500:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.fiveHundredApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.fiveHundredApplicationProblemPlusJsonClasses = utils.objectToClass(
@@ -1526,7 +1526,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -1581,7 +1581,7 @@ export class Executions {
             ...config,
         });
 
-        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) {
             throw new Error(`status code not found in response: ${httpRes}`);
@@ -1589,17 +1589,17 @@ export class Executions {
 
         const res: operations.GetTestExecutionResponse = new operations.GetTestExecutionResponse({
             statusCode: httpRes.status,
-            contentType: contentType,
+            contentType: responseContentType,
             rawResponse: httpRes,
         });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
-                if (utils.matchContentType(contentType, `application/json`)) {
+                if (utils.matchContentType(responseContentType, `application/json`)) {
                     res.execution = utils.objectToClass(JSON.parse(decodedRes), shared.Execution);
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -1607,7 +1607,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 404:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.fourHundredAndFourApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.fourHundredAndFourApplicationProblemPlusJsonClasses = utils.objectToClass(
@@ -1617,7 +1617,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -1625,7 +1625,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 500:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.fiveHundredApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.fiveHundredApplicationProblemPlusJsonClasses = utils.objectToClass(
@@ -1635,7 +1635,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -1643,7 +1643,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 502:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.fiveHundredAndTwoApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.fiveHundredAndTwoApplicationProblemPlusJsonClasses = utils.objectToClass(
@@ -1653,7 +1653,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -1708,7 +1708,7 @@ export class Executions {
             ...config,
         });
 
-        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) {
             throw new Error(`status code not found in response: ${httpRes}`);
@@ -1717,20 +1717,20 @@ export class Executions {
         const res: operations.GetTestSuiteExecutionResponse =
             new operations.GetTestSuiteExecutionResponse({
                 statusCode: httpRes.status,
-                contentType: contentType,
+                contentType: responseContentType,
                 rawResponse: httpRes,
             });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
-                if (utils.matchContentType(contentType, `application/json`)) {
+                if (utils.matchContentType(responseContentType, `application/json`)) {
                     res.testSuiteExecution = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.TestSuiteExecution
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -1738,7 +1738,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 404:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.fourHundredAndFourApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.fourHundredAndFourApplicationProblemPlusJsonClasses = utils.objectToClass(
@@ -1748,7 +1748,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -1756,7 +1756,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 500:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.fiveHundredApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.fiveHundredApplicationProblemPlusJsonClasses = utils.objectToClass(
@@ -1766,7 +1766,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -1774,7 +1774,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 502:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.fiveHundredAndTwoApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.fiveHundredAndTwoApplicationProblemPlusJsonClasses = utils.objectToClass(
@@ -1784,7 +1784,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -1839,7 +1839,7 @@ export class Executions {
             ...config,
         });
 
-        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) {
             throw new Error(`status code not found in response: ${httpRes}`);
@@ -1848,17 +1848,17 @@ export class Executions {
         const res: operations.GetTestSuiteExecutionArtifactsResponse =
             new operations.GetTestSuiteExecutionArtifactsResponse({
                 statusCode: httpRes.status,
-                contentType: contentType,
+                contentType: responseContentType,
                 rawResponse: httpRes,
             });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
-                if (utils.matchContentType(contentType, `application/json`)) {
+                if (utils.matchContentType(responseContentType, `application/json`)) {
                     res.artifact = utils.objectToClass(JSON.parse(decodedRes), shared.Artifact);
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -1866,7 +1866,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 500:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.classes = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.classes = utils.objectToClass(
@@ -1876,7 +1876,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -1931,7 +1931,7 @@ export class Executions {
             ...config,
         });
 
-        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) {
             throw new Error(`status code not found in response: ${httpRes}`);
@@ -1940,17 +1940,17 @@ export class Executions {
         const res: operations.GetTestSuiteExecutionArtifactsByTestsuiteResponse =
             new operations.GetTestSuiteExecutionArtifactsByTestsuiteResponse({
                 statusCode: httpRes.status,
-                contentType: contentType,
+                contentType: responseContentType,
                 rawResponse: httpRes,
             });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
-                if (utils.matchContentType(contentType, `application/json`)) {
+                if (utils.matchContentType(responseContentType, `application/json`)) {
                     res.artifact = utils.objectToClass(JSON.parse(decodedRes), shared.Artifact);
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -1958,7 +1958,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 404:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.fourHundredAndFourApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.fourHundredAndFourApplicationProblemPlusJsonClasses = utils.objectToClass(
@@ -1968,7 +1968,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -1976,7 +1976,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 500:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.fiveHundredApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.fiveHundredApplicationProblemPlusJsonClasses = utils.objectToClass(
@@ -1986,7 +1986,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -2042,7 +2042,7 @@ export class Executions {
             ...config,
         });
 
-        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) {
             throw new Error(`status code not found in response: ${httpRes}`);
@@ -2051,20 +2051,20 @@ export class Executions {
         const res: operations.GetTestSuiteExecutionByIDResponse =
             new operations.GetTestSuiteExecutionByIDResponse({
                 statusCode: httpRes.status,
-                contentType: contentType,
+                contentType: responseContentType,
                 rawResponse: httpRes,
             });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
-                if (utils.matchContentType(contentType, `application/json`)) {
+                if (utils.matchContentType(responseContentType, `application/json`)) {
                     res.testSuiteExecution = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.TestSuiteExecution
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -2072,7 +2072,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 500:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.classes = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.classes = utils.objectToClass(
@@ -2082,7 +2082,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -2134,7 +2134,7 @@ export class Executions {
             ...config,
         });
 
-        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) {
             throw new Error(`status code not found in response: ${httpRes}`);
@@ -2143,20 +2143,20 @@ export class Executions {
         const res: operations.ListAllTestSuiteExecutionsResponse =
             new operations.ListAllTestSuiteExecutionsResponse({
                 statusCode: httpRes.status,
-                contentType: contentType,
+                contentType: responseContentType,
                 rawResponse: httpRes,
             });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
-                if (utils.matchContentType(contentType, `application/json`)) {
+                if (utils.matchContentType(responseContentType, `application/json`)) {
                     res.testSuiteExecutionsResult = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.TestSuiteExecutionsResult
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -2164,7 +2164,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 500:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.classes = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.classes = utils.objectToClass(
@@ -2174,7 +2174,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -2226,7 +2226,7 @@ export class Executions {
             ...config,
         });
 
-        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) {
             throw new Error(`status code not found in response: ${httpRes}`);
@@ -2234,20 +2234,20 @@ export class Executions {
 
         const res: operations.ListExecutionsResponse = new operations.ListExecutionsResponse({
             statusCode: httpRes.status,
-            contentType: contentType,
+            contentType: responseContentType,
             rawResponse: httpRes,
         });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
-                if (utils.matchContentType(contentType, `application/json`)) {
+                if (utils.matchContentType(responseContentType, `application/json`)) {
                     res.executionsResult = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.ExecutionsResult
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -2255,7 +2255,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 404:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.fourHundredAndFourApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.fourHundredAndFourApplicationProblemPlusJsonClasses = utils.objectToClass(
@@ -2265,7 +2265,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -2273,7 +2273,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 500:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.fiveHundredApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.fiveHundredApplicationProblemPlusJsonClasses = utils.objectToClass(
@@ -2283,7 +2283,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -2335,7 +2335,7 @@ export class Executions {
             ...config,
         });
 
-        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) {
             throw new Error(`status code not found in response: ${httpRes}`);
@@ -2344,20 +2344,20 @@ export class Executions {
         const res: operations.ListTestExecutionsResponse =
             new operations.ListTestExecutionsResponse({
                 statusCode: httpRes.status,
-                contentType: contentType,
+                contentType: responseContentType,
                 rawResponse: httpRes,
             });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
-                if (utils.matchContentType(contentType, `application/json`)) {
+                if (utils.matchContentType(responseContentType, `application/json`)) {
                     res.executionsResult = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.ExecutionsResult
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -2365,7 +2365,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 404:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.fourHundredAndFourApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.fourHundredAndFourApplicationProblemPlusJsonClasses = utils.objectToClass(
@@ -2375,7 +2375,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -2383,7 +2383,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 500:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.fiveHundredApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.fiveHundredApplicationProblemPlusJsonClasses = utils.objectToClass(
@@ -2393,7 +2393,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -2449,7 +2449,7 @@ export class Executions {
             ...config,
         });
 
-        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) {
             throw new Error(`status code not found in response: ${httpRes}`);
@@ -2458,20 +2458,20 @@ export class Executions {
         const res: operations.ListTestSuiteExecutionsResponse =
             new operations.ListTestSuiteExecutionsResponse({
                 statusCode: httpRes.status,
-                contentType: contentType,
+                contentType: responseContentType,
                 rawResponse: httpRes,
             });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
-                if (utils.matchContentType(contentType, `application/json`)) {
+                if (utils.matchContentType(responseContentType, `application/json`)) {
                     res.testSuiteExecutionsResult = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.TestSuiteExecutionsResult
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -2479,7 +2479,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 500:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.classes = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.classes = utils.objectToClass(
@@ -2489,7 +2489,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -2553,7 +2553,7 @@ export class Executions {
             ...config,
         });
 
-        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) {
             throw new Error(`status code not found in response: ${httpRes}`);
@@ -2561,19 +2561,19 @@ export class Executions {
 
         const res: operations.UploadsResponse = new operations.UploadsResponse({
             statusCode: httpRes.status,
-            contentType: contentType,
+            contentType: responseContentType,
             rawResponse: httpRes,
         });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
-                if (utils.matchContentType(contentType, `application/json`)) {
+                if (utils.matchContentType(responseContentType, `application/json`)) {
                     res.twoHundredApplicationJsonRes = decodedRes;
-                } else if (utils.matchContentType(contentType, `text/yaml`)) {
+                } else if (utils.matchContentType(responseContentType, `text/yaml`)) {
                     res.twoHundredTextYamlRes = decodedRes;
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -2581,7 +2581,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 400:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.fourHundredApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.fourHundredApplicationProblemPlusJsonClasses = utils.objectToClass(
@@ -2591,7 +2591,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -2599,7 +2599,7 @@ export class Executions {
                 }
                 break;
             case httpRes?.status == 500:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.fiveHundredApplicationProblemPlusJsonClasses = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.fiveHundredApplicationProblemPlusJsonClasses = utils.objectToClass(
@@ -2609,7 +2609,7 @@ export class Executions {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes

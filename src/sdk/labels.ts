@@ -58,7 +58,7 @@ export class Labels {
             ...config,
         });
 
-        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) {
             throw new Error(`status code not found in response: ${httpRes}`);
@@ -66,17 +66,17 @@ export class Labels {
 
         const res: operations.ListLabelsResponse = new operations.ListLabelsResponse({
             statusCode: httpRes.status,
-            contentType: contentType,
+            contentType: responseContentType,
             rawResponse: httpRes,
         });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
-                if (utils.matchContentType(contentType, `application/json`)) {
+                if (utils.matchContentType(responseContentType, `application/json`)) {
                     res.object = utils.objectToClass(JSON.parse(decodedRes));
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -84,7 +84,7 @@ export class Labels {
                 }
                 break;
             case httpRes?.status == 502:
-                if (utils.matchContentType(contentType, `application/problem+json`)) {
+                if (utils.matchContentType(responseContentType, `application/problem+json`)) {
                     res.classes = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
                     res.classes = utils.objectToClass(
@@ -94,7 +94,7 @@ export class Labels {
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes

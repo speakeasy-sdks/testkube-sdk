@@ -152,8 +152,8 @@ import { RunningContextType, TestSuiteExecutionStatus, VariableType } from "test
         },
       },
       executionLabels: {
-        "users": "3",
         "prefix": "some-",
+        "users": "3",
       },
       httpProxy: "user:pass@my.proxy.server:8080",
       httpsProxy: "user:pass@my.proxy.server:8081",
@@ -377,8 +377,8 @@ import { RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/s
         },
       },
       executionLabels: {
-        "prefix": "some-",
         "users": "3",
+        "prefix": "some-",
       },
       httpProxy: "user:pass@my.proxy.server:8080",
       httpsProxy: "user:pass@my.proxy.server:8081",
@@ -947,7 +947,7 @@ import { RunningContextType, TestSuiteExecutionStatus, VariableType } from "test
         },
         timeout: 1,
         variables: {
-          "var1": {
+          "secret1": {
             configMapRef: {
               key: "<key>",
               name: "string",
@@ -957,7 +957,7 @@ import { RunningContextType, TestSuiteExecutionStatus, VariableType } from "test
               name: "string",
             },
           },
-          "secret1": {
+          "var1": {
             configMapRef: {
               key: "<key>",
               name: "string",

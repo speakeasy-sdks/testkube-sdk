@@ -143,8 +143,8 @@ import {
     event: "modified",
     execution: TestTriggerExecutions.Test,
     labels: {
-      "env": "prod",
       "app": "backend",
+      "env": "prod",
     },
     name: "name",
     namespace: "testkube",
@@ -422,8 +422,8 @@ import {
       event: "modified",
       execution: TestTriggerExecutions.Testsuite,
       labels: {
-        "app": "backend",
         "env": "prod",
+        "app": "backend",
       },
       name: "name",
       namespace: "testkube",

@@ -412,8 +412,8 @@ import { ExecutorUpsertRequestFeatures } from "testkube-sdk/dist/sdk/models/shar
       {},
     ],
     labels: {
-      "app": "backend",
       "env": "prod",
+      "app": "backend",
     },
     meta: {
       docsURI: "https://docs.testkube.io/test-types/executor-k6",
@@ -633,8 +633,8 @@ import { RunningContextType, TestSuiteExecutionStatus, VariableType } from "test
         },
       },
       executionLabels: {
-        "prefix": "some-",
         "users": "3",
+        "prefix": "some-",
       },
       httpProxy: "user:pass@my.proxy.server:8080",
       httpsProxy: "user:pass@my.proxy.server:8081",
@@ -963,8 +963,8 @@ import {
         },
       ],
       envs: {
-        "prefix": "some-",
         "record": "true",
+        "prefix": "some-",
       },
       executionLabels: {
         "users": "3",
@@ -988,15 +988,15 @@ import {
         type: RunningContextType.UserUI,
       },
       secretEnvs: {
-        "secret_key_name1": "secret-name",
         "secret_Key_name2": "secret-name",
+        "secret_key_name1": "secret-name",
       },
       testSuiteName: "test-suite1",
       uploads: [
         "settings/config.txt",
       ],
       variables: {
-        "var1": {
+        "secret1": {
           configMapRef: {
             key: "<key>",
             name: "string",
@@ -1006,7 +1006,7 @@ import {
             name: "string",
           },
         },
-        "secret1": {
+        "var1": {
           configMapRef: {
             key: "<key>",
             name: "string",
@@ -1778,8 +1778,8 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
         "record": "true",
       },
       executionLabels: {
-        "prefix": "some-",
         "users": "3",
+        "prefix": "some-",
       },
       httpProxy: "user:pass@my.proxy.server:8080",
       httpsProxy: "user:pass@my.proxy.server:8081",
@@ -4194,8 +4194,8 @@ import {
           "prefix": "some-",
         },
         executionLabels: {
-          "users": "3",
           "prefix": "some-",
+          "users": "3",
         },
         httpProxy: "user:pass@my.proxy.server:8080",
         httpsProxy: "user:pass@my.proxy.server:8081",
