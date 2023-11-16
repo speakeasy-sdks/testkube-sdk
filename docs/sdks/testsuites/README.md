@@ -152,8 +152,8 @@ import { RunningContextType, TestSuiteExecutionStatus, VariableType } from "test
         },
       },
       executionLabels: {
-        "prefix": "some-",
         "users": "3",
+        "prefix": "some-",
       },
       httpProxy: "user:pass@my.proxy.server:8080",
       httpsProxy: "user:pass@my.proxy.server:8081",
@@ -169,7 +169,7 @@ import { RunningContextType, TestSuiteExecutionStatus, VariableType } from "test
       },
       timeout: 1,
       variables: {
-        "var1": {
+        "secret1": {
           configMapRef: {
             key: "<key>",
             name: "string",
@@ -179,7 +179,7 @@ import { RunningContextType, TestSuiteExecutionStatus, VariableType } from "test
             name: "string",
           },
         },
-        "secret1": {
+        "var1": {
           configMapRef: {
             key: "<key>",
             name: "string",
@@ -473,8 +473,8 @@ import { RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/s
       httpProxy: "user:pass@my.proxy.server:8080",
       httpsProxy: "user:pass@my.proxy.server:8081",
       labels: {
-        "users": "3",
         "prefix": "some-",
+        "users": "3",
       },
       name: "testing with 1000 users",
       namespace: "testkube",
@@ -947,7 +947,7 @@ import { RunningContextType, TestSuiteExecutionStatus, VariableType } from "test
         },
         timeout: 1,
         variables: {
-          "secret1": {
+          "var1": {
             configMapRef: {
               key: "<key>",
               name: "string",
@@ -957,7 +957,7 @@ import { RunningContextType, TestSuiteExecutionStatus, VariableType } from "test
               name: "string",
             },
           },
-          "var1": {
+          "secret1": {
             configMapRef: {
               key: "<key>",
               name: "string",
@@ -970,8 +970,8 @@ import { RunningContextType, TestSuiteExecutionStatus, VariableType } from "test
         },
       },
       labels: {
-        "env": "prod",
         "app": "backend",
+        "env": "prod",
       },
       name: "name",
       namespace: "testkube",

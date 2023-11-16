@@ -988,15 +988,15 @@ import {
         type: RunningContextType.UserUI,
       },
       secretEnvs: {
-        "secret_Key_name2": "secret-name",
         "secret_key_name1": "secret-name",
+        "secret_Key_name2": "secret-name",
       },
       testSuiteName: "test-suite1",
       uploads: [
         "settings/config.txt",
       ],
       variables: {
-        "secret1": {
+        "var1": {
           configMapRef: {
             key: "<key>",
             name: "string",
@@ -1006,7 +1006,7 @@ import {
             name: "string",
           },
         },
-        "var1": {
+        "secret1": {
           configMapRef: {
             key: "<key>",
             name: "string",
@@ -1019,8 +1019,8 @@ import {
       },
     },
     labels: {
-      "env": "prod",
       "app": "backend",
+      "env": "prod",
     },
     name: "test1",
     namespace: "testkube",
@@ -1987,7 +1987,7 @@ import { RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/s
       },
       timeout: 1,
       variables: {
-        "var1": {
+        "secret1": {
           configMapRef: {
             key: "<key>",
             name: "string",
@@ -1997,7 +1997,7 @@ import { RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/s
             name: "string",
           },
         },
-        "secret1": {
+        "var1": {
           configMapRef: {
             key: "<key>",
             name: "string",
@@ -3848,8 +3848,8 @@ import { RunningContextType, TestSuiteExecutionStatus, VariableType } from "test
           },
         },
         executionLabels: {
-          "users": "3",
           "prefix": "some-",
+          "users": "3",
         },
         httpProxy: "user:pass@my.proxy.server:8080",
         httpsProxy: "user:pass@my.proxy.server:8081",
@@ -4013,8 +4013,8 @@ import {
       event: "modified",
       execution: TestTriggerExecutions.Testsuite,
       labels: {
-        "env": "prod",
         "app": "backend",
+        "env": "prod",
       },
       name: "name",
       namespace: "testkube",
@@ -4194,8 +4194,8 @@ import {
           "prefix": "some-",
         },
         executionLabels: {
-          "prefix": "some-",
           "users": "3",
+          "prefix": "some-",
         },
         httpProxy: "user:pass@my.proxy.server:8080",
         httpsProxy: "user:pass@my.proxy.server:8081",

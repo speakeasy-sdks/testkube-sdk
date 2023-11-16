@@ -37,7 +37,7 @@ export class GetTestSuiteExecutionArtifactsResponse extends SpeakeasyBase {
      * Raw HTTP response; suitable for custom response parsing
      */
     @SpeakeasyMetadata()
-    rawResponse?: AxiosResponse;
+    rawResponse: AxiosResponse;
 
     /**
      * problem with getting test suite executions from storage

@@ -48,8 +48,8 @@ import { ExecutorUpsertRequestFeatures } from "testkube-sdk/dist/sdk/models/shar
       {},
     ],
     labels: {
-      "app": "backend",
       "env": "prod",
+      "app": "backend",
     },
     meta: {
       docsURI: "https://docs.testkube.io/test-types/executor-k6",
