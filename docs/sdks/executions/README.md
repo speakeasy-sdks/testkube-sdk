@@ -305,8 +305,8 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
         type: RunningContextType.Testsuite,
       },
       secretEnvs: {
-        "secret_key_name1": "secret-name",
         "secret_Key_name2": "secret-name",
+        "secret_key_name1": "secret-name",
       },
       testSuiteName: "test-suite1",
       uploads: [
@@ -476,14 +476,14 @@ import { RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/s
         },
       },
       executionLabels: {
-        "users": "3",
         "prefix": "some-",
+        "users": "3",
       },
       httpProxy: "user:pass@my.proxy.server:8080",
       httpsProxy: "user:pass@my.proxy.server:8081",
       labels: {
-        "users": "3",
         "prefix": "some-",
+        "users": "3",
       },
       name: "testing with 1000 users",
       namespace: "testkube",
@@ -617,8 +617,8 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
         type: RunningContextType.Scheduler,
       },
       secretEnvs: {
-        "secret_Key_name2": "secret-name",
         "secret_key_name1": "secret-name",
+        "secret_Key_name2": "secret-name",
       },
       testSuiteName: "test-suite1",
       uploads: [

@@ -169,7 +169,7 @@ import { RunningContextType, TestSuiteExecutionStatus, VariableType } from "test
       },
       timeout: 1,
       variables: {
-        "secret1": {
+        "var1": {
           configMapRef: {
             key: "<key>",
             name: "string",
@@ -179,7 +179,7 @@ import { RunningContextType, TestSuiteExecutionStatus, VariableType } from "test
             name: "string",
           },
         },
-        "var1": {
+        "secret1": {
           configMapRef: {
             key: "<key>",
             name: "string",
@@ -394,7 +394,7 @@ import { RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/s
       },
       timeout: 1,
       variables: {
-        "var1": {
+        "secret1": {
           configMapRef: {
             key: "<key>",
             name: "string",
@@ -404,7 +404,7 @@ import { RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/s
             name: "string",
           },
         },
-        "secret1": {
+        "var1": {
           configMapRef: {
             key: "<key>",
             name: "string",
@@ -473,8 +473,8 @@ import { RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/s
       httpProxy: "user:pass@my.proxy.server:8080",
       httpsProxy: "user:pass@my.proxy.server:8081",
       labels: {
-        "prefix": "some-",
         "users": "3",
+        "prefix": "some-",
       },
       name: "testing with 1000 users",
       namespace: "testkube",
