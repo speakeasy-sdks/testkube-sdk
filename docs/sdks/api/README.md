@@ -101,7 +101,7 @@ Aborts execution with given executionID
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.abortExecution({
@@ -112,7 +112,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -141,7 +143,7 @@ Abort all test executions
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.abortTestExecutions({
@@ -151,7 +153,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -180,7 +184,7 @@ Aborts testsuite execution with given executionID
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.abortTestSuiteExecution({
@@ -191,7 +195,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -220,7 +226,7 @@ Aborts testsuite execution with given executionID
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.abortTestSuiteExecutionByID({
@@ -230,7 +236,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -259,7 +267,7 @@ Abort all test executions of a test suite
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.abortTestSuiteExecutions({
@@ -269,7 +277,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -304,7 +314,7 @@ import {
   TestTriggerResources,
 } from "testkube-sdk/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.bulkUpdateTestTriggers([
@@ -360,7 +370,9 @@ import {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -390,7 +402,7 @@ Create new executor based on variables passed in request
 import { TestkubeSDK } from "testkube-sdk";
 import { ExecutorUpsertRequestFeatures } from "testkube-sdk/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.createExecutorJson({
@@ -412,8 +424,8 @@ import { ExecutorUpsertRequestFeatures } from "testkube-sdk/dist/sdk/models/shar
       {},
     ],
     labels: {
-      "app": "backend",
       "env": "prod",
+      "app": "backend",
     },
     meta: {
       docsURI: "https://docs.testkube.io/test-types/executor-k6",
@@ -432,7 +444,9 @@ import { ExecutorUpsertRequestFeatures } from "testkube-sdk/dist/sdk/models/shar
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -461,7 +475,7 @@ Create new executor based on variables passed in request
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.createExecutorString("string");
@@ -469,7 +483,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -499,7 +515,7 @@ Create new test source based on variables passed in request
 import { TestkubeSDK } from "testkube-sdk";
 import { AuthType, RepositoryType, TestSourceUpsertRequestType } from "testkube-sdk/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.createTestSourceJson({
@@ -530,7 +546,9 @@ import { AuthType, RepositoryType, TestSourceUpsertRequestType } from "testkube-
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -559,7 +577,7 @@ Create new test source based on variables passed in request
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.createTestSourceString("string");
@@ -567,7 +585,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -597,7 +617,7 @@ Create new test suite action
 import { TestkubeSDK } from "testkube-sdk";
 import { RunningContextType, TestSuiteExecutionStatus, VariableType } from "testkube-sdk/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.createTestSuiteJson({
@@ -633,8 +653,8 @@ import { RunningContextType, TestSuiteExecutionStatus, VariableType } from "test
         },
       },
       executionLabels: {
-        "prefix": "some-",
         "users": "3",
+        "prefix": "some-",
       },
       httpProxy: "user:pass@my.proxy.server:8080",
       httpsProxy: "user:pass@my.proxy.server:8081",
@@ -700,7 +720,9 @@ import { RunningContextType, TestSuiteExecutionStatus, VariableType } from "test
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -729,7 +751,7 @@ Create new test suite action
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.createTestSuiteString("string");
@@ -737,7 +759,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -772,7 +796,7 @@ import {
   TestTriggerResources,
 } from "testkube-sdk/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.createTestTriggerJson({
@@ -826,7 +850,9 @@ import {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -855,7 +881,7 @@ Create new test trigger CRD inside a Kubernetes cluster
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.createTestTriggerString("string");
@@ -863,7 +889,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -901,7 +929,7 @@ import {
   VariableType,
 } from "testkube-sdk/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.createTestJson({
@@ -1041,7 +1069,9 @@ import {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1070,7 +1100,7 @@ Create new test based on file content, uri or git based data
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.createTestString("string");
@@ -1078,7 +1108,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1108,7 +1140,7 @@ Create new webhook based on variables passed in request
 import { TestkubeSDK } from "testkube-sdk";
 import { EventType } from "testkube-sdk/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.createWebhookJson({
@@ -1119,8 +1151,8 @@ import { EventType } from "testkube-sdk/dist/sdk/models/shared";
       "Content-Type": "application/xml",
     },
     labels: {
-      "app": "backend",
       "env": "prod",
+      "app": "backend",
     },
     name: "webhook1",
     namespace: "testkube",
@@ -1130,7 +1162,9 @@ import { EventType } from "testkube-sdk/dist/sdk/models/shared";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1159,7 +1193,7 @@ Create new webhook based on variables passed in request
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.createWebhookString("string");
@@ -1167,7 +1201,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1196,7 +1232,7 @@ Deletes executor by its name
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.deleteExecutor({
@@ -1206,7 +1242,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1235,7 +1273,7 @@ Deletes labeled executors
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.deleteExecutors({});
@@ -1243,7 +1281,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1272,7 +1312,7 @@ Deletes a test
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.deleteTest({
@@ -1282,7 +1322,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1311,7 +1353,7 @@ Deletes test source by its name
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.deleteTestSource({
@@ -1321,7 +1363,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1350,7 +1394,7 @@ Deletes labeled test sources
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.deleteTestSources({});
@@ -1358,7 +1402,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1387,7 +1433,7 @@ Deletes a test suite
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.deleteTestSuite({
@@ -1397,7 +1443,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1426,7 +1474,7 @@ Deletes all or labeled test suites
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.deleteTestSuites({});
@@ -1434,7 +1482,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1463,7 +1513,7 @@ Deletes a test trigger
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.deleteTestTrigger({
@@ -1473,7 +1523,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1502,7 +1554,7 @@ Deletes all or labeled test triggers
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.deleteTestTriggers({});
@@ -1510,7 +1562,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1539,7 +1593,7 @@ Deletes all or labeled tests
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.deleteTests({});
@@ -1547,7 +1601,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1576,7 +1632,7 @@ Deletes webhook by its name
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.deleteWebhook({
@@ -1586,7 +1642,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1615,7 +1673,7 @@ Deletes labeled webhooks
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.deleteWebhooks({});
@@ -1623,7 +1681,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1652,7 +1712,7 @@ Download the artifact archive from the given execution
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.downloadArchive({
@@ -1662,7 +1722,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1691,7 +1753,7 @@ Download the artifact file from the given execution
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.downloadFile({
@@ -1702,7 +1764,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1732,7 +1796,7 @@ New test execution returns new execution details on successful execution start
 import { TestkubeSDK } from "testkube-sdk";
 import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.executeTest({
@@ -1807,7 +1871,7 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
         "settings/config.txt",
       ],
       variables: {
-        "secret1": {
+        "var1": {
           configMapRef: {
             key: "<key>",
             name: "string",
@@ -1817,7 +1881,7 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
             name: "string",
           },
         },
-        "var1": {
+        "secret1": {
           configMapRef: {
             key: "<key>",
             name: "string",
@@ -1835,7 +1899,9 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1865,7 +1931,7 @@ New test suite execution returns new execution details on successful execution s
 import { TestkubeSDK } from "testkube-sdk";
 import { RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.executeTestSuite({
@@ -1925,7 +1991,9 @@ import { RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/s
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1955,7 +2023,7 @@ New test suite executions returns new executions details on successful execution
 import { TestkubeSDK } from "testkube-sdk";
 import { RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.executeTestSuites({
@@ -2014,7 +2082,9 @@ import { RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/s
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -2044,7 +2114,7 @@ New test executions returns new executions details on successful executions star
 import { TestkubeSDK } from "testkube-sdk";
 import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.executeTests({
@@ -2146,7 +2216,9 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -2175,7 +2247,7 @@ Get config from cluster storage state
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getConfig();
@@ -2183,7 +2255,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -2211,7 +2285,7 @@ Gets information that is needed for debugging and opening Testkube bug reports
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getDebugInfo();
@@ -2219,7 +2293,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -2247,7 +2323,7 @@ Returns artifacts of the given executionID
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getExecutionArtifacts({
@@ -2257,7 +2333,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -2286,7 +2364,7 @@ Returns execution with given executionID
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getExecutionByID({
@@ -2296,7 +2374,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -2325,7 +2405,7 @@ Returns logs of the given executionID
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getExecutionLogs({
@@ -2335,7 +2415,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -2364,7 +2446,7 @@ Returns executors data with executions passed to executor
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getExecutor({
@@ -2374,7 +2456,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -2403,7 +2487,7 @@ Returns a keymap (supported/allowed fields) for the test trigger UI screen
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getKeyMap();
@@ -2411,7 +2495,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -2439,7 +2525,7 @@ Gets the specified test
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getTest({
@@ -2449,7 +2535,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -2478,7 +2566,7 @@ Returns execution with given executionID
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getTestExecution({
@@ -2489,7 +2577,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -2518,7 +2608,7 @@ Gets test metrics for given tests executions, with particular execution status a
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getTestMetrics({
@@ -2528,7 +2618,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -2557,7 +2649,7 @@ Returns test sources data
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getTestSource({
@@ -2567,7 +2659,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -2596,7 +2690,7 @@ Returns test suite with given name
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getTestSuiteByID({
@@ -2606,7 +2700,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -2635,7 +2731,7 @@ Returns test suite with given name with execution
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getTestSuiteByIDWithExecution({
@@ -2645,7 +2741,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -2674,7 +2772,7 @@ Returns test suite execution with given executionID
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getTestSuiteExecution({
@@ -2685,7 +2783,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -2714,7 +2814,7 @@ Returns test suite execution artifacts with given executionID
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getTestSuiteExecutionArtifacts({
@@ -2724,7 +2824,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -2753,7 +2855,7 @@ Returns test suite execution artifacts with given executionID
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getTestSuiteExecutionArtifactsByTestsuite({
@@ -2764,7 +2866,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -2793,7 +2897,7 @@ Returns test suite execution with given executionID
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getTestSuiteExecutionByID({
@@ -2803,7 +2907,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -2832,7 +2938,7 @@ Gets test suite metrics for given tests executions, with particular execution st
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getTestSuiteMetrics({
@@ -2842,7 +2948,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -2871,7 +2979,7 @@ Get test trigger by ID from CRD in kubernetes cluster
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getTestTriggerByID({
@@ -2881,7 +2989,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -2910,7 +3020,7 @@ Gets the specified test with execution
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getTestWithExecution({
@@ -2920,7 +3030,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -2949,7 +3061,7 @@ Returns webhook
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getWebhook({
@@ -2959,7 +3071,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -2990,7 +3104,7 @@ import { TestkubeSDK } from "testkube-sdk";
 import { TestSuiteExecutionStatus } from "testkube-sdk/dist/sdk/models/shared";
 import { RFCDate } from "testkube-sdk/dist/sdk/types";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.listAllTestSuiteExecutions({});
@@ -2998,7 +3112,9 @@ import { RFCDate } from "testkube-sdk/dist/sdk/types";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -3029,7 +3145,7 @@ import { TestkubeSDK } from "testkube-sdk";
 import { ExecutionStatus } from "testkube-sdk/dist/sdk/models/shared";
 import { RFCDate } from "testkube-sdk/dist/sdk/types";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.listExecutions({});
@@ -3037,7 +3153,9 @@ import { RFCDate } from "testkube-sdk/dist/sdk/types";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -3066,7 +3184,7 @@ List executors available in cluster
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.listExecutors({});
@@ -3074,7 +3192,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -3105,7 +3225,7 @@ import { TestkubeSDK } from "testkube-sdk";
 import { ExecutionStatus } from "testkube-sdk/dist/sdk/models/shared";
 import { RFCDate } from "testkube-sdk/dist/sdk/types";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.listTestExecutions({
@@ -3115,7 +3235,9 @@ import { RFCDate } from "testkube-sdk/dist/sdk/types";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -3144,7 +3266,7 @@ List test sources available in cluster
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.listTestSources({});
@@ -3152,7 +3274,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -3183,7 +3307,7 @@ import { TestkubeSDK } from "testkube-sdk";
 import { TestSuiteExecutionStatus } from "testkube-sdk/dist/sdk/models/shared";
 import { RFCDate } from "testkube-sdk/dist/sdk/types";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.listTestSuiteExecutions({
@@ -3193,7 +3317,9 @@ import { RFCDate } from "testkube-sdk/dist/sdk/types";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -3222,7 +3348,7 @@ List available tests for test suite
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.listTestSuiteTests({
@@ -3232,7 +3358,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -3262,7 +3390,7 @@ Returns array of test suite with executions
 import { TestkubeSDK } from "testkube-sdk";
 import { TestSuiteExecutionStatus } from "testkube-sdk/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.listTestSuiteWithExecutions({});
@@ -3270,7 +3398,9 @@ import { TestSuiteExecutionStatus } from "testkube-sdk/dist/sdk/models/shared";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -3299,7 +3429,7 @@ Returns array of test suites
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.listTestSuites({});
@@ -3307,7 +3437,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -3336,7 +3468,7 @@ List test triggers from the kubernetes cluster
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.listTestTriggers({});
@@ -3344,7 +3476,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -3374,7 +3508,7 @@ List available test with executions
 import { TestkubeSDK } from "testkube-sdk";
 import { ExecutionStatus } from "testkube-sdk/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.listTestWithExecutions({});
@@ -3382,7 +3516,9 @@ import { ExecutionStatus } from "testkube-sdk/dist/sdk/models/shared";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -3411,7 +3547,7 @@ List available tests
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.listTests({});
@@ -3419,7 +3555,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -3448,7 +3586,7 @@ List webhooks available in cluster
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.listWebhooks({});
@@ -3456,7 +3594,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -3486,7 +3626,7 @@ Process test source batch based on variables passed in request
 import { TestkubeSDK } from "testkube-sdk";
 import { AuthType, RepositoryType, TestSourceUpsertRequestType } from "testkube-sdk/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.processTestSourceBatch({
@@ -3521,7 +3661,9 @@ import { AuthType, RepositoryType, TestSourceUpsertRequestType } from "testkube-
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -3550,7 +3692,7 @@ Updates config in cluster storage state
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.updateConfigKey({
@@ -3562,7 +3704,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -3592,7 +3736,7 @@ Update new executor based on variables passed in request
 import { TestkubeSDK } from "testkube-sdk";
 import { ExecutorUpdateRequestFeatures } from "testkube-sdk/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.updateExecutorJson({
@@ -3637,7 +3781,9 @@ import { ExecutorUpdateRequestFeatures } from "testkube-sdk/dist/sdk/models/shar
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -3666,7 +3812,7 @@ Update new executor based on variables passed in request
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.updateExecutorString({
@@ -3677,7 +3823,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -3707,7 +3855,7 @@ Update test source based on test content or git based data
 import { TestkubeSDK } from "testkube-sdk";
 import { AuthType, RepositoryType, TestSourceUpdateRequestType } from "testkube-sdk/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.updateTestSourceJson({
@@ -3741,7 +3889,9 @@ import { AuthType, RepositoryType, TestSourceUpdateRequestType } from "testkube-
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -3770,7 +3920,7 @@ Update test source based on test content or git based data
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.updateTestSourceString({
@@ -3781,7 +3931,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -3811,7 +3963,7 @@ Update test based on test suite content or git based data
 import { TestkubeSDK } from "testkube-sdk";
 import { RunningContextType, TestSuiteExecutionStatus, VariableType } from "testkube-sdk/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.updateTestSuiteJson({
@@ -3917,7 +4069,9 @@ import { RunningContextType, TestSuiteExecutionStatus, VariableType } from "test
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -3946,7 +4100,7 @@ Update test based on test suite content or git based data
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.updateTestSuiteString({
@@ -3957,7 +4111,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -3992,7 +4148,7 @@ import {
   TestTriggerResources,
 } from "testkube-sdk/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.updateTestTriggerJson({
@@ -4049,7 +4205,9 @@ import {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -4078,7 +4236,7 @@ Update test trigger
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.updateTestTriggerString({
@@ -4089,7 +4247,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -4127,7 +4287,7 @@ import {
   VariableType,
 } from "testkube-sdk/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.updateTestJson({
@@ -4270,7 +4430,9 @@ import {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -4299,7 +4461,7 @@ Update test based on test content or git based data
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.updateTestString({
@@ -4310,7 +4472,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -4340,7 +4504,7 @@ Upload file to be used in executions and tests
 import { TestkubeSDK } from "testkube-sdk";
 import { ParentType } from "testkube-sdk/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.uploads({
@@ -4351,7 +4515,9 @@ import { ParentType } from "testkube-sdk/dist/sdk/models/shared";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -4381,7 +4547,7 @@ Validate new repository based on variables passed in request
 import { TestkubeSDK } from "testkube-sdk";
 import { AuthType, RepositoryType } from "testkube-sdk/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.validateRepository({
@@ -4404,7 +4570,9 @@ import { AuthType, RepositoryType } from "testkube-sdk/dist/sdk/models/shared";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

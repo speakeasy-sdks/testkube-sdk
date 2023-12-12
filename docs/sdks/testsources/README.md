@@ -23,7 +23,7 @@ Create new test source based on variables passed in request
 import { TestkubeSDK } from "testkube-sdk";
 import { AuthType, RepositoryType, TestSourceUpsertRequestType } from "testkube-sdk/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testSources.createTestSourceJson({
@@ -54,7 +54,9 @@ import { AuthType, RepositoryType, TestSourceUpsertRequestType } from "testkube-
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -83,7 +85,7 @@ Create new test source based on variables passed in request
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testSources.createTestSourceString("string");
@@ -91,7 +93,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -120,7 +124,7 @@ Deletes test source by its name
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testSources.deleteTestSource({
@@ -130,7 +134,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -159,7 +165,7 @@ Deletes labeled test sources
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testSources.deleteTestSources({});
@@ -167,7 +173,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -196,7 +204,7 @@ Returns test sources data
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testSources.getTestSource({
@@ -206,7 +214,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -235,7 +245,7 @@ List test sources available in cluster
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testSources.listTestSources({});
@@ -243,7 +253,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -273,7 +285,7 @@ Process test source batch based on variables passed in request
 import { TestkubeSDK } from "testkube-sdk";
 import { AuthType, RepositoryType, TestSourceUpsertRequestType } from "testkube-sdk/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testSources.processTestSourceBatch({
@@ -308,7 +320,9 @@ import { AuthType, RepositoryType, TestSourceUpsertRequestType } from "testkube-
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -338,7 +352,7 @@ Update test source based on test content or git based data
 import { TestkubeSDK } from "testkube-sdk";
 import { AuthType, RepositoryType, TestSourceUpdateRequestType } from "testkube-sdk/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testSources.updateTestSourceJson({
@@ -372,7 +386,9 @@ import { AuthType, RepositoryType, TestSourceUpdateRequestType } from "testkube-
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -401,7 +417,7 @@ Update test source based on test content or git based data
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testSources.updateTestSourceString({
@@ -412,7 +428,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

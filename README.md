@@ -1,6 +1,6 @@
 # testkube-sdk
 
-<!-- Start SDK Installation -->
+<!-- Start SDK Installation [installation] -->
 ## SDK Installation
 
 ### NPM
@@ -14,16 +14,17 @@ npm add testkube-sdk
 ```bash
 yarn add testkube-sdk
 ```
-<!-- End SDK Installation -->
+<!-- End SDK Installation [installation] -->
 
+<!-- Start SDK Example Usage [usage] -->
 ## SDK Example Usage
-<!-- Start SDK Example Usage -->
+
 ### Example
 
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async () => {
+async function run() {
     const sdk = new TestkubeSDK();
 
     const res = await sdk.api.abortExecution({
@@ -34,14 +35,15 @@ import { TestkubeSDK } from "testkube-sdk";
     if (res.statusCode == 200) {
         // handle response
     }
-})();
+}
+
+run();
 
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->
 
-<!-- Start SDK Available Operations -->
+<!-- Start Available Resources and Operations [operations] -->
 ## Available Resources and Operations
-
 
 ### [api](docs/sdks/api/README.md)
 
@@ -130,28 +132,6 @@ import { TestkubeSDK } from "testkube-sdk";
 * [uploads](docs/sdks/api/README.md#uploads) - Upload file
 * [validateRepository](docs/sdks/api/README.md#validaterepository) - Validate new repository
 
-### [tests](docs/sdks/tests/README.md)
-
-* [abortExecution](docs/sdks/tests/README.md#abortexecution) - Aborts execution
-* [abortTestExecutions](docs/sdks/tests/README.md#aborttestexecutions) - Abort all executions of a test
-* [createTestJson](docs/sdks/tests/README.md#createtestjson) - Create new test
-* [createTestString](docs/sdks/tests/README.md#createteststring) - Create new test
-* [deleteTest](docs/sdks/tests/README.md#deletetest) - Delete test
-* [deleteTests](docs/sdks/tests/README.md#deletetests) - Delete tests
-* [executeTest](docs/sdks/tests/README.md#executetest) - Starts new test execution
-* [executeTests](docs/sdks/tests/README.md#executetests) - Starts new test executions
-* [getTest](docs/sdks/tests/README.md#gettest) - Get test
-* [getTestExecution](docs/sdks/tests/README.md#gettestexecution) - Get test execution
-* [getTestMetrics](docs/sdks/tests/README.md#gettestmetrics) - Get test metrics
-* [getTestSuiteMetrics](docs/sdks/tests/README.md#gettestsuitemetrics) - Get test suite metrics
-* [getTestWithExecution](docs/sdks/tests/README.md#gettestwithexecution) - Get test with execution
-* [listTestExecutions](docs/sdks/tests/README.md#listtestexecutions) - Get all test executions
-* [listTestWithExecutions](docs/sdks/tests/README.md#listtestwithexecutions) - List test with executions
-* [listTests](docs/sdks/tests/README.md#listtests) - List tests
-* [updateTestJson](docs/sdks/tests/README.md#updatetestjson) - Update test
-* [updateTestString](docs/sdks/tests/README.md#updateteststring) - Update test
-* [uploads](docs/sdks/tests/README.md#uploads) - Upload file
-
 ### [executions](docs/sdks/executions/README.md)
 
 * [abortExecution](docs/sdks/executions/README.md#abortexecution) - Aborts execution
@@ -176,6 +156,28 @@ import { TestkubeSDK } from "testkube-sdk";
 * [listTestExecutions](docs/sdks/executions/README.md#listtestexecutions) - Get all test executions
 * [listTestSuiteExecutions](docs/sdks/executions/README.md#listtestsuiteexecutions) - Get all test suite executions
 * [uploads](docs/sdks/executions/README.md#uploads) - Upload file
+
+### [tests](docs/sdks/tests/README.md)
+
+* [abortExecution](docs/sdks/tests/README.md#abortexecution) - Aborts execution
+* [abortTestExecutions](docs/sdks/tests/README.md#aborttestexecutions) - Abort all executions of a test
+* [createTestJson](docs/sdks/tests/README.md#createtestjson) - Create new test
+* [createTestString](docs/sdks/tests/README.md#createteststring) - Create new test
+* [deleteTest](docs/sdks/tests/README.md#deletetest) - Delete test
+* [deleteTests](docs/sdks/tests/README.md#deletetests) - Delete tests
+* [executeTest](docs/sdks/tests/README.md#executetest) - Starts new test execution
+* [executeTests](docs/sdks/tests/README.md#executetests) - Starts new test executions
+* [getTest](docs/sdks/tests/README.md#gettest) - Get test
+* [getTestExecution](docs/sdks/tests/README.md#gettestexecution) - Get test execution
+* [getTestMetrics](docs/sdks/tests/README.md#gettestmetrics) - Get test metrics
+* [getTestSuiteMetrics](docs/sdks/tests/README.md#gettestsuitemetrics) - Get test suite metrics
+* [getTestWithExecution](docs/sdks/tests/README.md#gettestwithexecution) - Get test with execution
+* [listTestExecutions](docs/sdks/tests/README.md#listtestexecutions) - Get all test executions
+* [listTestWithExecutions](docs/sdks/tests/README.md#listtestwithexecutions) - List test with executions
+* [listTests](docs/sdks/tests/README.md#listtests) - List tests
+* [updateTestJson](docs/sdks/tests/README.md#updatetestjson) - Update test
+* [updateTestString](docs/sdks/tests/README.md#updateteststring) - Update test
+* [uploads](docs/sdks/tests/README.md#uploads) - Upload file
 
 ### [artifacts](docs/sdks/artifacts/README.md)
 
@@ -264,29 +266,15 @@ import { TestkubeSDK } from "testkube-sdk";
 * [deleteWebhooks](docs/sdks/webhook/README.md#deletewebhooks) - Delete webhooks
 * [getWebhook](docs/sdks/webhook/README.md#getwebhook) - Get webhook details
 * [listWebhooks](docs/sdks/webhook/README.md#listwebhooks) - List webhooks
-<!-- End SDK Available Operations -->
+<!-- End Available Resources and Operations [operations] -->
 
 
 
-<!-- Start Dev Containers -->
-
-<!-- End Dev Containers -->
 
 
 
-<!-- Start Pagination -->
-# Pagination
 
-Some of the endpoints in this SDK support pagination. To use pagination, you make your SDK calls as usual, but the
-returned response object will have a `next` method that can be called to pull down the next group of results. If the
-return value of `next` is `null`, then there are no more pages to be fetched.
-
-Here's an example of one such pagination call:
-<!-- End Pagination -->
-
-
-
-<!-- Start Error Handling -->
+<!-- Start Error Handling [errors] -->
 ## Error Handling
 
 Handling errors in this SDK should largely match your expectations.  All operations return a response object or throw an error.  If Error objects are specified in your OpenAPI Spec, the SDK will throw the appropriate Error type.
@@ -300,7 +288,7 @@ Example
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async () => {
+async function run() {
     const sdk = new TestkubeSDK();
 
     let res;
@@ -309,19 +297,26 @@ import { TestkubeSDK } from "testkube-sdk";
             executionID: "string",
             id: "<ID>",
         });
-    } catch (e) {}
+    } catch (err) {
+        if (err instanceof errors.SDKError) {
+            console.error(err); // handle exception
+            throw err;
+        }
+    }
 
     if (res.statusCode == 200) {
         // handle response
     }
-})();
+}
+
+run();
 
 ```
-<!-- End Error Handling -->
+<!-- End Error Handling [errors] -->
 
 
 
-<!-- Start Server Selection -->
+<!-- Start Server Selection [server] -->
 ## Server Selection
 
 ### Select Server by Index
@@ -337,7 +332,7 @@ You can override the default server globally by passing a server index to the `s
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async () => {
+async function run() {
     const sdk = new TestkubeSDK({
         serverIdx: 0,
     });
@@ -350,7 +345,9 @@ import { TestkubeSDK } from "testkube-sdk";
     if (res.statusCode == 200) {
         // handle response
     }
-})();
+}
+
+run();
 
 ```
 
@@ -361,7 +358,7 @@ The default server can also be overridden globally by passing a URL to the `serv
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async () => {
+async function run() {
     const sdk = new TestkubeSDK({
         serverURL: "https://demo.testkube.io/results/v1",
     });
@@ -374,23 +371,25 @@ import { TestkubeSDK } from "testkube-sdk";
     if (res.statusCode == 200) {
         // handle response
     }
-})();
+}
+
+run();
 
 ```
-<!-- End Server Selection -->
+<!-- End Server Selection [server] -->
 
 
 
-<!-- Start Custom HTTP Client -->
+<!-- Start Custom HTTP Client [http-client] -->
 ## Custom HTTP Client
 
-The Typescript SDK makes API calls using the (axios)[https://axios-http.com/docs/intro] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `AxiosInstance` object.
+The Typescript SDK makes API calls using the [axios](https://axios-http.com/docs/intro) HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `AxiosInstance` object.
 
 For example, you could specify a header for every request that your sdk makes as follows:
 
 ```typescript
-from testkube-sdk import TestkubeSDK;
-import axios;
+import { testkube-sdk } from "TestkubeSDK";
+import axios from "axios";
 
 const httpClient = axios.create({
     headers: {'x-custom-header': 'someValue'}
@@ -398,7 +397,7 @@ const httpClient = axios.create({
 
 const sdk = new TestkubeSDK({defaultClient: httpClient});
 ```
-<!-- End Custom HTTP Client -->
+<!-- End Custom HTTP Client [http-client] -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 

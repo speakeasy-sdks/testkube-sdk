@@ -26,7 +26,7 @@ Create new executor based on variables passed in request
 import { TestkubeSDK } from "testkube-sdk";
 import { ExecutorUpsertRequestFeatures } from "testkube-sdk/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executor.createExecutorJson({
@@ -68,7 +68,9 @@ import { ExecutorUpsertRequestFeatures } from "testkube-sdk/dist/sdk/models/shar
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -97,7 +99,7 @@ Create new executor based on variables passed in request
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executor.createExecutorString("string");
@@ -105,7 +107,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -134,7 +138,7 @@ Deletes executor by its name
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executor.deleteExecutor({
@@ -144,7 +148,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -173,7 +179,7 @@ Deletes labeled executors
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executor.deleteExecutors({});
@@ -181,7 +187,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -210,7 +218,7 @@ Returns executors data with executions passed to executor
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executor.getExecutor({
@@ -220,7 +228,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -249,7 +259,7 @@ List executors available in cluster
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executor.listExecutors({});
@@ -257,7 +267,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -287,7 +299,7 @@ Update new executor based on variables passed in request
 import { TestkubeSDK } from "testkube-sdk";
 import { ExecutorUpdateRequestFeatures } from "testkube-sdk/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executor.updateExecutorJson({
@@ -332,7 +344,9 @@ import { ExecutorUpdateRequestFeatures } from "testkube-sdk/dist/sdk/models/shar
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -361,7 +375,7 @@ Update new executor based on variables passed in request
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executor.updateExecutorString({
@@ -372,7 +386,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

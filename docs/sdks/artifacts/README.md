@@ -20,7 +20,7 @@ Download the artifact archive from the given execution
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.artifacts.downloadArchive({
@@ -30,7 +30,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -59,7 +61,7 @@ Download the artifact file from the given execution
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.artifacts.downloadFile({
@@ -70,7 +72,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -99,7 +103,7 @@ Returns artifacts of the given executionID
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.artifacts.getExecutionArtifacts({
@@ -109,7 +113,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

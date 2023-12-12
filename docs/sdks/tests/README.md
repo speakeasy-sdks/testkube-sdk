@@ -36,7 +36,7 @@ Aborts execution with given executionID
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.tests.abortExecution({
@@ -47,7 +47,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -76,7 +78,7 @@ Abort all test executions
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.tests.abortTestExecutions({
@@ -86,7 +88,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -124,7 +128,7 @@ import {
   VariableType,
 } from "testkube-sdk/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.tests.createTestJson({
@@ -190,8 +194,8 @@ import {
         "prefix": "some-",
       },
       executionLabels: {
-        "prefix": "some-",
         "users": "3",
+        "prefix": "some-",
       },
       httpProxy: "user:pass@my.proxy.server:8080",
       httpsProxy: "user:pass@my.proxy.server:8081",
@@ -219,7 +223,7 @@ import {
         "settings/config.txt",
       ],
       variables: {
-        "secret1": {
+        "var1": {
           configMapRef: {
             key: "<key>",
             name: "string",
@@ -229,7 +233,7 @@ import {
             name: "string",
           },
         },
-        "var1": {
+        "secret1": {
           configMapRef: {
             key: "<key>",
             name: "string",
@@ -264,7 +268,9 @@ import {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -293,7 +299,7 @@ Create new test based on file content, uri or git based data
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.tests.createTestString("string");
@@ -301,7 +307,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -330,7 +338,7 @@ Deletes a test
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.tests.deleteTest({
@@ -340,7 +348,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -369,7 +379,7 @@ Deletes all or labeled tests
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.tests.deleteTests({});
@@ -377,7 +387,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -407,7 +419,7 @@ New test execution returns new execution details on successful execution start
 import { TestkubeSDK } from "testkube-sdk";
 import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.tests.executeTest({
@@ -510,7 +522,9 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -540,7 +554,7 @@ New test executions returns new executions details on successful executions star
 import { TestkubeSDK } from "testkube-sdk";
 import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.tests.executeTests({
@@ -642,7 +656,9 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -671,7 +687,7 @@ Gets the specified test
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.tests.getTest({
@@ -681,7 +697,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -710,7 +728,7 @@ Returns execution with given executionID
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.tests.getTestExecution({
@@ -721,7 +739,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -750,7 +770,7 @@ Gets test metrics for given tests executions, with particular execution status a
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.tests.getTestMetrics({
@@ -760,7 +780,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -789,7 +811,7 @@ Gets test suite metrics for given tests executions, with particular execution st
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.tests.getTestSuiteMetrics({
@@ -799,7 +821,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -828,7 +852,7 @@ Gets the specified test with execution
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.tests.getTestWithExecution({
@@ -838,7 +862,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -869,7 +895,7 @@ import { TestkubeSDK } from "testkube-sdk";
 import { ExecutionStatus } from "testkube-sdk/dist/sdk/models/shared";
 import { RFCDate } from "testkube-sdk/dist/sdk/types";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.tests.listTestExecutions({
@@ -879,7 +905,9 @@ import { RFCDate } from "testkube-sdk/dist/sdk/types";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -909,7 +937,7 @@ List available test with executions
 import { TestkubeSDK } from "testkube-sdk";
 import { ExecutionStatus } from "testkube-sdk/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.tests.listTestWithExecutions({});
@@ -917,7 +945,9 @@ import { ExecutionStatus } from "testkube-sdk/dist/sdk/models/shared";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -946,7 +976,7 @@ List available tests
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.tests.listTests({});
@@ -954,7 +984,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -992,7 +1024,7 @@ import {
   VariableType,
 } from "testkube-sdk/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.tests.updateTestJson({
@@ -1055,8 +1087,8 @@ import {
           },
         ],
         envs: {
-          "prefix": "some-",
           "record": "true",
+          "prefix": "some-",
         },
         executionLabels: {
           "users": "3",
@@ -1088,7 +1120,7 @@ import {
           "settings/config.txt",
         ],
         variables: {
-          "secret1": {
+          "var1": {
             configMapRef: {
               key: "<key>",
               name: "string",
@@ -1098,7 +1130,7 @@ import {
               name: "string",
             },
           },
-          "var1": {
+          "secret1": {
             configMapRef: {
               key: "<key>",
               name: "string",
@@ -1135,7 +1167,9 @@ import {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1164,7 +1198,7 @@ Update test based on test content or git based data
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.tests.updateTestString({
@@ -1175,7 +1209,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1205,7 +1241,7 @@ Upload file to be used in executions and tests
 import { TestkubeSDK } from "testkube-sdk";
 import { ParentType } from "testkube-sdk/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.tests.uploads({
@@ -1216,7 +1252,9 @@ import { ParentType } from "testkube-sdk/dist/sdk/models/shared";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

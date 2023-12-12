@@ -1,6 +1,6 @@
 src/sdk/api.ts
-src/sdk/tests.ts
 src/sdk/executions.ts
+src/sdk/tests.ts
 src/sdk/artifacts.ts
 src/sdk/logs.ts
 src/sdk/executor.ts
@@ -204,7 +204,6 @@ src/sdk/models/shared/uploadsbody.ts
 src/sdk/models/errors/index.ts
 src/sdk/models/operations/index.ts
 src/sdk/models/shared/index.ts
-USAGE.md
 docs/sdk/models/operations/abortexecutionrequest.md
 docs/sdk/models/operations/abortexecutionresponse.md
 docs/sdk/models/operations/aborttestexecutionsrequest.md
@@ -461,8 +460,8 @@ docs/sdk/models/shared/parenttype.md
 docs/sdk/models/shared/uploadsbody.md
 docs/sdks/testkubesdk/README.md
 docs/sdks/api/README.md
-docs/sdks/tests/README.md
 docs/sdks/executions/README.md
+docs/sdks/tests/README.md
 docs/sdks/artifacts/README.md
 docs/sdks/logs/README.md
 docs/sdks/executor/README.md
@@ -473,4 +472,5 @@ docs/sdks/testsources/README.md
 docs/sdks/testsuites/README.md
 docs/sdks/testtriggers/README.md
 docs/sdks/webhook/README.md
+USAGE.md
 .gitattributes

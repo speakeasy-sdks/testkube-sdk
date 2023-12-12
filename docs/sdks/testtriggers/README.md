@@ -32,7 +32,7 @@ import {
   TestTriggerResources,
 } from "testkube-sdk/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testTriggers.bulkUpdateTestTriggers([
@@ -88,7 +88,9 @@ import {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -123,7 +125,7 @@ import {
   TestTriggerResources,
 } from "testkube-sdk/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testTriggers.createTestTriggerJson({
@@ -177,7 +179,9 @@ import {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -206,7 +210,7 @@ Create new test trigger CRD inside a Kubernetes cluster
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testTriggers.createTestTriggerString("string");
@@ -214,7 +218,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -243,7 +249,7 @@ Deletes a test trigger
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testTriggers.deleteTestTrigger({
@@ -253,7 +259,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -282,7 +290,7 @@ Deletes all or labeled test triggers
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testTriggers.deleteTestTriggers({});
@@ -290,7 +298,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -319,7 +329,7 @@ Get test trigger by ID from CRD in kubernetes cluster
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testTriggers.getTestTriggerByID({
@@ -329,7 +339,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -358,7 +370,7 @@ List test triggers from the kubernetes cluster
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testTriggers.listTestTriggers({});
@@ -366,7 +378,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -401,7 +415,7 @@ import {
   TestTriggerResources,
 } from "testkube-sdk/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testTriggers.updateTestTriggerJson({
@@ -458,7 +472,9 @@ import {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -487,7 +503,7 @@ Update test trigger
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testTriggers.updateTestTriggerString({
@@ -498,7 +514,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

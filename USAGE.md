@@ -1,8 +1,8 @@
-<!-- Start SDK Example Usage -->
+<!-- Start SDK Example Usage [usage] -->
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async () => {
+async function run() {
     const sdk = new TestkubeSDK();
 
     const res = await sdk.api.abortExecution({
@@ -13,7 +13,9 @@ import { TestkubeSDK } from "testkube-sdk";
     if (res.statusCode == 200) {
         // handle response
     }
-})();
+}
+
+run();
 
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->

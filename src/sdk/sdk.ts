@@ -59,9 +59,9 @@ export class SDKConfiguration {
     serverDefaults: any;
     language = "typescript";
     openapiDocVersion = "1.0.0";
-    sdkVersion = "2.1.3";
-    genVersion = "2.194.1";
-    userAgent = "speakeasy-sdk/typescript 2.1.3 2.194.1 1.0.0 testkube-sdk";
+    sdkVersion = "2.2.0";
+    genVersion = "2.213.3";
+    userAgent = "speakeasy-sdk/typescript 2.2.0 2.213.3 1.0.0 testkube-sdk";
     retryConfig?: utils.RetryConfig;
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
@@ -79,13 +79,13 @@ export class TestkubeSDK {
      */
     public api: Api;
     /**
-     * Tests operations
-     */
-    public tests: Tests;
-    /**
      * Test suites and tests execution operations
      */
     public executions: Executions;
+    /**
+     * Tests operations
+     */
+    public tests: Tests;
     /**
      * Artifact operations
      */
@@ -139,8 +139,8 @@ export class TestkubeSDK {
         });
 
         this.api = new Api(this.sdkConfiguration);
-        this.tests = new Tests(this.sdkConfiguration);
         this.executions = new Executions(this.sdkConfiguration);
+        this.tests = new Tests(this.sdkConfiguration);
         this.artifacts = new Artifacts(this.sdkConfiguration);
         this.logs = new Logs(this.sdkConfiguration);
         this.executor = new Executor(this.sdkConfiguration);

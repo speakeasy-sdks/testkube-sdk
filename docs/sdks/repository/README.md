@@ -15,7 +15,7 @@ Validate new repository based on variables passed in request
 import { TestkubeSDK } from "testkube-sdk";
 import { AuthType, RepositoryType } from "testkube-sdk/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.repository.validateRepository({
@@ -38,7 +38,9 @@ import { AuthType, RepositoryType } from "testkube-sdk/dist/sdk/models/shared";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

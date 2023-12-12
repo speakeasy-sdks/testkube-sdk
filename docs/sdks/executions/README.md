@@ -39,7 +39,7 @@ Aborts execution with given executionID
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.abortExecution({
@@ -50,7 +50,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -79,7 +81,7 @@ Aborts testsuite execution with given executionID
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.abortTestSuiteExecution({
@@ -90,7 +92,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -119,7 +123,7 @@ Aborts testsuite execution with given executionID
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.abortTestSuiteExecutionByID({
@@ -129,7 +133,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -158,7 +164,7 @@ Download the artifact archive from the given execution
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.downloadArchive({
@@ -168,7 +174,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -197,7 +205,7 @@ Download the artifact file from the given execution
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.downloadFile({
@@ -208,7 +216,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -238,7 +248,7 @@ New test execution returns new execution details on successful execution start
 import { TestkubeSDK } from "testkube-sdk";
 import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.executeTest({
@@ -305,8 +315,8 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
         type: RunningContextType.Testsuite,
       },
       secretEnvs: {
-        "secret_Key_name2": "secret-name",
         "secret_key_name1": "secret-name",
+        "secret_Key_name2": "secret-name",
       },
       testSuiteName: "test-suite1",
       uploads: [
@@ -341,7 +351,9 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -371,7 +383,7 @@ New test suite execution returns new execution details on successful execution s
 import { TestkubeSDK } from "testkube-sdk";
 import { RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.executeTestSuite({
@@ -431,7 +443,9 @@ import { RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/s
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -461,7 +475,7 @@ New test suite executions returns new executions details on successful execution
 import { TestkubeSDK } from "testkube-sdk";
 import { RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.executeTestSuites({
@@ -476,14 +490,14 @@ import { RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/s
         },
       },
       executionLabels: {
-        "prefix": "some-",
         "users": "3",
+        "prefix": "some-",
       },
       httpProxy: "user:pass@my.proxy.server:8080",
       httpsProxy: "user:pass@my.proxy.server:8081",
       labels: {
-        "prefix": "some-",
         "users": "3",
+        "prefix": "some-",
       },
       name: "testing with 1000 users",
       namespace: "testkube",
@@ -520,7 +534,9 @@ import { RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/s
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -550,7 +566,7 @@ New test executions returns new executions details on successful executions star
 import { TestkubeSDK } from "testkube-sdk";
 import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "testkube-sdk/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.executeTests({
@@ -652,7 +668,9 @@ import { ExecutionRequestArgsMode, RunningContextType, VariableType } from "test
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -681,7 +699,7 @@ Returns artifacts of the given executionID
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.getExecutionArtifacts({
@@ -691,7 +709,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -720,7 +740,7 @@ Returns execution with given executionID
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.getExecutionByID({
@@ -730,7 +750,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -759,7 +781,7 @@ Returns logs of the given executionID
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.getExecutionLogs({
@@ -769,7 +791,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -798,7 +822,7 @@ Returns execution with given executionID
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.getTestExecution({
@@ -809,7 +833,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -838,7 +864,7 @@ Returns test suite execution with given executionID
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.getTestSuiteExecution({
@@ -849,7 +875,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -878,7 +906,7 @@ Returns test suite execution artifacts with given executionID
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.getTestSuiteExecutionArtifacts({
@@ -888,7 +916,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -917,7 +947,7 @@ Returns test suite execution artifacts with given executionID
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.getTestSuiteExecutionArtifactsByTestsuite({
@@ -928,7 +958,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -957,7 +989,7 @@ Returns test suite execution with given executionID
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.getTestSuiteExecutionByID({
@@ -967,7 +999,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -998,7 +1032,7 @@ import { TestkubeSDK } from "testkube-sdk";
 import { TestSuiteExecutionStatus } from "testkube-sdk/dist/sdk/models/shared";
 import { RFCDate } from "testkube-sdk/dist/sdk/types";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.listAllTestSuiteExecutions({});
@@ -1006,7 +1040,9 @@ import { RFCDate } from "testkube-sdk/dist/sdk/types";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1037,7 +1073,7 @@ import { TestkubeSDK } from "testkube-sdk";
 import { ExecutionStatus } from "testkube-sdk/dist/sdk/models/shared";
 import { RFCDate } from "testkube-sdk/dist/sdk/types";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.listExecutions({});
@@ -1045,7 +1081,9 @@ import { RFCDate } from "testkube-sdk/dist/sdk/types";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1076,7 +1114,7 @@ import { TestkubeSDK } from "testkube-sdk";
 import { ExecutionStatus } from "testkube-sdk/dist/sdk/models/shared";
 import { RFCDate } from "testkube-sdk/dist/sdk/types";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.listTestExecutions({
@@ -1086,7 +1124,9 @@ import { RFCDate } from "testkube-sdk/dist/sdk/types";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1117,7 +1157,7 @@ import { TestkubeSDK } from "testkube-sdk";
 import { TestSuiteExecutionStatus } from "testkube-sdk/dist/sdk/models/shared";
 import { RFCDate } from "testkube-sdk/dist/sdk/types";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.listTestSuiteExecutions({
@@ -1127,7 +1167,9 @@ import { RFCDate } from "testkube-sdk/dist/sdk/types";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1157,7 +1199,7 @@ Upload file to be used in executions and tests
 import { TestkubeSDK } from "testkube-sdk";
 import { ParentType } from "testkube-sdk/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.uploads({
@@ -1168,7 +1210,9 @@ import { ParentType } from "testkube-sdk/dist/sdk/models/shared";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

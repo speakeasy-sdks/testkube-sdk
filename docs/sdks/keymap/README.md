@@ -18,7 +18,7 @@ Returns a keymap (supported/allowed fields) for the test trigger UI screen
 ```typescript
 import { TestkubeSDK } from "testkube-sdk";
 
-(async() => {
+async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.keymap.getKeyMap();
@@ -26,7 +26,9 @@ import { TestkubeSDK } from "testkube-sdk";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
