@@ -7,7 +7,7 @@ import { EventType } from "./eventtype";
 import { Expose } from "class-transformer";
 
 /**
- * CRD based webhook data
+ * webhook create request body
  */
 export class WebhookCreateRequest extends SpeakeasyBase {
     @SpeakeasyMetadata()

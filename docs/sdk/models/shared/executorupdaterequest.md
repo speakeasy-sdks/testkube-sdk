@@ -1,6 +1,6 @@
 # ExecutorUpdateRequest
 
-CRD based executor data
+executor update request body
 
 
 ## Fields

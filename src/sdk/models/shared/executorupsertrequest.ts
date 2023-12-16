@@ -13,7 +13,7 @@ export enum ExecutorUpsertRequestFeatures {
 }
 
 /**
- * CRD based executor data
+ * executor create request body
  */
 export class ExecutorUpsertRequest extends SpeakeasyBase {
     /**

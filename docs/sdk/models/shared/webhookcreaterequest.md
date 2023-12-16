@@ -1,6 +1,6 @@
 # WebhookCreateRequest
 
-CRD based webhook data
+webhook create request body
 
 
 ## Fields

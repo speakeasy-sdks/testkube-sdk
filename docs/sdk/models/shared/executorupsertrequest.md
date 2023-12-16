@@ -1,6 +1,6 @@
 # ExecutorUpsertRequest
 
-CRD based executor data
+executor create request body
 
 
 ## Fields
