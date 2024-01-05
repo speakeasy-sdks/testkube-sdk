@@ -11,5 +11,5 @@ export class TestSuiteStepDelayV2 extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "duration" })
-    duration?: number;
+    duration: number;
 }

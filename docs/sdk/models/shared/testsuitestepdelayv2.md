@@ -5,4 +5,4 @@
 
 | Field                          | Type                           | Required                       | Description                    |
 | ------------------------------ | ------------------------------ | ------------------------------ | ------------------------------ |
-| `duration`                     | *number*                       | :heavy_minus_sign:             | delay duration in milliseconds |
+| `duration`                     | *number*                       | :heavy_check_mark:             | delay duration in milliseconds |

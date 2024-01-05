@@ -132,6 +132,7 @@ async function run() {
             test: "name",
           },
         ],
+        stopOnFailure: false,
       },
     ],
     before: [
@@ -142,6 +143,7 @@ async function run() {
             test: "name",
           },
         ],
+        stopOnFailure: false,
       },
     ],
     description: "collection of tests",
@@ -216,6 +218,7 @@ async function run() {
             test: "name",
           },
         ],
+        stopOnFailure: false,
       },
     ],
   });
@@ -940,6 +943,7 @@ async function run() {
               test: "name",
             },
           ],
+          stopOnFailure: false,
         },
       ],
       before: [
@@ -950,6 +954,7 @@ async function run() {
               test: "name",
             },
           ],
+          stopOnFailure: false,
         },
       ],
       description: "collection of tests",
@@ -1024,6 +1029,7 @@ async function run() {
               test: "name",
             },
           ],
+          stopOnFailure: false,
         },
       ],
     },
