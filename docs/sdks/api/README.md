@@ -626,10 +626,10 @@ async function run() {
         execute: [
           {
             delay: "1s",
-            test: "name",
+            test: "example-test",
           },
         ],
-        stopOnFailure: false,
+        stopOnFailure: true,
       },
     ],
     before: [
@@ -637,10 +637,10 @@ async function run() {
         execute: [
           {
             delay: "1s",
-            test: "name",
+            test: "example-test",
           },
         ],
-        stopOnFailure: false,
+        stopOnFailure: true,
       },
     ],
     description: "collection of tests",
@@ -677,20 +677,26 @@ async function run() {
             key: "<key>",
             name: "string",
           },
+          name: "var1",
           secretRef: {
             key: "<key>",
             name: "string",
           },
+          type: VariableType.Basic,
+          value: "value1",
         },
         "secret1": {
           configMapRef: {
             key: "<key>",
             name: "string",
           },
+          name: "secret1",
           secretRef: {
             key: "<key>",
             name: "string",
           },
+          type: VariableType.Secret,
+          value: "secretvalue1",
         },
       },
     },
@@ -712,10 +718,10 @@ async function run() {
         execute: [
           {
             delay: "1s",
-            test: "name",
+            test: "example-test",
           },
         ],
-        stopOnFailure: false,
+        stopOnFailure: true,
       },
     ],
   });
@@ -1032,20 +1038,26 @@ async function run() {
             key: "<key>",
             name: "string",
           },
+          name: "var1",
           secretRef: {
             key: "<key>",
             name: "string",
           },
+          type: VariableType.Basic,
+          value: "value1",
         },
         "secret1": {
           configMapRef: {
             key: "<key>",
             name: "string",
           },
+          name: "secret1",
           secretRef: {
             key: "<key>",
             name: "string",
           },
+          type: VariableType.Secret,
+          value: "secretvalue1",
         },
       },
     },
@@ -1879,20 +1891,26 @@ async function run() {
             key: "<key>",
             name: "string",
           },
+          name: "var1",
           secretRef: {
             key: "<key>",
             name: "string",
           },
+          type: VariableType.Basic,
+          value: "value1",
         },
         "secret1": {
           configMapRef: {
             key: "<key>",
             name: "string",
           },
+          name: "secret1",
           secretRef: {
             key: "<key>",
             name: "string",
           },
+          type: VariableType.Secret,
+          value: "secretvalue1",
         },
       },
     },
@@ -1971,20 +1989,26 @@ async function run() {
             key: "<key>",
             name: "string",
           },
+          name: "var1",
           secretRef: {
             key: "<key>",
             name: "string",
           },
+          type: VariableType.Basic,
+          value: "value1",
         },
         "secret1": {
           configMapRef: {
             key: "<key>",
             name: "string",
           },
+          name: "secret1",
           secretRef: {
             key: "<key>",
             name: "string",
           },
+          type: VariableType.Secret,
+          value: "secretvalue1",
         },
       },
     },
@@ -2063,20 +2087,26 @@ async function run() {
             key: "<key>",
             name: "string",
           },
+          name: "var1",
           secretRef: {
             key: "<key>",
             name: "string",
           },
+          type: VariableType.Basic,
+          value: "value1",
         },
         "secret1": {
           configMapRef: {
             key: "<key>",
             name: "string",
           },
+          name: "secret1",
           secretRef: {
             key: "<key>",
             name: "string",
           },
+          type: VariableType.Secret,
+          value: "secretvalue1",
         },
       },
     },
@@ -2197,20 +2227,26 @@ async function run() {
             key: "<key>",
             name: "string",
           },
+          name: "var1",
           secretRef: {
             key: "<key>",
             name: "string",
           },
+          type: VariableType.Basic,
+          value: "value1",
         },
         "secret1": {
           configMapRef: {
             key: "<key>",
             name: "string",
           },
+          name: "secret1",
           secretRef: {
             key: "<key>",
             name: "string",
           },
+          type: VariableType.Secret,
+          value: "secretvalue1",
         },
       },
     },
@@ -3976,10 +4012,10 @@ async function run() {
           execute: [
             {
               delay: "1s",
-              test: "name",
+              test: "example-test",
             },
           ],
-          stopOnFailure: false,
+          stopOnFailure: true,
         },
       ],
       before: [
@@ -3987,10 +4023,10 @@ async function run() {
           execute: [
             {
               delay: "1s",
-              test: "name",
+              test: "example-test",
             },
           ],
-          stopOnFailure: false,
+          stopOnFailure: true,
         },
       ],
       description: "collection of tests",
@@ -4027,20 +4063,26 @@ async function run() {
               key: "<key>",
               name: "string",
             },
+            name: "var1",
             secretRef: {
               key: "<key>",
               name: "string",
             },
+            type: VariableType.Basic,
+            value: "value1",
           },
           "secret1": {
             configMapRef: {
               key: "<key>",
               name: "string",
             },
+            name: "secret1",
             secretRef: {
               key: "<key>",
               name: "string",
             },
+            type: VariableType.Secret,
+            value: "secretvalue1",
           },
         },
       },
@@ -4062,10 +4104,10 @@ async function run() {
           execute: [
             {
               delay: "1s",
-              test: "name",
+              test: "example-test",
             },
           ],
-          stopOnFailure: false,
+          stopOnFailure: true,
         },
       ],
     },
@@ -4394,20 +4436,26 @@ async function run() {
               key: "<key>",
               name: "string",
             },
+            name: "var1",
             secretRef: {
               key: "<key>",
               name: "string",
             },
+            type: VariableType.Basic,
+            value: "value1",
           },
           "secret1": {
             configMapRef: {
               key: "<key>",
               name: "string",
             },
+            name: "secret1",
             secretRef: {
               key: "<key>",
               name: "string",
             },
+            type: VariableType.Secret,
+            value: "secretvalue1",
           },
         },
       },

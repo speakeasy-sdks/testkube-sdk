@@ -4,9 +4,9 @@ management:
   docChecksum: 35de89d3f53d9b12dd4444c075cea53e
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.225.2
-  releaseVersion: 2.3.1
-  configChecksum: 5f2ddf112641b2976ee72c6fa646b71e
+  generationVersion: 2.253.0
+  releaseVersion: 2.3.2
+  configChecksum: fb2265e95b3f73c044c46480194baf95
   repoURL: https://github.com/speakeasy-sdks/testkube-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/testkube-sdk
@@ -14,7 +14,7 @@ management:
 features:
   typescript:
     acceptHeaders: 2.81.1
-    core: 3.4.1
+    core: 3.4.6
     deprecations: 2.81.1
     globalServerURLs: 2.82.1
     inputOutputModels: 2.83.0
