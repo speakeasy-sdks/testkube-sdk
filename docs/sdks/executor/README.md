@@ -39,7 +39,7 @@ async function run() {
       "curl",
     ],
     contentTypes: [
-      "string",
+      "<value>",
     ],
     features: [
       ExecutorUpsertRequestFeatures.JunitReport,
@@ -61,7 +61,7 @@ async function run() {
     name: "name",
     namespace: "testkube",
     types: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -102,7 +102,7 @@ import { TestkubeSDK } from "testkube-sdk";
 async function run() {
   const sdk = new TestkubeSDK();
 
-  const res = await sdk.executor.createExecutorString("string");
+  const res = await sdk.executor.createExecutorString("<value>");
 
   if (res.statusCode == 200) {
     // handle response
@@ -142,7 +142,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executor.deleteExecutor({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -222,7 +222,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executor.getExecutor({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -313,7 +313,7 @@ async function run() {
         "curl",
       ],
       contentTypes: [
-        "string",
+        "<value>",
       ],
       features: [
         ExecutorUpdateRequestFeatures.Artifacts,
@@ -335,10 +335,10 @@ async function run() {
       name: "name",
       namespace: "testkube",
       types: [
-        "string",
+        "<value>",
       ],
     },
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -379,8 +379,8 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executor.updateExecutorString({
-    requestBody: "string",
-    id: "<ID>",
+    requestBody: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {

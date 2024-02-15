@@ -213,7 +213,7 @@ import { TestkubeSDK } from "testkube-sdk";
 async function run() {
   const sdk = new TestkubeSDK();
 
-  const res = await sdk.testTriggers.createTestTriggerString("string");
+  const res = await sdk.testTriggers.createTestTriggerString("<value>");
 
   if (res.statusCode == 200) {
     // handle response
@@ -253,7 +253,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testTriggers.deleteTestTrigger({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -333,7 +333,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testTriggers.getTestTriggerByID({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -466,7 +466,7 @@ async function run() {
         namespace: "testkube",
       },
     },
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -507,8 +507,8 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testTriggers.updateTestTriggerString({
-    requestBody: "string",
-    id: "<ID>",
+    requestBody: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {

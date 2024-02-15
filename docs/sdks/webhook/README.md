@@ -80,7 +80,7 @@ import { TestkubeSDK } from "testkube-sdk";
 async function run() {
   const sdk = new TestkubeSDK();
 
-  const res = await sdk.webhook.createWebhookString("string");
+  const res = await sdk.webhook.createWebhookString("<value>");
 
   if (res.statusCode == 200) {
     // handle response
@@ -120,7 +120,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.webhook.deleteWebhook({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -200,7 +200,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.webhook.getWebhook({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {

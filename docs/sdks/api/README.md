@@ -105,8 +105,8 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.abortExecution({
-    executionID: "string",
-    id: "<ID>",
+    executionID: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -147,7 +147,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.abortTestExecutions({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -188,8 +188,8 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.abortTestSuiteExecution({
-    executionID: "string",
-    id: "<ID>",
+    executionID: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -230,7 +230,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.abortTestSuiteExecutionByID({
-    executionID: "string",
+    executionID: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -271,7 +271,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.abortTestSuiteExecutions({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -415,7 +415,7 @@ async function run() {
       "curl",
     ],
     contentTypes: [
-      "string",
+      "<value>",
     ],
     features: [
       ExecutorUpsertRequestFeatures.JunitReport,
@@ -437,7 +437,7 @@ async function run() {
     name: "name",
     namespace: "testkube",
     types: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -478,7 +478,7 @@ import { TestkubeSDK } from "testkube-sdk";
 async function run() {
   const sdk = new TestkubeSDK();
 
-  const res = await sdk.api.createExecutorString("string");
+  const res = await sdk.api.createExecutorString("<value>");
 
   if (res.statusCode == 200) {
     // handle response
@@ -520,7 +520,7 @@ async function run() {
 
   const res = await sdk.api.createTestSourceJson({
     labels: {
-      "key": "string",
+      "key": "<value>",
     },
     name: "testsource1",
     namespace: "testkube",
@@ -530,13 +530,13 @@ async function run() {
       path: "test/perf",
       tokenSecret: {
         key: "<key>",
-        name: "string",
+        name: "<value>",
       },
       type: RepositoryType.Git,
       uri: "https://github.com/kubeshop/testkube",
       usernameSecret: {
         key: "<key>",
-        name: "string",
+        name: "<value>",
       },
       workingDir: "/",
     },
@@ -580,7 +580,7 @@ import { TestkubeSDK } from "testkube-sdk";
 async function run() {
   const sdk = new TestkubeSDK();
 
-  const res = await sdk.api.createTestSourceString("string");
+  const res = await sdk.api.createTestSourceString("<value>");
 
   if (res.statusCode == 200) {
     // handle response
@@ -675,12 +675,12 @@ async function run() {
         "var1": {
           configMapRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           name: "var1",
           secretRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           type: VariableType.Basic,
           value: "value1",
@@ -688,12 +688,12 @@ async function run() {
         "secret1": {
           configMapRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           name: "secret1",
           secretRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           type: VariableType.Secret,
           value: "secretvalue1",
@@ -763,7 +763,7 @@ import { TestkubeSDK } from "testkube-sdk";
 async function run() {
   const sdk = new TestkubeSDK();
 
-  const res = await sdk.api.createTestSuiteString("string");
+  const res = await sdk.api.createTestSuiteString("<value>");
 
   if (res.statusCode == 200) {
     // handle response
@@ -893,7 +893,7 @@ import { TestkubeSDK } from "testkube-sdk";
 async function run() {
   const sdk = new TestkubeSDK();
 
-  const res = await sdk.api.createTestTriggerString("string");
+  const res = await sdk.api.createTestTriggerString("<value>");
 
   if (res.statusCode == 200) {
     // handle response
@@ -949,13 +949,13 @@ async function run() {
         path: "test/perf",
         tokenSecret: {
           key: "<key>",
-          name: "string",
+          name: "<value>",
         },
         type: RepositoryType.Git,
         uri: "https://github.com/kubeshop/testkube",
         usernameSecret: {
           key: "<key>",
-          name: "string",
+          name: "<value>",
         },
         workingDir: "/",
       },
@@ -971,7 +971,7 @@ async function run() {
       ],
       artifactRequest: {
         dirs: [
-          "string",
+          "<value>",
         ],
         storageClassName: "artifact-volume-local",
       },
@@ -1036,12 +1036,12 @@ async function run() {
         "var1": {
           configMapRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           name: "var1",
           secretRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           type: VariableType.Basic,
           value: "value1",
@@ -1049,12 +1049,12 @@ async function run() {
         "secret1": {
           configMapRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           name: "secret1",
           secretRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           type: VariableType.Secret,
           value: "secretvalue1",
@@ -1118,7 +1118,7 @@ import { TestkubeSDK } from "testkube-sdk";
 async function run() {
   const sdk = new TestkubeSDK();
 
-  const res = await sdk.api.createTestString("string");
+  const res = await sdk.api.createTestString("<value>");
 
   if (res.statusCode == 200) {
     // handle response
@@ -1211,7 +1211,7 @@ import { TestkubeSDK } from "testkube-sdk";
 async function run() {
   const sdk = new TestkubeSDK();
 
-  const res = await sdk.api.createWebhookString("string");
+  const res = await sdk.api.createWebhookString("<value>");
 
   if (res.statusCode == 200) {
     // handle response
@@ -1251,7 +1251,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.deleteExecutor({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1331,7 +1331,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.deleteTest({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1372,7 +1372,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.deleteTestSource({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1452,7 +1452,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.deleteTestSuite({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1532,7 +1532,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.deleteTestTrigger({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1651,7 +1651,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.deleteWebhook({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1731,7 +1731,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.downloadArchive({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1773,7 +1773,7 @@ async function run() {
 
   const res = await sdk.api.downloadFile({
     filename: "maserati_bronze_audi.mp2a",
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1824,7 +1824,7 @@ async function run() {
       ],
       artifactRequest: {
         dirs: [
-          "string",
+          "<value>",
         ],
         storageClassName: "artifact-volume-local",
       },
@@ -1889,12 +1889,12 @@ async function run() {
         "var1": {
           configMapRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           name: "var1",
           secretRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           type: VariableType.Basic,
           value: "value1",
@@ -1902,19 +1902,19 @@ async function run() {
         "secret1": {
           configMapRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           name: "secret1",
           secretRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           type: VariableType.Secret,
           value: "secretvalue1",
         },
       },
     },
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1987,12 +1987,12 @@ async function run() {
         "var1": {
           configMapRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           name: "var1",
           secretRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           type: VariableType.Basic,
           value: "value1",
@@ -2000,19 +2000,19 @@ async function run() {
         "secret1": {
           configMapRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           name: "secret1",
           secretRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           type: VariableType.Secret,
           value: "secretvalue1",
         },
       },
     },
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -2085,12 +2085,12 @@ async function run() {
         "var1": {
           configMapRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           name: "var1",
           secretRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           type: VariableType.Basic,
           value: "value1",
@@ -2098,12 +2098,12 @@ async function run() {
         "secret1": {
           configMapRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           name: "secret1",
           secretRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           type: VariableType.Secret,
           value: "secretvalue1",
@@ -2160,7 +2160,7 @@ async function run() {
       ],
       artifactRequest: {
         dirs: [
-          "string",
+          "<value>",
         ],
         storageClassName: "artifact-volume-local",
       },
@@ -2225,12 +2225,12 @@ async function run() {
         "var1": {
           configMapRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           name: "var1",
           secretRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           type: VariableType.Basic,
           value: "value1",
@@ -2238,12 +2238,12 @@ async function run() {
         "secret1": {
           configMapRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           name: "secret1",
           secretRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           type: VariableType.Secret,
           value: "secretvalue1",
@@ -2366,7 +2366,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getExecutionArtifacts({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -2407,7 +2407,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getExecutionByID({
-    executionID: "string",
+    executionID: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -2448,7 +2448,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getExecutionLogs({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -2489,7 +2489,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getExecutor({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -2568,7 +2568,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getTest({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -2609,8 +2609,8 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getTestExecution({
-    executionID: "string",
-    id: "<ID>",
+    executionID: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -2651,7 +2651,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getTestMetrics({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -2692,7 +2692,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getTestSource({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -2733,7 +2733,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getTestSuiteByID({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -2774,7 +2774,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getTestSuiteByIDWithExecution({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -2815,8 +2815,8 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getTestSuiteExecution({
-    executionID: "string",
-    id: "<ID>",
+    executionID: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -2857,7 +2857,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getTestSuiteExecutionArtifacts({
-    executionID: "string",
+    executionID: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -2898,8 +2898,8 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getTestSuiteExecutionArtifactsByTestsuite({
-    executionID: "string",
-    id: "<ID>",
+    executionID: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -2940,7 +2940,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getTestSuiteExecutionByID({
-    executionID: "string",
+    executionID: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -2981,7 +2981,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getTestSuiteMetrics({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -3022,7 +3022,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getTestTriggerByID({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -3063,7 +3063,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getTestWithExecution({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -3104,7 +3104,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.getWebhook({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -3268,7 +3268,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.listTestExecutions({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -3350,7 +3350,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.listTestSuiteExecutions({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -3391,7 +3391,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.listTestSuiteTests({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -3672,7 +3672,7 @@ async function run() {
     batch: [
       {
         labels: {
-          "key": "string",
+          "key": "<value>",
         },
         name: "testsource1",
         namespace: "testkube",
@@ -3682,13 +3682,13 @@ async function run() {
           path: "test/perf",
           tokenSecret: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           type: RepositoryType.Git,
           uri: "https://github.com/kubeshop/testkube",
           usernameSecret: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           workingDir: "/",
         },
@@ -3735,9 +3735,9 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.updateConfigKey({
-    clusterId: "string",
+    clusterId: "<value>",
     enableTelemetry: false,
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -3789,7 +3789,7 @@ async function run() {
         "curl",
       ],
       contentTypes: [
-        "string",
+        "<value>",
       ],
       features: [
         ExecutorUpdateRequestFeatures.Artifacts,
@@ -3811,10 +3811,10 @@ async function run() {
       name: "name",
       namespace: "testkube",
       types: [
-        "string",
+        "<value>",
       ],
     },
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -3855,8 +3855,8 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.updateExecutorString({
-    requestBody: "string",
-    id: "<ID>",
+    requestBody: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -3900,7 +3900,7 @@ async function run() {
   const res = await sdk.api.updateTestSourceJson({
     testSourceUpdateRequest: {
       labels: {
-        "key": "string",
+        "key": "<value>",
       },
       name: "testsource1",
       namespace: "testkube",
@@ -3910,19 +3910,19 @@ async function run() {
         path: "test/perf",
         tokenSecret: {
           key: "<key>",
-          name: "string",
+          name: "<value>",
         },
         type: RepositoryType.Git,
         uri: "https://github.com/kubeshop/testkube",
         usernameSecret: {
           key: "<key>",
-          name: "string",
+          name: "<value>",
         },
         workingDir: "/",
       },
       uri: "https://github.com/kubeshop/testkube",
     },
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -3963,8 +3963,8 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.updateTestSourceString({
-    requestBody: "string",
-    id: "<ID>",
+    requestBody: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -4061,12 +4061,12 @@ async function run() {
           "var1": {
             configMapRef: {
               key: "<key>",
-              name: "string",
+              name: "<value>",
             },
             name: "var1",
             secretRef: {
               key: "<key>",
-              name: "string",
+              name: "<value>",
             },
             type: VariableType.Basic,
             value: "value1",
@@ -4074,12 +4074,12 @@ async function run() {
           "secret1": {
             configMapRef: {
               key: "<key>",
-              name: "string",
+              name: "<value>",
             },
             name: "secret1",
             secretRef: {
               key: "<key>",
-              name: "string",
+              name: "<value>",
             },
             type: VariableType.Secret,
             value: "secretvalue1",
@@ -4111,7 +4111,7 @@ async function run() {
         },
       ],
     },
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -4152,8 +4152,8 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.updateTestSuiteString({
-    requestBody: "string",
-    id: "<ID>",
+    requestBody: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -4247,7 +4247,7 @@ async function run() {
         namespace: "testkube",
       },
     },
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -4288,8 +4288,8 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.updateTestTriggerString({
-    requestBody: "string",
-    id: "<ID>",
+    requestBody: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -4347,13 +4347,13 @@ async function run() {
           path: "test/perf",
           tokenSecret: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           type: RepositoryType.Git,
           uri: "https://github.com/kubeshop/testkube",
           usernameSecret: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           workingDir: "/",
         },
@@ -4369,7 +4369,7 @@ async function run() {
         ],
         artifactRequest: {
           dirs: [
-            "string",
+            "<value>",
           ],
           storageClassName: "artifact-volume-local",
         },
@@ -4434,12 +4434,12 @@ async function run() {
           "var1": {
             configMapRef: {
               key: "<key>",
-              name: "string",
+              name: "<value>",
             },
             name: "var1",
             secretRef: {
               key: "<key>",
-              name: "string",
+              name: "<value>",
             },
             type: VariableType.Basic,
             value: "value1",
@@ -4447,12 +4447,12 @@ async function run() {
           "secret1": {
             configMapRef: {
               key: "<key>",
-              name: "string",
+              name: "<value>",
             },
             name: "secret1",
             secretRef: {
               key: "<key>",
-              name: "string",
+              name: "<value>",
             },
             type: VariableType.Secret,
             value: "secretvalue1",
@@ -4478,7 +4478,7 @@ async function run() {
         "settings/config.txt",
       ],
     },
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -4519,8 +4519,8 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.api.updateTestString({
-    requestBody: "string",
-    id: "<ID>",
+    requestBody: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -4610,13 +4610,13 @@ async function run() {
     path: "test/perf",
     tokenSecret: {
       key: "<key>",
-      name: "string",
+      name: "<value>",
     },
     type: RepositoryType.Git,
     uri: "https://github.com/kubeshop/testkube",
     usernameSecret: {
       key: "<key>",
-      name: "string",
+      name: "<value>",
     },
     workingDir: "/",
   });

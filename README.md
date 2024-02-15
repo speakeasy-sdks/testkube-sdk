@@ -28,8 +28,8 @@ async function run() {
     const sdk = new TestkubeSDK();
 
     const res = await sdk.api.abortExecution({
-        executionID: "string",
-        id: "<ID>",
+        executionID: "<value>",
+        id: "<id>",
     });
 
     if (res.statusCode == 200) {
@@ -294,8 +294,8 @@ async function run() {
     let res;
     try {
         res = await sdk.api.abortExecution({
-            executionID: "string",
-            id: "<ID>",
+            executionID: "<value>",
+            id: "<id>",
         });
     } catch (err) {
         if (err instanceof errors.SDKError) {
@@ -338,8 +338,8 @@ async function run() {
     });
 
     const res = await sdk.api.abortExecution({
-        executionID: "string",
-        id: "<ID>",
+        executionID: "<value>",
+        id: "<id>",
     });
 
     if (res.statusCode == 200) {
@@ -364,8 +364,8 @@ async function run() {
     });
 
     const res = await sdk.api.abortExecution({
-        executionID: "string",
-        id: "<ID>",
+        executionID: "<value>",
+        id: "<id>",
     });
 
     if (res.statusCode == 200) {

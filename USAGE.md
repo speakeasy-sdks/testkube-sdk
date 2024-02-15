@@ -6,8 +6,8 @@ async function run() {
     const sdk = new TestkubeSDK();
 
     const res = await sdk.api.abortExecution({
-        executionID: "string",
-        id: "<ID>",
+        executionID: "<value>",
+        id: "<id>",
     });
 
     if (res.statusCode == 200) {

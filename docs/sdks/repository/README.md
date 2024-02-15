@@ -24,13 +24,13 @@ async function run() {
     path: "test/perf",
     tokenSecret: {
       key: "<key>",
-      name: "string",
+      name: "<value>",
     },
     type: RepositoryType.Git,
     uri: "https://github.com/kubeshop/testkube",
     usernameSecret: {
       key: "<key>",
-      name: "string",
+      name: "<value>",
     },
     workingDir: "/",
   });

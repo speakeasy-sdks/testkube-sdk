@@ -28,7 +28,7 @@ async function run() {
 
   const res = await sdk.testSources.createTestSourceJson({
     labels: {
-      "key": "string",
+      "key": "<value>",
     },
     name: "testsource1",
     namespace: "testkube",
@@ -38,13 +38,13 @@ async function run() {
       path: "test/perf",
       tokenSecret: {
         key: "<key>",
-        name: "string",
+        name: "<value>",
       },
       type: RepositoryType.Git,
       uri: "https://github.com/kubeshop/testkube",
       usernameSecret: {
         key: "<key>",
-        name: "string",
+        name: "<value>",
       },
       workingDir: "/",
     },
@@ -88,7 +88,7 @@ import { TestkubeSDK } from "testkube-sdk";
 async function run() {
   const sdk = new TestkubeSDK();
 
-  const res = await sdk.testSources.createTestSourceString("string");
+  const res = await sdk.testSources.createTestSourceString("<value>");
 
   if (res.statusCode == 200) {
     // handle response
@@ -128,7 +128,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testSources.deleteTestSource({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -208,7 +208,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testSources.getTestSource({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -292,7 +292,7 @@ async function run() {
     batch: [
       {
         labels: {
-          "key": "string",
+          "key": "<value>",
         },
         name: "testsource1",
         namespace: "testkube",
@@ -302,13 +302,13 @@ async function run() {
           path: "test/perf",
           tokenSecret: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           type: RepositoryType.Git,
           uri: "https://github.com/kubeshop/testkube",
           usernameSecret: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           workingDir: "/",
         },
@@ -358,7 +358,7 @@ async function run() {
   const res = await sdk.testSources.updateTestSourceJson({
     testSourceUpdateRequest: {
       labels: {
-        "key": "string",
+        "key": "<value>",
       },
       name: "testsource1",
       namespace: "testkube",
@@ -368,19 +368,19 @@ async function run() {
         path: "test/perf",
         tokenSecret: {
           key: "<key>",
-          name: "string",
+          name: "<value>",
         },
         type: RepositoryType.Git,
         uri: "https://github.com/kubeshop/testkube",
         usernameSecret: {
           key: "<key>",
-          name: "string",
+          name: "<value>",
         },
         workingDir: "/",
       },
       uri: "https://github.com/kubeshop/testkube",
     },
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -421,8 +421,8 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testSources.updateTestSourceString({
-    requestBody: "string",
-    id: "<ID>",
+    requestBody: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {

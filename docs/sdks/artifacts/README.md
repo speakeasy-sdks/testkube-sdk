@@ -24,7 +24,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.artifacts.downloadArchive({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -66,7 +66,7 @@ async function run() {
 
   const res = await sdk.artifacts.downloadFile({
     filename: "maserati_bronze_audi.mp2a",
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -107,7 +107,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.artifacts.getExecutionArtifacts({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {

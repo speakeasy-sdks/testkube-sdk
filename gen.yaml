@@ -8,7 +8,7 @@ generation:
     parameterOrderingFeb2024: false
     requestResponseComponentNamesFeb2024: false
 typescript:
-  version: 2.3.2
+  version: 2.3.3
   author: aabedraba
   clientServerStatusCodesAsErrors: false
   flattenGlobalSecurity: true

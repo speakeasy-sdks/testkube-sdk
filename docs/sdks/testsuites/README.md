@@ -40,8 +40,8 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testSuites.abortTestSuiteExecution({
-    executionID: "string",
-    id: "<ID>",
+    executionID: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -82,7 +82,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testSuites.abortTestSuiteExecutions({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -178,12 +178,12 @@ async function run() {
         "var1": {
           configMapRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           name: "var1",
           secretRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           type: VariableType.Basic,
           value: "value1",
@@ -191,12 +191,12 @@ async function run() {
         "secret1": {
           configMapRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           name: "secret1",
           secretRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           type: VariableType.Secret,
           value: "secretvalue1",
@@ -266,7 +266,7 @@ import { TestkubeSDK } from "testkube-sdk";
 async function run() {
   const sdk = new TestkubeSDK();
 
-  const res = await sdk.testSuites.createTestSuiteString("string");
+  const res = await sdk.testSuites.createTestSuiteString("<value>");
 
   if (res.statusCode == 200) {
     // handle response
@@ -306,7 +306,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testSuites.deleteTestSuite({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -418,12 +418,12 @@ async function run() {
         "var1": {
           configMapRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           name: "var1",
           secretRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           type: VariableType.Basic,
           value: "value1",
@@ -431,19 +431,19 @@ async function run() {
         "secret1": {
           configMapRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           name: "secret1",
           secretRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           type: VariableType.Secret,
           value: "secretvalue1",
         },
       },
     },
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -516,12 +516,12 @@ async function run() {
         "var1": {
           configMapRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           name: "var1",
           secretRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           type: VariableType.Basic,
           value: "value1",
@@ -529,12 +529,12 @@ async function run() {
         "secret1": {
           configMapRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           name: "secret1",
           secretRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           type: VariableType.Secret,
           value: "secretvalue1",
@@ -581,7 +581,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testSuites.getTestSuiteByID({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -622,7 +622,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testSuites.getTestSuiteByIDWithExecution({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -663,8 +663,8 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testSuites.getTestSuiteExecution({
-    executionID: "string",
-    id: "<ID>",
+    executionID: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -705,7 +705,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testSuites.getTestSuiteExecutionArtifacts({
-    executionID: "string",
+    executionID: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -746,8 +746,8 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testSuites.getTestSuiteExecutionArtifactsByTestsuite({
-    executionID: "string",
-    id: "<ID>",
+    executionID: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -790,7 +790,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testSuites.listTestSuiteExecutions({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -831,7 +831,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testSuites.listTestSuiteTests({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1007,12 +1007,12 @@ async function run() {
           "var1": {
             configMapRef: {
               key: "<key>",
-              name: "string",
+              name: "<value>",
             },
             name: "var1",
             secretRef: {
               key: "<key>",
-              name: "string",
+              name: "<value>",
             },
             type: VariableType.Basic,
             value: "value1",
@@ -1020,12 +1020,12 @@ async function run() {
           "secret1": {
             configMapRef: {
               key: "<key>",
-              name: "string",
+              name: "<value>",
             },
             name: "secret1",
             secretRef: {
               key: "<key>",
-              name: "string",
+              name: "<value>",
             },
             type: VariableType.Secret,
             value: "secretvalue1",
@@ -1057,7 +1057,7 @@ async function run() {
         },
       ],
     },
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1098,8 +1098,8 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.testSuites.updateTestSuiteString({
-    requestBody: "string",
-    id: "<ID>",
+    requestBody: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {

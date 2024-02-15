@@ -43,8 +43,8 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.abortExecution({
-    executionID: "string",
-    id: "<ID>",
+    executionID: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -85,8 +85,8 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.abortTestSuiteExecution({
-    executionID: "string",
-    id: "<ID>",
+    executionID: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -127,7 +127,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.abortTestSuiteExecutionByID({
-    executionID: "string",
+    executionID: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -168,7 +168,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.downloadArchive({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -210,7 +210,7 @@ async function run() {
 
   const res = await sdk.executions.downloadFile({
     filename: "maserati_bronze_audi.mp2a",
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -261,7 +261,7 @@ async function run() {
       ],
       artifactRequest: {
         dirs: [
-          "string",
+          "<value>",
         ],
         storageClassName: "artifact-volume-local",
       },
@@ -326,12 +326,12 @@ async function run() {
         "var1": {
           configMapRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           name: "var1",
           secretRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           type: VariableType.Basic,
           value: "value1",
@@ -339,19 +339,19 @@ async function run() {
         "secret1": {
           configMapRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           name: "secret1",
           secretRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           type: VariableType.Secret,
           value: "secretvalue1",
         },
       },
     },
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -424,12 +424,12 @@ async function run() {
         "var1": {
           configMapRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           name: "var1",
           secretRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           type: VariableType.Basic,
           value: "value1",
@@ -437,19 +437,19 @@ async function run() {
         "secret1": {
           configMapRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           name: "secret1",
           secretRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           type: VariableType.Secret,
           value: "secretvalue1",
         },
       },
     },
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -522,12 +522,12 @@ async function run() {
         "var1": {
           configMapRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           name: "var1",
           secretRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           type: VariableType.Basic,
           value: "value1",
@@ -535,12 +535,12 @@ async function run() {
         "secret1": {
           configMapRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           name: "secret1",
           secretRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           type: VariableType.Secret,
           value: "secretvalue1",
@@ -597,7 +597,7 @@ async function run() {
       ],
       artifactRequest: {
         dirs: [
-          "string",
+          "<value>",
         ],
         storageClassName: "artifact-volume-local",
       },
@@ -662,12 +662,12 @@ async function run() {
         "var1": {
           configMapRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           name: "var1",
           secretRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           type: VariableType.Basic,
           value: "value1",
@@ -675,12 +675,12 @@ async function run() {
         "secret1": {
           configMapRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           name: "secret1",
           secretRef: {
             key: "<key>",
-            name: "string",
+            name: "<value>",
           },
           type: VariableType.Secret,
           value: "secretvalue1",
@@ -727,7 +727,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.getExecutionArtifacts({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -768,7 +768,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.getExecutionByID({
-    executionID: "string",
+    executionID: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -809,7 +809,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.getExecutionLogs({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -850,8 +850,8 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.getTestExecution({
-    executionID: "string",
-    id: "<ID>",
+    executionID: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -892,8 +892,8 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.getTestSuiteExecution({
-    executionID: "string",
-    id: "<ID>",
+    executionID: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -934,7 +934,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.getTestSuiteExecutionArtifacts({
-    executionID: "string",
+    executionID: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -975,8 +975,8 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.getTestSuiteExecutionArtifactsByTestsuite({
-    executionID: "string",
-    id: "<ID>",
+    executionID: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1017,7 +1017,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.getTestSuiteExecutionByID({
-    executionID: "string",
+    executionID: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -1142,7 +1142,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.listTestExecutions({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1185,7 +1185,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.executions.listTestSuiteExecutions({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {

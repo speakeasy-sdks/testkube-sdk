@@ -22,7 +22,7 @@ async function run() {
   const sdk = new TestkubeSDK();
 
   const res = await sdk.logs.getExecutionLogs({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
