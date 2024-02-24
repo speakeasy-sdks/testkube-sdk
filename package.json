@@ -1,6 +1,6 @@
 {
   "name": "testkube-sdk",
-  "version": "2.3.3",
+  "version": "2.3.4",
   "author": "aabedraba",
   "scripts": {
     "prepare": "tsc --build",
