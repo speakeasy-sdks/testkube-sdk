@@ -7,8 +7,10 @@ generation:
     nameResolutionDec2023: false
     parameterOrderingFeb2024: false
     requestResponseComponentNamesFeb2024: false
+  auth:
+    oAuth2ClientCredentialsEnabled: false
 typescript:
-  version: 2.3.3
+  version: 2.3.4
   author: aabedraba
   clientServerStatusCodesAsErrors: false
   flattenGlobalSecurity: true
