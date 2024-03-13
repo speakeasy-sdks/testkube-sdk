@@ -2378,7 +2378,7 @@ export class Tests {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(responseContentType, `application/json`)) {
-                    res.twoHundredApplicationJsonRes = decodedRes;
+                    res.twoHundredApplicationJsonString = JSON.parse(decodedRes);
                 } else if (utils.matchContentType(responseContentType, `text/yaml`)) {
                     res.twoHundredTextYamlRes = decodedRes;
                 } else {

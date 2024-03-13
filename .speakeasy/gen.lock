@@ -3,10 +3,10 @@ id: 1051f63e-5c51-4157-aded-e5762504c531
 management:
   docChecksum: 35de89d3f53d9b12dd4444c075cea53e
   docVersion: 1.0.0
-  speakeasyVersion: internal
-  generationVersion: 2.272.4
-  releaseVersion: 2.3.4
-  configChecksum: 8efe6da87ae9e688a411fe9fdf071295
+  speakeasyVersion: 1.207.1
+  generationVersion: 2.280.6
+  releaseVersion: 2.3.5
+  configChecksum: f7631e4d803a4a825f101ee992f9cdfa
   repoURL: https://github.com/speakeasy-sdks/testkube-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/testkube-sdk
@@ -16,7 +16,7 @@ features:
     acceptHeaders: 2.81.1
     core: 3.4.8
     deprecations: 2.81.1
-    globalServerURLs: 2.82.1
+    globalServerURLs: 2.82.2
     inputOutputModels: 2.83.0
 generatedFiles:
   - src/sdk/api.ts

@@ -5,7 +5,7 @@
 
 | Field                                                     | Type                                                      | Required                                                  | Description                                               |
 | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
-| `twoHundredApplicationJsonRes`                            | *string*                                                  | :heavy_minus_sign:                                        | successful operation                                      |
+| `twoHundredApplicationJsonString`                         | *string*                                                  | :heavy_minus_sign:                                        | successful operation                                      |
 | `twoHundredTextYamlRes`                                   | *string*                                                  | :heavy_minus_sign:                                        | successful operation                                      |
 | `fourHundredApplicationProblemPlusJsonClasses`            | [shared.Problem](../../../sdk/models/shared/problem.md)[] | :heavy_minus_sign:                                        | problem with the input                                    |
 | `fiveHundredApplicationProblemPlusJsonClasses`            | [shared.Problem](../../../sdk/models/shared/problem.md)[] | :heavy_minus_sign:                                        | could not upload file                                     |

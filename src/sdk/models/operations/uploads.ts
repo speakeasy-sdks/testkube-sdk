@@ -11,7 +11,7 @@ export class UploadsResponse extends SpeakeasyBase {
      * successful operation
      */
     @SpeakeasyMetadata()
-    twoHundredApplicationJsonRes?: string;
+    twoHundredApplicationJsonString?: string;
 
     /**
      * successful operation

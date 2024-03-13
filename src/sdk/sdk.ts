@@ -59,9 +59,9 @@ export class SDKConfiguration {
     serverDefaults: any;
     language = "typescript";
     openapiDocVersion = "1.0.0";
-    sdkVersion = "2.3.4";
-    genVersion = "2.272.4";
-    userAgent = "speakeasy-sdk/typescript 2.3.4 2.272.4 1.0.0 testkube-sdk";
+    sdkVersion = "2.3.5";
+    genVersion = "2.280.6";
+    userAgent = "speakeasy-sdk/typescript 2.3.5 2.280.6 1.0.0 testkube-sdk";
     retryConfig?: utils.RetryConfig;
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
@@ -125,9 +125,12 @@ export class TestkubeSDK {
 
     constructor(props?: SDKProps) {
         let serverURL = props?.serverURL;
-        const serverIdx = props?.serverIdx ?? 0;
 
         if (!serverURL) {
+            const serverIdx = props?.serverIdx ?? 0;
+            if (serverIdx < 0 || serverIdx >= ServerList.length) {
+                throw new Error(`Invalid server index ${serverIdx}`);
+            }
             serverURL = ServerList[serverIdx];
         }
 
